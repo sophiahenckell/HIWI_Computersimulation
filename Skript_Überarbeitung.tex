@@ -65,9 +65,47 @@ typisch 10 GFLOP/S ('\textbf{G}igia \textbf{F}loating \textbf{P}oint \textbf{O}p
 Bei $N=10^{10} $ pro Sekunde \\
 $\Rightarrow$  Für die Zahl der Atome  ($N = 10^{23}$) dann $10^{13} s \approx 3 \cdot 10^5 a$
 
-\item \textbf{S}
+\item \textbf{Speicherbedarf:} \\
+'Trivialmodell' eines Rechners: 
+
+\begin{figure}[ht]
+	\centering
+  \includegraphics[width=0.8\textwidth]{Null_Rechner.png}
+	%\caption{}
+	\label{Null_DrittesStandbein}
+\end{figure}
+Informationseinheit: 
+\begin{align*}
+ 1 Byte \;   \widehat{=} & \; 1 \mbox{ Zeichen (z.B. einer Tastatur)} \\
+ 1 kByte \; \widehat{=} & \;  1 \mbox{ Seite Text (z.B. 50 Zeilen, 20 Seiten}) 
+\end{align*}
+Typisch beim Programmieren ist die Gleitkommazahl (\textit{'double'} in C):
+\begin{align*}
+double \; \widehat{=} \; 8
+\end{align*}
+\begin{align*}
+\Rightarrow 10^{10} \mbox{ Zahlen} \; \widehat{ \approx } \; 10^{11} Byte \; \approx \; 100 \; GB
+\end{align*}
+Typischer \textbf{Hauptspeicher} (bei uns $16 \; GB$) wäre im Bruchteil einer Sekunde voll. Die Zahlen, die der Rechner in einer Sekunde verarbeitet \textit{passen nicht} in den Hauptspeicher, falls Zwischenergebnisse gespeichert werden (ist aber auch nicht nötig). Eine typische \textbf{Festplatte} fasst $500 \; GB$. Hier passen die Daten drauf. 
 \end{enumerate}
 
+\underline{Beispiel:} (Addition von Double) \\
+5 signifikante Stellen:
+\begin{align*}
+\mbox{ \underline{exakt:} } & \; 10^9 + 10^4 && = 1 \cdot 10^9 + 0,00001 \cdot 10^9 = 1,00001 \cdot 10^9 \\
+\mbox{ \underline{Rechner:} }&  &&= 1,0000 \cdot 10^9 + 0,0000... \cdot 10^9 = 1 \cdot 10^9
+\end{align*}
+
+\underline{Bemerkung:} $\Rightarrow $ 1. Kommutativgesetz der Addition gilt nicht nummerisch! 
+
+Denn:
+\begin{align*}
+1 \cdot 10^9 + \underbrace{ 0,000001 \cdot 10^9 + ... }_{10^{5}} = 1 \cdot 10^9
+\end{align*}
+während
+\begin{align*}
+\underbrace{0,00001 \cdot 10^9 + ... }_{10^5} + 1 \cdot 10^9 = 1,0001 \cdot 10^9
+\end{align*}
 \section{Monte Carlo Verfahren}
 \subsection{TIDIIII}
 \subsection{ Monte Carlo Integration}
