@@ -75,6 +75,7 @@ $\Rightarrow$  Für die Zahl der Atome  ($N = 10^{23}$) dann $10^{13} s \approx 
 	%\caption{}
 	\label{Null_DrittesStandbein}
 \end{figure}
+
 Informationseinheit: 
 \begin{align*}
  1 Byte \;   \widehat{=} & \; 1 \mbox{ Zeichen (z.B. einer Tastatur)} \\
@@ -138,6 +139,73 @@ während
 $\Rightarrow$ Regel für den Programmierer: Bei langen Zahlenreihen erst die kleinen addieren! 
 \end{enumerate}
 \end{enumerate}
+
+\section{Stochastische Physik}
+
+\subsection{Mikrozustände, Phasenraum und Entropie}
+Die \textbf{Gesamtheit (Ensemble)} ist eine Menge von Mikrozuständen, die einen Makrozustand repräsentieren (Zeit/Systemabhängig). Der \textbf{Mikrozustand} eines Systems wird durch generalisierte Koordinaten $q_i$ und Impulse $p_i$ mit $i=\{ 1,...,3N\} $ beschrieben. \\
+$\to 6N$-dimensionaler Phasenraum. Ein Punkt im Phasenraum ist ein Mikrozustand, Dynamik führt auf eine Bahn (\textit{Phasenraumtrajektorie)}
+
+%
+%\begin{figure}[ht]
+%	\centering
+%  \includegraphics[width=0.8\textwidth]{1}
+%	%\caption{Phasenraumtrajektorie des $1d$ harmonischen Oszillators. $q(t) \propto cos( \omega t)$ und $p(t) \propto sin(\\omega t)}
+%	\label{Phasenraum}
+%\end{figure}
+
+Die \textbf{Hamiltonfunktion} $H(q,p)$ entspricht der Gesamtenergie des Systems. \textbf{Energieerhaltung:} Im abgeschlossenen System ist die Gesamtenergie konstant mit $U = H (q (t), p(t)) = const.$ (\textit{innere Energie}). \\
+Die stochastische Beschreibung ist zurückzuführen auf die \textbf{Wahrscheinlichkeitsverteilung} $\rho (p,q)$\footnote{ besser: eine Wahrscheinlichkeitsdichte} mit der Wahrscheinlichkeit $\rho (q,p) dq^{3N} dp	^{3N}= \prod_{i=1}^{N} \; dq_i dp_i =: d\Gamma $  die Mikroszustände im Phasenraumelement $dq^{3N} dp^{3N} $ des Systems zu finden. Die Normierung verlangt: 
+\begin{align}
+1 = \int \rho (q,p) \; d\Gamma \mbox{ (mit Phasenraumvolumen } d\Gamma)
+\end{align}
+
+Das Phasenraumintegral wird also etwas anders definiert:
+\begin{enumerate}
+\item Faktor $\frac{1}{h^{3N}}$ wird eingeführt, damit $\rho $ dimensionslos ist. Mit dem \textsc{Planck}schen Wirkungsquantum $h$ und macht Sinn wegen $\Delta q \Delta p \approx h$ (kleinstmögliches Phasenraumelement)
+\item Bislang gehen wir davon aus, dass die Teilchen ununterscheidbar sind (durchnummerierbar). Bei unterscheidbaren Teilchen wäre das gleiche Zustände! Deswegen muss zusätzlich durch die Zahl der Vertauschungen ($N! $) dividiert werden! (\textsc{Gibbson}scher Korrelationsfaktor)
+\begin{align}
+1 = \frac{1}{h^{3N} N!} \int \rho (q,p)\;  d\Gamma
+\end{align}
+Ohne diese Korrektur kommt man zum \textsc{Gibb}schen Paradoxon. Der \textbf{thermische Mittelwert} $A(q,p)$ einer beliebigen Größe ist damit
+\begin{align}
+\Aboxed{ \langle A \rangle = \frac{1}{h^{3N} N!} \int \rho (q,p)\; A(q,p) \;  d\Gamma }
+\end{align}
+Dieser ist Nummerisch nicht lösbar, da für 10 Teilchen bereits $10^{60}$ Rechenoperationen nötig wären! 
+\end{enumerate}
+Die \textbf{Entropie} definieren wir analog zur Informationstheorie über 
+\begin{align}
+S = - \langle k_B ln(\rho ) \rangle  = -\frac{k_B}{h^{3N} N!} \int \rho \; ln(\rho ) d\Gamma 
+\end{align}
+Bedeutung der Entropie: 
+\begin{itemize}
+\item Informationsgehalt und Ungewissheit (\textit{Informationstheorie});
+\item  thermisches Mittel, 'Unordnung' (\textit{Physik})
+\end{itemize}  
+
+\textbf{Beispiel:} (gezinkter Münzwurf)\\
+Es sei $p(Kopf) = p \neq p(Zahl)= q$ und $1=p+q$. %TODO zweimal gleiches P? oder Pp?
+\begin{align*}
+\Rightarrow S =& - k_B \underbrace{\sum_{_{Kopf, Zahl}} \rho \; ln(\rho ) }_\text{Integral wird Summe} = -k_B  (p \; ln(p) + q \; ln(q)) \\
+=&  -k_B ( p \; ln(p) + (1-p) \; ln(1-p))
+\end{align*}
+Wir werfen N-mal:
+
+\begin{align*}
+\begin{rcases}
+p= 0: Z\; Z\; Z\; Z\; Z\; Z\; Z\; ... \\ 
+p= 1: K\; K\; K\; K\; K\;  ...  
+\end{rcases}
+\text{ 'Unordnung' S = 0} \\
+\end{align*}
+\begin{align*}
+\begin{rcases}
+p= 0.5: K\; K\; Z\; K\;  Z\; ...
+\end{rcases}
+\text{hier ist S maximal}
+\end{align*}
+
+
 
 \section{Monte Carlo Verfahren}
 \subsection{TIDIIII}
