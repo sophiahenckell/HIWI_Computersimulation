@@ -48,20 +48,21 @@ Die Bedeutung der Computersimulation für die physikalische Forschung steigt. Ma
 \item Erzeugen von Daten / Optimierung
 \item Analyse / Interpretation
 \end{itemize}
+\end{itemize}
 
 \subsection{Hardware}
 Diese Vorlesung beschäftigt sich nicht mit Hardware an sich, aber wir müssen abschätzen, ob ein Problem nummerisch lösbar ist! 
 
-\underline{Beispiel:} Wie weit kann ein Rechner zählen?
+\textbf{Beispiel:} Wie weit kann ein Rechner zählen?
 \begin{align*}
 S(N)= \sum_{i=1}^N x_i \; \mbox{  beispielsweise mit: } x_i = 1
 \end{align*}
-\end{itemize}
+
 
 \begin{enumerate}
 \item \textbf{Rechenleistung:} 
 typisch 10 GFLOP/S ('\textbf{G}igia \textbf{F}loating \textbf{P}oint \textbf{O}perations \textbf{P}er \textbf{S}econd', Gleitkommazahlen Operationen) \\
-\underline{Zum Beispiel Additionen:} \\
+\underline{Zum Beispiel Additionen:} \\ %TODO format passt?
 Bei $N=10^{10} $ pro Sekunde \\
 $\Rightarrow$  Für die Zahl der Atome  ($N = 10^{23}$) dann $10^{13} s \approx 3 \cdot 10^5 a$
 
@@ -87,13 +88,41 @@ double \; \widehat{=} \; 8
 \Rightarrow 10^{10} \mbox{ Zahlen} \; \widehat{ \approx } \; 10^{11} Byte \; \approx \; 100 \; GB
 \end{align*}
 Typischer \textbf{Hauptspeicher} (bei uns $16 \; GB$) wäre im Bruchteil einer Sekunde voll. Die Zahlen, die der Rechner in einer Sekunde verarbeitet \textit{passen nicht} in den Hauptspeicher, falls Zwischenergebnisse gespeichert werden (ist aber auch nicht nötig). Eine typische \textbf{Festplatte} fasst $500 \; GB$. Hier passen die Daten drauf. 
-\end{enumerate}
 
-\underline{Beispiel:} (Addition von Double) \\
-5 signifikante Stellen:
+\item \textbf{Präzision:} \\
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & \textbf{Integer} (ohne Komma) & \textbf{Double} (mit Komma) \\ \hline
+ Wertebereich (min/max) & $\pm 2147 \; 483 \; 647 \approx 2 \cdot 10^9$ & $\pm 2 \cdot 10^{308} $ \\
+ Genauigkeit & 1 & $2 \cdot 10^{-16} \widehat{=} 17$ Stellen \\ \hline
+\end{tabular} 
+\end{center}
+Vorsicht - der Computer nähert/rendert! \\
+\begin{itemize}
+\item Der Wertebereich vom Integer wird nach $0,2 s$ verlassen
+\item Der Wertebereich vom Double wird nach $2 \cdot 10^6 s \; \widehat{=} \; 23 d$ verlassen.
+\end{itemize}
+\textbf{Beispiel:} (Addieren) Wo sind die Grenzen?
 \begin{align*}
-\mbox{ \underline{exakt:} } & \; 10^9 + 10^4 && = 1 \cdot 10^9 + 0,00001 \cdot 10^9 = 1,00001 \cdot 10^9 \\
-\mbox{ \underline{Rechner:} }&  &&= 1,0000 \cdot 10^9 + 0,0000... \cdot 10^9 = 1 \cdot 10^9
+\sum_{i=1}^N 1
+\end{align*}
+\begin{enumerate}
+
+\item Wenn alle Partialsummen in ein Feld aufgeschrieben werden, läuft der Hauptspeicher nach spätestens $16/100s$ über.
+
+\item nach $0,2s$ reicht Integer Wertebereich nicht mehr %TODO missing word, 
+
+\item Nach $ 2 \cdot 10^6 s \; \widehat{=} \; 23 d$ reicht Double Präzision nicht \\
+(Beispielsweise 17 Stellen: $ 1\; 2 \; 3\; 4\; 5\; 6\; 7\; 8\; 9\; 0 \;1\; 2\; 3\; 4 \; 5 \; 6 +1$ obwohl $10^{18} < 2 \cdot 10^{308}$) \\
+ %TODO missing words 
+
+\textbf{Beispiel:} (Addition von Double) \\
+5 signifikante Stellen - Berechnung von $10^9 + 10^4$:
+\begin{align*}
+& \mbox{ \textit{Exakt:} }  \;  && = 1 \cdot 10^9 + 0,00001 \cdot 10^9 = 1,00001 \cdot 10^9 \\
+& \mbox{ \textit{Rechner:} }  &&= 1,0000 \cdot 10^9 + 0,0000... \cdot 10^9 = 1 \cdot 10^9
 \end{align*}
 
 \underline{Bemerkung:} $\Rightarrow $ 1. Kommutativgesetz der Addition gilt nicht nummerisch! 
@@ -106,6 +135,10 @@ während
 \begin{align*}
 \underbrace{0,00001 \cdot 10^9 + ... }_{10^5} + 1 \cdot 10^9 = 1,0001 \cdot 10^9
 \end{align*}
+$\Rightarrow$ Regel für den Programmierer: Bei langen Zahlenreihen erst die kleinen addieren! 
+\end{enumerate}
+\end{enumerate}
+
 \section{Monte Carlo Verfahren}
 \subsection{TIDIIII}
 \subsection{ Monte Carlo Integration}
