@@ -196,190 +196,541 @@ Wir werfen N-mal:
 p= 0: Z\; Z\; Z\; Z\; Z\; Z\; Z\; ... \\ 
 p= 1: K\; K\; K\; K\; K\;  ...  
 \end{rcases}
-\text{ 'Unordnung' S = 0} \\
+\text{ 'Unordnung', 'Informationsgehalt' S = 0} \\
 \end{align*}
 \begin{align*}
 \begin{rcases}
 p= 0.5: K\; K\; Z\; K\;  Z\; ...
 \end{rcases}
-\text{hier ist S maximal}
+\text{S maximal}
 \end{align*}
+Im Phasenraum: $S=0$ bestehen überall $\rho = 0$ außer an einem Punkt $\rho(p_0, q_0) = 1$ $\Rightarrow$ nur \textit{ein} Mikrozustand zu vorgegebenen Makrozustand. Hohe Entropie heißt, viele, gleich wahrscheinliche Mikrozustände. 
 
+\subsection{Mikrokanonische Gesamtheit}
+\textbf{Ziel allgemein:} Bestimmung von $\rho$ für definierte physikalische Systeme \\
+\underline{Hier (mikrokanonisch):} Isoliertes (abgeschlossenes) System mit festem $U,V,N$ (innere Energie, Vauum, Teilchenzahl). \footnote{Zur Erinnerung: \\ Die \textit{kanonische} Gesamtheit: festes N, Energiefluktuation\\ Das\textit{ großkanonische} Ensemble: Energie- und Teilchenfluktuation}
 
+Wir postulieren, dass dann $\rho$ für alle erlaubten Zustände gleich ist, also
+\begin{align}
+\rho (q,p) = 
+\begin{cases}
+\rho  & \mbox{ für } H(p,q) = U \\
+0 & \mbox{ sonst }
+\end{cases}
+\end{align}
+Da $\rho $ Volumenintegral, ist es zweckmäßig, Volumen zwischen zwei Hyperfllächen zu betrachten: 
+\begin{align}
+\beta = \{ (p,q): U \leq H (p,q) \leq U +\Delta \}
+\end{align}
+später dann $\Delta \to 0$. 
+\begin{align}
+\int_\beta \underbrace{ \; d \Gamma }_{ inkl.  \; (h^{3N} N!)^{-1}  } = 1 \; \Rightarrow \rho = \frac{1}{Z}
+\end{align} 
+
+mit der \textbf{Zustandssumme der mikrokanonischen Gesamtheit}
+\begin{align}
+Z_\Delta = \int_\beta d\Gamma = Z_\Delta (U,V,N) 
+\end{align} \footnote{U steht in $\beta$, V steckt in $d\Gamma$, N steckt in Dimension des Phasenraums. Z ist eine thermodynamische Größe. Im mikrokanonischen Ensemble führt Z auf S.}
+\begin{align}
+\Rightarrow S =& - \langle k_B \rho \; ln(\rho ) \rangle = - k_B \underbrace{\int_\beta d\Gamma \rho \; }_{=1} \underbrace{ln(\rho)}_\text{unabhängig von p,q} \\
+=& k_B ln (Z_\Delta(U,V,N)) \\
+=& - k_B \; ln(\rho )
+\end{align}
+
+Zusammenhang zur Thermodynamik: S(U,V,N) ist ein thermodynamisches Potential mit natürlichen Variablen U,V,N
+\begin{align}
+\begin{rcases}
+& \frac{\partial S}{\partial U} \biggr\vert_{V,N} = \frac{1}{T} = k \frac{1}{Z} \left( \frac{\partial Z}{\partial U}\right)_{V,N} \\
+& \frac{\partial S}{\partial V} \biggr\vert_{U,N} =  -\frac{p}{T} \\
+& \frac{\partial S}{\partial N} = \frac{\mu }{T}
+\end{rcases}
+ dS = \frac{\partial S}{\partial U} dU +\frac{\partial S}{\partial V}dV+  \frac{\partial S}{\partial N} dN
+\end{align}
+
+Abschließende Bemerkungen: 
+\begin{itemize}
+\item Zustandssumme der mikrokanonischen Gesamtheit kann als 'Zahl der Zustände' zu vorgegebener Energie U interpretiert werden: 
+\begin{align}
+Z = \frac{1}{h^{3N} N!} \int_{H(p,q)=U} dp \; dq
+\end{align}
+also Entropie $\propto ln(\mbox{Zahl der Zustände})$
+\item Rechnungen in der mikrokanonischen Gesamtheit sind recht kompliziert wegen der Randbedingung $H=U$. Besser sind andere Gesamtheiten. 
+\item Statistik erfordert den Limes großer Teilchenzahlen
+\end{itemize}
+\textbf{Wichtig: löst man nummerisch Bewegungsgleichnungen unter Energieerhaltung, summiert man im mikrokanonischen Ensemble}
+\subsection{Kanonisches Ensemble}
+Wir betrachten jetzt ein System in Kontakt mit einem Wärmebad der Temperatur $T$: \\
+\begin{itemize}
+\item Die Gesamtenergie $E = E_w + E_k$. \\
+\item Das Wärmebad soll sehr groß sein, sodass $\frac{E_K}{E} << 1$
+\item Die Energie in K ist nicht mehr Konstanz, nur im Gesamtsystem. Das Gesamtsystem ist mikrokanonisch, alle Gesamtzustände sind gleich wahrscheinlich. Gesucht ist die Wahrscheinlichkeitsdichte $\rho (p,q) = \rho_i $ der Mikrozustände in K. 
+\item $\rho_i$ gehört zum Mikrozustand mit Energie $E_i$ (siehe links) %TODO what? LEft? 
+Zahl der Makrozustände des Gesamtsystems ist gleich der Zahl der Mikrozustände des Wärmebads mit $E_w = E - E_i$ (bzw. gleich der mikrokanonischen Zustandssumme) 
+\begin{align}
+Z_w (E- E_i): \rho_i \propto Z_w (E-E_i)
+\end{align}
+Betrachte Entropie
+\begin{align}
+S_w &= k_B ln (Z_w (E-E_i)) \\
+&= k_B ln (Z_w (E)) - \underbrace{ k_B \frac{\partial ln (Z_w (E-E_i))}{\partial E_i}}_{ \frac{1}{T}} E_i \; ( E >> E_i) \\
+& \Rightarrow Z_w (E-E_i) = Z_w (E) e^{-\frac{E_i}{k_B T}} \\
+&\Rightarrow \rho_i \propto e^{- \frac{E_i}{k_B T} } \; \mbox{  ('\textsc{Boltzmann}-Faktor')} \\
+&\Rightarrow \rho (p,q) \propto e^{- \beta \; H(p,q)} \; \mbox{ mit: } \beta = \frac{1}{k_B T}
+\end{align}
+Die Normierung von $\rho$ verlangt: 
+\begin{align}
+\rho (p,q) = \frac{e^{- \beta \; H(p,q)}}{Z}
+\end{align}
+mit
+\begin{align}
+Z = \int d \Gamma e^{- \beta \; H(p,q)}
+\end{align}
+der \textbf{Zustandssumme der kanonischen Gesamtheit.} Integral erstreckt sich über den gesamten Phasenraum. \textbf{Thermodynamik:}
+\begin{align}
+S &= -k_B \int d\Gamma \rho \; ln(\rho ) = -k_B \int d\Gamma \frac{e^{- \beta \; H}}{Z} (- \beta H - ln(Z)) \\
+&= \frac{1}{T} \underbrace{ \int d\Gamma \; H \; \rho}_U + k_B ln(Z) \int d\Gamma \; \rho \\
+&=\frac{U}{T} + k_B ln(Z)
+\end{align}
+\begin{align}
+&\Rightarrow TS = U + k_B T ln(Z) \; (F= U - TS) \\
+& \Rightarrow \mbox{ Freie Energie: } F = - k_B T ln(Z) = F(T,V,N)
+\end{align}
+\textbf{Beispiel:} (Ideales Gas)
+\begin{align*}
+H = \sum_{i=1}^N \frac{p_i ^2}{2m} \; ,  \; \vec{p_i} = (p_x, p_y, p_z)
+\end{align*}
+Kanonische Zustandssumme
+\begin{align*}
+Z(T,V,N) &= \frac{1}{h^{3N} N!} \int d\Gamma e^{- \beta \sum \frac{p_i ^2}{2m} } = \frac{V^N}{h^{3N} N!} \int dp_1 ^3 ...dp_N ^3 \;  e^{ - \beta \frac{p_1 ^2}{2m}} ... e^{- \beta \frac{p_N ^2}{2m}}  \\
+&=  \frac{V^N}{h^{3N} N!} \; \prod_{i=1}^N \underbrace{\int dp_i ^3 \; e^{- \beta \frac{p_i ^2}{2m}} }_{ \sqrt{\frac{2m\pi}{\beta}}} \tag{$i = 1...N$ Teilchen} \\
+&= \frac{V^N}{h^{3N} N!} \; \prod_{i=1}^{3N}  \int dp_i  \; e^{- \beta \frac{p_i ^2}{2m}} \tag{$i = 1...3N,$  N Teilchen mit $(x,y,z)$} \\
+&= \frac{V^N}{h^{3N} N!} \sqrt[\frac{3N}{2}]{\frac{2m\pi}{\beta}}
+\end{align*} %TODO alle p_i Vektoren?
+\end{itemize}
+Für die freie Energie verwenden wir die \textsc{Stirling}-Formel für große N:
+\begin{align}
+ln(N!) \approx N \; ln(N) - N
+\end{align}
+\begin{align}
+\Rightarrow F = -k_B T \; ln(Z) = -k_B T N \left[ ln \left(\frac{V}{N}\right) + \frac{3}{2} ln \left(\frac{2 m \pi }{h^3} k_BT \right) +1 \right]
+\end{align}
+
+\begin{align}
+\Rightarrow p = - \frac{\partial F}{\partial V} \biggr\vert_{T,N} = \frac{N k_B T}{V}
+\end{align}
+
+\begin{align}
+ \Rightarrow \; \Aboxed{ p V = N k_B T}
+\end{align}
+Es folgt also eine der Gasgleichungen. Die andere folgt aus
+\begin{align}
+U = F + TS = F + T \frac{\partial F}{\partial T} \biggr\vert_{V,N} = \frac{3}{2} N k_B T
+\end{align}
+\textbf{Diskussion:} \\
+\begin{itemize}
+\item gilt auch für großkanonische Gesamtheiten
+\item Berechnung zu verschiedenen Gesamtheiten führen zu gleichen thermodynamischen Potentialen (also 'gleichen Ergebnissen'). $\to$ Nach \textsc{Legendre}-Transformation, Zustandssummen verschieden. \\
+Rechnungen jedoch verschieden, Numerik auch! (z.B. Resultate) %TODO stimmt resultate?
+\item Phasenraumintegrale werden meist nicht numerisch berechnet %TODO ?? Stimmt der satz?
+(\textit{Ausblick:} MD, MC) 
+\end{itemize}
+\subsection{Weitere Resultate der statistischen Mechanik}
+\begin{itemize}
+\item \textbf{Extremalprinzip:} im Gleichgewicht werden thermodynamische Potentiale extremal\footnote{genau genomme wir $\rho$ so gewählt}, z. B. 
+\begin{align}
+& S(U,V,N) \, && \mbox{ maximal} \\
+& F(T,V,N), \; U(S,V,N) \; && \mbox{ minimal}
+\end{align}
+\item \textbf{Schwankungen:} Die Wärmekapazität
+\begin{align}
+c_v = T \frac{\partial ^2 U}{\partial S ^2} \biggr\vert_{V,N} = \frac{\partial U}{\partial T}  \biggr\vert_{V,N} &= \frac{1}{k_B T^2} \langle (H - \langle H \rangle)^2\rangle \\
+&= \frac{1}{k_B T^2} \left( \langle H^2 \rangle - \langle H \rangle ^2 \right) \mbox{ (numerisch geschickt)}
+\end{align}
+\item \textbf{Gleichverteilungssatz:} jede quadratische Form in H gibt einen Beitrag $\frac{k_B T}{2}$ in U. 
+\textbf{Beispiel:} (ideales Gas) 
+\begin{align*}
+H = \sum_{i=1}^N \frac{p_i ^2}{2m}
+\end{align*}
+mit $p^2 = p_x^2 + p_y^2 + p_z^2 \Rightarrow U= \frac{3}{2} N k_B T$ (gut für Tests der Numerik) 
+\end{itemize}
 
 \section{Monte Carlo Verfahren}
-\subsection{TIDIIII}
+\subsection{Zufallszahlen}
+Statistik wichtig für Physik und andere Disziplinen. Physikalische Probleme sind oft ähnlich. Statt beispielsweise$10^{23}$ Atomen werden nur wenige betrachtet, dann 'hochgerechnet'.  \\
+$\Rightarrow$ Zahl der Freiheitsgrade sinnvoll beschränken. Häufig wichtig für 'Stichprobe': zufällige Auswahl  $\to$ also Zufallszahl.\\
+Im einfachsten Fall: \textit{diskrete Zufallszahlen} $x_1 ... x_N$\\
+\textbf{Beispiel:} (Würfel)  \\
+\begin{align*}
+x_1 = 1 , \; ... \; ,  x_6 = 1 , \; (N=6)
+\end{align*}
+Die \textbf{Wahrscheinlichkeitsdichte} ist definiert über die
+\begin{align}
+p_i = \frac{\mbox{Häufigkeit für Auftreten von } x_i}{\mbox{Gesamtzahl der Messungen}} = \frac{m_i}{M} \biggr\vert_{M \to \infty}
+\end{align}
+\begin{align*}
+\sum_{i=1}^N p_i = 1
+\end{align*}
+\textbf{Beispiel:} (zurück zum Würfel)
+\begin{align*}
+p_i = \frac{1}{6}, \; i=\{1,...,6\}
+\end{align*}
+Der \textbf{Mittelwert} ist definiert über
+\begin{align}
+\overline{x} = \sum_{i=1}^N p_i \; x_i \; = \sum_{i=1}^N \frac{M_i x_i}{M} \biggr\vert_{M \to \infty}
+\end{align}
+und entsprechend bei kontinuierlicher Verteilung $p(x)$ die 'Wahrscheinlichkeitsdichte'
+\begin{align}
+p(x) \; dx \; = \frac{dM_x}{M}
+\end{align}
+Normierung:
+\begin{align}
+\int dx \; p(x) = 1 
+\end{align}
+\begin{align}
+\overline{x}= \int dx \; p(x) \; x
+\end{align}
+\textbf{Schwankung}
+\begin{align}
+\overline{(\Delta x)^2} = \sum_{i=1}^N p_i \left( x_i - \overline{x} \right) ^2 \widehat{=} \int dx \; p(x) \; (x- \overline{x})^2
+\end{align}
+häufig wichtig ist auch
+
+\begin{align}
+\overline{(x-\overline{x})^2} = \overline{x^2 - \underbrace{2 \overline{x} x}_\text{=0, s.u.} - \overline{x}^2} = \overline{x^2} - \overline{x}^2
+\end{align}  \footnote{mittelt sich zu Null, da nach oben gleiche Abweichung wie nach unten} \\
+\textbf{Beispiel:}(Gleichverteilung) 
+\begin{align*}
+p(x) = 
+\begin{cases}
+1  \quad \quad 0 \leq x \leq 1 \\
+0  \quad \quad  \text{sonst}
+\end{cases}
+\quad \Rightarrow \overline{x}= \int_0^1 dx \; x = \frac{1}{2}
+\end{align*}
+\begin{align*}
+\overline{(\Delta x)^2} = \int_0^1 dx \; (x-\frac{1}{2})^2 \approx  \int_0^1 dx \; (x^2-\frac{1}{4}) = \frac{1}{3} - \frac{1}{4} = \frac{1}{12}   \label{Anmerkung}
+\end{align*} \footnote{Die Wurzel aus (\ref{Anmerkung}) wäre der Wert für die Breite }
+\paragraph{Erzeugung von Zufallszahlen im Rechner}
+...geht nicht, da es beim Rechner, einer deterministischen Maschine, keinen Zufall gibt. $\Rightarrow$ 'Pseudo-Zufallszahlen', deterministische Kette von Zahlen $x_i$, die bestimmten Anforderungen genügen: 
+\begin{itemize}
+\item definierter Wertebereich, \textbf{z.B.} $ [ 0,1] $ \textit{(double)}, $[ 0: RAND\_ \; MAX]$\textit{(Integer)}
+\item wohldefinierte Wahrscheinlichkeitsverteilung, gleichverteilt, \textbf{ z.B.} %TODO image doppeltes
+\item lange Periode: $x_i$ ist immer periodisch denn
+\begin{itemize}
+\item Rechner speichert Information
+\item Speicher begrenzt $\Rightarrow$ endliche Zahl von Zuständen
+\end{itemize}
+\item $x_i$ deterministisch $\Rightarrow$ aus \textit{einem} (gleichen) Zustand folgt immer die gleiche Kette $\Rightarrow \; x_i$ sind periodisch
+\item großer Wertevorrat (nicht immer nötig) jedoch unmöglich, deshalb Periode lang,\textbf{ z.B.} 1 von N %TODO
+aussuchen
+\item keine Korrelation, d.h. kein 'einfacher' Zusammenhang zwischen den $x_i$, \textbf{ z.B.}
+\begin{align*}
+x_{i+k} = x_i 
+\end{align*}
+geht nicht wegen der Periode (hier wäre die Periode $k$).
+\end{itemize}
+\paragraph{Methode 1} 
+
+linear konvergente Zufallsgeneratoren \footnote{Anmerkung: Der Rest bei Ganzzahldivision $mod$ $\widehat{=}$ $\% $ in C!} 
+\begin{align}
+& x_{i+1}= (a x_i + b)\; mod \; m \quad \\
+\end{align}
+ $x_i$: Integer ,  $m$: Wertebereich und $a,b$: 'magischen Zahlen'. \\
+Man kann zeigen: Der Algorithmus hat keine Zyklen $< m$ wenn:
+\begin{enumerate}
+\item $b$ und $m$ teilerfremd
+\item $a-1$ ein Vielfaches von jedem Primfaktor von $m$
+\item $a-1$ ein Vielfaches von 4, falls 4 Teiler von $m$
+\end{enumerate}
+\textbf{Beispiele:} \begin{itemize}
+\item $a= 137, \; \quad b= 187, \quad \quad m=256$
+\item $ a= 1366, \quad b=150887, \; m=714025$
+\end{itemize}
+Mögliche Testverfahren dafür sind:
+\begin{enumerate}
+\item Histogramm bezüglich Gleichmäßigkeit der Verteilung: Man teilt den Wertebereich in $I$ Teilintervalle der Länge $\Delta x$. Es gilt $I \cdot \Delta x = 1$.  Ziehe N Zufallszahlen, $N_i$ im Teilintervall $i$
+\begin{align}
+N = \sum _{i=1}^I N_i, \quad \quad \quad \overline{N_i} = \frac{N_i}{I}= N \Delta x
+\end{align}
+\begin{itemize}
+\item $\frac{N_i}{N}$ sollte für $N \to \infty $ gegen $\frac{N}{I}$ gehen
+\item Konvergenz (Fehler) %TODO FELDER? \\
+Betrachte 1. Teilintervall (als Beispiel) Wahrscheinlichkeit, dass von N Zufallszahlen $N_1$ im 1. Teilintervall sind: 
+\begin{align}
+p_N (N_1) = p^{N_1} (1-p)^{N-N_1} \frac{N!}{N_1 ! (N-N_1)!} \quad  \mbox{ \textbf{'Binomialverteilung'}} \\
+ \mbox{ mit } p= \Delta x
+\end{align}
+%TODO IMAGE MISSING! S.59
+Die Binomialverteilung geht in Grenzfällen in einfachere, d.h. analytische Verteilungen über: In diesem Beispiel geht sie für $N \to \infty$ und konstantes $p$ in die \textbf{ Gaußverteilung} über.
+\begin{align}
+p_N (N_1) = \frac{1}{\sqrt{2 \pi N p (1-p)}} e^{- \frac{(N_1 - N_p)^2}{2 N_p (1-p)}}
+\end{align}
+Der Beweis hierfür ist etwas komplizierter, unter Anderem mit \textsc{Stirling}-Formel $ln(N!) = N \; ln(N) - N + \frac{1}{2} \; ln( 2 \pi N)$. \\
+Die Eigenschaften der \textsc{Gauß}-Formel auf einen Blick:
+\begin{itemize}
+\item Mittelwert: $\overline{N_1}= N_p$
+\item Schwankung: $\chi ^2 = \overline{(N_1 - \overline{N_1})^2} \propto N p (1-p)$ 
+\item $\Rightarrow$ relativer Fehler: $\frac{\sqrt{\chi ^2}}{\overline{N_1}} \propto \frac{\sqrt{N}}{N} \propto \frac{1}{\sqrt{N}}$ 
+\end{itemize}
+\end{itemize}
+\item Weiteres Testverfahren: \\
+Auf Korrelation prüfen. Aufeinanderfolgende Zufallszahlen werden als Punkte in einem d-dimensionalen Einheitskubus dargestellt:
+\begin{align}
+(x_k, x_{k+1}, \; ...\; ,\; x_{k+(d-1)}) \in \mathbb{R}^d
+\end{align}
+Falls Korrelation vorhanden: Punkte füllen nicht den Raum sondern liegen auf $(d-1)$-dimensionalen Ebenen. \\
+\textbf{Beispiel:} $d=2$. 
+
+Muster $\widehat{=}$ schlechter Zufallszahlengenerator. 
+
+\item Momente testen: \\
+Bilde \begin{align}
+\frac{1}{N} \sum_{i=1}^N x_i^n
+\end{align}
+Falls zufällig verteilte $x_i$ (also gleichverteilt) gilt analytisch: \begin{align}
+\overline{x_i^n} = \int _0 ^1 dx \; x_i^n = \frac{1}{n+1}
+\end{align}
+Dies muss auch stimmen für eine große Zahl $N$ von Zufallszahlen:
+\begin{align}
+\frac{1}{N} \sum_{i=1}^N x_i^n = \frac{1}{n+1}
+\end{align}
+\begin{itemize}
+\item Es existieren zahlreiche Weiterentwicklungen des linear-konvergenten Zufallszahlen-Generators. (siehe z.B. \texttt{ rand()}), immer in C implementiert aber mit verschiedenen Methoden realisiert. 
+\item bessere Zufallszahlen-Generatoren sind:
+\begin{itemize}
+\item Schieberegister (shift, Tanswert...TODO) Generator: Speichert Array von Zufallszahlen und berechnet die nächste Zufallszahl auf Basis mehrerer Vorgänger, \textbf{z.B} Kirchpatrick-Stall %TODO
+$z[250]$ \begin{itemize}
+\item $Z= Z[0] \underbrace{ \string^ }_\text{ \texttt{XOR} linewise} Z[147]$
+\item dann wird Feld umsortiert
+\item 250 Startwerte mit anderem Zufallszahlen-Generator %TODO 
+\end{itemize}
+\end{itemize}
+\item seed reproduzierbar halten (wegen Reproduzierbarkeit wirtschaftlicher Ereignisse)
+\item Programmbibliotheken!
+\item Häufig sind anderen Verteilungsfunktionen gewünscht $\Rightarrow $ Transformationen
+\end{itemize}
+
+\end{enumerate}
+
+
 \subsection{ Monte Carlo Integration}
 Betrachten Integral 
 \begin{align}
 I= \int_a^b f(x) \; dx
 \end{align}
-Konventionelle nummerische Methode: Zerlegung in Intervalle $\Delta x$:
+Konventionelle nummerische Methode: \\
+Zerlegung in kleine Intervalle $\Delta x$:
 
 \begin{align}
-I_n= \sum_{\nu =1}^n f(x_\nu) \; , \mbox{ Rechteckregel, für } n \to \infty
+I_n= \sum_{\nu =1}^n \; \Delta x \; f(x_\nu) \quad \mbox{ \textbf{'Rechteckregel'}}
 \end{align}
-$\Rightarrow I_N \to I$ (falls integrierbar).
+für $n \to \infty \Rightarrow I_N \to I$ (falls integrierbar).
 
-Besser ist die Trapezregel, Simpson, Konvergenz verschieden
+Besser ist die Trapezregel oder die von Simpson. Sie sind im Prinzip 'gleich', unterscheiden sich allerdings bezüglich ihrer Konvergenz. \\
 
 Verallgemeinerung auf höhere Dimensionen:
 
-d-dimensional, $n$ Stützstellen pro Achse $\Rightarrow n^d$ Hypercubi der Göße $(\Delta x)^d$ und damit $\Rightarrow n^d$ Terme summieren
-Beispiel: Phasenraumintegral: 3TL, Freiheitsgrade $\vec{r}, \vec{p}$
+d-dimensionales Integral, $n$ Unterteilungen (Stützstellen) pro Achse \\
+$\Rightarrow n^d$ Hypercubi der Göße $(\Delta x)^d$ und damit \\
+$\Rightarrow n^d$ Terme müssen summiert werden\\
+Für kleine $d$ kein Problem, für große jedoch absolut unmöglich. \\
 
-\begin{align}
-\int d^3 \vec{r}_1 d^3 \vec{r}_2 d^3 \vec{r}_3 d^3 \vec{p}_1 d^3 \vec{p}_2 d^3 \vec{p}_3 .... 
-\end{align} %TODO bild
-ist 118 dimensional mit $n=100, d=18 \Rightarrow n^d=100^18=10^36$. Bei $10^10$FLOPS
-$\Rightarrow$ Summation dauert $10^{36 } / 10^{10}= 10^{26}s$ (Vergleich: alter des Universums ist $10^{19}s$.)
-Wir brauchen also andere Methoden der Statistik:
+\textbf{Beispiel:} (Phasenraumintegral) \\
+ 3TL, Freiheitsgrade $\vec{r}, \vec{p} \; \quad \Rightarrow$ Integral im Phasenraum: 
 
-Betrachten wieder 
+\begin{align*}
+\int d^3 \vec{r}_1 d^3 \vec{r}_2 d^3 \vec{r}_3 \; d^3 \vec{p}_1 d^3 \vec{p}_2 d^3 \vec{p}_3 .... 
+\end{align*} %TODO bild
+ist immerhin 18-dimensional mit 
+\begin{align*}
+ n=100, d=18 \Rightarrow n^d=100^{18}=10^{36} \mbox{ Summanden (Rechenoperationen)}
+\end{align*} 
+Unsere Cluster schaffen $10^{10}$FLOPS
+$\Rightarrow$ Summation dauert $10^{36 } / 10^{10}= 10^{26}s$ \\ (Vergleich: alter des Universums ist $10^{19}s$!) \\
+Wir brauchen also ganz andere Methoden für hochdimensionale Integrale - die Statistik! 
+
+Dafür betrachten wir wieder (der Einfachheit halber) folgendes Integral:
 \begin{align}
 I= \int_a^b f(x) \; dx
 \end{align}
-mit $x_1,....x_N$ seine $N$ gleichverteilte Zufallszahlen über $[a,b]$ %TODO bild
-
-$N_\mu$ sei Anzahl der $x_i$ im $\nu$ten Teilintervall dann gilt
+mit $x_1,....x_N$ als $N$ gleichverteilte Zufallszahlen über $[a,b]$. %TODO bild
+Wir zerlegen das Intervall in $n$ Kästchen der Länge $\Delta x$.
+$N_\mu$ sei weiterhin die Anzahl der $x_i$ im $\nu$ten Teilintervall. Dann gilt
 \begin{align}
-n \cdot \Delta x =& b-a \; \\
-\Rightarrow \frac{\bar{N}_\nu}{N}=& \frac{1}{n}= \frac{\Delta x}{b-a} \\
-\Rightarrow I= & \int_a^b f(x) \; dx \approx \sum_{\nu =1}^n (b-a)  \frac{\bar{N}_\nu}{N} f(x_0) \\
-=& \frac{b-a}{N} \sum_{\nu =1}^n \underbrace{\bar{N}_\nu f(x_0)}_\text{( * )}
+n \cdot \Delta x =&\;  b-a \; \quad
+\Rightarrow \frac{\overline{N}_\nu}{N}= \frac{1}{n}= \frac{\Delta x}{b-a} \\
+ \Rightarrow I= & \int_a^b f(x) \; dx  \approx  \sum_{\nu =1}^N \Delta x \; f(x_\nu )  \quad \quad \mbox{(Rechteckregel)} \\
+ =& \sum_{\nu =1}^n (b-a)  \frac{\overline{N}_\nu}{N} f(x_\nu) 
+= \frac{b-a}{N} \sum_{\nu =1}^n \underbrace{\overline{N}_\nu f(x_\nu)}_{ \approx \sum_{x_j \in [\,]_\nu} f(x_j)} \\ =& \frac{b-a}{N} \sum_{i=1}^N f(x_i)
 \end{align}
-mit *$ \approx \sum_{x_j \leftarrow [ ]_\nu} \; f(x_j)$.
-Dies gilt auch in höheren Dimensionen:
+Diese Formel ist nicht auf $d=1$ beschränkt, sondern gilt auch in höheren Dimensionen:
 \begin{align}
-I \approx \frac{v_\nu}{N} \sum_{i=1}^N f(\vec{x}_i)
+\Aboxed{ I \approx \frac{V_d}{N} \sum_{i=1}^N f(\vec{x}_i) }
 \end{align}
-Mittelwert der Funktionswerte an zufälligen Stützstellen $\vec{x}_i$.
-\textbf{Fehler:} $\{ x_1, x_2,..., x_N\}$ sei spezielle Folge von Zufallszahlen mit $I_1$ als Resultat. Andere Folge erzeugt $I_2,...$ 
-$\Rightarrow$ Es gibt eine Wahrscheinlichkeitsverteilung $P(I)$ %TODO image
-betrachte deswegen unendliche (exaktes Resultat, aber wie groß ist dann die Schankung) viele Ketten von Zufallszahlen der Länge $N$: $\Rightarrow P(I) dI$ wäre dann die Wahrscheinlichkeit, dass $I$ im Intervall $I$ liegt.
+d.h. das Integral ist der Mittelwert der Funktionswerte an zufälligen Stützstellen $\vec{x}_i$.\\
+\paragraph{Fehler:} (für $I = \int_0^1 f(x) dx$)\\
+$\{ x_1, x_2,..., x_N\}$ sei spezielle Folge von Zufallszahlen mit $I_1$ als Integralwert (also Resultat). Eine andere Folge erzeugt anderes Ergebnis $I_2,...$. \\
+$\Rightarrow$ Es existiert eine Wahrscheinlichkeitsverteilung $P(I)$ um dafür einen bestimmten Integralwert $I$ zu erhalten.   %TODO image
+Betrachte deswegen unendliche viele Ketten\footnote{$\to$ exaktes Resultat, aber wie groß ist dann die Schwankung?} von Zufallszahlen der Länge $N$:\\
+$\Rightarrow P(I) dI$ wäre dann die Wahrscheinlichkeit, dass $I$ im $I$-ten Intervall $dI$ um $I$ liegt.
 \begin{align}
-\langle I \rangle =& \int dI \; P(I) \; I \; \mbox{ mit } I= \frac{1}{N} \sum_{i=1}^N f(x_i)= I(x_1,x_2,...,x_N) \\
+\langle I \rangle =& \int dI \; P(I) \; I \; \quad \quad \left( \mbox{ mit } I= \frac{1}{N} \sum_{i=1}^N f(x_i)= I(x_1,x_2,...,x_N) \right) \\
 =& \int dx_1,...,dx_N \; \rho(x_1) ... \rho(x_N) \; \frac{1}{N} \sum_{i=1}^N f(x_i) \\
-=& \int dx \; f(x) ,
+=& \int_0^1 dx \; f(x) 
 \end{align}
-unendlich viele Folgen von UZ gemittelt das exakte Ergebnis geben.
-
-\textbf{Fehler:} 
+unendlich viele Folgen von Zufallszahlen der Länge $N$ liefern gemittelt das exakte Ergebnis! Die Berechnung des Fehlers folgt dann:
 \begin{align}
-(I- \langle I \rangle)^2 \rangle =& \langle I^2 \rangle - \langle I \rangle ^2 \\
+\langle (I- \langle I \rangle)^2 \rangle =& \langle I^2 \rangle - \langle I \rangle ^2 \\
 =& \langle \frac{1}{N^2} \left( \sum_{i=1}^N \; f(x_i) \right) ^2 \rangle - \langle \frac{1}{N} \sum_{i=1}^N \; f(x_i)\rangle^2 \\
 =& \frac{1}{N^2} \sum_{i,j=1}^N \langle f(x_i) \; f(x_j) \rangle - \frac{1}{N^2} \sum_{i,j=1}^N \langle f(x_i) \rangle \; \langle f(x_j) \rangle \\
-=& \frac{1}{N^2} \sum_{i=1}^N \langle f(x_i)^2 \rangle - \frac{1}{N^2} \sum_{i=1}^N \langle f(x_i) \rangle ^2 \; + O \mbox{ weil } \\
-\langle f(x_i) \; f(x_j) \rangle = \langle f(x_i) \rangle \; \langle f(x_j) \rangle \; \mbox{ für } i \neq j
+=& \frac{1}{N^2} \sum_{i=1}^N \langle f(x_i)^2 \rangle - \frac{1}{N^2} \sum_{i=1}^N \langle f(x_i) \rangle ^2 \; +\mathcal{O} \quad \mbox{ für } i = j
 \end{align}
-benutze
+
+weil
+\begin{align*}
+\langle f(x_i) \; f(x_j) \rangle = \langle f(x_i) \rangle \; \langle f(x_j) \rangle \; \mbox{ für } i \neq j
+\end{align*}
+
+brauche
 \begin{align}
-\int dx_1 \; dx_2 \rho(x_1) \rho(x_2) f(x_1) f(x_2) \\
-= \int dx_1 \rho(x_1)f(x_1)  \underbrace{\int dx_2 \rho(x_2)}_\text{=1}\cdot  \int dx_2 \rho(x_1)f(x_2) \cdot \underbrace{\int dx_1 \rho(x_1)}_\text{=1} \\
-\Rightarrow \langle \Delta I \rangle ^2= \frac{1}{N} \left( \langle f(x)^2 \rangle - \langle f(x) \rangle^2 \right)
+\int dx_1 dx_2 \; & \rho(x_1) \rho(x_2) \; f(x_1) f(x_2) \\
+&= \int dx_1 \rho(x_1)f(x_1)  \underbrace{\int dx_2 \rho(x_2)}_\text{=1}\times  \int dx_2 \rho(x_2)f(x_2) \cdot \underbrace{\int dx_1 \rho(x_1)}_\text{=1} 
 \end{align} 
-Diskussion:
-\begin{itemize}
-\item[1)]
+aber
+\begin{align*}
+\int dx_1 \; \rho (x_1) f(x_1)^2 \neq \left( \int dx_1 \; \rho (x_1) f(x_1) \right) ^2
+\end{align*}
+
+\begin{align*}
+ \Rightarrow \langle \Delta I \rangle ^2= \frac{1}{N} \left( \langle f(x)^2 \rangle - \langle f(x) \rangle^2 \right)
+\end{align*}
+\paragraph{Diskussion:} \begin{itemize}
+\item[1)] Konvergenz:
 \begin{align}
 \Delta I \propto \frac{1}{\sqrt{N}}
 \end{align}
-Zum Vergleich: Trapezregel. Fehler $\propto h^2 $, $N$ Rechenschritte: $h \propto N^{ \frac{-1}{d} }$ in $d$ Dimensionen. $\Rightarrow \Delta I \propto N^{\frac{-2}{d}} \Rightarrow$ für $d<4$ ist Monte Carlo 'besser'.
+Zum Vergleich der Konvergenz mit herkömmlichen Methoden, \textbf{z.B.} der Trapezregel. Ihr Fehler in einer Dimension ist $\propto h^2 $. $N$ Rechenschritte: $h \propto N^{ \frac{-1}{d} }$ in $d$ Dimensionen. $\Rightarrow \Delta I \propto N^{\frac{-2}{d}}$\\
+$ \Rightarrow$ für $d<4$ ist Monte Carlo 'besser' als Trapezregel
 
-\item[2)] $I \to \langle I \rangle$ für $N \to \infty$. Ein $\infty$-lange Kette führt zum exakten Resultat (sebstmittelnd)
+\item[2)] $I \to \langle I \rangle$ für $N \to \infty$. \textit{Eine} $\infty$-lange Kette (o. Folge) führt (auch) zum exakten Resultat, d.h. das Verfahren ist sebstmittelnd.
 
-\item[3)] Verfahren gut, wenn $f$ konstant. %TODO bild
-\item[4)]Fehler lässt sich bei der Integration berechnen.
+\item[3)] Verfahren gut, wenn $f$ möglichst konstant.  Anschaulich in Abbildung . Man sieht, dass das Verfahren exakt ist, falls $f= const.$ %TODO bild
+\item[4)]Der Fehler lässt sich während der Integration berechnen und sollte endlich bleiben.
 \end{itemize}
-Beispiel: Volumen einer D-Dimensionalen Einheitskugel. 
-
-2D: %TODO bild
-\begin{align}
+\textbf{Beispiel:} (Volumen einer D-Dimensionalen Einheitskugel) \\
+Wir starten in 2D. %TODO bild
+\begin{align*}
 f(x,y)=
 \begin{cases}
 1 & x^2+y^2 <1 \\
 0 & \mbox{sonst}
 \end{cases}
-\end{align}
-\begin{align}
-I= \int_0 dx \; dy 1 = \int_{-1}^1 dx \int_{-1}^1 dy \; f(x,y) 
-\approx \frac{4}{N} \sum_{i=0}^N f(x_i,y_i)
-\end{align}
-Zeige Programm: Volumen für hohe dimension verschwindet: Eindimensionale Betrachtung: Intervall geht exakt von $[-1,1]$, bei einem Kreis in $[-1,1] \times [-1,1]$ fallen schon die Ecken weg. Das Volumen auf den Einheitsradius ist nicht mehr ganz so groß. Bei drei Dimensionen fallen schon die 8 Ecken weg...daher nimmt das relatives Volumen ab für große Dimensionen.
-Wie kann man das Verfahren verbessern?
+\end{align*}
+Flächenberechnung: 
+\begin{align*}
+I= \int_0 dx \; dy \; 1 = \int_{-1}^1 dx \int_{-1}^1 dy \; f(x,y) 
+\approx \frac{4}{N} \sum_{i=1}^N f(x_i,y_i)
+\end{align*}
+mit $[x_i, y_i]$ gleichverteilt aus $[-1,1]$.
+Zeige Programm: Das Volumen verschwindet für hohe Dimensionen: Eindimensionale Betrachtung: Intervall geht exakt von $[-1,1]$, bei einem Kreis in $[-1,1] \times [-1,1]$ fallen schon die Ecken weg. Das Volumen auf den Einheitsradius ist nicht mehr ganz so groß. Bei drei Dimensionen fallen schon die 8 Ecken weg, daher nimmt das relatives Volumen für große Dimensionen ab. \\
+$\to$ Wie kann man das Verfahren verbessern?
 
-\subsubsection{Verbesserung}:
+\paragraph{Verbesserung:}
 \begin{align}
 (\Delta I )^2 = \frac{1}{N} \underbrace{\left( \langle f^2(x) \rangle - \langle f(x)\rangle^2 \right)}_\text{Schwankungsbreite der Fkt}
 \end{align}
-Idee: Transformation, so dass der Integrand $\approx const$, dafür aber Zufallszahl nicht gleichverteilt.
+Idee: Transformation, so dass der Integrand $\approx const$, dafür aber Zufallszahl \textit{nicht} gleichverteilt.
 \begin{align}
-I= \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)}
+\Aboxed{ I= \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)} }
 \end{align}
-wobei $y_i$ eine Folge von ZZ mit Verteilung $w(y)$ mit $w(y)>0$, $\int w(y) \; dy=1$.
+wobei $y_i$ eine Folge von Zufallszahlen gemäß Verteilung $w(y)$ mit $w(y)>0$, $\int w(y) \; dy=1$. \\
 Beweis:
 \begin{align}
 \langle I\rangle = \langle \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)} \rangle = \frac{1}{N} \sum_{i=1}^N \langle \frac{f(y_i)}{w(y_i)} \rangle = \frac{1}{N} \sum_{i=1}^N \int dy_i \; w(y_i)  \frac{f(y_i)}{w(y_i)} 
 = \int dx \; f(x)
 \end{align}
 Fehler: \begin{align}
-I=\frac{1}{\sqrt{N}}
+\Delta I=\frac{1}{\sqrt{N}}
  \sqrt{\langle \left(\frac{f}{w}\right)^2 \rangle - \langle \frac{f}{w} \rangle ^2}
  \end{align}
- $\Rightarrow$ für kleine Felder: $w$ so wählen, dass $\frac{f}{w} \approx const.$ Man muss allerdings $w$ integrieren können. %TODO grafik
+ $\Rightarrow$ für kleine Felder: $w$ so wählen, dass $\frac{f}{w} \approx const.$ Man muss allerdings $w$ integrieren können und $w$ muss $f$ ähnlich sein und man braucht Zufallszahlen mit einer vorgegebenen Verteilung! %TODO grafik \\
  
- $\Rightarrow$ Mann nennt dieses Verfahren:\textbf{Importance sampling}, weil 'wichtige' Werte von $f(x)$ in der ursprünglichen Funktion häufiger vorkommen, gegensätzlich zu \textbf{simple sampling} $\to$ die Wurzel N im Fehler ist geblieben. Leider konnten wir die Konvergenz dadurch nicht verstärken. Neues Problem hierbei ist jetzt: 
+ $\Rightarrow$ Mann nennt dieses Verfahren:\textbf{Importance sampling}, (weil 'wichtige'$\widehat{=}$ 'hohe' Werte des Integranden $f(x)$ in der ursprünglichen Funktion häufiger genommen werden, im Gegensatz zum herkömmlichen \textbf{simple sampling})\\ $\Rightarrow$ die Wurzel N im Fehler ist geblieben. Leider konnten wir die Konvergenz dadurch nicht verstärken. Neues Problem hierbei ist jetzt: 
  
  \subsection{Zufallszahlen einer vorgegebenen Verteilung}
- Problem: %TODO grafik
- Zufallszahlen $x_i$ aus Intervall berechnen mit einer Verteilung $\rho(x)$ mit $\rho(x)>0, \int_0^1 dy \rho(x)=1$.
+ Problem: %TODO grafik \\
+ Zufallszahlen $x_i$ aus einem Intervall berechnen mit einer Verteilung $\rho(x)$ mit
  \begin{itemize}
- \item[a)] Rejection-Method nach von Neumann \\
+ \item $\rho(x)>0$
+ \item $\int_0^1 dy \rho(x)=1$.
+\end{itemize} 
+ 
+ \begin{itemize}
+ \item[a)] \textbf{Rejection-Method} nach \textsc{von Neumann} (1947) \\
  %TODO grafik
- betrachte Paar von Zufallszahlen, $x_i \in [0,1], y_i \in [0,b]$ mit $b=Max[\rho(x)]$.
+ betrachte Paar von Zufallszahlen, $x_i \in [0,1], y_i \in [0,b]$ mit $b=Max(\rho(x))$.
  
 $\to$ wenn $y_i < \rho(x_i) \Rightarrow x_i$ wird akzeptiert mit $\xi_i=x_i$\\
  $\to$ wenn $y_i > \rho(x_i) \Rightarrow x_i$ wird nicht akzeptiert. \\
  
- $\Rightarrow$ Folge von Zufallszahlen $\xi_i$. Zahl der $\xi_i \in \Delta x$ ist proportional zur Fläche $\rho(x) \Delta x$ und damit proportional zu $\rho(x)$.
+ $\Rightarrow$ Folge von Zufallszahlen $\xi_i$. Zahl der $\xi_i \in \Delta x$ ist proportional zur Fläche $\rho(x) \cdot \Delta x$ und damit proportional zu $\rho(x)$.
  
  \textbf{Problem:} viele Züge notwendig, wenn selten akzeptiert wird. 
  
- \textit{Schlecht wäre zum Beispiel:} die Betrags-Exponentialfunktion
+ \textit{Schlecht wäre zum Beispiel:} die Betrags-Exponentialfunktion (\textsc{Gauß}funktion) benötigt ein großes $x-$Intervall.
  %TODO image
  
-\textit{Gut wäre dafür aber:}
-Vektoren mit (oder auf) Einheitskreis
+\textit{Gut wäre dafür aber:} Kugeln - 
+Vektoren innerhalb (oder auf) Einheitskreis
 %TODO
 
-\item[b)] Transformationsmethode \\
-betrachte monotone Funktion. Dabei seien wieder $x_i$ gleichverteilte Zufallsvariablen aus $x_i \in [0,1]$ und $y_i = f(x_i)$. Wie sind die verteilt? (Dafür muss man die Wahrscheinlichkeiten umrechnen. In ein $\Delta x$ fallen irgendwelche Zufallsvariablen rein und werden auf $\Delta y$ abgebildet, das ja kleiner sein kann. Die dichte in $\Delta y$ sowie $\Delta x$ kann also verschieden sein.) %TODO siege image
+\item[b)] \textbf{Transformationsmethode} \\
+betrachte monotone Funktion. Dabei seien wieder $x_i$ gleichverteilte Zufallsvariablen aus $x_i \in [0,1]$ und $y_i = f(x_i)$.Frage: Wie sind die verteilt? \footnote{Dafür muss man die Wahrscheinlichkeiten umrechnen. In ein $\Delta x$ fallen irgendwelche Zufallsvariablen rein und werden auf $\Delta y$ abgebildet, das ja kleiner sein kann. Die dichte in $\Delta y$ sowie $\Delta x$ kann also verschieden sein.} %TODO siehe image
 
-$N$ Zufallszahlen, $\Rightarrow$ $N \cdot \Delta x$ fallen in das Intervall $\Delta x$. Die entsprechenden abgebildeten Zufallszahlen $y_i=f(x_i)$ fallen in $\Delta y$.
+$N$ Zufallszahlen \\
+ $\Rightarrow$ $N \cdot \Delta x$ fallen in das Intervall $\Delta x$. Die entsprechenden abgebildeten Zufallszahlen $y_i=f(x_i)$ fallen in $\Delta y$ um $f(x)$.
 
-$\Rightarrow$ Änderung der Punktdichte $\rho(y)\Delta y = \Delta x$. Im limes $\Delta x \to 0$ mit 
+$\Rightarrow$ Änderung der Punktdichte $\rho(y)\Delta y = \Delta x$. \\
+Der limes $\Delta x \to 0$ mit 
 \begin{align*}
 \rho(y)=\frac{dx}{dy}
 \end{align*}
-soll vorgegeben werden
+soll vorgegeben werden. Wie lautet dann $f(x)$?
 \begin{align}
-\Rightarrow & \int_0^x dx' = \int \rho(y) dy \; \Rightarrow \; x(y) = \int \rho(y) dy = f^{-1}(y) \\
-\Aboxed{\Rightarrow & f(x)= \left( \int \rho(y) \; dy \right)^{-1} }\\
-\Rightarrow & f(x_i)=y_i \mbox{ sind gesuchte ZZ}
-\end{align} %TODO frameon the last formula
-also: $\rho(y)$ gegebene Verteilung muss man 1) Integrieren 2) Invertieren
- 
- Beispiel: \begin{align}
+\Rightarrow  \int_0^x dx' = \int \rho(y) dy \; \Rightarrow \; x(y) = \int \rho(y) \; dy = x(y) = f^{-1}(y) 
+\end{align}
+\begin{align}
+\Aboxed{\Rightarrow  f(x)= \left( \int \rho(y) \; dy \right)^{-1} }
+\end{align}
+\begin{align*}
+\Rightarrow  f(x_i)=y_i \mbox{ sind gesuchte ZZ}
+\end{align*} 
+also: $\rho(y)$ gegebene Verteilung muss man 
+\begin{enumerate}
+\item[1)] Integrieren
+\item[2)] Invertieren
+\end{enumerate}
+
+\textbf{ Beispiel:}
+ \begin{align*}
   \rho(y)=
  \begin{cases}
 e^{-y} & \text{für } y \geq 0 \\
 0 & \text{für } y < 0.
  \end{cases}
- \end{align}
+ \end{align*}
+ und wie gewünscht 
  
+ \begin{itemize}
+	 \item Normierung 
+  		$\int_0^\infty  \rho(y) \; dy = 1 $
+ 	\item Positiv
+ 		$\rho(y) \geq 0 $
+\end{itemize}
+
  \begin{enumerate}
- \item \begin{align*}
- \int_0^y dy' \rho(y') = 1_ e^{-y} =x(y)
+ \item Es gilt: \begin{align*}
+ \int_0^y dy' \rho(y') = 1- e^{-y} \equiv x(y)
  \end{align*}
  \item Umkehrfunktion:
   \begin{align*}
@@ -389,185 +740,299 @@ e^{-y} & \text{für } y \geq 0 \\
  $\Rightarrow y_i = -ln(1-x_i)$ sin exponentiell verteilte Zufallszahlen $\in [0,\infty]$.
  \end{enumerate}
  Nachteil: 
-(Der Computer ist nicht so schnell beim logarithmieren...deswegen ist die rejection Methode diesbezüglich interessanter.) 
-Man muss aber vor allem die gewünschte Verteilung $\rho(y)$ erst integrieren und dann invertieren können. Dies geht beispielsweise nicht bei:
+\footnote{Der Computer ist nicht so schnell beim logarithmieren...deswegen ist die rejection Methode diesbezüglich interessanter.}
+Man muss die gewünschte Verteilung $\rho(y)$ erst integrieren und dann zusätzlich auch invertieren können. Dies geht nicht bei \textbf{z.B.} der \textsc{Gauß}-Verteilung
 
-\item[c)] Gauß-Verteilung
+\item[c)] \textbf{Gauß-Verteilung } (Normalverteilung) \\
 \begin{align*}
 \rho(x)= \frac{1}{\sqrt{2 \pi} \sigma} e^{-\frac{x^2}{2 \sigma^2}}
 \end{align*}
-denn sie ist nicht analytisch bestimmt integrierbar. Dafür gibt es einen Trick:
+Wieder gilt:
+ \begin{itemize}
+	 \item Normierung 
+  		$\int_0^\infty  \rho(y) \; dy = 1 $
+ 	\item Positiv
+ 		$\rho(y) > 0 $
+\end{itemize}
 
-Trick: betrachte eine zweidimensionale Verteilung:
-\begin{align*}
-p(x_1,x_2)=\frac{1}{	2 \pi \sigma^2} e^{- \frac{x_1^2 + x_2^2}{2 \sigma^2}}
-\end{align*}
-Zahl der Punkte im Intervall $dx_1, dx_2$ ist:
-\begin{align*}
-\frac{1}{	2 \pi \sigma^2} e^{- \frac{x_1^2 + x_2^2}{2 \sigma^2}} dx_1 dx_2= & \frac{1}{	2 \pi \sigma^2} e^{- \frac{r^2}{2 \sigma^2}} \;r \; dr  d\phi \; \mbox{  subst: } u = \frac{r^2}{2 \sigma^2}\\
-= & \frac{1}{2 \pi} e^{-u} du \; d\phi \\
-\end{align*}
+
+Sie ist nicht analytisch (bestimmt) integrierbar, sodass die Transformationsmethode nicht anwendbar ist. Dafür gibt es aber einen Trick: \\
+betrachte eine zweidimensionale Wahrscheinlichkeitsverteilung
+\begin{align}
+p(x_1,x_2)=\frac{1}{	2 \pi \sigma^2} e^{- \frac{x_1^2 + x_2^2}{2 \sigma^2}} = \rho(x_1) \cdot \rho(x_2)
+\end{align}
+die Zahl der Punkte im Intervall $dx_1, dx_2$ ist:
+\begin{align}
+\frac{1}{	2 \pi \sigma^2} e^{- \frac{x_1^2 + x_2^2}{2 \sigma^2}} dx_1 dx_2= & \frac{1}{	2 \pi \sigma^2} e^{- \frac{r^2}{2 \sigma^2}} \;r \; dr  d\phi \quad \left( \mbox{subst: } u = \frac{r^2}{2 \sigma^2} \right) \\
+= & \frac{1}{2 \pi} e^{-u} du \; d\phi
+\end{align}
 mit
 \begin{align*}
-x_1=  r cos(\phi) = \sigma \sqrt{2 u} cos(\phi) \\
-x_2=  r sint(\phi)= \sigma \sqrt{2 u} sin(\phi)
+x_1=  r cos(\phi) = \sigma \sqrt{2 u} \; cos(\phi) \\
+x_2=  r sin(\phi)= \sigma \sqrt{2 u} \; sin(\phi)
 \end{align*}
-$\Rightarrow$ ziehe Zufallszahl $\phi_i$ aus $[0,2\pi]$, $y_i$ ist exp-verteilt aus $[0, \infty]$.
+also...
+\begin{itemize}
+\item[...] ziehe: 
+\begin{itemize}
+\item[-] Zufallszahl $\phi_i$ aus $[0,2\pi]$
+\item[-] Zufallszahl $y_i$ ist exp-verteilt aus $[0, \infty]$
+\end{itemize}
+\item[...]rechne:
+\begin{itemize}
+\item[-] $x_i = \sigma \sqrt{2 u_i} \; cos(\phi)$
+\item[-] $x_i' = \sigma \sqrt{2 u_i} \; sin(\phi)$
+\end{itemize}
+\end{itemize}
 
-rechne $x_1,x_2$....
+
 
 praktisch: \begin{align}
-\Aboxed{x_{2i}= \sigma \sqrt{-2 ln(1-y_{2i})} \; cos(2\pi \; y_{2i-1}) } \; \mbox{ mit } y_i\mbox{ ZZ} \in [0, 1) \mbox{ gleichverteilt}
+\Aboxed{x_{2i}= \sigma \sqrt{-2 ln(1-y_{2i})} \; cos(2\pi \; y_{2i-1}) } \\
+\mbox{ mit } y_i\mbox{ ZZ} \in [0, 1) \mbox{ gleichverteilt} \nonumber
 \end{align}
 Beispiel: Wir nehmen das Integral
 \begin{align*}
-\int_0^{2\pi} x e^x \; dx \underbrace{=}_\text{analytisch} e^{2\pi} (2\pi -1) +1
+\int_0^{2\pi} x \; e^x \; dx \underbrace{=}_\text{analytisch} e^{2\pi} (2\pi -1) +1
 \end{align*} 
 Importance: \begin{align*}
-\rho(y)=& \frac{e^y}{e^{2\pi} -1} \mbox{ (normiert) } \Rightarrow f(x)= ln(\underbrace{(e^{2\pi}-1)}_\text{Norm.-Konst} x+1) \\
-\Rightarrow & I = \frac{1}{N} \sum_{i=1}^N y_i (e^{2\pi}-1)
+\rho(y)= \frac{e^y}{e^{2\pi} -1}\quad  \left( \mbox{normiert } \int_0^{2\pi} e^y \; dy =1 \right) 
 \end{align*}
+\begin{align*}
+\int_0^y \rho(y') \; dy' = \frac{e^y - 1}{e^{2\pi} - 1} = x(y)
+\end{align*}
+\begin{align*}
+ \Rightarrow y= ln(\underbrace{(e^{2\pi}-1)}_\text{Norm.-Konst} x+1) 
+ \end{align*}
+ \begin{align*}
+\Rightarrow  I = \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{\rho(y_i)}= \frac{1}{N} \sum_{i=1}^N y_i (e^{2\pi}-1)
+\end{align*}
+wobei $x_i \in [0,1)$.
 \end{itemize}
+
  
- %TODO Review:
- Importance sampling: \begin{equation}
- i= \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)} \mbox{ mit } y_i: \mbox{ ZZ normalverteilt }
- \end{equation}
- 
- Beispiel: \begin{align}
- \int_0^{2\pi} x \; e^x \; dx = e^{2\pi} (2\pi -1) -1\\
- w(y)= \frac{e^y}{e^{2\pi}-1} \\
- y= ln\left( (e^{2\pi} -1)x+1\right) \mbox{ mit } x \in [ 0,1] \\ \Rightarrow I= \frac{1}{N}\sum_{i=1}^N y_i (e^{2\pi}-1)
- \end{align}
- %TODO Review END
+% %TODO Review:
+% Importance sampling: \begin{equation}
+% i= \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)} \mbox{ mit } y_i: \mbox{ Zufallszahl normalverteilt }
+% \end{equation}
+% 
+%\textbf{ Beispiel: }
+% \begin{align}
+% \int_0^{2\pi} x \; e^x \; dx = e^{2\pi} (2\pi -1) +1\\
+% \rho (y)= \frac{e^y}{e^{2\pi}-1} \\
+% y= ln \left( (e^{2\pi} -1)\; x \; +1\right) \mbox{ mit } x \in [ 0,1] \\ \Rightarrow I= \frac{1}{N}\sum_{i=1}^N y_i (e^{2\pi}-1)
+% \end{align}
+% %TODO Review END
  
  \subsection{Ising Modell}
-(Zweizustandsmodell: minimales Modell für ein reales system, jeder einzelne Freiheitsgrad hat nur zwei zustände, ist aber das erste Modell das einen Phasenübergang zeigt. Es ist im 2D Fall aber exakt lösbar und daher gut für uns.)
-\begin{itemize}
-\item[-]Findet zahlreiche Anwendungen
-\item[-]einfach
-\item[-]exakte Lösungen im 1D,2D Fall
+ Das \textsc{Ising}modell\footnote{Zweizustandsmodell: minimales Modell für ein reales system, jeder einzelne Freiheitsgrad hat nur zwei Zustände, ist aber das erste Modell das einen Phasenübergang zeigt. Es ist im $2d$ Fall aber exakt lösbar und daher gut für uns.} findet zahlreiche Anwendungen (\textbf{z.B.} in den Sozialwissenschaften, in der Phyik für Fest-Flüssig-Übergänge oder mehr noch für \textit{magnetische Eigenschaften}, wie etwa dem Ferromagneten). Es ist \textit{sehr einfach} und zudem auch \textit{exakt lösbar} für Lösungen im $1d$ (\textsc{Ising}), $2d $ (\textsc{Onsager}) Fall.
+($\to$ Nobelpreis) \\
+Wir benutzen das Modell eines Ferromagneten:  \\
+Makroskopisch ist eine Gesamtmagnetisiertung zu beobachten. Auf mikroskopischer Ebene findet man Atome mit 'Spin', atomare Momente, die in eine Richtung ausgerichtet sind. Sie wechselwirken mit ihren umliegenden Nachbarn\footnote{ Die Wechselwirkung ist im einfachsten Fall nur mit den nächsten Nachbart, idee: überlapp der wellenfunktion ist begrenzt exponentiell}. Es gibt Vorzugsrichtungen, abhängig von den Kristallstrukturen (Wegen Spin-Bahn Wechselwirkungen) \\
+$\Rightarrow$ Vorzugsachse (\textbf{Anisotropie}). Der Kristall hat eine leichte Achse, d.h. Spins wollen in diese Richtung stehen.\\
+$\Rightarrow$ nur noch zwei Zustände! ('rauf' $\uparrow$ oder 'runter' $\downarrow$) \\
 
- hier: Modell für Ferromagneten %TODO Gitterbild: zweizustandsmodell: dargestellt: möglicher zustand
- (Die Wechselwirkung ist im einfachsten Fall nur mit den nächsten Nachbart, idee: überlapp der wellenfunktion ist begrenzt exponentiell...)
-\item[-] Gitter aus Spins, im einfachsten Fall $S= \pm 1$, sodass beispielsweise $S_i$ nur index $i= \{x,-\}$ hat.
-\item[-]Hamilton-Funktion $H= - \sum_{i=1}^N B \; S_i$ (Spin hier kein Drehimpuls sondern Spin, das minus kommt vom Drehimpuls des \textit{Elektrons}. Es ist ein phänomenologisches klassisches Modell, also nicht wirklich ein quantenmechanisches Spin-$1/2$-Modell sonder im klassischen Limes (Limes Heisenbergmodell und gleichzeitig anisotropie gegen unendlich)) 
- \item[-]Hinzüglich einer Wechselwirkung: Austauschenergie J zwischen Spinpaaren. Am stärksten zwischen nächsten Nachbarn $ H= -J \sum_{i,j=1\; und \; i,j NN}^N S_i S_j - B \sum_{i=1}^N S_i$ ($B$ gibt vor, welche ausrichtung energetisch günstiger ist. Beispiel: $\uparrow \uparrow, B: \Uparrow$)
+ %TODO image
+
+ \begin{itemize}
+\item[-] Gitter aus Spins, im einfachsten Fall $S= \pm 1$, sodass beispielsweise $S_i$ nur index $i= \{+,-\}$ hat.
+\item[-]Hamilton-Funktion\footnote{Spin ist hier kein Drehimpuls sondern wirklich ein Spin, das Minuszeichen kommt vom Drehimpuls des \textit{Elektrons}. Es ist ein phänomenologisches klassisches Modell, also nicht wirklich ein quantenmechanisches Spin-$1/2$-Modell sonder im klassischen Limes (Limes Heisenbergmodell und gleichzeitig Anisotropie gegen unendlich)}
+\begin{align}
+H= - \sum_{i=1}^N B \; S_i
+\end{align}
+\begin{itemize}
+\item[-] $B> 0 : \; S_i = 1$ günstig 
+\item[-]  $B<0 : \; S_i = -1$ günstig 
+\item[-] $B=0; \; S_i = \pm 1$ unmöglich
+\end{itemize}
+ \item[-]Hinzüglich einer \textbf{Wechselwirkung:} Überlapp der Wellenfunktion führt zu Austauschenergie $J$ zwischen denjenigen Spins, die nächste Nachbarn sind. (Dies ist nicht die makroskopische (Dipol-)Wechselwirkung) 
+ 
+ \begin{align}
+  H(S_1, S_2, ..., S_N) = \underbrace{ -J \sum_{i,j=1;\; i,j NN}^N S_i S_j }_{\substack{\text{Nachbarn auf dem Gitter} \\ \text{jedes Paar einmal}}} - B \sum_{i=1}^N S_i
+\end{align}  
+($B$ gibt vor, welche Ausrichtung energetisch günstiger ist. Beispiel: $\uparrow \uparrow, B: \Uparrow$)
   \begin{itemize}
-  \item $J>0: \; \uparrow \uparrow $ günstig $\rightarrow$ Ferromagneten
-  \item $J<0: \; \uparrow \downarrow$ günstig $\rightarrow$ eventuell Antiferromagneten ($\uparrow \downarrow \; , \; \downarrow \uparrow$)
+  \item $J>0: \; \uparrow \uparrow  \quad E= -J$ günstig $\rightarrow$ Ferromagnet
+  \item $J<0: \; \uparrow \downarrow  \quad E= -J$ günstig $\rightarrow$ eventuell Antiferromagnet ($\uparrow \downarrow \; , \; \downarrow \uparrow$)
   \end{itemize}
+  Im Folgen $J>0$. 
 
 \begin{enumerate}
 \item Grundzustand (Kette): $E_0= -J(N-1)-BN $. $\uparrow \uparrow \uparrow \uparrow \uparrow \uparrow$
-\item Endliche Temperatur $T$: angeregte Zustände, z.B. $\uparrow \uparrow \uparrow \downarrow \uparrow$ \textit{(erster angeregter Zustand)}
+\item Endliche Temperatur $T$: angeregte Zustände kommen vor, z.B. $\uparrow \uparrow \uparrow \downarrow \uparrow$ \textit{(erster angeregter Zustand)}
 \end{enumerate}
 
-\underline{Thermische Mittelwerte:} Observable $\Omega: \langle \Omega \rangle= \sum_{ \{\bar{S} \} \\ 2^N }  p(\bar{S}) \Omega(\bar{S})$ mit $\bar{S}:$ Zustand, $\Omega(\bar{S})$: Observable, $p(\bar{S}):$ Wahrscheinlichkeit von $\bar{S}$. %TODO richtig plaziert?
-
-\item[-] kanonische Gesamtheit 
+\textbf{Beispiel:} System mit abzählbar vielen (quantisierten) Zuständen.  
+\begin{align*}
+N(4) \mbox{ Spins, } S= \frac{1}{2} \quad \quad \Aboxed{ \uparrow \downarrow \uparrow \uparrow }
+\end{align*}
+Wie berechnet man nun das \textbf{thermische Mittel} einer Observablen?
 \begin{align}
-p_{\bar{S}}=p(H(\bar{S})= \frac{e^{- \beta H(\bar{S})}}{\sum_{\{ \bar{S} \} } e^{-\beta H(\bar{S})}} \; , \; \beta = \frac{1}{k_BT}
+\langle \Omega \rangle= \sum_{ \{\bar{S} \}}  p(\{ S \}) \; \Omega(\{S\})
+\end{align}
+Dabei ist $\{ S \}$ ein Zustand des Systems und $\Omega(\{ S \})$ die zu diesem Zustand gehörende Größe. Die Wahrscheinlichkeit $p(\{ S \})$ meint die Wahrscheinlichkeit, dass das System in diesem Zustand ist. Eine vereinfachte Schreibweise ist
+\begin{align*}
+\{ S \} \; \widehat{=} \; \underline{S}
+\end{align*}
+Wir nummerieren die Zustände durch
+\begin{align}
+\langle \Omega \rangle = \sum_{\underline{\dot{S}}} p_{\underline{\dot{S}}} \; \Omega_{\underline{\dot{S}}}
+\end{align}
+wobei man zeigen kann dass:
+
+%\item[-] kanonische Gesamtheit 
+\begin{align}
+p_{\underline{\dot{S}}} = p ( H_{\underline{\dot{S}}}) = \frac{e^{- \beta H_{\underline{\dot{S}}} }}{\underbrace{ 
+\sum_{\underline{\dot{S}}}  e^{-\beta H_{\underline{\dot{S}}} } 
+}_{\text{Normierung:} \sum_{\underline{\dot{S}}} p_{\underline{\dot{S}}} =1 }}\; , \quad \beta = \frac{1}{k_BT}
 \end{align}
 mit \textit{Zustandssumme} 
 \begin{align}
-Z= \sum_{ \{\bar{S}\} } e^{- \beta H(\bar{S})} \mbox{ und } \langle \Omega \rangle = \frac{1}{Z}  \sum_{ \{\bar{S}\} } \Omega(\bar{S}) e^{- \beta H(\bar{S})}
+\Aboxed{ Z= \sum_{\underline{\dot{S}}} e^{- \beta H_{\underline{\dot{S}}} } }
+\quad
+\mbox{ und }  \Aboxed{ \langle \Omega \rangle = \frac{1}{Z}  \sum_{\underline{\dot{S}}} \Omega({\underline{\dot{S}}}) \;  e^{- \beta H_{\underline{\dot{S}}} }}
 \end{align} (fürs kanonische Ensemble bestimmbar in obiger Form)
-
-
 \end{itemize}
-Beispiel ($N=2$): 
-Magnetisierung $\langle M \rangle = \frac{1}{Z} \sum M e^{- \beta H(S_1,S_2)}$ mit $M= \frac{1}{N} \sum_{i=1}^N S_i$.
+Das \textsc{Ising}-Modell ist lösbar in $1d$ und $2d$. Wir beobachten im Folgenden aber Numerik und deswegen analytisch lösbare 'Vorüberlegung' mit nur 2 Spins:\\
+\textbf{ Beispiel:} ($N=2$): 
+Die beobachtbare Magnetisierung 
+\begin{align}
+M = \frac{1}{N} \sum_{i=1}^N S_i = \frac{1}{2} (S_1 + S_2)
+\end{align}
+Wieder betrachten wir den thermischen Mittelwert bei Ankopplung der Spins an ein Wärmebad:
+\begin{align}
+\langle M \rangle = \frac{1}{Z} \sum_{ \{ S_1, S_2 \} } M \; e^{- \beta \;  H(S_1,S_2)} \quad \left(\mbox{ mit: } Z = \sum_{ \{ S_1, S_2 \} }  e^{- \beta \; H(S_1, S_2)} \right)
+\end{align}
+im Allgemeinen haben wir
 \begin{align*}
 2^N \mbox{ Zustände } \uparrow \uparrow \; \downarrow \uparrow \; \uparrow \downarrow \; \downarrow \downarrow
 \end{align*}
+aus $2$ Spins folgen also 4 Zustände.
+
 \begin{align*}
-Z= e^{-\beta (-J -2B)} + 2 e^{-\beta J} + e^{- \beta (-J +2B)} \\
-\langle M \rangle = \frac{1}{2} \frac{2 e^{-\beta (-J - 2B)} - 2 e^{-\beta (-J + 2B)}}{Z}
-\end{align*} %TODO image
+Z= e^{-\beta (-J -2B)} + 2 e^{-\beta J} + e^{- \beta (-J +2B)}
+\end{align*}
+\begin{align*}
+ M &= \frac{1}{2} \frac{2 e^{-\beta (-J - 2B)} - 2 e^{-\beta (-J + 2B)}}{Z} = \frac{e^{\beta J} \left( e^{2 \beta B} - e^{-2\beta B} \right)}{e^{\beta J} \left( e^{-2\beta B} + e^{-2 \beta B} + 2 e^{-2 \beta J} \right)} \\
+ &= \frac{sinh( 2 \beta B) }{(cosh(2 \beta B) + e^{-2 \beta J}}
+\end{align*}
+ 
+%TODO image
+Allgemein: N Spins \\
+$\Rightarrow \; 2^N$-Zustände ($2^{100} = 10^{30}$) \\
+$\Rightarrow$ d.h. durch direktes Summieren numerisch nicht lösbar \\
+$\Rightarrow$ Näherungsverfahren!
 
 \subsection{Monte Carlo Simulation}
 (Wir rechnen im kanonischen Ensemble die Zustandssumme aus.)
 \begin{align}
-\langle M \rangle =& \frac{\sum^{2^N}_{\bar{S}} M(\bar{S}) e^{-\beta H(\bar{S})}}{\sum^{2^N}_{\bar{S}} e^{-\beta H(\bar{S})}}  \\ \underbrace{\approx}_\text{simple sampling} &
-\frac{\sum^{k}_{\bar{S}} M(\bar{S}) e^{-\beta H(\bar{S})}}{\sum^{k}_{\bar{S}} e^{-\beta H(\bar{S})}} \mbox{ nicht alle } 2^N \mbox{Zustände sondern } k \\
-\underbrace{\approx}_\text{importance sampling} & 
-\frac{\sum^{k}_{\bar{S}} M(\bar{S}) e^{-\beta H(\bar{S})} \frac{1}{w(\bar{S})}}{\sum^{k}_{\bar{S}} e^{-\beta H(\bar{S})} \frac{1}{w(\bar{S})}}
+\langle M \rangle = & \frac{\sum^{2^N}_{\underline{S}} M(\underline{S}) \;  e^{-\beta H(\underline{S} ) }}{\sum^{2^N}_{\underline{S}} e^{-\beta H(\underline{S})}}  
+\begin{cases}
+ \underbrace{\approx}_{\substack{ \text{simple} \\ \text{sampling}}} 
+& \frac{\sum^{k}_{\underline{S}} M(\underline{S}) \; e^{-\beta H(\underline{S})}}{\sum^{k}_{\underline{S}} e^{-\beta H(\underline{S})}} \mbox{ nicht alle } 2^N \mbox{Zust. sondern } k \\
+\underbrace{\approx}_{\substack{ \text{importance} \\ \text{ sampling}}} & 
+\frac{\sum^{k}_{\underline{S}} M(\underline{S}) \; e^{-\beta H(\underline{S})} \frac{1}{w(\underline{S})}}{\sum^{k}_{\underline{S}} e^{-\beta H(\underline{S})} \frac{1}{w(\underline{S})}}
+\end{cases}
 \end{align}
 
-wähle $w(\bar{S})= e^{-\beta H(\bar{S})} $ und dann folgt
+Dabei sind $[\underline{S}]$ Konfigurationen von Spins mit Wahrscheinlichkeit $w(S)$. Wähle 
 
 \begin{align}
-\Aboxed{ \langle M \rangle = \frac{1}{K} \sum_{ [\bar{S}]}^{(k)} M(\bar{S})}
+\Aboxed{ w(\bar{S})= e^{-\beta H(\underline{S})}  }
 \end{align}
-$\Rightarrow$ Problem: wir brauchen Zustände $\bar{S}$ mit Wahrscheinlichkeit $w(\bar{S})\propto e^{-\beta H(\bar{S})}$ ($\Rightarrow$Problematisch). Wie bekommt man jetzt Konfigurationen mit einer bestimmten Wahrscheinlichkeitsverteilung? 
-Lösung: Metropolis-Algorithmus.
+ und dann folgt
 
-Beginne einen Markov-Prozess (Kette) , (meint dass der nächste Zustand hängt nur von seinem Vorgänger ab, d.h. ein Zustand wird vom Vorgängerzustand erzeugt:) $\bar{S}_0 \rightarrow \bar{S}_1 \rightarrow \bar{S}_2$
-beispielsweise $\uparrow \uparrow \uparrow \; \rightarrow \; \uparrow \downarrow \uparrow \; \rightarrow \; \uparrow \downarrow \downarrow$
+\begin{align}
+\Aboxed{ \langle M \rangle = \frac{1}{K} \sum_{ [\underline{S}]}^{(k)} M(\bar{S})}
+\end{align}
+$\Rightarrow$ Problem: wir brauchen Zustände $\overline{S}$ mit Wahrscheinlichkeit $w(\overline{S})\propto e^{-\beta H(\overline{S})}$ ($\Rightarrow$Problematisch). Wir brauchen also ein Verfahren das Zustände des Systems (Spinkonfiguration $\underline{S}$) erzeugt die eben dieser eben genannten Wahrscheinlichkeitsverteilung genügt. Wie bekommt man jetzt Konfigurationen mit einer bestimmten Wahrscheinlichkeitsverteilung? 
+Lösung: \textbf{ Metropolis-Algorithmus}. \\
+
+Beginne einen Markov-Prozess (Kette)\footnote{meint dass der nächste Zustand nur von seinem Vorgänger abhängt, d.h. ein Zustand wird vom Vorgängerzustand erzeugt} 
+\begin{align*}
+\underline{S}_0 \rightarrow \underline{S}_1 \rightarrow \underline{S}_2
+\end{align*}
+(also beispielsweise $\uparrow \uparrow \uparrow \; \rightarrow \; \uparrow \downarrow \uparrow \; \rightarrow \; \uparrow \downarrow \downarrow$)
+
 \begin{enumerate}
-\item $\bar{S}_n $ sei ein Zustand
-\item \label{Punkt2} erzeuge Versuchszustand (trial state) $\bar{S}_r$ durch \textit{geeignete} Veränderung.
+\item $\underline{S}_n $ sei ein Zustand
+\item \label{Punkt2} erzeuge Versuchszustand \textit{(trial state)} $\underline{S}_r$ durch \textit{geeignete} Veränderung.
 \item berechne: 
 \begin{align}
-r= \frac{w(\bar{S}_r)}{w(\bar{S}_n)} = e^{-\beta (H(S_r)-H(S_n))}
+r= \frac{w(\underline{S}_r)}{w(\underline{S}_n)} = \frac{e^{- \beta H(\underline{S}_r )}}{e^{- \beta H(\underline{S}_n )}}= e^{-\beta (H(S_r)-H(S_n))}
 \end{align}
+
 \item Fallunterscheidung: \\ 
-$r>1$: akzeptieren, $\bar{S}_{n+1} = \bar{S}_r$\\
+$r>1$: akzeptieren, $\underline{S}_{n+1} = \underline{S}_r$\\
 $r \leq 1:$ akzeptieren mit Wahrscheinlichkeit $r$
 \item  $\rightarrow$ \ref{Punkt2}.
 \end{enumerate}
-Implementierung: am Beispiel einer Spinkette $\uparrow \uparrow \uparrow \uparrow \uparrow \uparrow$ (der letzte wechselwirkt mit dem ersten wieder...periodische Randbedingungen also)
+\textbf{Implementierung:} am Beispiel einer Spinkette $\uparrow \uparrow \uparrow \uparrow \uparrow \uparrow$ (der letzte wechselwirkt wieder mit dem ersten wieder, periodische Randbedingungen also)
+
 \begin{enumerate}
-\item Array von Spins $spins[N]$: $ +1|+1|+1|+1|+1|+1|$
-\item \label{wiederPunkt2} Versuchsschritt: misst 'single spin flip' $S_i \rightarrow - S_i$: $ +1|-1|+1|+1|+1|+1|$
-\item $\Delta H= H(\bar{S}_r)  - H(\bar{S}_n) = 2 J (S_i S_{i-1} + S_i S_{i+1}) + 2BS_i \; \; \Rightarrow r= e^{-\Delta H / k_BT}$
+\item Array von Spins \texttt{int spins}$[N]$: $ +1|+1|+1|+1|+1|+1|$ (mit Anfangsbedingung $S_i =1$)
+\item \label{wiederPunkt2} Versuchsschritt: misst \textbf{'single spin flip'}, d.h. ein Spin wird gedreht: \\
+$S_i \rightarrow - S_i$: $ +1|-1|+1|+1|+1|+1|$
+\item $\Delta H= H(\underline{S}_r)  - H(\underline{S}_n) = 2 J (S_i S_{i-1} + S_i S_{i+1}) + 2BS_i \; \; \Rightarrow r= e^{-\Delta H / k_BT}$
 \item \texttt{if (rand()/Randmax $<$r)} $S_r \rightarrow -S_i$
 \item $\rightarrow$ \ref{wiederPunkt2}.
 \end{enumerate}
 
 \begin{itemize}
-\item Wenn alle Spins einmal abgefragt wurden: $1MCS$ (MonteCarloSchritte)
+\item Wenn alle Spins einmal abgefragt wurden: $1MCS$ (\textbf{M}onte \textbf{C}arlo \textbf{S}chritt) pro Spin
 \item Mittelung über viele MCS
 
-\item Zu Beginn der Simulationen ist der Markov Prozess nicht im Gleichgewicht (hängen vom Anfangszustand ab) $\Rightarrow$  die ersten $k$ MCS sollten nicht zur Mittlung herangezogen werden: \begin{align}
-\langle M \rangle = \frac{1}{(K-k)} \sum_{i=k}^K M_i \mbox{ mit } M_i = \frac{1}{N} \sum_{j=1}^N S_j
+\item Zu Beginn der Simulationen ist der Markov Prozess nicht im Gleichgewicht (hängen vom Anfangszustand ab) \\
+$\Rightarrow$  die ersten $k$ MCS sollten nicht zur Mittlung herangezogen werden und damit bei der Berechnung von $\langle M \rangle$ weggelassen werden.
+ \begin{align}
+\langle M \rangle = \frac{1}{(K-k)} \sum_{i=k}^K M_i 
 \end{align}
-Beweis: Metropolis erzeugt Konfiguration $\bar{S}$ mit einer Wahrscheinlichkeitsverteilung von $w(\bar{S}) \propto e^{-\beta H(\bar{S})}$ (Wie betrachtet man denn nun statistische nicht gleichgewichtsprozesse so wie diesen Markov Prozess?)
-\item $w(\bar{S}):$ Wahrscheinlichkeit im Zustand $\bar{S}$ zu sein.
-\item Markov $\bar{S} \rightarrow \bar{S'}$ mit $p(\bar{S}, \bar{S'}): $ Wahrscheinlichkeit, im Prozess von $\bar{S}$ nach $\bar{S'}$ zu wechseln
+mit der Magnetisierung $M_i$ des $i-$ten Spinlaufs
+\begin{align*}
+M_i = \frac{1}{N} \sum_{j=1}^N \sigma
+\end{align*}
+\textbf{Beweis:} Metropolis-Algorithmus erzeugt Konfigurationen $\underline{S}$ mit einer Wahrscheinlichkeitsverteilung von $w(\underline{S}) \propto e^{-\beta H(\underline{S})}$ (Wie betrachtet man denn nun statistische nicht Gleichgewichtsprozesse so wie diesen Markov Prozess?)
+\item $w(\bar{S}):$ Wahrscheinlichkeit im Zustand $\underline{S}$ zu sein.
+\item Markov $\underline{S} \rightarrow \underline{S'}$ mit $p(\underline{S}, \underline{S'}): $ Wahrscheinlichkeit, im Prozess von $\underline{S}$ nach $\underline{S'}$ zu wechseln
 
-Aufgabe: $p$ bestimmen, sodass $w(\bar{S})$ herauskommt
+Aufgabe: $p$ bestimmen, sodass $w(\underline{S})$ herauskommt
 \end{itemize} %TODO bild mit strichen
 \begin{align*}
-\Delta w(\bar{S}) =& 
-- \sum_{\bar{S'}} w(\bar{S}) p(\bar{S} \rightarrow \bar{S'}) \mbox{ (raus) } \\
- &+  \sum_{\bar{S'}} w(\bar{S'}) p(\bar{S'} \rightarrow \bar{S}) \mbox{ (rein) } \\ 
+\Delta w(\underline{S}) =& 
+- \sum_{\underline{S'}} w(\underline{S}) \; p(\underline{S} \rightarrow \underline{S'})\quad  \mbox{ \textit{(raus)} } \\
+ &+  \sum_{\underline{S'}} w(\underline{S'}) \; p(\underline{S'} \rightarrow \underline{S}) \quad \mbox{\textit{ (rein)} } \\ 
  \overset{!}{=}& 0
 \end{align*}
 
 %TODO ising modell: phasenübergang bei 2....irgendwas. Schwankungen in der reduzierten magnetisierung für werte kurz unter 2 kommen durch spezifische Wärmekapazität als schwankung der Energie und genauso die spezifische suszeptibilität als schwankung der Magnetisierung. Die zahl der Montecarlo schritte steigt bis man im gleichgewicht ankommt für steigende werte für T. Sie fällt für höhere werte detulich größer aus bis sie bei Null ankommt
 
-Betrachte eine mögliche Lösung: jeder Summand $=0$. (\textbf{'detailed balance'}).
+Betrachte eine mögliche Lösung: jeder einzelne Summand wird $=0$. (\textbf{'detailed balance'}).
  \begin{align}
-\Rightarrow   w(\bar{S}) p(\bar{S} \rightarrow \bar{S}')- w(\bar{S}') p(\bar{S}' \rightarrow \bar{S}) =0 \\
-\Rightarrow  \frac{p(\bar{S} \rightarrow \bar{S}')}{p(\bar{S}' \rightarrow  \bar{S})} = \frac{w(\bar{S}')}{w(\bar{S})} = e^{-\beta(E(\bar{S}')- E(\bar{S})}
+\Rightarrow   w(\underline{S}) \; p(\underline{S} \rightarrow \underline{S}')- w(\underline{S}') \; p(\underline{S}' \rightarrow \underline{S}) =0 
+\end{align}
+\begin{align}
+\Rightarrow  \frac{p(\underline{S} \rightarrow \underline{S}')}{p(\underline{S}' \rightarrow  \underline{S})} = \frac{w(\underline{S}')}{w(\underline{S})} = e^{-\beta(E(\underline{S}')- E(\underline{S})}
 \end{align}
 \begin{enumerate}
-\item \underline{Lösung:}
+\item \underline{Lösung:} (eigentl. Metropolis Algorithmus)
  \begin{align}
-p(\bar{S} \rightarrow \bar{S}')
+p(\underline{S} \rightarrow \underline{S}')
 \begin{cases}
-e^{-\beta(E(\bar{S}')- E(\bar{S})} \text{ für } \Delta E > 0 \\
-1 \text{ sonst}
+e^{-\beta(E(\underline{S}')- E(\underline{S})} & \text{ für } \Delta E > 0 \\
+1 & \text{ sonst}
 \end{cases}
 \end{align} 
-\item \underline{Lösung:}
+
+\item \underline{Lösung:} (\textbf{Heat-bath algorithm})
 \begin{align*}
-p(\bar{S} \rightarrow \bar{S}') = \frac{1}{1+ e^{\beta \Delta E}} \mbox{, weil } \\ 
-\frac{p(\bar{S} \rightarrow \bar{S}')}{p(\bar{S}' \rightarrow \bar{S})} = \frac{1+e^{-\beta \Delta E} }{1+e^{\beta \Delta E}} = \frac{e^{-\beta \Delta E} (e^{\beta \Delta E}+1)}{1+e^{\beta \Delta E}}= e^{-\beta \Delta E}
+p(\underline{S} \rightarrow \underline{S}') = \frac{1}{1+ e^{\beta \Delta E}} \mbox{, weil } 
 \end{align*}
-(\textbf{Heat-bath algorithm})
+
+\begin{align*}
+\frac{p(\underline{S} \rightarrow \underline{S}')}{p(\underline{S}' \rightarrow \underline{S})} = \frac{1+e^{-\beta \Delta E} }{1+e^{\beta \Delta E}} = \frac{e^{-\beta \Delta E} (e^{\beta \Delta E}+1)}{1+e^{\beta \Delta E}}= e^{-\beta \Delta E}
+\end{align*}
+%TODO image
+
 \end{enumerate}
 \subsection{Master Gleichung und Monte Carlo Dynamik}
 Zusammenhang mit irreversibler Dynamik.
