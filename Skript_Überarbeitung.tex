@@ -1032,55 +1032,75 @@ p(\underline{S} \rightarrow \underline{S}') = \frac{1}{1+ e^{\beta \Delta E}} \m
 \frac{p(\underline{S} \rightarrow \underline{S}')}{p(\underline{S}' \rightarrow \underline{S})} = \frac{1+e^{-\beta \Delta E} }{1+e^{\beta \Delta E}} = \frac{e^{-\beta \Delta E} (e^{\beta \Delta E}+1)}{1+e^{\beta \Delta E}}= e^{-\beta \Delta E}
 \end{align*}
 %TODO image
-
 \end{enumerate}
-\subsection{Master Gleichung und Monte Carlo Dynamik}
-Zusammenhang mit irreversibler Dynamik.
 
-betrachte System im nicht-Gleichgewicht, das equilibriert (irreversibel) %TODO image
+
+\subsection{Master Gleichung und Monte Carlo Dynamik}
+\textit{(Zusammenhang mit irreversibler Dynamik)}\\
+
+
+Betrachte ein System im nicht-Gleichgewicht, das equilibriert (irreversibel)  %TODO image
+Beispielsweise ein Gas, das mit der Zeit sinkt oder ein Spinsystem. (Letzteres equilibriert durch 'entkopplung an Phononen') %TODO entkoppelt? 
+Wie beschreibt man solche \textbf{irreversiblen Dynamiken}?
 \begin{itemize}
-\item Stellen uns vor, wir haben $\infty$ viele Kopien des Systems
+\item Stellen uns vor, wir haben $\infty$ viele Kopien des Systems und machen nun 'Momentaufnahmen' der Zustände über der Zeit. 
 \item Berechne nun die zeitliche Änderung der Wahrscheinlichkeit $p_r(t)$ (Wahrscheinlichkeit, das System zur Zeit $t$ im Zustand $r$ zu finden)
 \item betrachte quantenmechanisches System im Kontakt mit einem Wärmebad
 \begin{align}
 \bar{H}_{gesamt} = \underbrace{ \bar{H}}_\text{System} + \underbrace{\bar{H}'}_\text{Wärmebad} + \underbrace{ \bar{H}_i}_\text{Wechselwirkung}
 \end{align}
 \item System sei im Zustand $r$, $\bar{H} \Psi_r = E_r \Psi_r$ mit Wahrscheinlichkeit $p_r(t)$.
-
-\underline{Master Gleichung}
+\end{itemize}
+\textbf{Master Gleichung}
 \begin{align}
-\frac{dp_r}{dt}= \sum_s p_s \underbrace{w_{sr}}_\text{} - p_r \underbrace{w_{rs}}_\text{Übergangsraten}
+\frac{dp_r}{dt}= \sum_s \left( p_s \; w_{sr}  - p_r \; w_{rs} \right) 
 \end{align}
-\item Anwendung im Wärmebad
+mit $ w_{sr}, \;  w_{rs}$ als Übergangsraten. Eine  Anwendung im Wärmebad ergibt
 \begin{align}
 w_{rs}= & \sum_{r',s'} p_{r'}' w_g(rr' \rightarrow ss') = \frac{1}{Z'} \sum_{r',s'}  e^{-\beta E_{r'}'} w_g (rr' \rightarrow ss') \mbox{ Wärmebad ist kanonisch! } \\
 w_{sr}= & \frac{1}{Z'} \sum_{r',s'}  e^{-\beta E_{s'}'} w_g (ss' \rightarrow rr')
 \end{align}
+\begin{itemize}
 \item Energieerhaltung: $E_{r'}' + E_r = E_{s'}' + E_s$ (*)
 \item Symmetrie im Gesamtsystem $w_g (rr' \rightarrow ss') = w_g (ss' \rightarrow rr')$(*)
 \end{itemize}
+
+
 aus (*) einsetzen folgt
 \begin{align}
-w_{sr}&= \frac{1}{Z'} \sum_{r',s'} e^{\beta (E_{r'}' -E_{s'}') } e^{-\beta E_{r'}'  w_g (rr' \rightarrow ss')} = w_{rs} \; e^{-\beta (E_r - E_s)} \\
-& \Rightarrow  \frac{w_{sr}}{w_{rs}}= e^{-\beta (E_r - E_s)}
+w_{sr}&= \frac{1}{Z'} \sum_{r',s'} e^{\beta (E_{r'}' -E_{s'}') } e^{-\beta E_{r'}'}  w_g (rr' \rightarrow ss') = w_{rs} \; e^{-\beta (E_r - E_s)} \\
+& \Rightarrow  \frac{w_{sr}}{w_{rs}}= e^{-\beta (E_r - E_s)} \label{Master}
 \end{align}
-\underline{also:} Irreversible Dynamik eines Systems in Kontakt mit einem Wärmebad wird beschrieben durch Master-Gleichung $ frac{dp_r}{dt}= \sum_s( p_s(t) w_{sr} - p_r(t) w_{rs}) $ mit $\frac{w_{sr}}{w_{rs}}= e^{-\beta (E_r-E_s)}$. Diese Dynamik wird durch Metropolis Algorithmus (oder Heat Bath Algorithmus) simuliert.
+\underline{also:} Irreversible Dynamik eines Systems in Kontakt mit einem Wärmebad wird beschrieben durch Master-Gleichung (unter Verwendung von Formel \ref{Master})
+\begin{align}
+ \frac{dp_r}{dt}= \sum_s( p_s(t) w_{sr} - p_r(t) w_{rs})
+\end{align}
+ Diese Dynamik wird durch Metropolis Algorithmus (oder Heat Bath Algorithmus) simuliert. %TODO nicht durch MC?
 
-\underline{Beachte:} \begin{itemize}
+\underline{Beachte:} 
+\begin{itemize}
 \item $w_{sr}$ liegen nicht absolut fest. Mit $w_{sr}, w_{rs}$ ist auch $\gamma (t) w_{sr}, \gamma(t) w_{rs}$ Lösung \\  $\Rightarrow$ Zeitskala ist nicht absolut festgelegt!
 \item $w_{sr}$ ist nicht mikroskopisch bekannt (im Raum nicht festgelegt)
-\item Die Master Gleichung beschreibt \textit{ausschließlich} irreversible Dynamiken!
-\item speziell für Ising Modell heißt diese Dynamik Glauber-Dynamik.
-
-
+\item Die Master Gleichung beschreibt \textit{ausschließlich} irreversible Dynamiken, nicht aber die Bewegungsgleichung innerhalb des Systems $\tilde{H}$! %TODO image
+\item speziell für das Ising Modell heißt diese Dynamik, die durch die Mastergleichung beschrieben wird  \textbf{Glauber-Dynamik}.(Besonders wichtig, das Ising Modell keine Bewegungsgleichung hat)
 \end{itemize}
-Beispiel: Glauber Dynamik für 2 Spins:  $H=-J S_1 S_2$ mit $S_{1,2} = \pm 1$
-$2^2 =4$ Zustände: $ \uparrow_+ \uparrow_+ \; \; \uparrow_+ \downarrow_- \; \; \downarrow_- \uparrow_+ \; \; \downarrow_- \downarrow_-$
+
+
+\textbf{Beispiel:} (Glauber Dynamik für 2 Spins) \\ 
+$H=-J S_1 S_2$ mit $S_{1,2} = \pm 1$
+$\Rightarrow 2^2 =4$ Zustände: 
+\begin{center}
+\begin{tabular}{c c c c}
+$\uparrow \uparrow$ & $\uparrow \downarrow$ & $\downarrow \uparrow$ & $ \downarrow \downarrow$ \\ 
+$++$ & $+-$ & $-+$ & $--$ \\ 
+\end{tabular} 
+\end{center}
 
  \begin{align*}
  \frac{dp_{++}}{dt} = \sum_s p_s w_{sr} - p_r w_{rs}
  \end{align*}
- (Energie $++$ und $--$ sind genau gleich, da ja kein externes Feld angelegt ist. Nur interessant ist also der Übergang von $++, --$ zu $+-,-+$) $\Rightarrow$ Annahme: Single spin flip und 'Metropolis' mit \begin{align*}
+ (Energie $++$ und $--$ sind genau gleich, da ja kein externes Feld angelegt ist. Nur interessant ist also der Übergang von $++, --$ zu $+-,-+$) $\Rightarrow$ Annahme: Single spin flip und 'Metropolis' mit 
+ \begin{align*}
  w=
  \begin{cases}
  1 & \Delta E <0 \\
@@ -1095,7 +1115,7 @@ $2^2 =4$ Zustände: $ \uparrow_+ \uparrow_+ \; \; \uparrow_+ \downarrow_- \; \; 
  \end{itemize}
  
   \begin{align*}
- \frac{dp_{++}}{dt} =& \sum_s p_s w_{s \rightarrow ++} - p_{++} w_{++ \rightarrow s} \\
+ \frac{dp_{++}}{dt} =& \sum_s p_s w_{s r} - p_{r} w_{r s} \\
  =& p_{+-} w_{+- \rightarrow ++} - p_{++} w_{++ \rightarrow +-} +
  p_{-+} w_{-+ \rightarrow ++} - p_{++} w_{++ \rightarrow -+} =
  p_{+-} + p_{-+} - 2 p_{++} w \\
@@ -1103,7 +1123,7 @@ $2^2 =4$ Zustände: $ \uparrow_+ \uparrow_+ \; \; \uparrow_+ \downarrow_- \; \; 
   \frac{dp_{+-}}{dt}= & p_{++}w + p_{--} w- 2p_{+-} \\
    \frac{dp_{-+}}{dt}= & p_{++}w + p_{--}w -2p_{-+}
  \end{align*}
-$\Rightarrow$ homogenes, lineares Gleichungssystem
+$\Rightarrow$ homogenes, lineares Gleichungssystem \\
 $\Rightarrow$ Lösung für $\lambda$ mit 
 \begin{align*}
 \begin{vmatrix}
@@ -1111,75 +1131,176 @@ $\Rightarrow$ Lösung für $\lambda$ mit
 0 & -2w +\lambda & 1 & 1 \\
 w & w & -2w + \lambda & 0 \\
 w & w & 0 & -2+\lambda 
-\end{vmatrix} \\
+\end{vmatrix} 
 \end{align*}
-$\Rightarrow \lambda_1=0, \lambda_2=2, \lambda_3=2w+2, \lambda_4=2w$ \\
-Wichtig: Kleinstes $\lambda >0$ definiert die Relaxationszeit
-$\Rightarrow$ für lange Zeiten: $p_s(t) \approx a_s + b_s e^{-\lambda_4 t} \approx a_s + b_s e^{-\frac{t}{\tau}}$ mit $\tau= \frac{1}{20}= \frac{e^{2J/k_BT}}{2}$ \\
-\underline{Magnetisierung:} $M(t)= \sum_s p_s(t) M_s = 2(p_{++}(t) + p_{--}(t) \approx M_0 e^{-\frac{t}{\tau}} + const$, wobei $const=0$. (Formel gilt für $t\to \infty$) \\
+\begin{align*}
+\Rightarrow \lambda_1=0, \lambda_2=2, \lambda_3=2w+2, \lambda_4=2w \end{align*}
+
+\textbf{Wichtig:} Kleinstes $\lambda >0$ definiert die Relaxationszeit! \\
+$\Rightarrow$ für lange Zeiten: 
+\begin{align*} p_s(t) \approx a_s + b_s e^{-\lambda_4 t} \approx a_s + b_s e^{-\frac{t}{\tau}} \quad \quad \left(\text{mit} \tau= \frac{1}{20}= \frac{e^{2J/k_BT}}{2} \right)
+\end{align*}
+
+\textbf{Magnetisierung:} 
+\begin{align}
+M(t)= \sum_s p_s(t) M_s = p_{++}(t) + p_{--}(t) \underbrace{\approx}_{t \to \infty} M_0 \; e^{-\frac{t}{\tau}} + \underbrace{const}_{=0}
+\end{align}
+
+
 \underline{Diskussion:} %TODO image
 \begin{itemize}
-\item $\tau$ hängt vom 'Algorithmus' ab
-\item $p(t)$ hängen von Dynamik ab (single spin flip oder nicht)
+\item $\tau$ hängt vom 'Algorithmus' ab (siehe auch Grenze für $T\to \infty $)
+\item $p(t)$ hängt von Annahmen bezüglich Übergangswahrcheinlichkteisraten  also der Dynamik ab (single spin flip oder nicht)
 \end{itemize}
 \subsection{Phasenübergange und Skalentheorie}
-\begin{itemize}
-\item[•] ideale Gase haben keine Wechselwirkung
-\item[•] erst die Wechselwirkung zwischen Teilchen erklärt aber das Entstehen von Ordnung
-\item[•] Ordnung entsteht häufig spontan durch PÜ, bei dem eine Symmetrie gebrochen wird.
-\item[•]lösbares Modell: Ising-Modell: %TODO image
-\end{itemize}
-Ordungsparameter; $ lim_{B \to 0} lim_{N \to \infty} M(B)$.\\
-Analytisch: 2D, Quadratgitter: \begin{align}
-J= - \sum_{i,j} \frac{J}{2}\sigma_i \sigma_j \; , \; \sigma_i=\pm 1
-\end{align}
-Onsager: \underline{innere Energie:}
+
+Ideale Gase haben keine Wechselwirkung erst die Wechselwirkung zwischen Teilchen erklärt aber das Entstehen von Ordnung. Ordnung entsteht häufig spontan durch Phasenübergänge, bei dem eine Symmetrie gebrochen wird. Ein Analytisch lösbares Modell für das Studium von Phasenübergängen ist das \textbf{ (2d) Ising-Modell}: %TODO image
+
+Ordnungsparameter: 
+\begin{align*}
+ \lim\limits_{\substack{B \to 0 \\ N \to \infty}} M(B)
+\end{align*}
+
+\textbf{Analytisch:}  (2D, Quadratgitter mit $B=0$ und $N \to \infty$) 
 \begin{align}
-\frac{U}{N}= &- J \; coth( \frac{2J}{k_BT}) \left[ 1 + \frac{2}{\pi} \left( 2 \; tanh^2 \left( \frac{2J}{k_BT} \right) - 1 \right) K_1(\kappa ) \right] \; \mbox{ mit} \\
-\kappa=& \frac{2 \; sinh \left( \frac{2J}{k_BT} \right)}{cosh^2 \left( \frac{2J}{k_BT} \right) } \; , \; K_1(\kappa)= \int_0^\frac{\pi}{2} \frac{1}{\sqrt{1- \kappa^2 \; sinh^2(\Phi)}} d\Phi
+H= - \underbrace{ \sum_{i,j}}_{\substack{\text{ 4 nächste} \\ \text{Nachbarn}}} \frac{J}{2}\sigma_i \sigma_j \; , \quad \quad \sigma_i=\pm 1
 \end{align}
-U ist nicht analytisch bei einer Temperatur $T_c$ mit $sinh(\frac{2J}{k_BT_c} ) = 1 \Rightarrow cosh(\frac{2J}{k_BT_c})= \sqrt{2} \Rightarrow 2 tanh^2( \frac{2J}{k_B T_c}) =1$ mit $k_B T_c = 2.269 J$. %TODO bild
+Die exakte Lösung von Onsager (1944) erhielt einen Nobelpreis. Heutzutage löst man es jedoch auf andere Weise, beispielsweise
 \begin{itemize}
-\item[•] spezifische Wärme $c(T \to T_c) \propto - ln \left(\vert 1- \frac{T}{T_c}\vert \right)$
-\item[•]Magnetisierung 
+\item[-] graph theory
+\item[-] transfermatrix methods
+\end{itemize} 
+\textbf{innere Energie:}
+\begin{align}
+\frac{U}{N}= - J \; coth\left( \frac{2J}{k_BT}\right) \left[ 1 + \frac{2}{\pi} \left( 2 \; tanh^2 \left( \frac{2J}{k_BT} \right) - 1 \right) K_1(\kappa ) \right]
+\end{align}
+mit
+\begin{align}
+\kappa= \frac{2 \; sinh \left( \frac{2J}{k_BT} \right)}{cosh^2 \left( \frac{2J}{k_BT} \right) } \; , \; K_1(\kappa)= \int_0^\frac{\pi}{2} \frac{1}{\sqrt{1- \kappa^2 \; sinh^2(\Phi)}} d\Phi
+\end{align}
+U ist nicht analytisch bei einer Temperatur $T_c$ mit 
+\begin{align*}
+sinh \left(\frac{2J}{k_BT_c} \right) = 1\quad \Rightarrow cosh \left(\frac{2J}{k_BT_c} \right)= \sqrt{2} \quad \Rightarrow 2 tanh^2\left( \frac{2J}{k_B T_c}\right) =1
+\end{align*}
+ mit $k_B T_c = 2.269 J$. %TODO bild 
+ Beachte, dass $K_1(\kappa)$ hat eine Singularität für $\kappa \to 1$:
+ \begin{align*}
+ K_1(\kappa) \propto  ln \left( \frac{U}{\sqrt{1-\kappa^2}} \right)
+ \end{align*}
+ $U$ bleibt endlich, aber seine Ableitung divergiert. Typisch für einen Phasenübergang sind unter anderem kritische Punkte mit nicht-analytischen Singularitäten sowie auch Werte hüpfen oder divergieren können. (kritisches Verhalten) Beispielsweise:
+\begin{itemize}
+\item[•] Dies spezifische Wärme $c(\underbrace{T \to T_c}_{\kappa \to 1}) \propto - ln \left(\vert 1- \frac{T}{T_c}\vert \right)$
+\end{itemize}
+Der Ornungsparameter jedoch bleibt endlich. (Magnetisierung:)
+\begin{itemize}
+\item[•] Magnetisierung 
 \begin{align}
 m=
 \begin{cases}
 0 & T>T_c \\
-\sqrt[4]{1+x^2} \sqrt[8]{1-6x^2 +x^4} & T<T_c
-\end{cases}
+\frac{\sqrt[4]{1+x^2} \sqrt[8]{1-6x^2 +x^4} }{\sqrt{1-x^2}}& T<T_c
+\end{cases} \quad \quad \quad \mbox{ wobei } 
+\begin{cases}
+x= e^{- \frac{2J}{k_B T}}, \\
+ x_c=  e^{- \frac{2J}{k_B T_c}} = \sqrt{2} -1
+ \end{cases}
 \end{align}
-\item[•]PÜ (Phasenübergang) $2.$Ordnung, Ordnungsparameter stetig, kritische Exponenten
 \end{itemize}
-kritische Exponenten beschreiben Verhalten in der Nähe des kritischen Punktes $(\epsilon = \frac{T - T_c}{T_c} , B) = (0,0)$ \\
-spezifische Wärme: $c \propto \epsilon^{-\alpha}$\\
-Suszeptibilität: $\chi \propto \epsilon^{-\gamma}$\\
-Korrelationslänge: $\xi \propto \epsilon^{-\nu}$\\ 
+
+\textbf{Kritische Exponenten} \\
+Ising Modell mit Feld:
+\begin{itemize}
+\item[•] Phasenübergang $1.$Ordnung bei %TODO missing word
+des Feldes $\Rightarrow$ \textit{Hysterese}, Ordnungsparameter stetig, kritische Exponenten
+
+\item[•] kritischer Punkt: $B=0, \; (T= T_c) \;  \widehat{=}$ Phasenübergang 2.Ordnung $\widehat{=} $ 2. Ableitung der freien Energie unstetig (z.B. spezifische Wärme) %TODO missing word
+sind viele Größen nicht-analytisch. 
+\end{itemize}
+Definition: Kritische Exponenten beschreiben das Verhalten in der Nähe des kritischen Punktes $(\epsilon = \frac{T - T_c}{T_c} , \;  B) = (0,0)$  ($\widehat{=}$ Abstand vom kritischen Punkt. 
+\begin{itemize}
+\item $T>T_c, \; B=0 : $ 
+\begin{itemize}
+\item[•] $c \propto \epsilon^{-\alpha}$ \textit{(spezifische Wärme)}
+\item[•] $\chi \propto \epsilon^{-\gamma}$ \textit{(Suszeptibilität)}
+\item[•]$\xi \propto \epsilon^{-\nu}$ \textit{(Korrelationslänge)}
+\end{itemize}
+
+\item $T<T_c, \; B=0 :$
+\begin{itemize}
+\item[•] $c \propto \vert \epsilon \vert ^{-\alpha}$ 
+\item[•] $\chi \propto \vert \epsilon \vert ^{-\gamma}$
+\item[•]$\xi \propto \vert \epsilon \vert ^{-\nu}$ 
+\end{itemize}
+
+\item $T=T_c, \; B \to 0:$ siehe \textit{(Magnetisierung)}
+
+\item $+$ eventuelle weitere...
+\end{itemize}
+  
 Magnetisierung (OP) \begin{align}
 m= \begin{cases}
-M \propto \epsilon^{-\beta} & T<T_c \\
+M \propto \vert E \vert ^{-\beta} & T<T_c \\
 M \propto \vert B \vert ^\frac{1}{\delta} & T=T_c
 \end{cases}
 \end{align}
-genauer: \begin{align*}
+Kritische Exponenten beschreiben das führende nicht-analytische Verhalten einer Funktion. Genauer:
+\begin{align*}
 A(\epsilon)= 
-\underbrace{ A_0 + A_1 \epsilon + A_2 \epsilon +...}_\text{analytisch} 
-+ \underbrace{ A_3 \epsilon^{0.8}}_{\substack{ \text{führend} \\ \text{ nichtanalytisch} \\ \text{ (kritisch)} }}
+\underbrace{ A_0 + A_1\;  \epsilon + A_2 \; \epsilon +...}_\text{analytisch} 
++ \underbrace{ A_3 \; \epsilon^{0.8}}_{\substack{ \text{führend} \\ \text{ nichtanalytisch} \\ \text{ (kritisch)} }}
 + \underbrace{ A_4 \epsilon^{1.7}}_\text{Korrekturen}
 \end{align*}
-\underline{wichtig:} Universalität \\
-\underline{Skalenhypothese:} Freie Energie ist eine verallgemeinerte, homogene Funktion: \begin{align}
+\begin{align*}
+\to A(\epsilon ) \propto A > \epsilon^{0.8}
+\end{align*}
+Kritische Exponenten haben Eigenschaften, die sie interessant machen:
+\begin{enumerate}
+\item[1)] Sie sind nicht unabhängig, d.h. es gibt sogenannte Skalengesetze %TODO words missing! 
+\item[2)] Universalität, Werte hängen nur von räumlicher Dimension und Symmetrie des Hamiltonoperators ab und nicht von Stärke der Wechselwirkungen, ...
+\end{enumerate}
+%TODO 3 images
+
+Moderne Theorie der Phasenübergänge 2.Ordnung: \\
+Verschiedene physikalische Systeme können dieselben kritischen Exponenten aufweisen! %TODO kommt dieser satz hier hin?
+Bestimmung der kritischen Exponenten aus:
+\begin{enumerate}
+\item[a)] exakte Lösung (2d-Ising-Model)
+\item[b)]Reihenentwicklung
+\item[c)]Computersimulation
+\item[d)]Experimente
+\end{enumerate}
+$\Rightarrow$ Bestätigung des Konzepts der Universalität. Beweis später, zunächst werden Beziehungen zwischen den Exponenten hergeleitet. Die Folgen aus: \\
+\textbf{Skalenhypothese:}  (\textsc{Widom, Griffith} 1965) als Postulat \\
+Freie Energie ist eine verallgemeinerte, homogene Funktion der Variablen $\epsilon, B$:
+ \begin{align}
 G(a^{x_1} B, a^{x_2} \epsilon)= a \; G(B, \epsilon)
 \end{align} 
-für führenden nicht-analytischen Anteil. \\
-'normal' wäre: $U( \lambda S, \lambda V, \lambda N) = \lambda U(S,V,N))$ \\
-Beispiel: $f(x) = x^{0,5} \Rightarrow f(bx) = (bx)^{0,5} = b^{0,5} x^{0,5}$ \\ \begin{align*}
-b=a^2 \;  \Aboxed{ f(a^2 x)=  a x^{0,5} = a f(x)}
+für führenden nicht-analytischen Anteil. Gültig in unmittelbarer Nähe des kritischen Punktes $(\epsilon, B) =0$ für den singulären Anteil der freien Energie. Beachte, dass $G$ eine gerade Funktion von $B$ ist, $\epsilon = \frac{T-T_c}{T_c}$ kann beide Vorzeichen haben!\\
+\textbf{Beispiel:}
+\begin{align*}
+f(x) = x^{0.5} \quad & \Leftrightarrow \quad f(bx) = (bx)^{0.5} = b^{0.5} \; x^{0.5} \\
+b= y^2 \quad &\Rightarrow \Aboxed{ f(a^2 x) = a \; x^{0.5} = a f(x) }
 \end{align*}
-'normal' f analytisch $\Rightarrow f(x)= f(0) + f'(0)x + .... \Rightarrow \Delta f(x) = f(x) - f(0) = f'(0)x+...$
-\begin{align}
-\Rightarrow \Aboxed{ \Delta f(ax) = f'(0) ax= a \Delta f(x)}
-\end{align}
+'Normal' wäre: 
+$U( \lambda S, \lambda V, \lambda N) = \lambda U(S,V,N))$,  f analytisch
+\begin{align*}
+f(x) &= f(0) + f'(0)x + .... \\
+ \Delta f(x) &= f(x) - f(0) = f'(0)x+... \\
+\Delta f(ax) &= f'(0) ax +... \\
+\Rightarrow \Aboxed{ \Delta f(ax) &= a \Delta f(x)}
+\end{align*} 
+\textit{Erinnerung an 'Thermodynamik'}
+Wir verdoppeln ein System sodass  %TODO image
+\begin{align*}
+\Rightarrow \quad \begin{cases}
+U_{ges}= 2U \\
+V_{ges} = 2V \\
+N_{ges} = 2N \\
+S_{ges} = 2S 
+\end{cases}
+\quad \quad \mbox{ also } U(2S, 2V, 2N) = 2 U (S,V,N)
+\end{align*}
+
 \underline{Folgerungen:} setze $ a= \vert \epsilon \vert ^{-1/x^2}$
 \begin{align}
 \Rightarrow G\left(\vert \epsilon \vert ^{-\frac{x_1}{x_2}} B, \underbrace{ \frac{\epsilon}{\vert \epsilon \vert}}_{\pm 1} \right) = \vert \epsilon \vert^\frac{-1}{x^2} G(B, \epsilon)
