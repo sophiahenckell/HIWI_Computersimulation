@@ -1273,7 +1273,7 @@ $\Rightarrow$ Bestätigung des Konzepts der Universalität. Beweis später, zun�
 \textbf{Skalenhypothese:}  (\textsc{Widom, Griffith} 1965) als Postulat \\
 Freie Energie ist eine verallgemeinerte, homogene Funktion der Variablen $\epsilon, B$:
  \begin{align}
-G(a^{x_1} B, a^{x_2} \epsilon)= a \; G(B, \epsilon)
+G(a^{x_1} B, a^{x_2} \epsilon)= a \; G(B, \epsilon) \quad \quad \forall a > 0 \label{SkalenHypothese}
 \end{align} 
 für führenden nicht-analytischen Anteil. Gültig in unmittelbarer Nähe des kritischen Punktes $(\epsilon, B) =0$ für den singulären Anteil der freien Energie. Beachte, dass $G$ eine gerade Funktion von $B$ ist, $\epsilon = \frac{T-T_c}{T_c}$ kann beide Vorzeichen haben!\\
 \textbf{Beispiel:}
@@ -1281,96 +1281,190 @@ für führenden nicht-analytischen Anteil. Gültig in unmittelbarer Nähe des kr
 f(x) = x^{0.5} \quad & \Leftrightarrow \quad f(bx) = (bx)^{0.5} = b^{0.5} \; x^{0.5} \\
 b= y^2 \quad &\Rightarrow \Aboxed{ f(a^2 x) = a \; x^{0.5} = a f(x) }
 \end{align*}
-'Normal' wäre: 
-$U( \lambda S, \lambda V, \lambda N) = \lambda U(S,V,N))$,  f analytisch
+'Normal' wäre: f analytisch
 \begin{align*}
 f(x) &= f(0) + f'(0)x + .... \\
  \Delta f(x) &= f(x) - f(0) = f'(0)x+... \\
 \Delta f(ax) &= f'(0) ax +... \\
 \Rightarrow \Aboxed{ \Delta f(ax) &= a \Delta f(x)}
 \end{align*} 
-\textit{Erinnerung an 'Thermodynamik'}
-Wir verdoppeln ein System sodass  %TODO image
+\textit{Erinnerung an 'Thermodynamik'} \\
+\textit{Wir verdoppeln ein System sodass  %TODO image
 \begin{align*}
-\Rightarrow \quad \begin{cases}
+\begin{rcases}
 U_{ges}= 2U \\
 V_{ges} = 2V \\
 N_{ges} = 2N \\
 S_{ges} = 2S 
-\end{cases}
-\quad \quad \mbox{ also } U(2S, 2V, 2N) = 2 U (S,V,N)
+\end{rcases}
+\quad  \mbox{ also } U(2S, 2V, 2N) = 2 U (S,V,N)
 \end{align*}
+allgemein
+\begin{align*}
+U( \lambda S, \lambda V, \lambda N) = \lambda U(S,V,N))
+\end{align*}
+die innere Energie $U$ ist eine homogene Funktion $1.$Grades!} \\
 
-\underline{Folgerungen:} setze $ a= \vert \epsilon \vert ^{-1/x^2}$
+\textbf{Folgerungen aus der Skalenhypothese (\ref{SkalenHypothese}):} \\
+setze $ a= \vert \epsilon \vert ^{-1/x^2}$
 \begin{align}
-\Rightarrow G\left(\vert \epsilon \vert ^{-\frac{x_1}{x_2}} B, \underbrace{ \frac{\epsilon}{\vert \epsilon \vert}}_{\pm 1} \right) = \vert \epsilon \vert^\frac{-1}{x^2} G(B, \epsilon)
+\Rightarrow G\; (\vert \epsilon \vert ^{-\frac{x_1}{x_2}} \;  B, \underbrace{ \frac{\epsilon}{\vert \epsilon \vert}}_{\substack{ +1 \; (T>T_c) \\ -1 \; (T<T_c)}} ) \; = \; \vert \epsilon \vert^\frac{-1}{x^2} \; G(B, \epsilon)
 \end{align}
-\underline{Definition:} Skalenfunktion: \begin{align}
-f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) = G \left( \epsilon^\frac{-x_1}{x_2} B, \pm 1 \right)
+\textbf{Definition:} Skalenfunktion: 
+\begin{align}
+f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) = G \left( \epsilon^{-\frac{x_1}{x_2}} \; B, \pm 1 \right)
 \end{align} 
 \underline{Skalenhypothese:}
 \begin{align}
-G(B,\epsilon) = \vert \epsilon \vert ^\frac{1}{x_2} \; f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \\
-G(B,\epsilon) = \vert B \vert ^\frac{1}{x_1} \; g \left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1}} \right)
+G(B,\epsilon) &= \vert \epsilon \vert ^\frac{1}{x_2} \; f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \\
+G(B,\epsilon) &= \vert B \vert ^\frac{1}{x_1} \; g^\pm \left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1}} \right)
 \end{align}
-\begin{itemize}
-\item[•]Eigenschaften der Skalarfunktionen $g,f$: G soll am kritischen Punkt endlich bleiben $\Rightarrow f^\pm (0)$ und $g(0)$ bleiben endlich (und ihre Ableitungen) $\Rightarrow \alpha, \beta, \gamma, \delta$ lassen sich durch $x_1, x_2$ ausdrücken: \\
-\underline{spezifische Wärme:} \begin{align}
-G(0, \epsilon)= \vert \epsilon \vert
-^\frac{1}{x_2} f^\pm (0) \; , \; B=0 \\
-\Rightarrow c \propto \frac{\partial^2 G}{\partial \epsilon^2} \propto \vert \epsilon \vert ^{\frac{1}{x_2}-2}= \vert \epsilon \vert ^{-\alpha} \; , \; \Rightarrow \alpha = 2- \frac{1}{x_2} 
-\end{align}
-\underline{spontane Magnetisierung:} 
-\begin{align}
-M(0,\epsilon) \propto \frac{\partial G(B, \epsilon)}{\partial B} \vert \epsilon \vert ^\frac{1}{x_2} f^\pm \left(\frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \propto \vert \epsilon \vert ^\frac{1}{x_2} \frac{1}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \propto \vert \epsilon \vert ^\beta \Rightarrow \beta = \frac{1-x_1}{x_2}
-\end{align}
-\underline{Suszeptibilität:}
-\begin{align}
-\xi = \frac{\partial M}{\partial B} \Bigg\vert_{B \to o}
- \propto \vert \epsilon \vert ^\frac{1}{x_2} \frac{1}{\vert \epsilon \vert ^\frac{2 x_1}{x_2}} \Rightarrow \gamma = \frac{2x_1 -1}{x_2}
-\end{align}
-\underline{Magnetisierung für $\epsilon =0$:}
-\begin{align}
-M(B,\epsilon) = - \frac{\partial G}{\partial B} = - \frac{\partial}{\partial B} \left[ \vert B \vert ^\frac{1}{x_1} g\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1}} \right) \right] \\
-= - B^{\frac{1}{x_1}-1} g\left( \frac{\epsilon}{B^\frac{x_2}{x_1}}\right) - \vert B \vert ^\frac{1}{x_1} \frac{x_2}{x_1} \frac{\epsilon}{\vert B \vert ^{\frac{x_2}{x_1}+1} } g'\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1} }\right) \\
-= - B^{\frac{1}{x_1}-1} \left[ 
-g\left( \frac{\epsilon}{B^\frac{x_2}{x_1}}\right) 
-- \frac{x_2}{x_1} \frac{\epsilon}{\vert B \vert ^{\frac{x_2}{x_1}} } g'\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1} }\right) \right] \\
-\Rightarrow \Aboxed{M(B,\epsilon)= B^\frac{1}{\delta} \text{\~{g}} \left( \frac{\epsilon}{B^\frac{1}{\beta \delta}} \right)  }\\
-\frac{M(B,\epsilon)}{\underbrace{B^\frac{1}{\delta}}_\text{Grösse hängt von einem Feld ab}}=  \text{\~{g}} \left( \frac{\epsilon}{\underbrace{ B^\frac{1}{\beta \delta}}_{ \substack{ \text{hängt von} \\ \text{zwei Feldern} \\ \text{ ab}}}} \right) 
-\end{align} %TODO formel schöner
-\underline{vorher:} $M = M(B,\epsilon)$ \\ %TODO image
-\underline{Crossover-Verhalten} \\
-Skalarverhalten: \begin{align}
-G(B,\epsilon)=& \vert \epsilon \vert ^\frac{1}{x_2} f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \\
-G(B,\epsilon)= & \vert B \vert ^\frac{1}{x_1} g \left( \frac{\epsilon}{B ^\frac{x_1}{x_2}} \right) \; , \; B>0 \\
-\Rightarrow & B=0: \; G(0,\epsilon) \propto \vert \epsilon \vert ^\frac{1}{x_2} \propto \vert \epsilon \vert^{2- \alpha} \\
-\Rightarrow & B \neq 0: \mbox{ solange } \frac{B}{\vert \epsilon \vert ^\frac{x_2}{x_1}} << 1 \Leftrightarrow B< \vert \epsilon \vert ^\frac{x_1}{x_2} \\
-& \mbox{ gleiches kritisches Verhalten wie bei } B=0. \frac{B}{\vert \epsilon \vert^\frac{x_1}{x_2}} \approx 1 
-\end{align} ändert sich das Verthalten. $\to$ 'Crossover' zu anderem (oder keinem) kritischen Verhalten. \\
-crossover für $B \approx \vert \epsilon \vert^\frac{x_1}{x_2} = \vert \epsilon \vert ^\Phi$
-\subsection{Finite size scaling}
-betrachten $\frac{1}{L}$ als Skalenfeld.  \\
-Ansatz: $G(B,\epsilon, \frac{1}{L}) = \vert \epsilon \vert^{2-\alpha} f \left( \frac{\frac{1}{L}}{\vert \epsilon \vert^\Phi}\right) \; , \; \Phi = \mbox{ Crossover }$
-erwarten, dass $G$ nur von dimensionaslosten Größen abhöngt:
-\begin{align}
-\frac{•}{•}
-\end{align} %TODO %TODO inhalt fehlt
-\item[•] $L >> \xi (T) \Rightarrow$ wie unendliches System
-\item[•] $ L \approx \xi (T)$ crossover $\vert \epsilon \vert \propto L^\frac{-1}{\nu}$
-\item[•]$L<< \xi(T)$ Singularitäten verschwinden
-\end{itemize}
-\underline{Beispiel:} $B=0$, spezifische Wärme: $c\propto \frac{\partial^2 G}{\partial \epsilon^2} \propto \vert \epsilon \vert^{-\alpha} f^\pm \left( \frac{1}{L \vert \epsilon \vert^\nu}\right) \propto L^\frac{\alpha}{\nu} (L^\frac{1}{\nu} \vert \epsilon \vert)^{-\alpha} f^\pm() \\
-\Rightarrow \frac{c}{L^\frac{\alpha}{\nu}} = \text{\~{f}} (L^\frac{1}{\nu} \epsilon)$ und $c \propto L^\frac{\alpha}{\nu}$ bei $T_c$.\\
-\underline{ohne Beweis:}$ L^\frac{\beta}{\nu} M(\epsilon,L)=f(L^\frac{1}{\nu} \epsilon)$
+Letztere Gleichung erhält man durch tauschen von $(\epsilon, x_2)$ mit $(B,x_1)$. Außerdem ist
+\begin{align*}
+g^\pm \left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1}} \right) = G\left( \frac{B}{\vert B \vert }, \; \frac{\epsilon}{\vert B \vert^\frac{x_2}{x_1}}\right)
+\end{align*}
+da $G$ eine gerade Funktion von $B$ ist, ist $\pm$ überflüssig.\\
 
- 
-zu jedem $\vec{S}$ mit $M(\vec{S})$ gibt es einen (bei$ B=0$) gleichwahrscheinlichen Zustand $\vec{S}'= -\vec{S}$ mit $M(S') = - M(\vec{S})$. \\
-$\Rightarrow$ es ist $\langle M(T,B=0)  \rangle \geq 0$ (Statistisches Mittel $\approx$ MC-Mittel \\
-\underline{Symmetriebruch} nur für: $ \langle M(T,B=0) \rangle = lim_{B \to 0} lim_{N \to \infty} \langle M(T,B) \rangle $
-auch experimentell beobachtbar: endliches System fluktuiert thermisch $(\pm M),$ sodass im zeitmittel $M \to 0$
-\\
-\underline{Superparamagnetismus} \\
+\textbf{Eigenschaften der Skalenfunktionen $g,f$:} \\
+G soll am kritischen Punkt ($B\to 0, \; \epsilon \to 0$) endlich bleiben\\
+$\Rightarrow f^\pm (0)$ und $g(0)$ bleiben endlich (und ihre Ableitungen) \\
+$\Rightarrow \alpha, \beta, \gamma, \delta$ lassen sich durch $x_1, x_2$ ausdrücken: \\
+\begin{itemize}
+\item \textbf{spezifische Wärme:} \begin{align}
+G(0, \epsilon) &= \vert \epsilon \vert
+^\frac{1}{x_2}\;  f^\pm (0) \quad \quad \quad  (B=0) 
+\end{align}
+\begin{align}
+&\Rightarrow \;  c \; \propto \;  \frac{\partial^2 G}{\partial \epsilon^2} \; \propto \; \vert \epsilon \vert ^{\frac{1}{x_2}-2} \; = \; \vert \epsilon \vert ^{-\alpha}  \\
+& \Rightarrow \;  \alpha = 2- \frac{1}{x_2} 
+\end{align}
+(Die Exponenten sind allgemein auf beiden Seiten gleich.)
+
+\item \textbf{spontane Magnetisierung:} 
+\begin{align}
+M(0,\epsilon) \;  \propto \;  \frac{\partial G(B, \epsilon)}{\partial B} \Biggr\vert_{B \to 0} \propto \; \frac{\partial }{\partial B} \Biggr\vert_{B \to 0}  
+ \vert \epsilon \vert ^\frac{1}{x_2} f^\pm \left(\frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \propto \; \vert \epsilon \vert ^\frac{1}{x_2} \frac{1}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \; \propto \;  \vert \epsilon \vert ^\beta 
+ \end{align}
+ \begin{align}
+ \Rightarrow \beta = \frac{1-x_1}{x_2}
+\end{align}
+\item \textbf{Suszeptibilität:}
+\begin{align}
+\chi = \frac{\partial M}{\partial B} \Bigg\vert_{B \to 0}
+ \propto \vert \epsilon \vert ^\frac{1}{x_2} \frac{1}{\vert \epsilon \vert ^\frac{2 x_1}{x_2}} = \vert \epsilon \vert ^\gamma \quad \quad \Rightarrow \gamma = \frac{2x_1 -1}{x_2}
+\end{align}
+\item \textbf{Magnetisierung:} (für $\epsilon =0$)
+\begin{align*}
+G(B, 0 ) = \vert B \vert ^\frac{1}{x_1} \; g\left( \frac{E}{\vert B \vert^\frac{x_1}{x_2}} \right)
+\end{align*}
+\begin{align}
+M \; \propto \;  \frac{\partial G(B,0)}{\partial B} \; \propto \; \vert B \vert ^{\frac{1}{x_1} - 1}
+\end{align}
+\end{itemize}
+Da sich $\alpha, \; \beta, \; \gamma, \; \delta$ (die sogenannten \textit{thermischen Exponenten}) durch $x_1, \; x_2$ ausdrücken lassen, gibt es offensichtlich Zusammenhänge. Mann nennt sie die \\
+\begin{itemize}
+\item \textbf{Skalengesetze:}
+\begin{align*}
+\underbrace{\alpha = 2 - \frac{1}{x_2} \quad \quad \quad \quad \beta = \frac{1- x_1}{x_2} \quad \quad \quad \quad \gamma = \frac{2x_1 - 1}{x_2}} 
+\end{align*}
+\begin{align}
+\Aboxed{ \alpha + 2 \beta + \gamma = 2 } \quad \mbox{'\textbf{Rushbrooke-Gleichung}'}
+\end{align}
+und \begin{align*}
+\delta= \frac{x_1}{1-x_1}  \quad \quad \Rightarrow \delta - 1 = \frac{x_1 - 1 + x_1}{1 - x_1} = \frac{2 x_1 - 1}{1 - x_1}
+\end{align*}
+\begin{align}
+\Aboxed{ \gamma = \beta \; (\delta - 1)} \quad \mbox{'\textbf{Widom-Gleichung}'}
+\end{align}
+\end{itemize}
+Weitere Folgerungen sind
+\begin{itemize}
+\item \textbf{magnetische Zustandsgleichung:}
+\begin{align}
+M(B,\epsilon)& = - \frac{\partial G}{\partial B} = - \frac{\partial}{\partial B} \left[ \vert B \vert ^\frac{1}{x_1} \; g\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1}} \right) \right] \\
+&= - B^{\frac{1}{x_1}-1} \; g\left( \frac{\epsilon}{B^\frac{x_2}{x_1}}\right) - \vert B \vert ^\frac{1}{x_1} \; \frac{x_2}{x_1} \; \frac{\epsilon}{\vert B \vert ^{\frac{x_2}{x_1}+1} }  \; \; g'\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1} }\right) \\
+&= - B^{\frac{1}{x_1}-1} \left[ 
+g\left( \frac{\epsilon}{B^\frac{x_2}{x_1}}\right) 
+- \frac{x_2}{x_1} \; \frac{\epsilon}{\vert B \vert ^{\frac{x_2}{x_1}} } \; \;g'\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1} }\right) \right] 
+\end{align}
+\begin{align}
+\Rightarrow \Aboxed{M(B,\epsilon)= B^\frac{1}{\delta} \; \; \tilde{g} \left( \frac{\epsilon}{B^\frac{1}{\beta \delta}} \right)  } \label{Magnetisierung}
+\end{align}
+\begin{align}
+M(B,\epsilon)
+= \underbrace{B^\frac{1}{\delta}}_{ \substack{ \text{Grösse hängt} \\ \text{ von einem Feld} \\ \text{ab}}} \cdot \; \text{\~{g}} \Big( \frac{\epsilon}{\underbrace{ B^\frac{1}{\beta \delta}}_{ \substack{ \text{hängt von} \\ \text{zwei Feldern} \\ \text{ ab}}}} \Big) 
+\end{align} 
+\begin{align*}
+\mbox{vorher: } \; & M = M(B,\epsilon) \quad \text{ \textbf{eine} Größe hängt ab von \textbf{zwei} Parametern }\\
+\mbox{jetzt: }\; & M = M(B,\epsilon) \quad \text{ \textbf{eine} Größe hängt ab von \textbf{einem} Parameter}
+\end{align*}
+Dies führt zum sogenannten \textbf{scaling plot}: \\
+
+%TODO image
+
+\item \textbf{Crossover-Verhalten} \\
+Skalenverhalten der freien Energie:
+\begin{align}
+G(B,\epsilon) \; =& \;  \vert \epsilon \vert ^\frac{1}{x_2} \; f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \\
+G(B,\epsilon) \; =  & \; \vert B \vert ^\frac{1}{x_1}\;  \; g \left( \frac{\epsilon}{B ^\frac{x_2}{x_2}} \right) \quad \quad \quad (B>0) \\
+\end{align}
+\begin{align}
+\Rightarrow & B=0: \quad  G(0,\epsilon) \propto \vert \epsilon \vert ^\frac{1}{x_2} \propto \vert \epsilon \vert^{2- \alpha} \\
+\Rightarrow & B \neq 0: \quad \mbox{solange } \frac{B}{\vert \epsilon \vert ^\frac{x_2}{x_1}} \ll 1 \quad \Leftrightarrow \quad B< \vert \epsilon \vert ^\frac{x_1}{x_2} \end{align}
+Für $B\neq 0$ sieht man also ein gleiches kritisches Verhalten wie bei $ B=0.$ Erst wenn $ B/ \vert \epsilon \vert^\frac{x_1}{x_2} \approx 1 $ ändert sich das Verhalten.  $\to$ 'Crossover' zu anderem (oder keinem) kritischen Verhalten. Crossover setzt ein für $B \approx \vert \epsilon \vert^\frac{x_1}{x_2} = \vert \epsilon \vert ^{\Phi_B}$ \\
+Für einen Ferromagnet im Feld beobachtet man jenseits des Crossover-Bereichs kein kritisches Verhalten. Es gibt aber erheblich interessantere Fälle, wo in Abhängigkeit von einem unsichtbaren %TODO wort stimmt?
+ Systemparameter das kritische Verhalten wechselt (von einem zu einem anderen).
+\end{itemize}
+%TODO images
+\subsection{Finite size scaling}
+Phasenübergänge werden in einem endlichen System unterdrückt, weil $ \xi < L$. (Liniendimension %TODO wort?
+des Systems). \\
+Wir betrachten $\frac{1}{L}$ als Skalenfeld. (parameter, scaling field) \\
+S-Ansatz: 
+\begin{align}G(\xi, \frac{1}{L}) = \vert \epsilon \vert^{2-\alpha} \; f \left( \frac{\frac{1}{L}}{\vert \epsilon \vert^\Phi}\right) \; , \quad \quad \Phi = \mbox{ Crossover }
+\end{align}
+Wir erwarten, dass $G$ nur von dimensionslosen Größen abhängt:
+
+\begin{align}
+\frac{L}{\xi(T)} \quad \Rightarrow \quad \frac{\frac{1}{L}}{\frac{1}{\xi}} \; \propto \;  \frac{\frac{1}{L}}{\vert \epsilon \vert ^\nu} \quad \Rightarrow \quad \Phi = \nu
+\end{align} Daraus folgt der allgemeine Ansatz:
+\begin{align}
+G(B, \epsilon, \frac{1}{L}) = \vert \epsilon \vert^{2-\alpha} \;  f^\pm \left( \frac{B}{\vert \epsilon \vert ^{\beta \delta}} ,\; \frac{1}{L \vert \epsilon \vert^\nu}\right) 
+\end{align}
+Betrachte: $\epsilon$ ist bezogen auf das unterschiedliche System $ \epsilon = \frac{T-T_c}{T_c}$ 
+\begin{itemize}
+\item[•] $L \gg \xi (T) \quad \Rightarrow \; L \vert \epsilon \vert ^\nu \gg  1,$ also verhält es sich wie ein unendliches System
+\item[•] $ L \approx \xi (T) \quad \, \Rightarrow \; \vert \epsilon \vert \propto L^\frac{-1}{\nu}$ crossover 
+\item[•]$L\ll \xi(T) \quad \Rightarrow \;$ Singularitäten verschwinden, kein Phasenübergang
+
+\end{itemize}
+\textbf{Beispiel:} ($B=0$, spezifische Wärme:) 
+\begin{align*}
+c \; \propto \;  \frac{\partial^2 G}{\partial \epsilon^2} \; \propto \; \vert \epsilon \vert^{-\alpha} \;  f^\pm \left( \frac{1}{L \vert \epsilon \vert^\nu}\right) 
+\; \propto \;  L^\frac{\alpha}{\nu} (L^\frac{1}{\nu} \vert \epsilon \vert)^{-\alpha} \; f^\pm \left( \frac{1}{L \vert \epsilon \vert ^\nu }\right) 
+\end{align*}
+\begin{align*}
+\Rightarrow \frac{c}{L^\frac{\alpha}{\nu}} = \tilde{f}^\pm \left( L^\frac{1}{\nu} \vert \epsilon \vert \right) = \tilde{f} \left( L^\frac{1}{\nu} \epsilon \right), \quad \mbox{ und } \quad c \propto L^\frac{\alpha}{\nu} \tag{bei $T_c$}
+\end{align*} 
+Andere Beispiele folgen in der Übung. 
+Ohne Beweis gilt weiterhin: 
+\begin{align*}
+L^\frac{\beta}{\nu} M(\epsilon,L)=\underbrace{f}_{\substack{\text{ander-} \\ \text{es $f$}}}(L^\frac{1}{\nu} \epsilon) \quad \Rightarrow \quad M(0,L) \; = \; L^{-\frac{\beta}{\nu}} \; f(0)
+\end{align*}
+ %TODO  image
+ \subsubsection*{Wie berechnet man $M(T)$ im System endlicher Größe?}
+zu jedem Zustand $\vec{S}$ mit $M(\vec{S})$ gibt es einen (bei $ B=0$) gleichwahrscheinlichen Zustand $\vec{S}'= -\vec{S}$ mit $M(S') = - M(\vec{S})$. \\
+$\Rightarrow$ es ist 
+\begin{align*}
+M(T,B=0) \; = \;  \frac{1}{N} \sum_{i=1}^N \underbrace{\langle S_i \rangle}_{\substack{ \text{thermisches} \\ \text{ Mittel} \\ \widehat{=} \text{MC- Mittel}}} \; = \; 0 \quad \quad \quad \forall N
+\end{align*} 
+Der \textbf{Symmetriebruch} findet nur statt für: 
+\begin{align}
+\Aboxed{\langle M(T,B=0) \rangle = \lim_{B \to 0} \lim_{N \to \infty} \langle M(T,B) \rangle }
+\end{align} 
+Dies ist auch experimentell beobachtbar: endliche Systeme fluktuieren thermisch $(\pm M),$ sodass sie im Zeitmittel 'nicht-magnetisch' erscheinen $M \to 0$ \\
+$\to$\textbf{Superparamagnetismus} \\ ($\Rightarrow$ Bedetung für Festplatten diskutieren!) \\
+Die Reihenfolge der Limites oben kann man nicht numerisch durchführen. Daher rechnet man:
 \underline{Zeitskala:} $\tau = \tau_0 e^\frac{\Delta E}{k_B T}$ \\
 \underline{Energieverbrauch:} $\Delta E(L^n)$ (n meint Dimension: Oberfläche, Volumen...)\\ %TODO spinbild
 $\Rightarrow$ zeitabhängiger (Algorithmus-abhängige) Ordungsparameterkurven. \\

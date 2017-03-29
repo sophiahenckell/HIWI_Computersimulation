@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  28 MAR 2017 18:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  29 MAR 2017 11:48
 entering extended mode
 **./Skript_Überarbeitung.tex
 (Skript_Überarbeitung.tex
@@ -772,112 +772,112 @@ Overfull \hbox (1.41315pt too wide) in paragraph at lines 1125--1125
 [] 
  []
 
-[25] [26] [27] [28] [29]
+[25] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 1306--1307
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
+ []
 
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1325--1327
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
-
-
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
-
-
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
+ []
 
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
+Underfull \hbox (badness 10000) in paragraph at lines 1328--1332
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 1364--1365
+
+ []
 
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
+Underfull \hbox (badness 10000) in paragraph at lines 1400--1402
 
+ []
 
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
-
-
-LaTeX Warning: Command \textbullet invalid in math mode on input line 1358.
-
-[30]
-Overfull \hbox (6.84203pt too wide) in paragraph at lines 1391--1391
+[30] [31] [32]
+Overfull \hbox (6.84203pt too wide) in paragraph at lines 1484--1484
 []\OT1/cmr/bx/n/14.4 Kontinuierliche Frei-heits-gra-de: 'x-y' und Heisenbergs-M
 odell 
  []
 
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 1455--1458
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1548--1551
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1455--1458
+Underfull \hbox (badness 10000) in paragraph at lines 1548--1551
 
  []
 
 
-LaTeX Warning: Command \ss invalid in math mode on input line 1460.
+LaTeX Warning: Command \ss invalid in math mode on input line 1553.
 
 
-Overfull \hbox (25.5427pt too wide) in paragraph at lines 1468--1470
+Overfull \hbox (25.5427pt too wide) in paragraph at lines 1561--1563
 []\OT1/cmr/m/n/12 definiere Nach-bar-schaft, z.B via n[]achste Nach-barn (je na
 ch fall viel-leicht auch []ubern[]achste
  []
 
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 1512--1513
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1605--1606
 
  []
 
-[33] [34] [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1648--1650
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1654--1656
-
- []
-
-[36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1749--1752
+[35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 1741--1743
 
  []
 
 
-Overfull \hbox (1.62202pt too wide) in paragraph at lines 1754--1755
+Underfull \hbox (badness 10000) in paragraph at lines 1747--1749
+
+ []
+
+[38] [39]
+Underfull \hbox (badness 10000) in paragraph at lines 1842--1845
+
+ []
+
+
+Overfull \hbox (1.62202pt too wide) in paragraph at lines 1847--1848
 []\OT1/cmr/m/n/12 Teilchen k[]onnen in-ne-re Frei-heits-gra-de ha-ben. Wird im 
 ein-fach-sten Fall ver-nachl[]assigt
  []
 
-[38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1827--1828
+[40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 1920--1921
 
  []
 
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 1874--1875
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 1967--1968
 
  []
 
-[41] [42] [43] [44] [45] [46]
-Underfull \hbox (badness 10000) in paragraph at lines 2132--2134
+[43] [44] [45] [46] [47] [48]
+Underfull \hbox (badness 10000) in paragraph at lines 2225--2227
 
  []
 
-[47]
-Underfull \hbox (badness 10000) in paragraph at lines 2187--2189
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 2280--2282
 
  []
 
-[48] (Skript_Überarbeitung.aux)
+[50] (Skript_Überarbeitung.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4036 strings out of 493334
- 54222 string characters out of 3139675
- 139024 words of memory out of 3000000
- 7471 multiletter control sequences out of 15000+200000
+ 4038 strings out of 493334
+ 54255 string characters out of 3139675
+ 137046 words of memory out of 3000000
+ 7473 multiletter control sequences out of 15000+200000
  15169 words of font info for 62 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,22n,25p,659b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -903,9 +903,9 @@ nts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1
 /public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/am
 sfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfon
 ts/symbols/msbm10.pfb>
-Output written on Skript_Überarbeitung.pdf (48 pages, 529970 bytes).
+Output written on Skript_Überarbeitung.pdf (50 pages, 536232 bytes).
 PDF statistics:
- 255 PDF objects out of 1000 (max. 8388607)
+ 262 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
