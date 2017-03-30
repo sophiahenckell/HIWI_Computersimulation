@@ -18,6 +18,8 @@
 \oddsidemargin -0.0cm
 
 \usepackage{epsf}
+\usepackage{pdfpages} 
+
 
 \begin{document}
 \section*{Vorwort}
@@ -1464,130 +1466,226 @@ Der \textbf{Symmetriebruch} findet nur statt für:
 \end{align} 
 Dies ist auch experimentell beobachtbar: endliche Systeme fluktuieren thermisch $(\pm M),$ sodass sie im Zeitmittel 'nicht-magnetisch' erscheinen $M \to 0$ \\
 $\to$\textbf{Superparamagnetismus} \\ ($\Rightarrow$ Bedetung für Festplatten diskutieren!) \\
-Die Reihenfolge der Limites oben kann man nicht numerisch durchführen. Daher rechnet man:
-\underline{Zeitskala:} $\tau = \tau_0 e^\frac{\Delta E}{k_B T}$ \\
-\underline{Energieverbrauch:} $\Delta E(L^n)$ (n meint Dimension: Oberfläche, Volumen...)\\ %TODO spinbild
-$\Rightarrow$ zeitabhängiger (Algorithmus-abhängige) Ordungsparameterkurven. \\
-\underline{besser:} $M(T,B=0) = \sqrt{\langle \left( \frac{1}{N} \sum_{i=1}^N S_i \right)^2 \rangle} = \sqrt{\langle S^2 \rangle}$ \\
-hiermit wird finite-size Analysis durchgeführt:
-\begin{itemize}
-\item[•] innere Energie: $U= \langle H \rangle$
-\item[•] spezifische Wärme: $c_v= \frac{1}{k_B T} \left( \langle H ^2 \rangle - \langle H \rangle^2 \right) $
-\item[•] Binder-Kummulante (4$^{th}$ order cummulant) zur Bestimmung von $T_c: U_L = 1-  \frac{\langle S^4 \rangle}{3 \langle S^2 \rangle^2}$ mit folgenden Eigenschaften:
-\begin{enumerate}
-\item $T > T_c , L \gg \xi: \; U_L \to 0 \approx L^{- \alpha}$
-\item $ T< T_c, L \gg \xi: \; U_L \to \frac{2}{3}$
-\item $L \ll \xi: U_L \to U^*, L, \epsilon$ unabhängiger Zahlenwert
-\end{enumerate}
 
+\textit{Zeitskala:} $\tau = \tau_0 e^\frac{\Delta E}{k_B T}$ \\
+\textit{Energieverbrauch:} $\Delta E(L^n)$ (n meint Dimension: Oberfläche, Volumen...)\\ %TODO spinbild
+$\Rightarrow$ zeitabhängiger (Algorithmus-abhängige) Ordungsparameterkurven. \\
+Die Reihenfolge der Limites oben kann man nicht numerisch durchführen. Daher rechnet man: \\
+ \begin{align}
+  M(T,B=0) \; = \; \sqrt{\langle \left( \frac{1}{N} \sum_{i=1}^N S_i \right)^2 \rangle} = \sqrt{\langle S^2 \rangle} \label{EinfachereFormel}
+\end{align} 
+Mit (\ref{EinfachereFormel}) wird dann die Finite-Size-Scaling Analyse durchgeführt. 
+\begin{itemize}
+\item[•] innere Energie: \begin{align*}
+U= \langle H \rangle
+\end{align*}  
+\item[•] spezifische Wärme:
+\begin{align*}
+ c_v= \frac{\partial U}{\partial T} \bigr\vert _{V,N}\; =\frac{1}{k_B T^2} \left( \langle H ^2 \rangle - \langle H \rangle^2 \right) 
+\end{align*}
+\item[•] Binder-Kummulante (4$^{th}$ order cummulant) zur Bestimmung von $T_c:$ 
+\begin{align*}
+U_L = 1-  \frac{\langle S^4 \rangle}{3 \langle S^2 \rangle^2}
+\end{align*}
+ mit folgenden Eigenschaften:
+\begin{enumerate}
+\item $T > T_c , \; L \gg \xi:  \quad \; U_L \to 0 \approx L^{- \alpha}$
+\item $ T< T_c,  \; L \gg \xi: \quad \; U_L \to \frac{2}{3}$
+\item $L \ll \xi: \quad   \quad  \quad  \quad \quad U_L \to U^* \; (L, T$ unabhängiger Zahlenwert)
+\end{enumerate}
+%TODO image doppelbild
 \end{itemize}
 
  \subsection{Kontinuierliche Freiheitsgrade: 'x-y' und Heisenbergs-Modell} \label{Kapitel2.9}
- Heisenberg-Ferromagnet mit axialer Anisotropie: 
+ Bislang betrachten wir Ising-Spins mit $ \uparrow \Rightarrow \downarrow$. Versuchs... %TODO word
+ des Monte-Carlo-Algorithmus 'offensichtlich'. Wir betrachten jetzt (als Beispiel) Spinmodelle mit kontinuierlichen Freiheitsgraden.\\ 
+ $3d$ Heisenberg-Ferromagnet mit axialer Anisotropie: 
  \begin{align}
- H= - J \sum_{i,j} \vec{S}_i \vec{S}_j - K \sum_i S_{iz}^2 \; , \; \vert \vec{S} \vert
+ H= - J \sum_{i,j} \vec{S}_i \vec{S}_j - K \sum_i S_{iz}^2 \; , \quad \quad  \vert \vec{S} \vert
  =1
  \end{align}
- \underline{Universalität:} Kriterium hängt von Dimensionen des Ordnungsparameters ab:
+ \textbf{Universalität:} Das kritische Verhalten hängt nicht von $J$ ab, sondern von Dimensionen des Ordnungsparameters!
  \begin{enumerate}
- \item K= 0: $S_i \cdot S_j$ isotrop $\Rightarrow$ OP hat $n=3$ Komponenten $(m_x, m_y, m_z)$
- \item $K<0$ Spins legen sich in $x-y-$Ebene, OP hat $2$ Komponenten
- \item $K>0$ Spins entlang $z-$Achse, OP hat 1 Komponente
+ \item $K= 0:  \quad$ $\vec{S}_i \cdot \vec{S}_j$ isotrop $ \quad \Rightarrow  \quad$ OP hat $n=3$ Komponenten $(m_x, m_y, m_z)$
+ \item $K<0:  \quad$ Spins legen sich in $xy-$Ebene $ \quad \Rightarrow  \quad$ OP hat $2$ Komponenten ($m_x, \; m_y$)
+ \item $K>0 : \quad$ Spins entlang $z-$Achse $ \quad \Rightarrow  \quad$ OP hat 1 Komponente ($m_z$)
+ %TODO image Phasendiagramm
  \end{enumerate}
  \begin{itemize}
- \item entlang der $K=0$-Linie anderes kritisches Verahlten (andere Exponenten) als für $K=0$.
+ \item entlang der ($K=0$)-Linie anderes kritisches Verhalten (andere Exponenten) als für $K\neq 0$.
  \item für jedes endliche $K$ ist man im Universalitätsklasse von Ising- oder 'x-y'-Modell. 
  \item $K=0$: Heisenberg
- \end{itemize}
+ 
+ %TODO Tabelle von Gebhardt und krey als image
+ \item besonders interessant: $2d-xy-Modell$ zeigt keine langreichweitige, ferromagnetische Ordnung aber einen \textsc{Kosterlitz-Thouless}-Übergang. ($\to$ Nobelpreis 2016) 
+\end{itemize}
+\subsection{MC-Algorithmen für kontinuierliche Freiheitsgrade}
+\subsubsection{x-y-Modell}
+Wir beachten kontinuierlichen 'Spin' (eigentlich ein magnetisches Moment) in der Ebene: $\vert \vec{S} \vert = 1$. Ein Spin davon mit Anisotropie \begin{align*}
+H=-D \; S_x^2 = -D \cos(\phi)^2
+\end{align*} mit dem Potential
+\begin{align*}
+V(x) = -D \cos(x)^2
+\end{align*}
 
-%TODO %TODO %TODO Fehleintrag nachholen!
-
+\textbf{Frage:} Wie wählt man den Versuchsschritt des Monte-Carlo-Algorithmus?
 \begin{enumerate}
-\item $x-y-$Modell: 1 Spin
 
+\item \textbf{Idee:} (Falsch!)
+\begin{align*}
+\varphi_{trial} = \varphi_{initial} \pm \Delta \varphi \quad \quad \quad \Delta \varphi = const.
+\end{align*}
+Falsch! Setze $\Delta \varphi = \pi$ \\
+$ \Rightarrow$ anderes Modell (Ising $S_x = \pm 1$). Allgemein gilt, dass der MC-Algorithmus \textbf{ergodisch} sein muss, d.h. er muss genau den Phasenraum erreichen können!\footnote{genauer: Ergodisch bedeutet 'Zeit-Mittelwert $\widehat{=}$ Ensemble-Mittelwert'} \\
+Ein anderes Beispiel für 'nicht-ergodisch' ist: \\
+\textbf{Beispiel} ('naiver Clusteralgorithmus') \\
+%TODO image
+Im Isingmodell: bestimmte Konfigurationen können nicht vermischt werden. Trotzdem gibt es richtige (=also ergodische) und zudem sehr effektive Cluster-Algorithmen, wie beispielsweise \textit{Swendsten-Wang}. Da werden (immer andere) Cluster nach Regeln getrennt. 
+
+\item \textbf{Idee:} (falsch!) Wähle zufälligen Punkt im Einheitsquadrat und normiere. %TODO image
+Dieser ist auch falsch: Punkte auf dem Einheitskreis sind \textit{nicht} gleichverteilt, entlang Diagonale wahrscheinlicher
+\begin{align*}
+\frac{w(1 \to 2)}{w(2\to 1)} \overset{!}{=} e^{- \beta \; (E_2 - E_1)} = \frac{w_{t} (1 \to 2) \; w_{a} (1 \to 2)}{w_{t} (2 \to 1) \; w_{a} (2 \to 1) }  = \frac{w_t(2 \to 1)}{w_t(1 \to 2)} \; e^{-\beta \; (E_2-E_1)}
+\end{align*}
+\begin{align*}
+\text{wobei} \begin{cases}
+w_t: & \text{ Wahrscheinlichkeit, Wert vorzuschlagen} \\
+w_a: & \text{Wahrscheinlichkeit zu akzeptieren}
+\end{cases}
+\end{align*}
+sodass \begin{align*}
+\Rightarrow \; w_t(2\to 1) = w_t(1 \to 2)
+\end{align*}
+\textbf{Allgemeine Symmetriebedingung:} Wahrscheinlichkeit für Versuchsschritte von Zustand $1 \to 2$ und zurück müssen gleich sein!
+
+\item \textbf{Idee:}\label{Idee3} (stimmt!) Gleichverteilt auf Einheitskreis,\\ \textbf{z.B} $\varphi_i \in [0, 2\pi)$ gleichverteilt, $\Delta H = -D \cos (\varphi_{trial})^2 + D \cos (\varphi_{initial})^2$. \\
+Und damit ergodisch und symmetrisch.
+
+\item \textbf{Idee:}\label{Idee4} kleine Schritte um $\varphi_{initial}$: 
+\begin{align*}
+\varphi_{trial} = \varphi_{initial} + \delta_{trial} \quad \quad \quad \delta_{trial} \in [ - \Delta \varphi, \Delta \varphi ] \; \textit{(gleichverteilt)}
+\end{align*}
+Auch ergodisch und symmetrisch, wenn $\delta_{trial}$ symmetrisch gewählt wird.
+\end{enumerate}
+
+Idee \ref{Idee3} ist identisch mit Idee \ref{Idee4} für $\Delta \varphi = \pi$. Für kleines $\Delta \varphi \ll \pi$: Unterschiedliche Dynamik. Allgemein muss Idee \ref{Idee4} über den Energieberg, um Spin umzudrehen, Idee \ref{Idee3} nicht. Daher sind die Relaxationszeiten verschieden, aber Gleichgewichtseigenschaften sind gleich. 
+
+%TODO image 
+
+
+
+
+\subsubsection{Heisenberg-Modell}
+\begin{align}
+H= - \underbrace{\frac{J}{2} \sum_{i,j} \vec{S}_i \vec{S}_j}_{\substack{\text{Austausch} \\ \text{Nächste Nachbarn}}}
+ - \underbrace{ D \sum_i S_{iz}^2}_\text{Anisotropie} - \underbrace{\vec{B} \sum_i \vec{S}_i}_\text{Magnetfeld} \; , \quad \quad \quad \vert \vec{S}_i \vert =1
+\end{align}
+
+\textbf{single spin flip Algorithmus:} Phasenraum des einzelnen Spins ist Einheitskugeloberfläche 
+Der Versuchsschritt muss
 \begin{itemize}
 \item ergodisch
 \item symmetrisch
-\end{itemize}
-
-\item Heisenberg-Modell
-\begin{align}
-H= -\frac{J}{2} \sum_{i,j} \vec{S}_i \vec{S}_j - D \sum_i S_{iz}^2 - \vec{B} \sum_i \vec{S}_i\; , \; \vert \vec{S}_i \vert =1
-\end{align}
-single spin flip algorithm: Phasenraum des einzelnen Spins ist Einheitskugeloberfläche %TODO image
+\end{itemize} %TODO image
+sein. 
 
 \begin{enumerate}
-		\item gleichverteilt auf Einheitskugel
-			\begin{itemize}
-				\item \underline{rejection Methode:}
-					\begin{itemize}
-						\item  ziehe 3 Zufallszahlen $\in [ -1:1]$. $z_x, 		z_y, z_z$. 
-						\item verwerfe die Wahl, wenn außerhalb der Einheitskugel. $\sqrt{z_x^2 + z_y^2 +z_z^2}>1$.
-						\item sonst normieren: 
-							\begin{align}
-							TODO
-							\end{align}
-					\item schnelle Methode, beruht auf 3 ZZ + Algebra. Relaive Zahl der berücksichtigen Tripel ist $ \frac{4}{3} \pi / 2^3 = \frac{\pi}{6}$
-					\end{itemize}				
-			\item \underline{Kugelkoordinaten} Flächenelement:
-			\begin{align}
-			dF= \underbrace{r^2}_\text{=1} sin(\Theta) d \Theta d\phi
-			\end{align}	
-			Würdem man gleichverteilte ZZ in $\Theta$ und $\phi$ nehmen, wären die Vektoren auf der Einehitskugeloberfläche nicht gleichverteilt, da $dF \propto sin(\Theta)$ \\
-			\underline{Aber:} $sin(\Theta) d\Theta = - d cos(\Theta) = -dz$ mit $S_z =cos(\Theta)$. \\
-			$\Rightarrow dF= - d S_z d \phi \; \Rightarrow$ man kann $S_z$ und $\phi$ gleichverteilt aus $[-1:1]$ und $[0:2\pi)$ wählen. $\Rightarrow$ %TODO vector
-			\\ \underline{Nachteil:} $cos(),sin()$ müssen gerechnet werden $\to$ langsam!			
-			\end{itemize}
+		\item \textbf{gleichverteilt auf Einheitskugel} \\
+		Wie erzeugt man Zufallsvariablen auf Einheitskugel?
+
+\begin{itemize}
+\item \textbf{rejection Methode:}
 			
-			\item kleine Schritte um den alten Vektor $\vec{S}$ innerhalb eines Kegels
 			\begin{itemize}
-			\item erzeuge Zufallsvektor $\vec{S}_r$ mit maximalen Radius R.
-			\item rechne 
+						\item  ziehe 3 Zufallszahlen $\in [ -1:1]$. $(z_x, 		z_y, z_z)$. 
+						\item verwirf die Wahl, wenn außerhalb der Einheitskugel. $\sqrt{z_x^2 + z_y^2 +z_z^2}>1$.
+						\item sonst normieren: 
+\begin{align}
+\begin{pmatrix} S_x^+ \\ S_y^+ \\ S_z ^+\end{pmatrix} = \begin{pmatrix} Z_x \\ Z_y \\ Z_z \end{pmatrix} \; \frac{1}{\sqrt{Z_x^2 + Z_y^2 + Z_z^2}}
+\end{align}
+						\item Schnelle Methode, beruht auf 3 Zufallszahlen und Algebra. Relative Zahl der berücksichtigten Tripel
+\begin{align*}
+\frac{\frac{4}{3} \pi (1)^3}{(2+1)^3} = \frac{\pi }{6}
+\end{align*}
+\end{itemize}		
+		
+			\item \textbf{Kugelkoordinaten} Flächenelement:
+			Einheitsvektoren beschreiben Punkte auf der Einheitskugeloberfläche. Flächenelement in Kugelkoordinaten ist:
+			\begin{align}
+			dF= \underbrace{r^2}_\text{=1} sin(\Theta) \; d \Theta d\varphi
+			\end{align}	
+			Würde man gleichverteilte Zufallszahlen in $\Theta$ und $\varphi$ nehmen, wären die Vektoren auf der Einehitskugeloberfläche nicht gleichverteilt, da $dF \propto sin(\Theta)$ \\
+			\textit{Aber:} 
+			\begin{align*}
+			sin(\Theta) \; d\Theta = - d \, cos(\Theta) = -dz \quad \quad \quad S_z =cos(\Theta)
+			\end{align*}
+			das heißt 
+			\begin{align*}
+			\Rightarrow dF= - d S_z \; d \phi 
+			\end{align*}
+			$ \Rightarrow$man kann $S_z$ und $\phi$ gleichverteilt aus $[-1:1]$ und $[0:2\pi)$ wählen. \\
+			$\Rightarrow$ Dies erzeugt gleichverteilte Vektoren auf der Einheitskugeloberfläche mit
+\begin{align*}
+ \begin{pmatrix} S_x \\ S_y \\ S_z \end{pmatrix} =  \begin{pmatrix} \sqrt{1-S_z^2} \; \cos(\varphi) \\ \sqrt{1-S_z^2} \; \sin(\varphi) \\ S_z \end{pmatrix}
+\end{align*}
+			\\ 
+\textbf{Nachteil:} $\cos(),\sin()$ müssen gerechnet werden $\to$ langsam!			
+\end{itemize}
+			
+			\item \textbf{ kleine Schritte um den alten Vektor $\vec{S}$ innerhalb eines Kegels} %TODO image kegel
+			\begin{itemize}
+			\item[-] erzeuge Zufallsvektor $\vec{S}_r$ innerhalb einer Kugel, also mit maximalen Radius R.
+			\item[-] rechne 
 			\begin{align}
 			\vec{S}_r = \frac{\vec{S} + \vec{S}_r}{\sqrt{\vec{S}^2 + \vec{S}_r^2}}
-			\end{align}
-			\item $\vec{S}_r$ aus rejection Methode ohne Normierung
-			\\
-			\\
-			
-			
-Diese Methode erzeugt kleine Schritte, sodass Energiebarrieren überwunden werden müssen $\to$ Konsequenz für die Dynamik. Man kann maximale Schrittweite R berechnen um einen Monte Carlo Schritt zu eichen $ßto$ Zeitquantifizierung ('time quantified Monte Carlo')
+			\end{align} d.h. addiere $\vec{S}_r$ und normiere.
+			\item[-] $\vec{S}_r$ aus rejection Methode ohne Normierung
 			\end{itemize}
+			
+			
+Diese Methode erzeugt kleine Schritte (je nach Wahl von $R$), sodass Anisotropie-Energiebarrieren überwunden werden müssen $\to$ Konsequenzen für die Dynamik.  \\
+Man kann maximale Schrittweite $R$ berechnen um einen Monte Carlo Schritt zu eichen, also auf ein 'echtes' Zeitintervall im %TODO word 
+der dissipativen Dynamik des Systems abzubilden $\to$ Zeitquantifizierung \textit{('time quantified Monte Carlo')}		
 \end{enumerate}
-\end{enumerate}
+
+
  \subsection{Perkolation}
  	\begin{itemize}
- 	\item betrachte Gitter in d Dimensionen
- 	\item besetze Plätze (Verbindungen) mit Wahrscheinlichkeit p
- 	\item definiere Nachbarschaft, z.B via nächste Nachbarn
- 	(je nach fall vielleicht auch übernächste nachbarn bei dottierung einer Monolage beispielsweise...)
- 	\item Perkolation beschäftigt sich mit Clustern, d.h.  besetzte, benachbarte Gitterplätze
- 	\item oberhalb der sogenannten Perkolationswahrscheinlichkeit (oder Perkolationsgrenze) $p_c$ gibt es einen $\infty$ großen, perkolierenden Cluster. 
- 	$\Rightarrow$ wichtig für Leitfähigkeit, magnetische Ordnung
- 	\begin{tabular}{|c|c|c|c|}
- 	\hline 
- 	 &  & $p_c$ & bond \\ 
+ 	\item betrachte Gitter in d Dimensionen\footnote{$(1d, \; 2d, \; 3d)$}
+ 	\item besetze Plätze (Verbindungen) mit Wahrscheinlichkeit $p$
+ 	\item definiere Nachbarschaft, z.B via nächste Nachbarn\footnote{je nach Fall vielleicht auch übernächste Nachbarn... bei Dottierung einer Monolage beispielsweise}
+ 	\item Perkolation beschäftigt sich mit Clustern, d.h.  besetzter, benachbarter Gitterplätze %TODO image cluster
+ 	\item speziell oberhalb der sogenannten \textbf{Perkolationswahrscheinlichkeit} (oder Perkolationsgrenze) $p_c$ gibt es einen $\infty$ großen, perkolierenden Cluster. \footnote{$2d: \; \infty $ große Cluster  nicht möglich, in $2d$ schon.}
+ 	$\Rightarrow$ wichtig für z.B. Leitfähigkeit, (ferro)magnetische Ordnung 
+ 	\begin{center}
+ 	
+ 	
+ 	\begin{tabular}{c||c c c}
+ 	%\hline 
+ 	 &  & $\mathbf{p_c}$ &\textbf{ bond} \\ 
  	\hline 
  	\textbf{2d} & Quadrat & 0.592 & 0.5 \\ 
- 	\hline 
- 	• & sc & 0.312 & 0.249 \\ 
- 	\hline 
+ 	%\hline 
+ 	 & sc & 0.312 & 0.249 \\ 
+ 	%\hline 
  	\textbf{3d} & fcc & 0.198 & 0.119 \\ 
- 	\hline 
- 	• & bcc & 0.245 & 0.179 \\ 
- 	\hline 
- 	\end{tabular} 
+ 	%\hline 
+ 	 & bcc & 0.245 & 0.179 \\ 
+ 	%\hline 
+ 	\end{tabular} \\
+ 	\end{center} 
  	\end{itemize}
- 	\underline{Definiere Korrelationsfunktion $g( \vert \vec{r}_1 - \vec{r}_2 \vert)$:} Wahrscheinlichkeit, dass $\vec{r}_1$ und $\vec{r}_2$ zum gleichen Cluster gehören. \\
- 	\underline{Korrelationslänge:}
+ 	\textbf{Definition Korrelationsfunktion:}\\
+ 	 $g( \vert \vec{r}_1 - \vec{r}_2 \vert)$: Wahrscheinlichkeit, dass $\vec{r}_1$ und $\vec{r}_2$ zum gleichen Cluster gehören. \\
+ 	\textbf{Korrelationslänge:}
  	 \begin{align}
  	\xi^2= \frac{\sum_r r^2 g(r)}{\sum_r g(r)}
  	\end{align}
- 	Definition ist vereinbar mit $g(r) \propto e^\frac{-r}{\xi}$, da 
+ 	diese Definition ist vereinbar mit $g(r) \propto e^\frac{-r}{\xi}$, da 
  	\begin{align}
- 	\frac{\int d^3r r^2 \; e^\frac{-r}{\xi}}{\int d^3 r \; e^\frac{-r}{\xi}}
- 	= \frac{\int_0^\infty dr r^4 \; e^\frac{-r}{\xi}}{\int_0^\infty d r \; r^2 \; e^\frac{-r}{\xi}}
- 	= \frac{\xi^s}{\xi^3}  \frac{\int d^3r r^2 \; e^\frac{-r}{\xi}}{\int d^3 r \; e^\frac{-r}{\xi}}
+ 	\frac{\int d^3r \; r^2 \; e^\frac{-r}{\xi}}{\int d^3 r \; e^\frac{-r}{\xi}}
+ 	= \frac{\int_0^\infty dr \; r^4 \; e^\frac{-r}{\xi}}{\int_0^\infty d r \; r^2 \; e^\frac{-r}{\xi}}
+ 	= \frac{\xi^5}{\xi^3}  \frac{\int d^3r \; r^2 \; e^\frac{-r}{\xi}}{\int d^3\;  r \; e^\frac{-r}{\xi}} \; \propto \; \xi^2
  	\end{align}
  	\begin{itemize}
  	\item $p>p_c$: Beitrag des $\infty$-großen Clustern wird subtrahiert $\Rightarrow \; g(r)$ geht immer gegen Null
@@ -2294,7 +2392,12 @@ $\Rightarrow $ 1 MCS entspricht Zeitintervall $\Delta t$ für
 \Aboxed{ R^2 = \frac{20 k_B T \alpha \gamma}{\mu} \Delta t }
 \end{align}
 für $R<<1$
+
  \end{document}
+ 
+ANHANG:
+\includepdf[pages={1,2,3,4,5}]{Thouless_Uebergang_Nobelprice.pdf}  \label{siehe Dokument...} 
+ 
  Siehe physical review letters 3. January 2000 Volume 84 Number 1
  
  

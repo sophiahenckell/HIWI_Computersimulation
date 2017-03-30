@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  29 MAR 2017 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  30 MAR 2017 16:13
 entering extended mode
 **./Skript_Überarbeitung.tex
 (Skript_Überarbeitung.tex
@@ -518,38 +518,79 @@ This is `epsf.tex' v2.7.4 <14 February 2011>
 \epsfxsize=\dimen137
 \epsfysize=\dimen138
 \pspoints=\dimen139
-) (Skript_Überarbeitung.aux
+) ("C:\Program Files\MiKTeX2.9\tex\latex\pdfpages\pdfpages.sty"
+Package: pdfpages 2017/01/14 v0.5h Insert pages of external PDF documents (AM)
+
+("C:\Program Files\MiKTeX2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+("C:\Program Files\MiKTeX2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+)
+("C:\Program Files\MiKTeX2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen140
+\AM@pageheight=\dimen141
+
+("C:\Program Files\MiKTeX2.9\tex\latex\pdfpages\pppdftex.def"
+File: pppdftex.def 2017/01/14 v0.5h Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box28
+\AM@global@opts=\toks24
+\AM@toc@title=\toks25
+\c@AM@survey=\count107
+\AM@templatesizebox=\box29
+)
+(Skript_Überarbeitung.aux
 
 LaTeX Warning: Label `Null_DrittesStandbein' multiply defined.
 
 )
 \openout1 = `Skript_Überarbeitung.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  ("C:\Program Files\MiKTeX2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
-\scratchdimen=\dimen140
-\scratchbox=\box28
-\nofMPsegments=\count108
-\nofMParguments=\count109
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count110
-\MPscratchDim=\dimen141
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count108
+\scratchdimen=\dimen142
+\scratchbox=\box30
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen143
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks27
 ) ("C:\Program Files\MiKTeX2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -626,30 +667,39 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+\AtBeginShipoutBox=\box31
+("C:\Program Files\MiKTeX2.9\tex\latex\oberdiek\pdflscape.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Program Files\MiKTeX2.9\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
 <Null_DrittesStandbein.jpg, id=1, 388.8126pt x 238.0092pt>
 File: Null_DrittesStandbein.jpg Graphic file (type jpg)
 
 <use Null_DrittesStandbein.jpg>
-Package pdftex.def Info: Null_DrittesStandbein.jpg used on input line 27.
+Package pdftex.def Info: Null_DrittesStandbein.jpg used on input line 29.
 (pdftex.def)             Requested size: 204.85844pt x 125.40703pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 32.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 34.
 
 ("C:\Program Files\MiKTeX2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 32.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 46.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 34.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 48.
 
 ("C:\Program Files\MiKTeX2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 46.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
 ("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 46.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 ("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -657,29 +707,29 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Null_Rechner.png, id=2, 623.4492pt x 194.6472pt>
 File: Null_Rechner.png Graphic file (type png)
  <use Null_Rechner.png>
-Package pdftex.def Info: Null_Rechner.png used on input line 74.
+Package pdftex.def Info: Null_Rechner.png used on input line 76.
 (pdftex.def)             Requested size: 364.19664pt x 113.70627pt.
 
 [1
 
 {C:/Users/studium/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Null_Dr
 ittesStandbein.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--121
+Underfull \hbox (badness 10000) in paragraph at lines 120--123
 
  []
 
 [2 <./Null_Rechner.png>]
-Overfull \hbox (14.26021pt too wide) in paragraph at lines 157--159
+Overfull \hbox (14.26021pt too wide) in paragraph at lines 159--161
 \OT1/cmr/bx/n/12 hal-tung: \OT1/cmr/m/n/12 Im ab-ge-schlos-se-nen Sy-stem ist d
 ie Ge-sam-t-ener-gie kon-stant mit $\OML/cmm/m/it/12 U \OT1/cmr/m/n/12 = \OML/c
 mm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
@@ -688,69 +738,69 @@ mm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
  []
 
 [3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 264--265
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
+
+ []
+
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
+Underfull \hbox (badness 10000) in paragraph at lines 330--332
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 359--363
+Underfull \hbox (badness 10000) in paragraph at lines 361--365
 
  []
 
 [8] [9] [10] [11]
-Overfull \hbox (21.10927pt too wide) in paragraph at lines 498--499
+Overfull \hbox (21.10927pt too wide) in paragraph at lines 500--501
 []\OT1/cmr/m/n/12 Es exi-stie-ren zahl-rei-che Wei-ter-ent-wick-lun-gen des lin
 ear-konvergenten Zufallszahlen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--530
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 533--537
+Underfull \hbox (badness 10000) in paragraph at lines 535--539
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 569--571
+Underfull \hbox (badness 10000) in paragraph at lines 571--573
 
  []
 
 [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 673--675
+Underfull \hbox (badness 10000) in paragraph at lines 675--677
 
  []
 
 
-Overfull \hbox (16.82448pt too wide) in paragraph at lines 680--682
+Overfull \hbox (16.82448pt too wide) in paragraph at lines 682--684
 []\OT1/cmr/m/it/12 Schlecht w[]are zum Bei-spiel: \OT1/cmr/m/n/12 die Betrags-E
 xponentialfunktion (\OT1/cmr/m/sc/12 Gau\OT1/cmr/m/n/12 funktion) ben[]otigt
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 746--747
+Underfull \hbox (badness 10000) in paragraph at lines 748--749
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 828--834
+Underfull \hbox (badness 10000) in paragraph at lines 830--836
 
  []
 
 [18] [19] [20]
-Overfull \hbox (35.15198pt too wide) in paragraph at lines 947--950
+Overfull \hbox (35.15198pt too wide) in paragraph at lines 949--952
 $\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 Pro-blem: wir brau-chen Zust[]ande $[]$ mi
 t Wahr-schein-lich-keit $\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 ([]) \OMS/cmsy/m/n/1
 2 / \OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 ($\OMS/cmsy/m/n/12 )$\OT1/cmr/m/n/12 
@@ -758,154 +808,152 @@ Problematisch).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 947--950
+Underfull \hbox (badness 10000) in paragraph at lines 949--952
 
  []
 
 [21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1040
+Underfull \hbox (badness 10000) in paragraph at lines 1041--1042
 
  []
 
 [23] [24]
-Overfull \hbox (1.41315pt too wide) in paragraph at lines 1125--1125
+Overfull \hbox (1.41315pt too wide) in paragraph at lines 1127--1127
 [] 
  []
 
 [25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1306--1307
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1309
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1325--1327
+Underfull \hbox (badness 10000) in paragraph at lines 1327--1329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1328--1332
+Underfull \hbox (badness 10000) in paragraph at lines 1330--1334
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1364--1365
+Underfull \hbox (badness 10000) in paragraph at lines 1366--1367
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1400--1402
+Underfull \hbox (badness 10000) in paragraph at lines 1402--1404
 
  []
 
-[30] [31] [32]
-Overfull \hbox (6.84203pt too wide) in paragraph at lines 1484--1484
+[30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 1466--1469
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1470--1474
+
+ []
+
+[32]
+Overfull \hbox (6.84203pt too wide) in paragraph at lines 1499--1499
 []\OT1/cmr/bx/n/14.4 Kontinuierliche Frei-heits-gra-de: 'x-y' und Heisenbergs-M
 odell 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1548--1551
+Overfull \hbox (5.60808pt too wide) in paragraph at lines 1537--1544
+\OT1/cmr/m/n/12 dem gibt es rich-ti-ge (=al-so er-go-di-sche) und zu-dem sehr e
+f-fek-ti-ve Cluster-Algorithmen,
+ []
+
+[34] [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
+
+ []
+
+[37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 1840--1842
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1548--1551
+Underfull \hbox (badness 10000) in paragraph at lines 1846--1848
+
+ []
+
+[39] [40] [41]
+Underfull \hbox (badness 10000) in paragraph at lines 1941--1944
 
  []
 
 
-LaTeX Warning: Command \ss invalid in math mode on input line 1553.
-
-
-Overfull \hbox (25.5427pt too wide) in paragraph at lines 1561--1563
-[]\OT1/cmr/m/n/12 definiere Nach-bar-schaft, z.B via n[]achste Nach-barn (je na
-ch fall viel-leicht auch []ubern[]achste
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1605--1606
-
- []
-
-[35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1741--1743
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1747--1749
-
- []
-
-[38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1842--1845
-
- []
-
-
-Overfull \hbox (1.62202pt too wide) in paragraph at lines 1847--1848
+Overfull \hbox (1.62202pt too wide) in paragraph at lines 1946--1947
 []\OT1/cmr/m/n/12 Teilchen k[]onnen in-ne-re Frei-heits-gra-de ha-ben. Wird im 
 ein-fach-sten Fall ver-nachl[]assigt
  []
 
-[40] [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1920--1921
-
- []
-
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1967--1968
+Underfull \hbox (badness 10000) in paragraph at lines 2019--2020
 
  []
 
-[43] [44] [45] [46] [47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 2225--2227
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 2066--2067
 
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 2280--2282
+[44] [45] [46] [47] [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 2324--2326
 
  []
 
-[50] (Skript_Überarbeitung.aux)
+[50] [51]
+Underfull \hbox (badness 10000) in paragraph at lines 2379--2381
+
+ []
+
+[52] (Skript_Überarbeitung.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4038 strings out of 493334
- 54255 string characters out of 3139675
- 137046 words of memory out of 3000000
- 7473 multiletter control sequences out of 15000+200000
- 15169 words of font info for 62 fonts, out of 3000000 for 9000
+ 5263 strings out of 493334
+ 71743 string characters out of 3139675
+ 162161 words of memory out of 3000000
+ 8665 multiletter control sequences out of 15000+200000
+ 15870 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,22n,25p,659b,355s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 40i,22n,39p,659b,372s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
-gram Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Fil
-es/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
-2.9/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX2.9/f
-onts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX2.9/fonts/type
-1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/
-amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/c
-m/cmmi6.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmmi8.pf
-b><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
-ram Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/
-MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX2.9/f
-onts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/
-public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsf
-onts/cm/cmr8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cms
-y10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C
-:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program 
-Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiK
-TeX2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX2.9/fo
-nts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1
-/public/amsfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/am
-sfonts/symbols/msam10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb>
-Output written on Skript_Überarbeitung.pdf (50 pages, 536232 bytes).
+gram Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files
+/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files/MiKTeX2
+.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX2.9/fonts/
+type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/c
+m/cmmi5.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmmi6.pf
+b><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/
+MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX2.9/
+fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX2.9/fonts/type1
+/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/ams
+fonts/cm/cmr7.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cm
+r8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C
+:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program 
+Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKT
+eX2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX2.9/fon
+ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/
+public/amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/am
+sfonts/cm/cmtt8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
+Output written on Skript_Überarbeitung.pdf (52 pages, 552939 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
+ 272 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
