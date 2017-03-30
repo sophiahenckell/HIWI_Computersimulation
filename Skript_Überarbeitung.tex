@@ -1687,26 +1687,33 @@ der dissipativen Dynamik des Systems abzubilden $\to$ Zeitquantifizierung \texti
  	= \frac{\int_0^\infty dr \; r^4 \; e^\frac{-r}{\xi}}{\int_0^\infty d r \; r^2 \; e^\frac{-r}{\xi}}
  	= \frac{\xi^5}{\xi^3}  \frac{\int d^3r \; r^2 \; e^\frac{-r}{\xi}}{\int d^3\;  r \; e^\frac{-r}{\xi}} \; \propto \; \xi^2
  	\end{align}
+ 	
  	\begin{itemize}
- 	\item $p>p_c$: Beitrag des $\infty$-großen Clustern wird subtrahiert $\Rightarrow \; g(r)$ geht immer gegen Null
- 	\item $p \to p_c:$ $\xi(p) \propto \vert p-p_c \vert^{-\nu}$ mit kritischem Exponenten $\nu$.
+ 	\item $p>p_c: \quad$Beitrag des $\infty$-großen Clustern wird subtrahiert \\ $\Rightarrow \; g(r)$ geht immer gegen Null
+ 	\item $p \to p_c: \quad $ $\xi(p) \propto \vert p-p_c \vert^{-\nu}$ mit kritischem Exponenten $\nu$. Wieder gilt die Universalität $\nu_{2d} = \frac{4}{3}, \; \nu_{3d} = 0,88$ unabhängig vom Gitter!
  	
  	\end{itemize}
 
- 	\underline{Universalität:} $\nu_{2d}= \frac{4}{3}, \; \nu_{3d}=0.88$
+ 	 	Wir betrachten die Wahrscheinlichkeitsvertielung $D(s,p)$ für Cluster der Größe $s$: 
+\begin{align}
+ 	D(s,p)=& (1-p)^2 \; p^s
+ 	= (1-p)^2 \; e^{ln(p)s} = (1-p)^2 \underbrace{e^{- \vert ln(p) \vert s}}_\text{Korrelationslänge} = (1-p)^2 e^{-\frac{s}{\xi}}
+\end{align}
+
+ 	mit Korrelationslänge
+ 	\begin{align*}
+ 	\xi = \frac{1}{\vert ln(p) \vert} = -\frac{1}{ln(p)}, \quad \quad \quad ln(p)= p-1= p-p_c \quad \mbox{ wobei } p_c=1
+\end{align*}
+Wir entwickeln um $p-p_c$: \begin{align*}
+ln(p) \approx p-1  \quad \quad \Rightarrow \quad \quad  \xi (p \to p_c) = \frac{1}{p_c-p}= (p_c - p)^\nu 
+\end{align*}
+ 	mit dem kritischen Exponenten $\nu =1$ der Korrelationslänge. \\
  	
- 	 	Wir betrachten die Wahrscheinlichkeitsvertielung $D(s,p)$ für Cluster der Größe $s$: \begin{align}
- 	D(s,p)=& (1-p)^2 \; p^s \\
- 	=& (1-p)^2 \; e^{ln(p)s} = (1-p)^2 e^{- \vert ln(p) \vert s} = (1-p)^2 e^{-\frac{s}{\xi}}
- 	\end{align}
- 	mit Korrelationslänge $\xi = \frac{1}{\vert ln(p) \vert} = -\frac{1}{ln(p)}$ und mit $ln(p)= p-1= p-p_c$ wobei $p_c=1$. 
- 	
- 	$\Rightarrow \xi (p \to p_c) = \frac{1}{p_c-p}= (p_c - p)^\nu $ mit dem kritischen Exponenten $\nu =1$ \\
- 	
- 	In hpheren Dimensionen $D>1$ nur numerische Verfahren möglich. nummerisches Verfahren zur Clusteranalyse.
+ 	In höheren Dimensionen $D>1$ sind nur numerische Verfahren möglich. Zentrale Größe für die Analyse ist die Verteilungsfunktion der Clustergrößen $D(s,p)$.
+ 	\subsubsection{nummerisches Verfahren zur Clusteranalyse}
  		\begin{enumerate}
  		
- 		\item Rekursiv %TODO image
+ 		\item Rekursiv %TODO 5 images
  			\begin{itemize}
  			\item Schleife durch das Gitter
  			\item 1.Besetzter Platz erhält Index 1
@@ -1714,28 +1721,35 @@ der dissipativen Dynamik des Systems abzubilden $\to$ Zeitquantifizierung \texti
  			\item weiter zum nächsten Platz falls besetzt und falls nicht indiziert, dann Index 2...
  			\end{itemize}
  			
- 		\item schneller: Hoshen-Kopelmann-Algorithmus
+ 		\item schneller: \textbf{Hoshen-Kopelmann-Algorithmus}
  		
 \end{enumerate} 	
 
-\underline{Cluster-Analyse} erlaubt weitere Auswirkung der Verteilung $D(s,p)$.
+Die \textbf{Cluster-Analyse} erlaubt weitere Auswirkung der Verteilungsfunktionen $D(s,p)$.
 \begin{itemize}
 \item in der Nähe des kritischen Punktes $p_c$ gilt $D(s,p_c) \propto s^{-\epsilon}$ mit einem kritischen Exponenten $\epsilon$.
 \item weiter weg gilt $D(s,p) \propto e^{-\frac{s}{\xi}}$ mit $\xi (p) \propto \vert p_c - p \vert ^{- \nu}$
 \item das perkulierende Cluster am kritischen Punkt ist ein Fraktal
 \end{itemize}	 
-\underline{Fraktal:} \begin{itemize}
+\textbf{Fraktal:} 
+\begin{itemize}
 	\item gebrochene Dimension \begin{align}
-	s \propto \underbrace{r^{D_f}}_\text{Gyrationsradius} \mbox{ fraktale Dimension } D_f
+	s \propto \underbrace{r^{D_f}}_{\substack{\text{Gyrations-} \\ \text{radius}}} \mbox{ fraktale Dimension } D_f
 \end{align}	 
-\item 'normal' wäre Fläche $F \propto r^2$ und Volumen $V \propto r^3$.
-\item $D_f$ ist dabei kleiner als die einbettende Dimension $(2,3)$
-\item Fraktale sind selbstähnlich
+\item 'normal' wäre Fläche $F \propto r^2$ und Volumen $V \propto r^3$. $D_f$ ist dabei kleiner als die einbettende Dimension $(2,3)$
+\item Fraktale sind selbstähnlich\footnote{hier im statistischen Sinne}
 \end{itemize}
 Beispiel: aus der Mathematik %TODO image fraktale
 
-allgemein: $ln(as)= a^x ln(x)$ mit $4=3^x \Rightarrow x= \frac{lln(4)}{ln(3)}$ \\
-setze: $a= \frac{1}{s} \Rightarrow ln(1)= \left( \frac{1}{s}) \right)^x ln(s) \Rightarrow ln(s)= ln(1) s^x$
+allgemein: \begin{align*}
+ln(as)= a^x ln(s) \quad \quad \quad   4=3^x \Rightarrow x= \frac{ln(4)}{ln(3)}
+\end{align*}
+
+
+setze:\begin{align*}
+a= \frac{1}{s} \quad \Rightarrow \quad ln(1)= \left( \frac{1}{s} \right)^x ln(s) \quad \Rightarrow \quad ln(s)= ln(1) s^x
+\end{align*} 
+$x$ bezeichnet dabei die fraktale dimension.
 
 \section{Molekulardynamiksimulationen}
 Es gibt 2 Klassen von Verfahren in der statistischen Physik 
