@@ -4,7 +4,8 @@
 \usepackage{latexsym}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsmath}
+\usepackage{amstext}
+
 \usepackage{amsmath,mathtools} %hinteres dient der umrandung von Formeln
 
 \usepackage{graphicx}
@@ -18,7 +19,21 @@
 \oddsidemargin -0.0cm
 
 \usepackage{epsf}
-\usepackage{pdfpages} 
+\usepackage{pdfpages} %bindet pdfs ein
+\usepackage{empheq}
+\usepackage[theorems,skins]{tcolorbox}  %macht bunte boxen, auch in matheumgebung
+\newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
+\newtcbox{\othermathbox}[1][]{nobeforeafter, 
+math upper, 
+tcbox raise base, 
+%sharp corners,
+enhanced, 
+colback=blue!10!white, %Hintergrundfarbe Farbe!Transparenz
+colframe=blue!30!black, 
+left=1em, 
+top=2em,
+right=3em, 
+bottom=4em}
 
 
 \begin{document}
@@ -1749,90 +1764,120 @@ ln(as)= a^x ln(s) \quad \quad \quad   4=3^x \Rightarrow x= \frac{ln(4)}{ln(3)}
 setze:\begin{align*}
 a= \frac{1}{s} \quad \Rightarrow \quad ln(1)= \left( \frac{1}{s} \right)^x ln(s) \quad \Rightarrow \quad ln(s)= ln(1) s^x
 \end{align*} 
-$x$ bezeichnet dabei die fraktale dimension.
+$x$ bezeichnet man dabei als die fraktale dimension.
 
 \section{Molekulardynamiksimulationen}
-Es gibt 2 Klassen von Verfahren in der statistischen Physik 
+Es gibt 2 Klassen von Verfahren in der statistischen Physik: 
 \begin{enumerate}
 \item Monte Carlo (kanonische Gesamtheit)
-\item Molekulardynamik (zunächst mikrokanonisch)
-Lösen Bewegungsgleichungen für viele Teilchen \\
-$\Rightarrow$ brauchen Verfahren zur nummerischen Lösung von DGL \\
-\underline{Dynamische Systeme} ist beispeilsweise die Newtonsche Bewegungsgleichung \begin{align}
-m \ddot{\textbf{r}} = \mathbf{F} (\mathbf{r}, \dot{\mathbf{r}}, t)
-\end{align} mit der Bahn $\mathbf{r}(t)$.
-neue Variablen sind \begin{align*}
-\dot{\mathbf{r}}= \mathbf{v} \\
-\dot{\mathbf{v}} = \frac{1}{m} \mathbf{F}(\mathbf{r}, \mathbf{v},t) 
-\end{align*}
-sodass 
+\item Molekulardynamik (zunächst) mikrokanonisch, d.h. die Energie bleibt erhalten. Durch Lösen der Bewegungsgleichungen für viele Teilchen \\
+\end{enumerate}
+$\Rightarrow$ Wir brauchen ein Verfahren zur nummerischen Lösung von DGL \\
+\textbf{Dynamische Systeme} 
+ist beispeilsweise die Newtonsche Bewegungsgleichung 
+\begin{align}
+m \ddot{\vec{r}} = \vec{F} (\vec{r}, \dot{\vec{r}}, t) \quad \quad \quad \vec{r} \in \mathbb{R}^3 \; \text{(pro Teilchen)}
+\end{align} mit der Bahn $\vec{r}(t)$. Hier haben wir 3 DGLn $2.$Ordnung mit den zwei Anfangsbedingungen
 \begin{align*}
+r(t=0) \quad \quad  \quad \quad \dot{r}(t=0)
+\end{align*}
+Wir führen neue Variablen ein 
+\begin{align*}
+\begin{cases}
+\dot{\vec{r}}= \vec{v} \\
+\dot{\vec{v}} = \frac{1}{m} \vec{F}(\vec{r}, \vec{v},t) 
+\end{cases}
+\text{ mit }
 \begin{pmatrix}\mathbf{r}\\ \mathbf{v}\end{pmatrix} \in \mathbb{R}^6
 \end{align*}
-Es handelt sich um 6 DGLn 1.Ordnung (siehe auch 'Hamilton Formalismus'). Es genügt eine DGL folgenden Typs zu studieren: 
+Es handelt sich um 6 DGLn 1.Ordnung (siehe auch 'Hamilton Formalismus') %TODO verlinken?
+. Es genügt aber eine DGL folgenden Typs zu studieren: 
 \begin{align}
-\dot{\mathbf{x}}= \mathbf{f}( \mathbf{x},t) \mbox{  mit  } x \in \mathbb{R}^n \mbox{   (Dynamisches System)}
+\dot{\mathbf{x}}= \mathbf{f}( \mathbf{x},t) \quad \quad \quad \quad \mbox{  mit  } x \in \mathbb{R}^n \tag{\textbf{Dynamisches System}}
 \end{align}
+
 \subsection{Euler Verfahren}
 Eindimensional $\dot{x}= f(x,t)$.\\  %TODO image 
-\underline{Taylor:}
+\textbf{Taylor:}
 \begin{align}
 x(t_0 +h)=& x(t_0) + \dot{x}(t_0)h+ \mathcal{O} (h^2) \\
-=& x(t_0) + f(x,t_0) + \mathcal{O} (h^2)
+=& x(t_0) + f(x,t_0) h+ \mathcal{O} (h^2)
 \end{align}
-\underline{Diskretisierung der Zeit:}
+\textbf{Diskretisierung der Zeit:}
+\begin{align*}
+\begin{rcases}
+t_n = t_0 + nh \\ 
+x_n = x(t_n)
+\end{rcases}
+\quad \quad \quad n=0,1,2,...
+\end{align*}
+\textbf{Euler:}
 \begin{align}
-t_n = t_0 + nh, \; n=0,1,2,...
-\end{align}
-\underline{Euler:}
-\begin{align}
-\Aboxed{ x_{n+1}= x_n + f(x_n, t_n)h+ \mathbb{O}(h^2)}
+\Aboxed{ x_{n+1}= x_n + f(x_n, t_n)h+ \mathcal{O}(h^2)}
 \end{align}
 Fehler des Einzelschritts $\propto h^2$. Für ein Intervall der Länge $T$ benötigt man $N= \frac{T}{h}$ Schritte.
 \begin{align}
 \Aboxed{ \mbox{Gesamtfehler} \propto h^2 N \propto h }
 \end{align}
-Fehler oben heißt systematischer Fehler, er entsteht durch die Approximation. Verkleinern durch $h \to 0$. Geht das? Nein! Wegen \underline{Rundungsfehlern} und eventueller \underline{Instabilitäten}.
-\end{enumerate}
+Fehler oben heißt \textbf{systematischer Fehler}. Er entsteht durch die Approximation. Verkleinern durch $h \to 0$ - Geht das? Nein! Wegen \textit{Rundungsfehlern} und eventueller \textit{Instabilitäten}.
+
 
 \subsection{Stabilitätsanalyse}
 $x_n$: berechne Werte $x(t)$ mit Fehler $\epsilon_n$:
+
 \begin{align}
-\mathbf{x}_{n+1} + \mathbf{\epsilon}_{n+1} =\mathbf{x}_n + \mathbf{\epsilon}_n + f( \mathbf{x}_n + \mathbf{\epsilon}_n, t_n) \Delta t := \mathbf{T}(\mathbf{x}_n + \mathbf{\epsilon}_n)
-\end{align} %TODO %TODO griechische buchstaben in boldface?!?
- entwickle $T$ für kleines $\epsilon$: 
+\mathbf{x}_{n+1} + \boldsymbol{\epsilon}_{n+1} =\mathbf{x}_n + \boldsymbol{\epsilon}_n + \mathbf{f}( x_n + \boldsymbol{\epsilon}_n, t_n) \Delta t := \mathbf{T}(\mathbf{x}_n + \boldsymbol{\epsilon}_n)
+\end{align} 
+
+ entwickle $T$ für kleines $\boldsymbol{\epsilon}_n$: 
  \begin{align}
- \mathbf{T}(\mathbf{x}_n + \mathbf{\epsilon}_n) 
- \approx \mathbf{T}(\mathbf{x}_n) + \underbrace{\frac{d\mathbf{T}}{d\mathbf{x}}}_\text{Funktionalmatrix (Jacobi)} \cdot \mathbf{\epsilon}_n \\
- \Rightarrow \epsilon_{n+1} = \frac{d\mathbf{T}}{d\mathbf{x}} \vert _{x_n} \epsilon \equiv \mathbb{G} \mathbf{\epsilon} \; ,
+ \mathbf{T}(\mathbf{x}_n + \boldsymbol{\epsilon}_n) 
+ \approx \mathbf{T}(\mathbf{x}_n) + \underbrace{\frac{d\mathbf{T}}{d\mathbf{x}}}_{ \substack{ \text{Funktional-} \\ \text{matrix} \\  \text{ (Jacobi)} }} \biggr\vert_{x_n} \cdot \boldsymbol{\epsilon}_n \quad
+ \Rightarrow \quad \epsilon_{n+1} = \frac{d\mathbf{T}}{d\mathbf{x}}  \biggr\vert_{x_n} \boldsymbol{ \epsilon}_n  \equiv \underline{ \underline{\mathbf{G} }} \;  \boldsymbol{\epsilon}_n \; 
  \end{align}
+ weil
+ \begin{align*}
+ \mathbf{x}_{n+1} = \mathbf{T}_{x_n}
+ \end{align*}
  
- %TODO interrupt
-....wenn für alle Eigenwerte von $\mathbb{G}$, $\vert g_i \vert <1$ gilt:
+Der Fehler divergiert nur dann nicht, wenn für alle Eigenwerte von $\underline{ \underline{\mathbf{G} }}$, $\vert g_i \vert \leq 1$ gilt\footnote{Achtung, $g_i$ kann komplex sein!}.
 \\
-Beispiel 1: \begin{align}
-\frac{dx}{dt}= - \lambda x \mbox{  (zum Beispiel radioaktiver Zerfall für } \lambda<0)
- \end{align}
- \underline{Euler:}
+\textbf{Beispiel 1: }
+\begin{align*}
+\frac{dx}{dt}= - \lambda \; x \quad \quad \quad \text{  (zum Beispiel radioaktiver Zerfall für } \lambda > 0)
+ \end{align*}
+ \textit{Euler:}
+ \begin{align*}
+ x_{n+1} = \;  x_n ( 1- \lambda \Delta t) = T (x_n) \quad
+ \Rightarrow \quad \epsilon_{n+1} = \frac{dT}{dx} \biggr\vert _{x_n} \epsilon_n \; =\;  (1- \lambda \Delta t) \; \epsilon_n 
+ \end{align*}
  \begin{align}
- x_{n+1} =& x_n ( 1- \lambda \Delta t) = T (x_n) \\
- \Rightarrow &\epsilon_{n+1} = \frac{dT}{dx} \vert _{x_n} \epsilon_n = (1- \lambda \Delta t) \epsilon_n \\
- \Rightarrow & \vert 1 - \lambda \Delta t \vert <1 , \mbox{  für alle } \lambda < 0 \\
- \Rightarrow & \mbox{stabil!}
+   \Rightarrow  \vert 1 - \lambda \Delta t \vert <1 , \quad \quad \quad \forall \lambda > 0, \Delta T \to 0
  \end{align}
-(instabil für $\lambda < 0$) \\
-Beispiel 2: \begin{align}
-\ddot{z}= - \omega^2 z & \mbox{  (harmonischer Oszillator)} \\
-\begin{cases}
-\dot{x}_1 = x_2 \\
-\dot{x}_2 = - \omega^2 x_1 
-\end{cases} 
-\Rightarrow &
-\begin{cases}
+$\Rightarrow$ stabil! (instabil für $\lambda < 0$) \\
+
+\textbf{Beispiel 2:} (harmonischer Oszillator)
+\begin{align}
+\ddot{z}= - \omega^2 z &  
+\end{align}
+\begin{align*}
+\begin{rcases}
+x_1 = z \\
+x_2 = \dot{z} &(v)
+\end{rcases}
+\; \Rightarrow \; 
+\begin{rcases}
+\dot{x}_1 = x_2  & (\dot{z}=v) \\
+\dot{x}_2 = - \omega^2 x_1 & (\dot{v}= - \omega ^2 z)
+\end{rcases}  
+\;  \Rightarrow \; 
+\begin{rcases}
 x_1 (n+1) = x_1(n) + x_2 (n) \Delta t \\
 x_2 (n+1) = x_2(n) - \omega^2 x_1 (n) \Delta t
-\end{cases}
-\Rightarrow \mathbb{G} = 
+\end{rcases} 
+\end{align*}
+\begin{align}
+\Rightarrow \underline{ \underline{\mathbf{G} }} = 
 \begin{pmatrix}
  1 & \Delta t \\
  - \omega^2 \Delta t & 1
@@ -1844,113 +1889,273 @@ für Eigenwerte aus
 1-g & \Delta t \\
 - \omega^2 \Delta t & 1-g
 \end{vmatrix}
-= 0 = (1-g)^2 + \omega^2 \Delta t^2 \\
-\Rightarrow g_{1,2} = 1 \pm i\omega t \\
-\Rightarrow \vert g_{1,2} \vert = \sqrt{1 + \omega^2 \Delta t^2} <1\; \forall \omega, \Delta t \\
-\Rightarrow \mbox{ immer instabil}
+\overset{!}{=} 0 \quad \quad \Leftrightarrow \quad \quad 0=  (1-g)^2 + \omega^2 \Delta t^2 
 \end{align}
-Anschaulich: \begin{align}
-\dot{x}= f(x) = - \lambda x \; \Rightarrow x(t) = x_0 e^{-\lambda t}
+\begin{align*}
+\Leftrightarrow \quad  g_{1,2} = 1 \pm i\omega t \quad 
+\Leftrightarrow  \quad \vert g_{1,2} \vert = \sqrt{1 + \omega^2 \Delta t^2} <1,\quad \forall \; \omega, \Delta t \quad \Rightarrow \quad  \mbox{immer instabil}
+\end{align*}
+Anschauliche Erklärung: Was passiert? \\
+Wir betrachten noch einmal: 
+ \begin{align}
+\dot{x}= f(x) = - \lambda x \quad \quad \Rightarrow \quad \quad x(t) = x_0 e^{-\lambda t} \quad \quad \Rightarrow \quad \quad \text{stabil}
 \end{align}
-\underline{Weitere Tests (nummerisch):}\\
+%TODO image BEARBEITEN!!!
+\begin{align*}
+x_{n+1} \; = \; x_n + \Delta t \; f(x_n, t_n) \; = \; x_n - \lambda x_n \, \Delta t
+\end{align*}
+\begin{align*}
+\dot{x} = f(x) = + \lambda x \quad \quad \Rightarrow \quad \quad \lambda > 0 \quad \quad \Rightarrow \quad \quad \text{instabil}
+\end{align*}
+%TODO image 
+\paragraph{Weitere Tests (nummerisch):}
 \begin{itemize}
-\item Energieerhaltung (oder Impuls, Drehimpuls) 
+\item Erhaltungssätze überprüfen: Energie-, Impuls-, Drehimpulserhaltung 
 \item Rückwärtsintegration
+\end{itemize}
 \subsection{Runge-Kutta Verfahren}
-besser: stabilder; schnellere Konvergenz \\
-Warum schneller? $\to$ CPU-Zeit $\Leftrightarrow$ bessere Konvergenz.\\
+Es gibt viele bessere Verfahren
+\begin{itemize}
+\item[-]stabiler
+\item[-]schnellere Konvergenz
+\end{itemize}
+
+Warum schneller? Schneller muss dabei im einzelnen abgewogen werden: \\
+ $\to$ 'CPU-Zeit $\Leftrightarrow$ bessere Konvergenz'.\\
 
 \underline{Euler:} 
 
-\begin{align}
-x(t_n +h) =& x(t_n) + \dot{x}(t_n) \cdot h + \mathcal{O}(h^2) \\
-x(t_n -h) =& x(t_n) - \dot{x}(t_n) \cdot h + \mathcal{O}(h^2)  \\
- \Rightarrow x(t_n +h) - x(t_n -h) =&2 h \dot{x}(t_n) \cdot  + \mathbb{O}(h^3)
-\end{align}
+\begin{align*}
+ x(t_n +h)  &= x(t_n) + \dot{x}(t_n) \cdot h + \mathcal{O}(h^2) \\
+ x(t_n -h) &= x(t_n) - \dot{x}(t_n) \cdot h + \mathcal{O}(h^2)  
+ \end{align*}
+ \begin{align*}
+ \Rightarrow \quad  x(t_n +h) - x(t_n -h) =\; 2 h\;  \dot{x}(t_n)  + \mathcal{O}(h^3)
+\end{align*}
 Lösung von $\dot{x}= f(x,t):$
+
+%\begin{mymathbox}[ams gather, title=two equations, colframe=blue!30!black]
+\begin{tcolorbox}[ams gather,title= Runge-Kutta 1. Stufe, colback=blue!10!white, colframe=blue!30!black] 
+x_{n+1}= x_{n-1} + 2 h f(x_n, t) + \mathcal{O} (h^3)  \nonumber \\
+x_{n+2}= x_{n} + 2 h f(x_{n+1}, t) + \mathcal{O} (h^3) 
+\end{tcolorbox}
+%TODO %TODO %TODO Schablone von boxes
+Man nennt dies auch \textbf{'Bocksprung', 'Leap-Frog'} oder \textbf{'Merhschrittverfahren'}.\\ 
+
+%TODO image
+
+\textbf{noch besser:} Runge-Kutta 2.Stufe.
+\begin{align*}
+x_{n+1} =& x_{n-1}+2hf(x_{n}, t_n) + \mathcal{O}(h^3) 
+\end{align*}
+man braucht wegen $x_{n-1}$ und $x_n$ zwei Anfangswerte. Berechne $x_n$ aus Euler:
+\begin{align*}
+x_n = &x_{n-1} + h f(x_{n-1}, t_{n-1}) + \mathcal{O}(h^2)  
+\end{align*}
+umschreiben mit
+\begin{align*}
+2h=\bar{h}
+\end{align*}
+liefert
+%\begin{empheq}[box=\othermathbox]{align}
+\begin{tcolorbox}[ams align, title= Runge-Kutta 2. Stufe, colback=blue!10!white, colframe=blue!30!black] 
+K &=\frac{1}{2} \; \bar{h} \; f(x_n, t_n) \nonumber \\ 
+x_{n+1} &= x_n + \bar{h} \; f(x_n+k, \;  t_n+ \frac{1}{2} \bar{h}) + \mathcal{O}(h^3) \\
+t_{n+1} & = t_n \,+ \bar{h}  \nonumber
+\end{tcolorbox}
+Auch bekannt als \textbf{'Zwischenschritt-Verfahren'}. \\
+%TODO image
+
+\textbf{Beispiel:} (DGL 2. Ordnung)
 \begin{align}
-x_{n+1}= x_{n-1} + 2 h f(x_n, t) + \mathcal{O} (h^3) \\
-x_{n+2}= x_{n} + 2 h f(x_{n+1}, t) + \mathcal{O} (h^3)
-\end{align}
-und nennt dies Bocksprung, Leop-Frog, Runge Kutta 1.Stufe...\\
-\underline{noch besser:} Runge-Kutta 2.Stufe:
-\begin{align}
-x_{n+1} =& x_{n-1}+2hf(x_{n}, t_n) + \mathcal{O}(h^3) \\
-\mbox{ berechne } x_n \mbox{ aus Euler: } x_n = &x_{n-1} + h f(x_{n-1}, t_{n-1}) + \mathcal{O}(h^2) \\
-\mbox{ umschreiben: } 2h=&\bar{h} : 
-\end{align}
-\begin{align}
-\Aboxed{K=\frac{1}{2} \bar{h} f(x_n, t_n) } \\
-\Aboxed{x_{n+1}= x_n + \bar{h} f(x_n+k, t_n+\frac{1}{2}\bar{h}) + \mathcal{O}(h^3) } \\
-\Aboxed{t_{n+1} = t_n + \bar{h} } \\
-\mbox{ Runge-Kutta 2.Stufe, Zwischenschrittverfahren }
-\end{align}
-\underline{Bsp:}\begin{align}
-\ddot{x}= f(x,t) \Rightarrow \begin{cases}
+\ddot{x}= f(x,t) \qquad \Rightarrow \qquad \begin{cases}
 \dot{x}=v \\
 \dot{v}= f(x,v,t)
 \end{cases}
 \end{align}
-\underline{RKZ:}\begin{align}
-K_x =& \frac{1}{2} h v_n \\
-K_v = & \frac{1}{2} h f(x_n, t) \\
-x_{n+1} =& x_n + (v_n + K_v) h \\
-v_{n+1}= & v_n + f(x_n+K_x, (v_n+K_v), t_n+\frac{1}{2}h)h
-\end{align}
-\underline{(ohne Beweis:) Runge Kutta 4.Stufe:}
-\begin{align}
-K_1= hf(x_n, t_n) \\
-K_2=h f(x_n + \frac{1}{2} K_1, t_n + \frac{h}{2}) \\
-K_3= h f(x_n + \frac{1}{2} K_2, t_n + \frac{h}{2}) \\
-K_4= h f(x_n +  K_3, t_n + h) \\
-x_{n+1}= x_n + \frac{1}{6} (K_1 + 2 K_2 + 2 K_3 + K_4) \\
-t_{n+t} = t_n + h + \mathcal{O}(h^5)
-\end{align}
-Prinzip:
-\begin{align}
-\dot{x}=& f(x,t) \\
-x_{n+1} - x_n =& \int_{t_n}^{t_n+h} dt f(x(t), t) \mbox{  allerdings ist } x(t) \mbox{ nicht bekannt}
-\end{align}
-\end{itemize}
+\textit{RKZ:}\begin{align*}
+K_x =&\; \frac{1}{2} \;  h \; v_n \\
+K_v = & \; \frac{1}{2} \; h \; f(x_n, t) \\
+x_{n+1} =&\; x_n +h \;  (v_n + K_v)  \\
+v_{n+1}= &\; v_n + h \; f(x_n+K_x, \;  v_n+K_v, \;  t_n+\frac{1}{2}h)  \\
+t_{n+1} =&\;  t_n + h
+\end{align*}
+\textbf{(ohne Beweis:) Runge Kutta 4.Stufe:}
+\begin{align*}
+K_1&= h\; f(x_n, \; t_n) \\
+K_2&=h \; f(x_n + \frac{1}{2} K_1, \; t_n + \frac{h}{2}) \\
+K_3&= h\;  f(x_n + \frac{1}{2} K_2, \; t_n + \frac{h}{2}) \\
+K_4&= h\;  f(x_n +  K_3, \; t_n + h)  \\
+x_{n+1}&= x_n + \frac{1}{6} (K_1 + 2 K_2 + 2 K_3 + K_4) + \mathcal{O}(h^5)\\
+t_{n+t} &= t_n + h 
+\end{align*}
+Prinzip: 4 Punkte werden zur Integration herangezogen.
+\begin{align*}
+\dot{x}=& f(x,t) \qquad \Rightarrow \qquad  x_{n+1} - x_n = \int_{t_n}^{t_n+h} dt \; f(x(t), t) \qquad \quad x(t) \text{ aber unbekannt!}
+\end{align*}
+
 \subsection{Schrittweitenanpassung}
 \begin{itemize}
-\item einfachste Vorgehensweise: feste Schrittweite $h +$Tests.
-\item unter Umständen ist aber eine Anpassung der Schrittweite besser. Anpassung durch Vergleich (z.B. von RKZ und RK4) \\
+\item einfachste Vorgehensweise: feste Schrittweite $h +$Tests, ob die Lösung wirklich stabil, richtig... ist.
+\item unter Umständen ist aber eine dynamische Anpassung der Schrittweite besser. Anpassung durch Vergleich (z.B. von RK2 und RK4) \\
+\end{itemize}
+
 RK2: \begin{align}
 x_{n+1} = x_n + K_2 + \mathcal{O}(h^3)
 \end{align}
 RK4: \begin{align}
-x_{n+1}= x_n + \frac{1}{6} (K_1 + 2K_2 +2K_3 + K_4) = x_n + K_2 + \underbrace{\frac{1}{6} (K_1 - 4K_2 + 2K_3 +K_4)}_\text{$\delta$} + \mathcal{O}(h^5)
+x_{n+1} &= x_n + \frac{1}{6} (K_1 + 2K_2 +2K_3 + K_4) \\
+&= x_n + K_2 + \underbrace{\frac{1}{6} (K_1 - 4K_2 + 2K_3 +K_4)}_\delta + \mathcal{O}(h^5)
 \end{align}
-$\delta$ ist ein Maß für den Fehler von RKZ und $\delta= \mathcal{O}(h^3)$. Definiere den relativen Fehler: 
+$\delta$ ist ein Maß für den Fehler von RKZ und 
+\begin{align*}
+\delta = \mathcal{O}(h^3)
+\end{align*} 
+Wir definieren weiterhin den \textbf{relativen Fehler:} 
 \begin{align}
 \left| \frac{\delta}{K_2} \right| = \mathcal{O}(h^2)
 \end{align}
-und versuchen diesen Fehler konstant zu halten.
+und versuchen diesen Fehler konstant zu halten
 \begin{align}
-\left| \frac{\delta}{K_2} \right| = a h^2 \overset{!}{=} \epsilon
+\left| \frac{\delta}{K_2} \right| = a\; h^2 \overset{!}{=} \epsilon.
 \end{align}
-wird vorgegeben durch Wahl von $h$. Verlange 
+Dieser wird vorgegeben durch Wahl von $h$. Verlange 
 \begin{align}
-a h_{neu}= \epsilon \Rightarrow h^2 = \frac{\epsilon}{a} = h^2 \frac{\epsilon}{\left| \frac{\delta}{K_2} \right|} \\
-\Rightarrow \Aboxed{ h_{neu} = h \sqrt{\frac{\epsilon}{\vert \frac{\delta}{K_2} \vert }}}
+a \;  h_{neu}= \epsilon \qquad \Rightarrow \qquad h^2 = \frac{\epsilon}{a} = h^2 \frac{\epsilon}{\left| \frac{\delta}{K_2} \right|} 
 \end{align}
-\underline{also:}
-\item $h$ vorgegeben \begin{align}
-\to \epsilon = \left| \frac{delta}{K_2} \right|
+\begin{align}
+\tcboxmath{ h_{neu} = h \sqrt{\frac{\epsilon}{\vert \frac{\delta}{K_2} \vert }}}
 \end{align}
-\item immer wieder $h$ neu berechnen aus $\vert \frac{ \delta}{K_2} \vert$
+\textbf{also:} 
+\begin{itemize}
+\item[-] $h$ vorgegeben $
+\to \epsilon = \left| \frac{\delta}{K_2} \right| $
+\item[-] $\epsilon$ konstant halten 
+\item[-] immer wieder neues $h$ berechnen aus $ \left| \frac{\delta}{K_2} \right|$
 \end{itemize}
 
-GROSSER SCHNITT
+\subsection{Prädikator-Korrelator-Verfahren}
+Ein sehr genaues und stabiles Verfahren. Hier soll nur das Prinzip erläutert werden.
+\begin{align*}
+\dot{x}= f(x,t) \qquad \overrightarrow{_{Integrieren}} \qquad x(t+h) = x(t) + \int_t^{t+h} dt' \; f(x(t'), t') 
+\end{align*}
+Dabei ist $x(t')$ aber nicht bekannt!
 
-\subsection{whatever}
+%TODO images 
+\begin{enumerate}
+\item[1)] Prädikator: $x^{(0)} (t+h) = x(t) + h \; f(x(t), t)$ (im einfachsten Fall Euler)
+\item[2)] Konstruktor: $ x^{(1)} (t+h) = s(t) + \frac{1}{2} \left( f(x(t),t) + f(x^{(0)} (t+h), t+h)\right) $
+\end{enumerate}
+$x^{(1)}$ ist genauer, weil $f$ nicht an linken Integralgrenze ($\to$ \textit{Rechteckregel}) sondern als Mittelwert von linker und rechter (nicht exakt) genommen wird ($\to$ \textit{Trapezregel}). \\
+Verfahren kann iteriert werden:
+\begin{align*}
+x^{(0+1)} (t+h) = x(t) + \frac{h}{2} \left( f(x(t),t) + f(x^{(\nu)} (t+h), t+h)\right) 
+\end{align*}
+Mit steigendem $\nu$ wird $x^{(\nu)}$ immer besser, d.h. es konvergiert gegen einen Fixpunkt $x^* (t+h)$.
+\begin{align*}
+x^* (t+h) = x(t) + \frac{h}{2} \left( f(x(t),t) + f(x^* (t+h), t+h)\right) 
+\end{align*}
+In der Praxis:
+\begin{enumerate}
+\item[1)] Prädikator häufig aus komplizierteren Formeln als Euler, dafür aber besser
+\item[2)] unter Umständen mehrere Prädikator-Korrelation-Schritte
+\end{enumerate}
 \subsection{Chaotische Systeme und fraktale Dimensionen}
-\underline{Beispiel:} (Diffusion limited aggregation) DLA
+\textbf{Chaos:} Typisches Gebiet der Physik, das durch Einsatz von Rechnen unglaublich %TODO word
+beeinflusst wurde, obwohl prinzipiell schon in Newtonscher Bewegungsgleichung enthalten. \\
+Dynamisches System
+\begin{align*}
+\ddot{\mathbf{x}} = \mathbf{F} (\mathbf{x}, \mathbf{\dot{x}}, t)
+\end{align*}
+wird beschrieben durch Trajektorie $(x(t), v(t))$ im Phasenraum. \\
+\textbf{Beispiel} (harmonischer Oszillator)
+\begin{align*}
+\dot{r} &= v \\
+\dot{v} &= - \omega^2 r
+\end{align*}
+%TODO image
+System ist deterministisch, d.h. aus den Anfangsbedingungen $x_0, \; v_0$ folgt eindeutig die Trajektorie. Seit \textsc{Poincaré} (1892) ist ebenso bekannt, dass solche DGLn unter Umständen 'irreguläres Verhalten' zeigen können. \\
+\textbf{Anschaulich:} 'normal' ist:
+\begin{itemize}
+\item[-] gebunden $\to$ periodisch
+\item[-] nicht gebunden
+\item[-] zur Ruhe kommend (gedämpft)
+\end{itemize}
+$\Rightarrow$ 'chaotisch' wäre gebunden, aber nicht periodisch. \\
+\paragraph{Geht das denn überhaupt?}
+\begin{itemize}
+\item betrachte  
+\begin{align*}
+\dot{\mathbf{x}} = f(\mathbf{x}, \mathbf{\dot{x}}) \qquad \qquad (2d)
+\end{align*}
+Trajektorien können sich nicht schneiden. Wenn eine Trajektorie
+\begin{itemize}
+\item[•] endet $\qquad \quad \to$ \textit{Fixpunkt}
+\item[•] sich schließt $\, \to$ \textit{periodische Bewegung}
+\end{itemize} 
+Für Chaos braucht man entweder 
+\begin{align*}
+\tcboxmath{ d \geq 3} \qquad \text{ oder } \qquad
+\dot{x} = f(\mathbf{x}, \mathbf{\dot{x}},t),
+\end{align*}
+denn nur dann können sich Trajektorien in $2d$ schneiden.
+%TODO images (2)
+$1d$ Molekularphysik mit $\mathbf{F} + \mathbf{F}(t)$ kann nicht chaotisch werden! Ab $d=3$ kann eine Trajektorie in höhere Dimensionen ausweichen. Siehe bild %TODO : 
+\textsc{Poincaré}-Schritt ist Punktmenge in (z.B) der $x_3 =0$ Ebene.
+
+\item $A$ muss \textbf{nicht linear} sein (sonst gibt es Schwingungen oder exponentielle Lösungen)
+\end{itemize}
+Wir betrachten als Beispiel für ein chaotisches System den \textsc{Duffing}-Oszillator:
+\textbf{Beispiel:} (Duffing-Oszillator) \\
+MP in 1 räumlichen Dimension mit 
+\begin{align*}
+m \ddot{x} = F(x, \dot{x},t) = - V_0 (x^3 - x ) -\underbrace{ \beta \dot{x}}_\text{Reibung} + \underbrace{\gamma \; \cos (\omega t)}_{\substack{ \text{treibende Kraft} \\ \text{ mit Frequenz $\omega$}}}  
+\end{align*}
+mit Potential
+\begin{align*}
+V(x) = V_0 ( \frac{x^4}{4} - \frac{x^2}{2})
+\end{align*}
+Für Numerik: 2 DGLn 1. Ordnung:
+\begin{align*}
+\begin{rcases}
+\dot{v}= \frac{1}{m} F(x, \dot{x}, t) \\
+\dot{x}= v
+\end{rcases} \qquad \Rightarrow \qquad \text{nicht linear, zeitabhängig} \to \text{Chaos nachweisbar}
+\end{align*}
+$\Rightarrow$ RK 2. Stufe. \\
+
+\textbf{Beispiel:} (Diffusion limited aggregation) DLA
 \begin{itemize}
 \item Simulation, z.B. d=2, Quadratgitter
+\end{itemize}  %TODO kommt da noch was?
 
-\end{itemize} 
+\paragraph{Diskussion:} 
+\begin{enumerate}
+\item[0)] \textbf{Tests:} Harmonischer Oszillator, $x(0) = \pm 1$, Reibung...
+\item[1)] \textbf{Fixpunkte:} Punkte im Phasenraum, für die die Lösung stationär ist. 
+\begin{align*}
+F=0 \qquad \Rightarrow \qquad
+\begin{cases}
+\gamma =0, \\
+ x = \pm 1
+ v=0
+\end{cases} 
+\end{align*}
+für lange Zeiten und $\gamma =0$ endet man in einem der beiden Fixpunkte.
+\item[2)] \textbf{Attraktor:} Punktmenge im Phasenraum, auf der die Lösung für $t \to \infty$ liegt (siehe Beispiel: Trajektorie des harmonischen Oszillators). Mit Reibung ohne Antrieb folgt, dass der Atraktor gleich dem Fixpunkt ist. \\
+Eigenschaften des 'seltsamen Attraktors' (\textit{strange}), d.h. im chaotischen Bereich ($\beta =1, \gamma \approx 0.8$)
+\begin{itemize}
+\item[-]nicht periodisch
+\item[-]nicht $2d$ (d.h. füllt nicht den Raum)
+\item[-]zwei benachbarte Trajektorien auf dem Attraktor laufen auseinander
+\end{itemize}
+$\Rightarrow$ formale Defintionen von Chaos durch \textsc{Lyaponov}-Exponenten, der das Auseinanderlaufen beschreibt
+\end{enumerate}
+\subsection*{Fraktale Dimensionen/ Box-Counting}
+Wie definiert/bestimmet man die Dimension eines Objektes bzw. einer Punktmenge? \\
+Einbettende Dimension ($d=2)$, Volumen $V$. \begin{itemize}
+\item Führe Quadrate der Kantenlänge $\epsilon$ ein.
+\end{itemize}
 \subsection{Molekulardynamik im mikrokanonischen Ensemble}
  moderne Physik: Vielteilchensysteme
  \underline{speziell:} klassische Teilchen (z.Bsp. Moleküle...daher auch die Namensgebung)
