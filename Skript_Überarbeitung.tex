@@ -2124,10 +2124,7 @@ Für Numerik: 2 DGLn 1. Ordnung:
 \end{align*}
 $\Rightarrow$ RK 2. Stufe. \\
 
-\textbf{Beispiel:} (Diffusion limited aggregation) DLA
-\begin{itemize}
-\item Simulation, z.B. d=2, Quadratgitter
-\end{itemize}  %TODO kommt da noch was?
+
 
 \paragraph{Diskussion:} 
 \begin{enumerate}
@@ -2152,35 +2149,96 @@ Eigenschaften des 'seltsamen Attraktors' (\textit{strange}), d.h. im chaotischen
 $\Rightarrow$ formale Defintionen von Chaos durch \textsc{Lyaponov}-Exponenten, der das Auseinanderlaufen beschreibt
 \end{enumerate}
 \subsection*{Fraktale Dimensionen/ Box-Counting}
-Wie definiert/bestimmet man die Dimension eines Objektes bzw. einer Punktmenge? \\
+Wie definiert/bestimmet man die Dimension eines Objektes bzw. einer Punktmenge? \\ %TODO  image gitter
 Einbettende Dimension ($d=2)$, Volumen $V$. \begin{itemize}
 \item Führe Quadrate der Kantenlänge $\epsilon$ ein.
+\item Zähle die Würfel, in die ein Punkt der Menge fällt $N(\epsilon)$
 \end{itemize}
+\begin{align*}
+N(\epsilon) \propto \epsilon ^{-D} \qquad \quad \text{ (klar bei euklid. Objekten: }d=D)
+\end{align*}
+Definition der
+\begin{tcolorbox}[ams gather,title= Hausdorff-Dimension, colback=blue!10!white, colframe=blue!30!black] 
+D = - \lim_{\epsilon \to 0} \frac{ln(N(\epsilon))}{ln(\epsilon)}
+\end{tcolorbox} Ein fraktales Objekt muss also auf allen Längenskalen durchlöchert sein. Problematisch für numerische Anwendungen ist jedoch $lim \; \epsilon \to 0$, denn numerisch ist die Zahl der Punkte begrenzt ($N_0$)
+\begin{enumerate}
+\item[1)] Ist $\epsilon$ zu klein: es stehen nur $N_0$ Punkte zur Verfügung: $\Rightarrow \; N(\epsilon) = N_0 = const.$
+\item[2)] Ist $\epsilon$ zu groß: jede Box enthält Punkte $\Rightarrow \; N(\epsilon) = \frac{V}{\epsilon^d} \; \propto \epsilon^{-d}$
+\end{enumerate}
+Also %TODO image
+
+Fraktale in der Natur sind (ähnlich wie beim Rechnen) stets begrenzt, d.h. es gibt obere und untere Abschnitte-Längenskalen, z.B. die Ausdehnung des Gesamtobjektes (ohne) und die Mikrostruktur, z.B. Zelle, Atom...(unten). \\\paragraph*{ Wichtige Eigenschaften:}
+\begin{itemize}
+\item Fraktale haben in der einbettenden Dimension kein Volumen:
+\begin{align*}
+V_F \approx \lim_{\epsilon \to 0} \underbrace{ \epsilon^d}_\text{Volumen} \cdot \underbrace{\epsilon ^{-D} }_{\substack{\text{Anzahl der} \\ \text{Boxen}}}= 0
+\end{align*}
+
+%Gehört das Beispiel wirklich hier hin?
+\textbf{Beispiel:} DLA (Diffusion limited aggregation $\widehat{=}$ \textit{Diffusionsbedingtes Wachstum})
+\begin{itemize}
+\item zufälliger Startwert
+\item random walk bis Keim erkannt wird, dann Anlagerung %TODO worte stimmen?
+\item $\Rightarrow$ Cluster wächst
+\item (Simulation, z.B. d=2, Quadratgitter)
+\end{itemize}  %TODO kommt da noch was?
+%TODO image MISSING
+Tricks:
+\begin{itemize}
+\item Startradius nachfahren
+\item Außenradius einführen und bei Verlassen neues Teilchen starten
+\end{itemize}
+\item Fraktale sind \textbf{selbstähnlich}, d.h. sie haben einen zu Grunde legenden Bauplan, der sich auf allen Längenskalen wiederholt ($\to$ \textit{Koch-Kurve}). In der Praxis werden andere Verfahren verwendet, um $D$ zu bekommen, nämlich aus einer Beziehung zwischen Volumen $V$ (Zahl der Punkte) und Längenskala $R$ einer Menge von Objekten. 
+\begin{itemize}
+\item Menge von Objekten: 
+\begin{itemize}
+\item entweder während Wachstum
+\item oder bei Zerlegen eines Systems in viele Teilsysteme
+\end{itemize}
+\item Volumen $V=$Zahl der Punkte
+\item $ R= \sqrt{\sum_{i=1}^N (r_i - r_{Schwerpunkt})^2 \frac{1}{n}}$ = Gyrationsradius
+\end{itemize}
+\end{itemize}
+
 \subsection{Molekulardynamik im mikrokanonischen Ensemble}
- moderne Physik: Vielteilchensysteme
- \underline{speziell:} klassische Teilchen (z.Bsp. Moleküle...daher auch die Namensgebung)
- $\to$ können durch Bewegungsgleichungen beschrieben werden \\
+ moderne Physik beschäftigt sich viel mit Vielteilchensystemen (wie Gase, Flüssigkeiten, Plasma) meist speziell Festkörperproblemen (Halbleiterphysik, Magnetismus...) Betrachtet man die Teilchen als klassisch (z.Bsp. hinreichend große Moleküle\footnote{...daher auch die Namensgebung} oder granulare Materie), kann man die Bewegungsgleichung für wechselwirkende Teilchen lösen: \textbf{Molekulardynamik-Simulation}. (Wichtiges Verfahren)
  \begin{itemize}
- \item (Intensive Wechselwirkungen ) $\hat{=} $MD-Simulationen 
- \item Teilchen können innere Freiheitsgrade haben. Wird im einfachsten Fall vernachlässigt $\to $ Kugel mit Schwerpunktskoordinate $\vec{r}_i$:
+ \item (Intensive Wechselwirkungen ) $\widehat{=}$ MD-Simulationen. 
+ \item Teilchen können innere Freiheitsgrade haben. Beispielsweise bei Molekülen: Rotation und Schwingung. Wird im einfachsten Fall vernachlässigt \\$\to $ Moleküle als Kugel mit Schwerpunkt(skoordinate) $\vec{r}_i$:
  
- \item $N$ Teilchen, die wechselwirken mit Potential $V(\vec{r}_1,\vec{r}_2, ..., \vec{r}_N)$ 
- 
- \begin{align}
- \Rightarrow \; \mbox{Newton } \Aboxed{ m_i \vec{\ddot{r}}_i = -grad_{\vec{r}_i} V(\vec{r}_i, ..., \vec{r}_N)} \; i=1,...,N \\
- \mbox{Anfangsbedingungen } \vec{r}_i^{(0)}, \dot{\vec{r}}_i^{(0)}
- \end{align}
- \item ohne Dissipation erhalten diese MD Simulationen die Energie und Teilchenzahl $\Rightarrow$ \underline{mikrokanonisches Ensemble} innere Energie U durch Anfangsbed. vorgegeben
- \item Entropie $S(U,V,N)$ wird maximiert
- 
+ \item $N$ Teilchen, die miteinander wechselwirken mit Potential $V(\vec{r}_1,\vec{r}_2, ..., \vec{r}_N)$ 
  \end{itemize}
- \underline{Zwei Vorgehen:}
- \begin{enumerate}
- \item Teilchen dicht gepackt, sie wechselwirken zu jeder Zeit $\Rightarrow$ diskretisieren Zeit $t \to \Delta t$, lösen DGL zu jedem Zeitschritt (\textbf{Zeitgesteuerte MD Simulation}), zu englisch '\textit{time step driven}'.
- \item Teilchen weit auseinander (im Verhältnis zur Reichweite der Wechselwirkung) $\to$ die Teilchen fliegen frei auf endlichen Strecken $\to$ zwischen Stößen wird die DGL analytisch gelöst nur für den Stoßprozess wird DGL nummerisch gelöst \\
- $\Rightarrow$ \underline{Ereignisgesteuerte Simulation} ('\textit{event driven}')
+ $\Rightarrow$ Bewegungsgleichung (nach \textsc{Newton}):
+ \begin{tcolorbox}[ams gather,title= Newtonsche Bewegungsgleichung, colback=blue!10!white, colframe=blue!30!black] 
+ m_i \vec{\ddot{r}}_i = -grad_{\vec{r}_i} V(\vec{r}_i, ..., \vec{r}_N) \qquad i=1,...,N \qquad
+ \end{tcolorbox}
+ mit Anfangsbedingungen $\vec{r}_i^{(0)}, \dot{\vec{r}}_i^{(0)}$
  
+ \begin{itemize}
+ \item Achtung, ohne Dissipation erhalten diese MD Simulationen die Energie und Teilchenzahl 
+\begin{itemize}
+\item \textit{mikrokanonisches Ensemble}
+\item  innere Energie U durch Anfangsbedingungen vorgegeben
+\item Entropie $S(U,V,N)$ wird maximiert
+\end{itemize} 
+\end{itemize}
+Wie üblich, wird die Zeit diskretisiert. Des Weiteren, gibt es zwei verschiedene Vorgehen, je nach Problemstellung:
+ \begin{enumerate}
+ \item Teilchen dicht gepackt, sie wechselwirken zu jeder Zeit mit den anderen \\
+ \begin{itemize}
+ \item[$\Rightarrow$] diskretisieren Zeit $t \to \Delta t$ also festes Zeitintervall $\Delta t$, lösen alle DGL zu jedem Zeitschritt 
+ \item[$\Rightarrow$] \textbf{Zeitgesteuerte MD Simulation}, zu englisch ('\textit{time step driven}').
+ \end{itemize}
+ 
+ \item Teilchen weit auseinander (im Verhältnis zur Reichweite der Wechselwirkung) 
+ \begin{itemize}
+ \item[$\Rightarrow$] die Teilchen fliegen frei auf endlichen Strecken
+ \item[$\Rightarrow$] zwischen Stößen wird die DGL analytisch gelöst nur für den Stoßprozess wird DGL mit Potential nummerisch gelöst
+ \item[$\Rightarrow$]  \textbf{Ereignisgesteuerte Simulation} ('\textit{event driven}')
+ \end{itemize}  
  \end{enumerate}
+ 
+ 
 Zu 1) TD: populär ist der Verlet Algorithmus, den es in 2 Versionen gibt:
 \begin{align}
 \vec{r}_i (t+h) =& r_i(t) + h \vec{\dot{r}}_i(t) + \frac{h^2}{2} \vec{\ddot{r}}_i(t) + \mathcal{O} (h^2) \\
