@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  4 APR 2017 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  4 APR 2017 21:24
 entering extended mode
 **./Skript_Überarbeitung.tex
 (Skript_Überarbeitung.tex
@@ -1259,30 +1259,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 2301--2306
  []
 
 [49]
-Underfull \hbox (badness 10000) in paragraph at lines 2377--2378
+Underfull \hbox (badness 10000) in paragraph at lines 2372--2374
 
  []
 
-[50] [51] [52] [53] [54] [55]
-Underfull \hbox (badness 10000) in paragraph at lines 2635--2637
+
+Underfull \hbox (badness 10000) in paragraph at lines 2385--2386
 
  []
 
-[56] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 2690--2692
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 2408--2410
 
  []
 
-[58] (Skript_Überarbeitung.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 2411--2417
+
+ []
+
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 2452--2453
+
+ []
+
+
+Overfull \hbox (1.90877pt too wide) in paragraph at lines 2460--2465
+\OT1/cmr/m/sc/12 Lan-ge-vin \OT1/cmr/m/n/12 1908) Fol-gen \OT1/cmr/m/sc/12 Lan-
+ge-vin \OT1/cmr/m/n/12 Be-we-gungs-glei-chung f[]ur \OT1/cmr/m/it/12 ein \OT1/c
+mr/m/n/12 Teil-chen auf ei-ner Fl[]ussig-
+ []
+
+[52]
+
+LaTeX Warning: Command \ss invalid in math mode on input line 2496.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 2496.
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 2543--2545
+
+ []
+
+[54] [55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 2698--2700
+
+ []
+
+[57] [58]
+Underfull \hbox (badness 10000) in paragraph at lines 2753--2755
+
+ []
+
+[59] (Skript_Überarbeitung.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18008 strings out of 493334
- 361800 string characters out of 3139675
+ 18014 strings out of 493334
+ 361899 string characters out of 3139675
  459733 words of memory out of 3000000
- 21169 multiletter control sequences out of 15000+200000
+ 21175 multiletter control sequences out of 15000+200000
  18435 words of font info for 73 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,22n,85p,889b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1310,9 +1349,9 @@ sfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm
 /cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmtt8.pf
 b><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C
 :/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Skript_Überarbeitung.pdf (58 pages, 590027 bytes).
+Output written on Skript_Überarbeitung.pdf (59 pages, 595837 bytes).
 PDF statistics:
- 302 PDF objects out of 1000 (max. 8388607)
+ 305 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

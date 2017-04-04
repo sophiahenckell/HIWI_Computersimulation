@@ -2352,138 +2352,202 @@ t_{s,ij} =
  - \Delta \vec{v}_{i,j} \; \Delta \vec{r}_{i,j} - \sqrt{( \Delta \vec{v}_{i,j} \; \Delta \vec{r}_{i,j})^2 - \left( (\Delta \vec{r}_{i,j})^2 - 4R^2\right) (\Delta \vec{v}_{i,j})^2} \; \right)
 \end{align*}
 Stoßzeit $t_s = \min \{ t_{s,ij} > 0\} \; \forall i,j$
-\item \textbf{Geschwindigkeitsänderung bei Stoß}
+\item \textbf{Geschwindigkeitsänderung bei Stoß} \\
+Hier ist die Kraft $\perp$ Kugeloberfläche.
 \begin{itemize}
-\item Impulsänderung $|| \vec{r}_{i} - \vec{r}_{j}$
-\item Änderung von $\vec{v}_{i}, \vec{v}_{j}$ folgt aus Energiesatz und Impulssatz (hier: gleiche Massen, harte Kugeln)\\
-\underline{Impulssatz}: $m( \vec{v}_{i}' - -\vec{v}_{i}) = -m ( \vec{v}_{j}' - \vec{v}_{j}) $ mit $(v' \triangleq$ nach Stoß) \\
-\underline{Energiesatz:}
-\begin{align}
-\frac{m}{2} (\vec{v}_{i}^2 + \vec{v}_{j}^2) = \frac{m}{2} (\vec{v}_{i}'^2  + \vec{v}_{j}'^2) \\
- \mbox{ mit }  \vec{v}_{i}^2 - \vec{v}_{i}'^2 = \vec{v}_{j}^2 + \vec{v}_{j}'^2 
- (\vec{v}_{i}^2-\vec{v}_{i}'^2)(\vec{v}_{i}^2 + \vec{v}_{i}'^2) = (\vec{v}_{j}^2 - \vec{v}_{j}'^2)(\vec{v}_{j}^2 + \vec{v}_{j}'^2) \\
- \mbox{ wegen Impulserhalt. } v_i + v_i' = v_j' + v_j 
-\end{align}
-und weiterhin
-\begin{align}
-\mbox{ Impuls: } v_i'-v_i= v_j -v_j' = v_j - (v_i + v_i - v_j) = 2 v_i - v_i -v_i' \\
-\Rightarrow v_i' - v_i = v_j - v_i \\
-\mbox{ allgemein: } 
-\Aboxed{ \Delta \vec{v}_{i} = \vec{l}_{i,j} (\vec{r}_j - \vec{r}_i)  \vec{l}_{i,j}  }
-\mbox{ (3D) mit } \vec{l}_{i,j} = \frac{\vec{r}_i - \vec{r}_j}{\vert \vec{r}_i - \vec{r}_j \vert}
-\end{align}
+\item Impulsänderung  entlang der Verbindungslinie der Schwerpunkte $|| \vec{r}_{i} - \vec{r}_{j} ||$
+\item Änderung von $\vec{v}_{i}, \vec{v}_{j}$ folgt aus Energiesatz und Impulssatz \\
+(\textit{hier:} gleiche Massen, harte Kugeln)\\ 
+%TODO image
+\textit{Impulssatz}: 
+\begin{align*}
+m( \vec{v}_{i}' - \vec{v}_{i}) = -m ( \vec{v}_{j}' - \vec{v}_{j})   \qquad \text{mit } (v'\; \widehat{=} \text{ nach Stoß)} 
+\end{align*} 
+\textit{Energiesatz:}
+\begin{align*}
+\frac{m}{2} (\vec{v}_{i}^2 + \vec{v}_{j}^2) &= \frac{m}{2} (\vec{v}_{i}'^2  + \vec{v}_{j}^{'2}) && + Q \\
+ \mbox{ mit } \qquad \qquad \qquad \qquad  \vec{v}_{i}^2 - \vec{v}_{i}'^2 &= \vec{v}_{j'}^2 - \vec{v}_{j}'^2 && + \frac{2Q}{m} \\ 
+ (\vec{v}_{i}^2-\vec{v}_{i}'^2)(\vec{v}_{i}^2 + \vec{v}_{i}'^2) &= (\vec{v}_{j}^2 - \vec{v}_{j}'^2)(\vec{v}_{j}^2 + \vec{v}_{j}'^2) \\
+ \text{ (wegen Impulserhaltung) } \qquad  v_i + v_i' &= v_j' + v_j && + \frac{2Q}{m (v_i - v_i')}
+\end{align*}\\
+und weiterhin \\
+\begin{align*}
+\mbox{ Impuls: } v_i'-v_i= v_j -v_j' = v_j - (v_i + v_i' - v_j) = 2 v_i - v_i -v_i' \\
+\Rightarrow v_i' - v_i = v_j - v_i 
+\end{align*}
+und allgemein in $3d$:
+\begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
+\Delta \vec{v}_{i} = \vec{l}_{i,j} (\vec{v}_j - \vec{v}_i) \,  \vec{l}_{i,j}  
+ \qquad \quad \mbox{ mit} \quad \vec{l}_{i,j} = \frac{\vec{r}_i - \vec{r}_j}{\vert \vec{r}_i - \vec{r}_j \vert}
+\end{tcolorbox}
 \end{itemize}
 \end{enumerate}
- Manchmal ist auch eine Energiedissipation erwünscht: \\
+ Häufig ist auch eine \textbf{Energiedissipation}\footnote{leichter Energieverlust} erwünscht: \\
 
 \begin{align}
-\Rightarrow \Delta \vec{v}_i = \vec{l}_{i,j} \left[ \vec{v}_j - \vec{v}_i) - \frac{Q}{m \Delta v_i} \right] \vec{l}_{i,j}
+\Delta \vec{v}_i = \vec{l}_{i,j} \left[ ( \vec{v}_j - \vec{v}_i) - \frac{Q}{m \; \Delta v_i} \right] \vec{l}_{i,j}
 \end{align}
-typische Annahme: $Q \propto \Delta v_i^2$ 
-\begin{align}
-\Rightarrow \frac{Q}{m}= \epsilon \Delta v_i^2 \Rightarrow v_i ' = v_i + (v_j - v_i) - \epsilon\underbrace{ \Delta v_i}_\text{= $v_j -v_i$} = \epsilon v_i + (1-\epsilon) v_j
-\end{align}
-$\epsilon$ ist dabei ein Maß für die beim Stoß dissipative Energie.
+Restriktionskoeffizient:
+\begin{align*}
+r= \frac{v_j ' - v_i '}{v_i - v_j}
+\end{align*}
+typische Annahme: 
+\begin{align*}
+Q \propto \Delta v_i^2 \quad \Rightarrow \quad \frac{Q}{m}= \epsilon \; \Delta v_i^2 
+\end{align*}
+\begin{align*}
+\Rightarrow  \quad v_i '& = v_i + (v_j - v_i) - \epsilon\underbrace{ \Delta v_i}_{v_j -v_i}  = v_i + (1 - \epsilon ) (v_j - v_i)
+\\
+&= \epsilon \; v_i + (1-\epsilon) \; v_j \qquad \qquad \epsilon > 0
+\end{align*}
+$\epsilon$ ist dabei ein Maß für die beim Stoß dissipative Energie. Mit Restriktionskoeffizienten ($\widehat{=}$ Maß für die verbleibende Energie)
+\begin{align*}
+r = 1 - 2\; \epsilon
+\end{align*}
 \subsubsection*{Randbedingungen:}
-In Simulationen nur endliche Teilchenzahl $N$ möglich. \\
-Wünschenswert: $N \to \infty, V \to \infty$ (Außer bei Nanotechnologie) \\
-Beispiel:  N Teilchen auf einfach kubischem Gitter $N = 512 = 8^3$ \\
+Häufig, etwa bei Simulationen von Flüssigkeiten; Gasen ist man an Systemen mit vielen Teilchen interessiert. In Simulationen nur endliche Teilchenzahl $N$ möglich. Realistische Teilchenzahlen in Großrechnern sind $\approx 100 \, 000$ (1997).Wünschenswert wäre: $N \to \infty, V \to \infty$ (Außer bei Nanotechnologie) \\
+$\Rightarrow$ Extrapolation uninteressant, wo liegt das Problem? \\
+
+\textbf{Beispiel:}  (N Teilchen auf einfach kubischem Gitter $N = 512 = 8^3$) \\
+$\Rightarrow$ Gittergröße: $ 8 \cdot 8 \cdot 8 = 512=N$ \\
 $\Rightarrow$ Oberfläche: $8 \cdot 8 \cdot 6 = 384$ Teilchen auf der Oberfläche (mehr als die Hälfte). \\
 $\Rightarrow$ Normal: $6$ Nachbarn, auf Oberfläche $<6$ Nachbarn. \\
-$\Rightarrow$ Problem sind die Oberflächen wegen geändertem Verhalten. (wegen der Nachbarn)\\
-Lösungsansatz: Periodische Randbedingungen. 
+$\Rightarrow$ Problem sind die Oberflächen wegen geändertem Verhalten. (wegen der Nachbarn)\\ \\
+ \textit{Lösungsansatz:} System periodisch fortsetzten. Periodische Randbedingungen. 
 \begin{itemize}
 \item Bewegung der Teilchen wird nur in \textit{einer} Zelle berechnet
 \item Wechselwirkung wird (prinzipiell) als Summe der Wechselwirkungen mit allen Bildern genommen
 \end{itemize}
-\underline{Einfaches Beispiel:} 1-dim, granulare Materie (geht auch in 2,3D) \\
-\underline{komplizierter:} langreichweitige Wechselwirkung
-Wechselwirkung:
+$\Rightarrow$ Wechselwirkung wie im unendlichen System, Verteilung im Ort aber periodisch (Approximation). \\
+(Andere Interpolation: periodische Anfangsbedingung führen zu periodischen Dichten %TODO word
+) \\
+\textbf{Einfaches Beispiel:} (1-dim System granularer Materie (geht auch in 2,3D)) \\ %TODO image
+nur einen Abstand mehr einführen \\ $\Rightarrow$ periodische Randbedingung (\textit{'Nächster Nachbar Wechselwirkung}') \\
+\textbf{komplizierteres Beispiel:} (unendlich langreichweitige Wechselwirkung)
 \begin{itemize}
-\item entweder abschneiden
-\item oder unendliche Reihe ausrechnen (Ewald Summation)
+\item entweder abschneiden, falls Wechselwirkung hinreichend schnell abfällt (siehe Bild oben) %TODO reference
+\item oder unendliche Reihe ausrechnen ($\to$Ewald Summation) z.B. erforderlich bei elektrostatischen Dipol-Wechselwirkung 
 \end{itemize}
-\underline{Ergebnis:} Oberflächeneffekte verschwinden, aber System bleibt periodisch. \\
-Beispiel: Event driven molekulardynamische Simulation, ($N=10$,$1d$, $R=0$) (links getrieben, rechts reflektiert $v  \dashrightarrow -v$)
+\textbf{Ergebnis:} Unterschied zu unendlichen Systemen: Periodizität! Oberflächeneffekte verschwinden, aber System bleibt periodisch. \\
+\textbf{Beispiel:} (Event driven molekulardynamische Simulation) \\
+$N=80$, $1d$, $R=0$ (links getrieben, rechts reflektiert $v  \dashrightarrow -v$) %TODO image
+Energiedissipation über Restriktionskoeffizienten 
+\begin{align*}
+r = 1-2 \; \epsilon \qquad \qquad (\epsilon \text{ wird vorgegeben)}
+\end{align*}
+Anfangsbedingungen: 
+\begin{align*}
+ x_i \quad (gleicher Abstand) \qquad \qquad \qquad \qquad v_i \quad \text{ (zuällig aus } [-v_{ini} , v_{ini}]) 
+\end{align*} %TODO letzte zwei indices stimmen nicht...
+
 
 \subsection{Stochastische Differentialgleichungen}
-\underline{Bislang:}
+\textbf{Bislang:} 
 \begin{itemize}
-\item klassische Bewegungsgleichungen lösen $\Rightarrow$ Moolekulardynamik \textit{ohne} Ankopplung an Wärmebad 
+\item klassische Bewegungsgleichungen lösen $\Rightarrow$ Molekulardynamik \textit{ohne} Ankopplung an Wärmebad 
 \item Ankopplung an Wärmebad (Mastergleichung) ohne Bewegungsgleichung
 \end{itemize}
-\underline{Jetzt:} Versuchen Bewegungsgleichung zu erweitern, sodass Wärmebad beschrieben wird
- \begin{itemize}
+\textbf{Jetzt:} Versuchen Bewegungsgleichung zu erweitern, sodass Wärmebad beschrieben wird
+\begin{itemize}
  \item Wandstöße sorgen für zufällige Impulsübertragung \\
+ \end{itemize}
  $\Rightarrow$ Bewegungsgleichung muss um einen \textit{zufälligen} Beitrag erweitert werden:
- \begin{align}
+\begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
  \dot{x} =\underbrace{ F(x(t))}_\text{deterministisch} +\underbrace{ \eta (t)}_\text{stochastisch} \\
- dx = f(x(t))dt + d\omega(t)
- \end{align}
-  \end{itemize}
-\underline{Beispiel:} \textsc{Brown}'sche Molekularbewegung (\textsc{Brown} 1827, \textsc{Einstein} 1905, \textsc{Smoluchowski} 1906 $\to$ \textsc{Fokker-Planck}-Gleichung, \textsc{Langevin} 1908) 
-Folgen \textsc{Langevin} Bewegungsgleichung für ein Teilchen auf einer Flüssigkeit. \textsc{Langevin} Gleichung 
-\begin{align}
-\underbrace{\dot{v}}_\textsc{Newton}= \underbrace{-\frac{c}{m} v(t)}_\text{ \textsc{Stokes}'sche Reibung} + \underbrace{\frac{1}{m}\eta (t)}_\text{Rauschen} \; , \; \mbox{ mit } c= 6 \pi \nu a
-\end{align} (Bewegungsgleichung für ein Teilchen, da ja in Wirklichkeit Wechselwirkung mit anderen Teilchen..ohne Wechselwirkung hätte man gleich ganz viele Teilchen nehmen können)
+ dx = f(x(t))dt + d\omega(t) \nonumber
+\end{tcolorbox} 
 
-\underline{Problem:} Deterministischer Anteil gibt eine Lösung für eine Anfangsbedingung. Durch Rauschen wird Trajektorie 'zufällig'. $\Rightarrow$ müssen ein Ensemble von Trajektorien betrachten.\\
-Eigenschaften des Rauschens $\eta (t)$ 
+\textbf{Beispiel:} (\textsc{Brown}'sche Molekularbewegung) \\
+(\textsc{Brown} 1827, (\textsc{Einstein} 1905, \textsc{Smoluchowski} 1906 $\to$ \textsc{Fokker-Planck}-Gleichung), \textsc{Langevin} 1908) 
+Folgen \textsc{Langevin} Bewegungsgleichung für \textit{ein} Teilchen auf einer Flüssigkeit. ($1d$). 
+\begin{tcolorbox}[ams align, title= \textsc{Langevin} Gleichung, colback=blue!10!white, colframe=blue!30!black] 
+\underbrace{\dot{v}}_\textsc{Newton}= \underbrace{-\frac{c}{m} v(t)}_\text{ \textsc{Stokes}'sche Reibung} + \underbrace{\frac{1}{m} \; \eta (t)}_\text{Rauschen} \; , \quad \mbox{ mit } c= 6 \pi \nu a
+\end{tcolorbox} 
+$c$ enthält die Viskosität und Teilchengröße, $\eta$ (Rauschen) meint vor allem die zufällige Impulsübertragung pro Zeit).\footnote{Bewegungsgleichung für ein Teilchen, da ja in Wirklichkeit Wechselwirkung mit anderen Teilchen..ohne Wechselwirkung hätte man gleich ganz viele Teilchen nehmen können}
+
+\textbf{Problem:} Deterministischer Anteil gibt \textit{eine} Lösung für \textit{eine} Anfangsbedingung. Durch Rauschen wird Trajektorie 'zufällig'. \\
+$\Rightarrow$ Wir müssen ein Ensemble von Trajektorien betrachten.\\
+Eigenschaften des Rauschens $\eta (t)$:
 \begin{enumerate}
 \item Mittelwert $\langle \eta \rangle = 0 $
 \begin{align}
-\int_t^{t + \Delta t} \eta (t') dt' \; \to \mbox{ \textsc{Gauss}-Verteilung. (Summe von Zufallsprozessen in } (t, t+\Delta t) )
+\int_t^{t + \Delta t} \eta (t') dt' \; \to \mbox{ \textsc{Gauss}-Verteilung.}
 \end{align}
-
-\item Rauschen ist unkorreliert 
-\begin{align}
- \langle \eta(t_1), \eta (t_2) \rangle =& \Gamma \delta (t_1 - t_2)\\
+Summe von Zufallsprozessen in $(t, t+\Delta t)$.
+\item Rauschen ist unkorreliert. Für gilt:
+\begin{align*}
+ \langle \eta(t_1) \; \eta (t_2) \rangle =& 0 \qquad \forall t_1 \neq t_2  \qquad \Rightarrow \qquad
+ \langle \eta(t_1) \; \eta (t_2) \rangle = \Gamma \delta (t_1 - t_2)\\
  \langle\Delta \omega(t_2), \Delta \omega(t_2)\rangle
- =& \langle \int_{t_1}^{t_1 + \Delta t} \eta (t') dt'  \int_{t_2}^{t_2 + \Delta t} \eta (t'') dt'' \rangle 
- = \Gamma  \int_{t_2}^{t_2 + \Delta t} \int_{t_1}^{t_1 + \Delta t} dt' dt'' \; \delta(t'-t'') \\
- =& \Gamma \Delta t\;  \delta_{t_1,t_2}  \\
- \langle \Delta \omega \rangle =& \langle \int_t^{t+\Delta t} dt' \eta (t') \rangle =0
+ =& \langle \int_{t_1}^{t_1 + \Delta t} \eta (t')  \; dt'  \int_{t_2}^{t_2 + \Delta t} \eta (t'') \;  dt'' \; \rangle  \\
+ =& \Gamma  \int_{t_2}^{t_2 + \Delta t} \int_{t_1}^{t_1 + \Delta t} dt' dt'' \; \delta(t_1'-t_2'') \\
+ =& \Gamma \Delta t\;  \delta_{t_1,t_2} 
+\end{align*}
+\begin{align}
+ \langle \Delta \omega \rangle &= \langle \int_t^{t+\Delta t}  \eta (t') \; dt' \rangle =0 \qquad \qquad  \\
+ \langle \Delta \omega^2 \rangle &= \Gamma \; \Delta t
 \end{align}
+erfüllt durch Gauß-Verteilung mit $\Gamma \Delta $
 \end{enumerate}
+Beide Eigenschaften, 1. und 2. determinieren \textbf{weißes Rauschen}. Zentrales Problem jedoch: $\Gamma $?\\
 Deterministischer Anteil hat Lösung
 \begin{align}
-v(t) = v_0 e^{- \frac{t}{\tau}} \; , \; \tau = \frac{m}{c}
+v(t) = v_0 ß; e^{- \frac{t}{\tau}} \; , \qquad \qquad \tau = \frac{m}{c}
 \end{align}
-mit Rauschen: Berechnen Autokorrelationsfunktion:
-\begin{align}
+mit Rauschen - Berechnen \textbf{Autokorrelationsfunktion.} Zunächst:
+\begin{align*}
 v(t+ \Delta t ) - v(t) =& - \frac{c}{m} v(t) \Delta t + \frac{1}{m} \int_t^{t+\Delta t} \eta (t') dt' \\
-\underbrace{ \langle v(0)}_\text{einfach eine Konstante} v(t+ \Delta t ) \rangle - \langle v(0) v(t) \rangle =&- \frac{c}{m} \langle v(0) v(t) \rangle \Delta t + \frac{1}{m} \underbrace{ \langle v(0) \int_t^{t+\Delta t} \eta (t') dt' \rangle }_\text{$=0$} \\
-\Rightarrow \frac{d}{dt} \langle v(0) v(t) \rangle 
-=& \frac{\langle v(0) v(t+ \Delta t) \rangle - \langle v(0) v(t) \rangle}{\Delta t} = - \frac{c}{m} \langle v(0) v(t) \rangle \\
-\langle v(0) v(t) \rangle =& \langle v(0)^2 \rangle e^{-\frac{t}{\tau}}
-\end{align}
-Aus statistischer Mechanik
-\begin{align}
-\langle \frac{m}{2} v^2 \rangle = \frac{k_B T}{2} \\
-\Rightarrow \mbox{ Autokorrelationsfunktion: } 
-\langle v(t) v(t') \rangle = \frac{k_B T}{m} e^{- \frac{t-t'}{\tau}}
-\end{align}
-Betrachten $\tau \to 0$ (entspricht $ m\to 0$), dann
-\begin{align}
-\langle v(t) v(t') \rangle \approx & \frac{2 k_B T}{m} \tau \delta (t_t') =\frac{2 k_B T}{c} \delta (t_t') \\
-v=& \frac{dx}{dt}= \frac{1}{c} \eta (t) \; \mbox{ mit } \langle \eta (t') \eta (t) \rangle = \Gamma \delta (t-t') 
-\end{align}
+\langle \underbrace{  v(0)}_{ \substack{\text{eine} \\ \text{ Kon-} \\ \text{stante}}} v(t+ \Delta t ) \rangle - \langle v(0) \; v(t) \rangle =&- \frac{c}{m} \langle v(0)\;  v(t) \rangle \Delta t + \frac{1}{m} \underbrace{ \langle v(0) \int_t^{t+\Delta t} \eta (t') \; dt' \rangle }_\text{$=0$} 
+\end{align*}
+\begin{align*}
+\Rightarrow \frac{d}{dt} \langle v(0) \; v(t) \rangle 
+= \frac{\langle v(0) \; v(t+ \Delta t) \rangle - \langle v(0) \; v(t) \rangle}{\Delta t} = - \frac{c}{m} \langle v(0) \; v(t) \rangle 
+\end{align*}
+\begin{align*}
+\langle v(0) \; v(t) \rangle = \langle v(0)^2 \rangle \, e^{-\frac{t}{\tau}} \qquad \text{ mit } \tau = \frac{m}{c}
+\end{align*}
+
+\begin{tcolorbox}[ams align, title= Autokorrelationsfunktion , colback=blue!10!white, colframe=blue!30!black] 
+\langle v(t) \; v(t') \rangle = \frac{k_B T}{m} e^{- \frac{\vert t-t' \vert}{\tau}}
+\end{tcolorbox}
+wegen Gleichverteilung folgt als Verbindung zur statistischen Mechanik
+\begin{align*}
+\langle \frac{m}{2} v^2 \rangle = \frac{k_B T}{2} 
+\end{align*}
+Wir betrachten weiterhin $\tau \to 0$ (entspricht $ m\to 0$), sodass
+\begin{align*}
+\langle v(t) v(t') \rangle \approx & \frac{2 k_B T}{m} \tau \delta (t_t') \approx \frac{2 k_B T}{c} \delta (t_t') 
+\end{align*}
+Letzteres im Sinne, dass Integrale (über $\pm \infty$) gleich sind! Vergleich mit $m \to 0$:
+\begin{align*}
+v=& \frac{dx}{dt}= \frac{1}{c} \; \eta (t) \qquad \qquad \mbox{ mit } \langle \eta (t')  \; \eta (t) \rangle = \Gamma \delta (t-t') 
+\end{align*}
+\textbf{Wiener-Prozess}
 \begin{enumerate} 
 \item
 \begin{align}
 \Gamma =& c^2 \frac{2 k_B T}{c} = 2 k_B T c
 \end{align}
-\item lösen \begin{align}
-\dot{x}= & \frac{1}{c} \eta (t) \; \Rightarrow x(t) = x(0) + \int_0^t \frac{\eta (t')}{c} dt' \\
-\langle x(t) \rangle =& \langle x(0) \rangle = 0 \\
-\langle (x(t) - x(0))^2 \rangle =& \frac{1}{c^2} \int_0^t \int_0^t dt' dt'' \underbrace{\langle \eta (t') \eta (t'') \rangle}_\text{$ \Gamma \delta (t' - t'')$} = \frac{2 k_B T}{c^2} c t = \underbrace{2 D t = \frac{2 k_B T t}{c}}_\text{\textsc{Einstein}-Beziehung}
-\end{align}
-$D$ ist die Diffusionskonstante mit \begin{align}
-D= \frac{k_B T}{6 \pi \nu a} \; \mbox{ mit: Viskosität } \nu \mbox{ und Radius } a
-\end{align}
-Ausbreitung von \textit{Random Walk} $\propto \sqrt{t}$ $\Rightarrow$ Wiener Prozess
+\item lösen \begin{align*}
+\dot{x}= \frac{1}{c} \eta (t) \quad &\Rightarrow \quad x(t) = x(0) + \int_0^t \frac{\eta (t')}{c} dt'  \\
+& \Rightarrow \quad \langle x(t) \rangle = \langle x(0) \rangle = x(0) 
+\end{align*}
+\begin{align*}
+\langle \left(x(t) - x(0) \right)^2 \rangle =& \frac{1}{c^2} \int_0^t \int_0^t dt' dt'' \underbrace{\langle \eta (t') \eta (t'') \rangle}_\text{$ \Gamma \delta (t' - t'')$} = \frac{2 k_B T}{c^2} c t = \underbrace{2 D t = \frac{2 k_B T t}{c}}_\text{\textsc{Einstein}-Beziehung}
+\end{align*}
+\begin{tcolorbox}[ams align, title= Einstein-Beziehung , colback=blue!10!white, colframe=blue!30!black] 
+2 D t = \frac{2 k_B T t}{c}
+\end{tcolorbox}
+$D$ ist die Diffusionskonstante mit \begin{align*}
+D= \frac{k_B T}{6 \pi \nu a} \quad \mbox{ mit: Viskosität } \nu \mbox{ und Teilchenradius } a
+\end{align*}
+Ausbreitung von \textit{Random Walk} $\propto \sqrt{t}$ $\Rightarrow$ \textbf{Wiener Prozess}  \\
 \end{enumerate}
-\underline{Random Walk:} eines der einfachsten Modelle der Computersimulation
+Wo liegt das Problem? Warum nicht Euler?
+%TODO image
+Extrapolation des Rauschens gibt es aber nicht, wird $\eta (t) \; \eta(t') = \Gamma \delta (t-t')$. 
+%TODO %TODO %TODO Hier gehts nächstes mal weiter
+\textbf{Random Walk:} eines der einfachsten Modelle der Computersimulation
 \begin{itemize}
 \item 'Random Walker' startet auf Gitterpunkt
 \item bei jedem Zeitschritt: zufällige Bewegung auf Gitter
