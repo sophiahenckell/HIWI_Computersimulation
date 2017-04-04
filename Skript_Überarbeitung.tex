@@ -1963,6 +1963,7 @@ K &=\frac{1}{2} \; \bar{h} \; f(x_n, t_n) \nonumber \\
 x_{n+1} &= x_n + \bar{h} \; f(x_n+k, \;  t_n+ \frac{1}{2} \bar{h}) + \mathcal{O}(h^3) \\
 t_{n+1} & = t_n \,+ \bar{h}  \nonumber
 \end{tcolorbox}
+
 Auch bekannt als \textbf{'Zwischenschritt-Verfahren'}. \\
 %TODO image
 
@@ -2219,12 +2220,12 @@ Tricks:
 \begin{itemize}
 \item \textit{mikrokanonisches Ensemble}
 \item  innere Energie U durch Anfangsbedingungen vorgegeben
-\item Entropie $S(U,V,N)$ wird maximiert
+\item Entropie $S(U,V,N)$ wird maximiert %TODO MINITMIERT
 \end{itemize} 
 \end{itemize}
 Wie üblich, wird die Zeit diskretisiert. Des Weiteren, gibt es zwei verschiedene Vorgehen, je nach Problemstellung:
  \begin{enumerate}
- \item Teilchen dicht gepackt, sie wechselwirken zu jeder Zeit mit den anderen \\
+ \item Teilchen dicht gepackt, sie wechselwirken zu jeder Zeit mit den anderen 
  \begin{itemize}
  \item[$\Rightarrow$] diskretisieren Zeit $t \to \Delta t$ also festes Zeitintervall $\Delta t$, lösen alle DGL zu jedem Zeitschritt 
  \item[$\Rightarrow$] \textbf{Zeitgesteuerte MD Simulation}, zu englisch ('\textit{time step driven}').
@@ -2239,53 +2240,70 @@ Wie üblich, wird die Zeit diskretisiert. Des Weiteren, gibt es zwei verschieden
  \end{enumerate}
  
  
-Zu 1) TD: populär ist der Verlet Algorithmus, den es in 2 Versionen gibt:
+Zu 1) TD: populär ist der \textbf{Verlet Algorithmus}, den es in 2 Versionen gibt:
+\begin{enumerate}
+\item[1)]
 \begin{align}
-\vec{r}_i (t+h) =& r_i(t) + h \vec{\dot{r}}_i(t) + \frac{h^2}{2} \vec{\ddot{r}}_i(t) + \mathcal{O} (h^2) \\
-\Rightarrow \vec{r}_i (t-h) =& r_i (t) - h \vec{\dot{r}}_i (t) + \frac{h^2}{2} \vec{\ddot{r}}_i (t) - \mathcal{O} (h^2) \\
-\Rightarrow 
- \Aboxed{\vec{r}_i (t+h) =& 2 r_i (t) - \vec{r}_i (t-h) + h^2 \vec{\ddot{r}}_i (t) +\mathcal{O} (h^2)} \\
- \mbox{mit } \vec{\ddot{r}}_i (t)=& \frac{\vec{F}(\vec{r}_1 (t),...., \vec{r}_N(t))}{m} 
-\end{align} 
+\vec{r}_i (t+h) =& r_i(t) + h \; \vec{\dot{r}}_i(t) + \frac{h^2}{2} \; \vec{\ddot{r}}_i(t) + \mathcal{O} (h^2) \\
+\vec{r}_i (t-h) =& r_i (t) - h \; \vec{\dot{r}}_i (t) + \frac{h^2}{2} \; \vec{\ddot{r}}_i (t) - \mathcal{O} (h^2) 
+\end{align}
+\begin{tcolorbox}[ams gather,title= I. Verlet-Algorithmus=blue!10!white, colframe=blue!30!black] 
+\vec{r}_i (t+h) = 2 \vec{r_i} (t) - \vec{r}_i (t-h) + h^2 \vec{\ddot{r}}_i (t) +\mathcal{O} (h^4) \\
+ \mbox{mit} \qquad \vec{\ddot{r}}_i (t)= \frac{\vec{F}(\vec{r}_1 (t),..., \vec{r}_N(t))}{m} 
+ \end{tcolorbox}
+
  
-Anfangsbedingungen $ \vec{r}_i (0), \vec{\dot{r}}_i (0) \overbrace{\Rightarrow}^\text{Euler} \vec{r}_i (h) = \vec{v}_i (0) h + \vec{r}_i (0)$
-Dabei wird $\vec{r}_i (t+h)$ wird berechnet, ohne dass $\vec{v}_i$ berechnet wird
+Anfangsbedingungen 
+\begin{align*}
+\vec{r}_i (0), \vec{\dot{r}}_i (0) \qquad \underbrace{\Rightarrow}_\text{Euler} \qquad \vec{r}_i (h) = \vec{v}_i (0) h + \vec{r}_i (0)
+\end{align*} 
+Dabei wird $\vec{r}_i (t+h)$ wird berechnet, ohne dass $\vec{v}_i$ berechnet werden muss. Wenn $\vec{v}$ bestimmt werden muss (z.B. für kinetische Energie): 
+\begin{align*}
+\vec{v}(t) = \frac{\vec{r}(t+h) - \vec{r}(t-h)}{2h} \mathcal{0}(h^2)
+\end{align*}
 
-%TODO MISSING Line!
+\item[2)] Geschwindigkeitsvariation: \textit{(häufiger)}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+\vec{r}(t+h) = \vec{r}(t) + \vec{\dot{r}} (t) h + \frac{h^2}{2} \vec{\ddot{r}}(t) + \mathcal{O}(h^3) 
+\end{tcolorbox}
 
-zu 2) Geschwindigkeitsvariation: (häufiger)
 \begin{align}
-\vec{r}(t+h) = \vec{r}(t) + \vec{\dot{r}} (t) h + \frac{h^2}{2} \vec{\ddot{r}}(t) + \mathcal{O}(h^3) \\
 \vec{\dot{r}}(t+h) = \vec{\dot{r}}(t) + \vec{\ddot{r}} (t) h + \frac{h^2}{2} \vec{\dddot{r}}(t) + \mathcal{O}(h^3) 
 \end{align}
 und
 \begin{align}
-h \vec{\dddot{r}}(t) = \vec{\ddot{r}} (t+h) - \vec{\ddot{r}} (t) + \mathcal{O}(h^2) \\
-\Rightarrow \Aboxed{ \vec{\dot{r}} (t+h) = \vec{\dot{r}} (t) + \frac{h}{2} ( \vec{\ddot{r}} (t) + \vec{\ddot{r}} (t+h) ) + \mathcal{O}(h^3) }  
-\end{align}
-mit
-\begin{align}
-\vec{\ddot{r}} (t)= \frac{\vec{F} (\vec{\dot{r}}_1 (t), ... , \vec{\dot{r}}_N (t) ) }{m} \; , \; 
-\vec{\ddot{r}} (t+h)= \frac{\vec{F} (\vec{\dot{r}}_1 (t+h), ... , \vec{\dot{r}}_N (t+h) ) }{m}
-\end{align}
-Anfangsbedingungen $\vec{r}_i (0), \vec{\dot{r}}_i (0), \Rightarrow \vec{F}(\vec{r}_1 (0), ..., \vec{r}_N (0))$
-\begin{align}
+h \vec{\dddot{r}}(t) = \vec{\ddot{r}} (t+h) - \vec{\ddot{r}} (t) + \mathcal{O}(h^2) \end{align}
+
+\begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
+ \vec{\dot{r}} (t+h)  = \vec{\dot{r}} (t) & + \frac{h}{2} ( \vec{\ddot{r}} (t) + \vec{\ddot{r}} (t+h) ) + \mathcal{O}(h^3)    \\
+\text{mit } \qquad \vec{\ddot{r}} (t) & = \frac{\vec{F} (\vec{\dot{r}}_1 (t), ... , \vec{\dot{r}}_N (t) ) }{m}  \nonumber \\
+\vec{\ddot{r}} (t+h) & = \frac{\vec{F} (\vec{\dot{r}}_1 (t+h), ... , \vec{\dot{r}}_N (t+h) ) }{m} \nonumber 
+\end{tcolorbox}
+Anfangsbedingungen $\vec{r}_i (0), \vec{\dot{r}}_i (0)\; \Rightarrow \;\vec{F}(\vec{r}_1 (0), ..., \vec{r}_N (0))$
+\begin{align*}
 \mbox{1. Schritt: } & \vec{r}(t+h) \mbox{ aus } \vec{r}(t), \vec{\dot{r}}(t) \\
 \mbox{ 2. Schritt: } &  F( \vec{r}_1 (t+h),..., \vec{r}_N (t+h)) \\
 \mbox{ 3. Schritt: } & \vec{\dot{r}}(t+h) \mbox{ aus } \vec{r}(t), \vec{r}(t+h), \vec{\dot{r}}(t)
-\end{align}
+\end{align*}
 wichtiges Kriterium für Güte eines Algorithmus:\\
-\underline{Erhaltung der Energie:} hier: 
+\textbf{Erhaltung der Energie:} hier: 
 \begin{itemize}
 \item Mittelwert stabil
-\item momentane Werte schwanken
+\item momentane Werte schwanken (sollte ja eigentlich nicht sein)
 \end{itemize}
-\underline{Kräfte:} zuer Beschreibund eines Festkörpers: QM-Rechnung der Kräfte auf Atome (sog. ab-initiv Rechnungen) \\
+\end{enumerate}
+Es gibt auch andere Algorithmen mit:
+\begin{itemize}
+\item geringere momentane Schwankung 
+\item Drift der Energie auf längeren Zeitskalen
+\end{itemize}
+
+\textbf{Kräfte:} zur Beschreibung eines Festkörpers: QM-Rechnung der Kräfte auf Atome (sog. ab-initiv Rechnungen) \\ %TODO wort
 $\Rightarrow$ Energie als Funktion der Atomposition \\
 $\Rightarrow$ Gitterstruktur, Gleichgewichtsabstände, Kräfte \\
-für Gase, Flüssigkeiten gibt es das stark vereinfacht:
+für Gase, Flüssigkeiten gibt es das stark vereinfachte
 \\
-\underline{Lennard-Jones-Potential} 
+\paragraph{Lennard-Jones-Potential} 
 \begin{align}
 U(r) = 
 4 \epsilon 
@@ -2293,32 +2311,48 @@ U(r) =
 \end{align}
 für neutrale Atome ohne innere Freiheitsgrade. 
 \begin{itemize}
-\item kleine Abstände: Wellenfunktion zweier Atome überlappen, Pauli Prinzip verbreitet Annäherung (bei abgeschlossenen Schalen im gleichen Zustand) $\Rightarrow U \propto r^{-12}$ (gut für Edelgase) \\
-\item große Abstände: Van der Waals Kräfte durch Polarisation der Ladungsverteilung mit $U \propto - r^{-6}$.
-\item eventuell auch weitere Wechselwirkungen wie z.B. Coulomb...
+\item \textbf{kleine Abstände:} Wellenfunktion zweier Atome überlappen,
+%TODO image 
+ Pauli Prinzip verbietet Annäherung (bei abgeschlossenen Schalen im gleichen Zustand) \\ $\Rightarrow U \propto r^{-12}$ (gut für Edelgase) \\ bei nicht abgeschlossenen Schalen auch chemische Bindung möglich. ($H_2$ Molekül)
+\item \textbf{große Abstände:} \textsc{Van der Waals} Kräfte durch Polarisation der Ladungsverteilung \\
+$\Rightarrow$ anziehende Wechselwirkung der Dipole (QM-Effekt) mit $U \propto - r^{-6}$.
+\item eventuell auch weitere Wechselwirkungen wie z.B. Coulombwirkung bei elektrisch geladenen Teilchen, ...
 \end{itemize}
-Beispiel: N Teilchen mit Lennard-Jones Potential
+\textbf{Beispiel:} (N Teilchen mit Lennard-Jones Potential)
 \begin{itemize}
 \item Anfangsbedingung: $\vec{v}_i (0)=0, \vec{r}_i (0)$ äquidistant, Eindimensional (1D) 
-\end{itemize}
+\end{itemize} %TODO ? struktur? (S.31)
 zu 2) ereignisgesteuerte Simulation
-$\vec{r}_i^{(0)}, \vec{v}_i^{(0)}$ seinen Koordinaten nach einem Stoß (oder Anfangsbedingung).
 \begin{itemize}
-\item Bilde alle $\frac{N(N-1)}{2}$ Abstände zwischen dem Teilchen $ \vert \vec{r}_i (t) - \vec{r}_j (t) \vert > R_i + R_j \; \forall i,j \Rightarrow$ freier Flug (freier Flug: $\vec{r}_i (t) = \vec{r}^{(0)} + \vec{v}^{(0)} t$)
-\item Stoß, wenn für ein Paar $(i,j) \; \vert \vec{r}_i (t_s) - \vec{r}_j (t_s) \vert = R_i + R_j $ und $ \vert \vec{r}_i (t_s) - \vec{r}_j (t_s) \vert > R_i + R_j \; \forall 0< t < t_s $ und alle anderen $i,j$.
+\item $\vec{r}_i^{(0)}, \vec{v}_i^{(0)}$ seinen Koordinaten nach einem Stoß (oder Anfangsbedingung): 
+\begin{align*}
+\vec{r}_i (t) = \vec{r}^{(0)} + \vec{v}^{(0)} t
+\end{align*} Bilde nun alle $\frac{N(N-1)}{2}$ Abstände zwischen dem Teilchen 
+\begin{align*}
+\vert \vec{r}_i (t) - \vec{r}_j (t) \vert > R_i + R_j \quad \forall i,j \qquad \Rightarrow \qquad  \text{freier Flug}
+\end{align*}
+\item Stoß findet statt, wenn für ein Paar $(i,j)$ gilt:
+\begin{align*}
+\; \vert \vec{r}_i (t_s) - \vec{r}_j (t_s) \vert &= R_i + R_j   \qquad t_s = \text{Stoßzeit} \\
+\text{ und } \quad  \vert \vec{r}_i (t_s) - \vec{r}_j (t_s) \vert &> R_i + R_j \qquad \forall 0< t < t_s \text{ und alle anderen } i,j
+\end{align*} 
 \end{itemize}
 \begin{enumerate}
-\item Berechnung der Stoßzeit (für gleiche Radien): 
-\begin{align}
-\vec{r}_i^{(0)} - \vec{r}_j^{(0)} \vert > R_i + R_j + \left( \vec{v}_i^{(0)} \right) -\left( \vec{v}_j^{(0)} \right) t_{s,ij}  \vert = 2 R \\
-\Rightarrow (\Delta \vec{r}_{i,j})^2 + 2\Delta \vec{r}_{i,j} \Delta\vec{v}_{i,j} t_{s,ij} + (\Delta \vec{v}_{i,j})^2 t_{s,ij}^2 = 4R \\
+\item \textbf{Berechnung der Stoßzeit} (für gleiche Radien): 
+\begin{align*}
+\vert \vec{r}_i^{(0)} - \vec{r}_j^{(0)} + \left( \vec{v}_i^{(0)} - \vec{v}_j^{(0)} \right) t_{s,ij}  \vert = 2 R 
+\end{align*}
+\begin{align*}
+\Rightarrow (\Delta \vec{r}_{i,j})^2 + 2(\Delta \vec{r}_{i,j})( \Delta\vec{v}_{i,j}) t_{s,ij} + (\Delta \vec{v}_{i,j})^2 t_{s,ij}^2 = 4R^2 
+\end{align*}
+\begin{align*}
 t_{s,ij} =
  \frac{1}{(\Delta \vec{v}_{i,j})^2} 
  \left( 
- - \Delta \vec{r}_{i,j} \Delta \vec{r}_{i,j} - \sqrt{( \Delta \vec{v}_{i,j} \Delta \vec{r}_{i,j})^2 - (\Delta \vec{r}_{i,j}) - 4R^2 (\Delta \vec{v}_{i,j})^2} \right)
-\end{align}
-Stoßzeit $t_s = min \{ t_{s,ij} > 0\} \forall i,j$
-\item Geschwindigkeitsänderung bei Stoß
+ - \Delta \vec{v}_{i,j} \; \Delta \vec{r}_{i,j} - \sqrt{( \Delta \vec{v}_{i,j} \; \Delta \vec{r}_{i,j})^2 - \left( (\Delta \vec{r}_{i,j})^2 - 4R^2\right) (\Delta \vec{v}_{i,j})^2} \; \right)
+\end{align*}
+Stoßzeit $t_s = \min \{ t_{s,ij} > 0\} \; \forall i,j$
+\item \textbf{Geschwindigkeitsänderung bei Stoß}
 \begin{itemize}
 \item Impulsänderung $|| \vec{r}_{i} - \vec{r}_{j}$
 \item Änderung von $\vec{v}_{i}, \vec{v}_{j}$ folgt aus Energiesatz und Impulssatz (hier: gleiche Massen, harte Kugeln)\\
