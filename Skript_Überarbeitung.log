@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  4 APR 2017 21:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  5 APR 2017 16:19
 entering extended mode
 **./Skript_Überarbeitung.tex
 (Skript_Überarbeitung.tex
@@ -992,61 +992,65 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 \Hy@linkcounter=\count141
 
-ABD: EveryShipout initializing macros
-<Null_DrittesStandbein.jpg, id=4, 388.8126pt x 238.0092pt>
+ABD: EveryShipout initializing macros (Skript_Überarbeitung.toc
+LaTeX Font Info:    Try loading font information for U+lasy on input line 2.
+
+("C:\Program Files\MiKTeX2.9\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 2.
+
+("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 2.
+
+("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write6
+\openout6 = `Skript_Überarbeitung.toc'.
+
+ [1
+
+{C:/Users/studium/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<Null_DrittesStandbein.jpg, id=10, 388.8126pt x 238.0092pt>
 File: Null_DrittesStandbein.jpg Graphic file (type jpg)
 
 <use Null_DrittesStandbein.jpg>
-Package pdftex.def Info: Null_DrittesStandbein.jpg used on input line 44.
+Package pdftex.def Info: Null_DrittesStandbein.jpg used on input line 47.
 (pdftex.def)             Requested size: 204.85844pt x 125.40703pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 52.
 
 ("C:\Program Files\MiKTeX2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 49.
-LaTeX Font Info:    Try loading font information for U+lasy on input line 63.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
 
-("C:\Program Files\MiKTeX2.9\tex\latex\base\ulasy.fd"
-File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 63.
-
-("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 63.
-
-("C:\Program Files\MiKTeX2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-<Null_Rechner.png, id=5, 623.4492pt x 194.6472pt>
+<Null_Rechner.png, id=11, 623.4492pt x 194.6472pt>
 File: Null_Rechner.png Graphic file (type png)
  <use Null_Rechner.png>
-Package pdftex.def Info: Null_Rechner.png used on input line 91.
+Package pdftex.def Info: Null_Rechner.png used on input line 94.
 (pdftex.def)             Requested size: 364.19664pt x 113.70627pt.
 
-[1
-
-{C:/Users/studium/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./Null_Dr
-ittesStandbein.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 110--111
+[2 <./Null_DrittesStandbein.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 123--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--138
+Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
 
-[2 <./Null_Rechner.png>]
-Overfull \hbox (14.26021pt too wide) in paragraph at lines 174--176
+[3 <./Null_Rechner.png>]
+Overfull \hbox (14.26021pt too wide) in paragraph at lines 177--179
 \OT1/cmr/bx/n/12 hal-tung: \OT1/cmr/m/n/12 Im ab-ge-schlos-se-nen Sy-stem ist d
 ie Ge-sam-t-ener-gie kon-stant mit $\OML/cmm/m/it/12 U \OT1/cmr/m/n/12 = \OML/c
 mm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
@@ -1054,70 +1058,70 @@ mm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 /cmr/m/n/12 )) =
  []
 
-[3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+[4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 345--347
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 376--380
+Underfull \hbox (badness 10000) in paragraph at lines 348--350
 
  []
 
-[8] [9] [10] [11]
-Overfull \hbox (21.10927pt too wide) in paragraph at lines 515--516
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 379--383
+
+ []
+
+[9] [10] [11] [12]
+Overfull \hbox (21.10927pt too wide) in paragraph at lines 518--519
 []\OT1/cmr/m/n/12 Es exi-stie-ren zahl-rei-che Wei-ter-ent-wick-lun-gen des lin
 ear-konvergenten Zufallszahlen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 546--547
+Underfull \hbox (badness 10000) in paragraph at lines 549--550
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 550--554
+Underfull \hbox (badness 10000) in paragraph at lines 553--557
 
  []
 
-[12]
-Underfull \hbox (badness 10000) in paragraph at lines 586--588
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 589--591
 
  []
 
-[13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+[14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 693--695
 
  []
 
 
-Overfull \hbox (16.82448pt too wide) in paragraph at lines 697--699
+Overfull \hbox (16.82448pt too wide) in paragraph at lines 700--702
 []\OT1/cmr/m/it/12 Schlecht w[]are zum Bei-spiel: \OT1/cmr/m/n/12 die Betrags-E
 xponentialfunktion (\OT1/cmr/m/sc/12 Gau\OT1/cmr/m/n/12 funktion) ben[]otigt
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 763--764
-
- []
-
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 845--851
+Underfull \hbox (badness 10000) in paragraph at lines 766--767
 
  []
 
-[18] [19] [20]
-Overfull \hbox (35.15198pt too wide) in paragraph at lines 964--967
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 848--854
+
+ []
+
+[19] [20] [21]
+Overfull \hbox (35.15198pt too wide) in paragraph at lines 967--970
 $\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 Pro-blem: wir brau-chen Zust[]ande $[]$ mi
 t Wahr-schein-lich-keit $\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 ([]) \OMS/cmsy/m/n/1
 2 / \OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 ($\OMS/cmsy/m/n/12 )$\OT1/cmr/m/n/12 
@@ -1125,204 +1129,490 @@ Problematisch).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 964--967
+Underfull \hbox (badness 10000) in paragraph at lines 967--970
 
  []
 
-[21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1056--1057
+[22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 1059--1060
 
  []
 
-[23] [24]
-Overfull \hbox (1.41315pt too wide) in paragraph at lines 1142--1142
+[24] [25]
+Overfull \hbox (1.41315pt too wide) in paragraph at lines 1145--1145
 [] 
  []
 
-[25] [26] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
-
- []
-
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 1342--1344
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1345--1349
+[26] [27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 1326--1327
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1381--1382
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1417--1419
+Underfull \hbox (badness 10000) in paragraph at lines 1348--1352
 
  []
 
-[30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1481--1484
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1384--1385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1489
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1422
 
  []
 
-[32]
-Overfull \hbox (6.84203pt too wide) in paragraph at lines 1514--1514
+[31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 1484--1487
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1488--1492
+
+ []
+
+[33]
+Overfull \hbox (6.84203pt too wide) in paragraph at lines 1517--1517
 []\OT1/cmr/bx/n/14.4 Kontinuierliche Frei-heits-gra-de: 'x-y' und Heisenbergs-M
 odell 
  []
 
-[33]
-Overfull \hbox (5.60808pt too wide) in paragraph at lines 1552--1559
+[34]
+Overfull \hbox (5.60808pt too wide) in paragraph at lines 1555--1562
 \OT1/cmr/m/n/12 dem gibt es rich-ti-ge (=al-so er-go-di-sche) und zu-dem sehr e
 f-fek-ti-ve Cluster-Algorithmen,
  []
 
-[34] [35] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 1724--1726
+[35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 1727--1729
 
  []
 
-[37]
-Overfull \hbox (6.71364pt too wide) in paragraph at lines 1773--1774
+[38]
+Overfull \hbox (6.71364pt too wide) in paragraph at lines 1776--1777
 []\OT1/cmr/m/n/12 Molekulardynamik (zun[]achst) mi-kro-ka-no-nisch, d.h. die En
 er-gie bleibt er-hal-ten. Durch
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1773--1774
-
- []
-
-[38]
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 1830.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 1830.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1856--1858
+Underfull \hbox (badness 10000) in paragraph at lines 1776--1777
 
  []
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1923--1925
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1833.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 1833.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1859--1861
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1943--1944
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1967--1969
+Underfull \hbox (badness 10000) in paragraph at lines 1926--1928
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 2001--2002
+Underfull \hbox (badness 10000) in paragraph at lines 1946--1947
 
  []
 
-[42] [43]
-Overfull \hbox (2.56035pt too wide) in paragraph at lines 2076--2080
+
+Underfull \hbox (badness 10000) in paragraph at lines 1970--1972
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 2004--2005
+
+ []
+
+[43] [44]
+Overfull \hbox (2.56035pt too wide) in paragraph at lines 2079--2083
 \OT1/cmr/m/n/12 Tra-jek-to-rie. Seit \OT1/cmr/m/sc/12 Poin-car[]e \OT1/cmr/m/n/
 12 (1892) ist eben-so be-kannt, dass sol-che DGLn un-ter Umst[]anden
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2085--2086
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 2125--2127
+Underfull \hbox (badness 10000) in paragraph at lines 2088--2089
 
  []
 
 [45]
-Underfull \hbox (badness 10000) in paragraph at lines 2171--2171
+Underfull \hbox (badness 10000) in paragraph at lines 2128--2130
 
  []
 
-[46] [47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 2301--2306
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 2174--2174
 
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 2372--2374
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2385--2386
+[47] [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 2304--2309
 
  []
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 2408--2410
+Underfull \hbox (badness 10000) in paragraph at lines 2375--2377
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2411--2417
+Underfull \hbox (badness 10000) in paragraph at lines 2388--2389
 
  []
 
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 2452--2453
+Underfull \hbox (badness 10000) in paragraph at lines 2411--2413
 
  []
 
 
-Overfull \hbox (1.90877pt too wide) in paragraph at lines 2460--2465
+Underfull \hbox (badness 10000) in paragraph at lines 2414--2420
+
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 2455--2456
+
+ []
+
+
+Overfull \hbox (1.90877pt too wide) in paragraph at lines 2463--2468
 \OT1/cmr/m/sc/12 Lan-ge-vin \OT1/cmr/m/n/12 1908) Fol-gen \OT1/cmr/m/sc/12 Lan-
 ge-vin \OT1/cmr/m/n/12 Be-we-gungs-glei-chung f[]ur \OT1/cmr/m/it/12 ein \OT1/c
 mr/m/n/12 Teil-chen auf ei-ner Fl[]ussig-
  []
 
-[52]
-
-LaTeX Warning: Command \ss invalid in math mode on input line 2496.
-
-
-LaTeX Warning: Command \ss invalid in math mode on input line 2496.
-
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 2543--2545
+
+LaTeX Warning: Command \ss invalid in math mode on input line 2499.
+
+
+LaTeX Warning: Command \ss invalid in math mode on input line 2499.
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 2546--2548
 
  []
 
-[54] [55] [56]
-Underfull \hbox (badness 10000) in paragraph at lines 2698--2700
+
+Underfull \hbox (badness 10000) in paragraph at lines 2549--2552
+
+ []
+
+
+Overfull \hbox (1.39981pt too wide) in paragraph at lines 2556--2557
+[]\OT1/cmr/m/n/12 bewegt sich dann bei je-dem Zeit-schritt 'zuf[]allig': z.B. B
+e-we-gung auf $2\OML/cmm/m/it/12 d$\OT1/cmr/m/n/12 -Quadratgitter 
+ []
+
+[55] [56]
+Underfull \hbox (badness 10000) in paragraph at lines 2630--2633
 
  []
 
 [57] [58]
-Underfull \hbox (badness 10000) in paragraph at lines 2753--2755
+Underfull \hbox (badness 10000) in paragraph at lines 2724--2726
 
  []
 
-[59] (Skript_Überarbeitung.aux)
+
+Overfull \hbox (11.71637pt too wide) in paragraph at lines 2727--2728
+[]\OT1/cmr/m/n/12 Einfachstes, ir-re-ver-si-bles Ver-fah-ren, das Stratonovich-
+Gleichung ver-wen-det: Heun-Verfahren. 
+ []
+
+[59]
+Overfull \hbox (4.83983pt too wide) in paragraph at lines 2768--2770
+\OT1/cmr/m/n/12 Wobei die Er-war-tungs-wer-te in klas-si-sche Gr[]oen []uber-g
+e-hen. (\OT1/cmr/bx/n/12 Ehrenfest-Theorem\OT1/cmr/m/n/12 ):
+ []
+
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 2788--2790
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2804--2806
+
+ []
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 2875--2877
+
+ []
+
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 2890--2891
+
+ []
+
+<Thouless_Uebergang_Nobelprice.pdf, id=230, 597.50829pt x 845.0471pt>
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 2
+894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 2
+894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 2
+894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 2
+894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 2
+894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 2
+894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+
+<Thouless_Uebergang_Nobelprice.pdf, id=237, page=1, 597.50829pt x 845.0471pt>
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 1>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 1>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [63]
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 1>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 1>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 1>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [64 <./Thouless_Uebergang_Nobelprice.pdf>]
+<Thouless_Uebergang_Nobelprice.pdf, id=344, page=2, 597.50829pt x 845.0471pt>
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 2>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page2 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 2>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page2 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 2>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page2 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [65 <./Thouless_Uebergang_Nobelprice.pdf>]
+<Thouless_Uebergang_Nobelprice.pdf, id=376, page=3, 597.50829pt x 845.0471pt>
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 3>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page3 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 3>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page3 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 3>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page3 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [66 <./Thouless_Uebergang_Nobelprice.pdf>]
+<Thouless_Uebergang_Nobelprice.pdf, id=388, page=4, 597.50829pt x 845.0471pt>
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 4>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page4 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 4>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page4 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 4>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page4 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [67 <./Thouless_Uebergang_Nobelprice.pdf>]
+<Thouless_Uebergang_Nobelprice.pdf, id=401, page=5, 597.50829pt x 845.0471pt>
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 5>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page5 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 5>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page5 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
+
+<use Thouless_Uebergang_Nobelprice.pdf, page 5>
+Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page5 used on input
+ line 2894.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [68 <./Thouless_Uebergang_Nobelprice.pdf>] <Nowak.pdf, id=413, 614.295pt x 794
+.97pt>
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf>
+Package pdftex.def Info: Nowak.pdf used on input line 2895.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Nowak.pdf Graphic file (type pdf)
+
+<use Nowak.pdf>
+Package pdftex.def Info: Nowak.pdf used on input line 2895.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf>
+Package pdftex.def Info: Nowak.pdf used on input line 2895.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf>
+Package pdftex.def Info: Nowak.pdf used on input line 2895.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf>
+Package pdftex.def Info: Nowak.pdf used on input line 2895.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+
+<Nowak.pdf, id=419, page=1, 614.295pt x 794.97pt>
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 1>
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 2895.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: Nowak.pdf Graphic file (type pdf)
+
+<use Nowak.pdf, page 1>
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 1>
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 1>
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+
+<use Nowak.pdf, page 1>
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [69 <./Nowak.pdf>]
+<Nowak.pdf, id=451, page=2, 614.295pt x 794.97pt>
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 2>
+Package pdftex.def Info: Nowak.pdf, page2 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+
+<use Nowak.pdf, page 2>
+Package pdftex.def Info: Nowak.pdf, page2 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 2>
+Package pdftex.def Info: Nowak.pdf, page2 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [70 <./Nowak.pdf>]
+<Nowak.pdf, id=463, page=3, 614.295pt x 794.97pt>
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 3>
+Package pdftex.def Info: Nowak.pdf, page3 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+
+<use Nowak.pdf, page 3>
+Package pdftex.def Info: Nowak.pdf, page3 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 3>
+Package pdftex.def Info: Nowak.pdf, page3 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [71 <./Nowak.pdf>]
+<Nowak.pdf, id=478, page=4, 614.295pt x 794.97pt>
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 4>
+Package pdftex.def Info: Nowak.pdf, page4 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+
+<use Nowak.pdf, page 4>
+Package pdftex.def Info: Nowak.pdf, page4 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+File: Nowak.pdf Graphic file (type pdf)
+ <use Nowak.pdf, page 4>
+Package pdftex.def Info: Nowak.pdf, page4 used on input line 2895.
+(pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
+ [72 <./Nowak.pdf>]
+(Skript_Überarbeitung.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18014 strings out of 493334
- 361899 string characters out of 3139675
- 459733 words of memory out of 3000000
- 21175 multiletter control sequences out of 15000+200000
- 18435 words of font info for 73 fonts, out of 3000000 for 9000
+ 18067 strings out of 493334
+ 363238 string characters out of 3139675
+ 459751 words of memory out of 3000000
+ 21221 multiletter control sequences out of 15000+200000
+ 18736 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  54i,22n,85p,889b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pro
@@ -1338,20 +1628,21 @@ ram Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/
 MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files/MiKTeX2.
 9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX2.9/fonts/ty
 pe1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public
-/amsfonts/cm/cmr5.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/c
-m/cmr6.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-<C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
- Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/Mi
-KTeX2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX2.9/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/
-public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/am
-sfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm
-/cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmtt8.pf
-b><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><C
-:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Skript_Überarbeitung.pdf (59 pages, 595837 bytes).
+/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/c
+m/cmr7.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+<C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progr
+am Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/M
+iKTeX2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX2.9/f
+onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX2.9/fonts/type
+1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/
+amsfonts/cm/cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/
+cm/cmtt8.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/ms
+am10.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+
+Output written on Skript_Überarbeitung.pdf (72 pages, 1104947 bytes).
 PDF statistics:
- 305 PDF objects out of 1000 (max. 8388607)
+ 570 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

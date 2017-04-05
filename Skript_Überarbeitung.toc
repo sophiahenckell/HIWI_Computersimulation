@@ -1,0 +1,44 @@
+\contentsline {section}{\numberline {1}Vorwort}{2}
+\contentsline {subsection}{\numberline {1.1}Hardware}{2}
+\contentsline {section}{\numberline {2}Stochastische Physik}{4}
+\contentsline {subsection}{\numberline {2.1}Mikrozust\IeC {\"a}nde, Phasenraum und Entropie}{4}
+\contentsline {subsection}{\numberline {2.2}Mikrokanonische Gesamtheit}{6}
+\contentsline {subsection}{\numberline {2.3}Kanonisches Ensemble}{7}
+\contentsline {subsection}{\numberline {2.4}Weitere Resultate der statistischen Mechanik}{9}
+\contentsline {section}{\numberline {3}Monte Carlo Verfahren}{10}
+\contentsline {subsection}{\numberline {3.1}Zufallszahlen}{10}
+\contentsline {paragraph}{Erzeugung von Zufallszahlen im Rechner}{11}
+\contentsline {paragraph}{Methode 1}{11}
+\contentsline {subsection}{\numberline {3.2} Monte Carlo Integration}{13}
+\contentsline {paragraph}{Fehler:}{14}
+\contentsline {paragraph}{Diskussion:}{15}
+\contentsline {paragraph}{Verbesserung:}{16}
+\contentsline {subsection}{\numberline {3.3}Zufallszahlen einer vorgegebenen Verteilung}{17}
+\contentsline {subsection}{\numberline {3.4}Ising Modell}{19}
+\contentsline {subsection}{\numberline {3.5}Monte Carlo Simulation}{22}
+\contentsline {subsection}{\numberline {3.6}Master Gleichung und Monte Carlo Dynamik}{24}
+\contentsline {subsection}{\numberline {3.7}Phasen\IeC {\"u}bergange und Skalentheorie}{27}
+\contentsline {subsection}{\numberline {3.8}Finite size scaling}{32}
+\contentsline {subsection}{\numberline {3.9}Kontinuierliche Freiheitsgrade: 'x-y' und Heisenbergs-Modell}{34}
+\contentsline {subsection}{\numberline {3.10}MC-Algorithmen f\IeC {\"u}r kontinuierliche Freiheitsgrade}{35}
+\contentsline {subsubsection}{\numberline {3.10.1}x-y-Modell}{35}
+\contentsline {subsubsection}{\numberline {3.10.2}Heisenberg-Modell}{36}
+\contentsline {subsection}{\numberline {3.11}Perkolation}{37}
+\contentsline {subsubsection}{\numberline {3.11.1}nummerisches Verfahren zur Clusteranalyse}{38}
+\contentsline {section}{\numberline {4}Molekulardynamiksimulationen}{39}
+\contentsline {subsection}{\numberline {4.1}Euler Verfahren}{40}
+\contentsline {subsection}{\numberline {4.2}Stabilit\IeC {\"a}tsanalyse}{40}
+\contentsline {paragraph}{Weitere Tests (nummerisch):}{41}
+\contentsline {subsection}{\numberline {4.3}Runge-Kutta Verfahren}{41}
+\contentsline {subsection}{\numberline {4.4}Schrittweitenanpassung}{43}
+\contentsline {subsection}{\numberline {4.5}Pr\IeC {\"a}dikator-Korrelator-Verfahren}{44}
+\contentsline {subsection}{\numberline {4.6}Chaotische Systeme und fraktale Dimensionen}{45}
+\contentsline {paragraph}{Geht das denn \IeC {\"u}berhaupt?}{45}
+\contentsline {paragraph}{Diskussion:}{46}
+\contentsline {subsection}{\numberline {4.7}Molekulardynamik im mikrokanonischen Ensemble}{48}
+\contentsline {paragraph}{Lennard-Jones-Potential}{50}
+\contentsline {subsection}{\numberline {4.8}Stochastische Differentialgleichungen}{53}
+\contentsline {subsubsection}{\numberline {4.8.1}Erst die Numerik}{56}
+\contentsline {subsubsection}{\numberline {4.8.2}Jetzt Multiplikatives Rauschen}{58}
+\contentsline {subsection}{\numberline {4.9}Zeitquantifizierung von Monte Carlo Methoden}{59}
+\contentsline {section}{Anhang}{63}

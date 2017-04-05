@@ -37,7 +37,10 @@ bottom=4em}
 
 
 \begin{document}
-\section*{Vorwort}
+\tableofcontents
+\newpage
+
+\section{Vorwort}
 Die Bedeutung der Computersimulation für die physikalische Forschung steigt. Man kann von einem 3. methodischen Standbein der Physik sprechen: 
 \begin{figure}[ht]
 	\centering
@@ -2522,7 +2525,7 @@ Letzteres im Sinne, dass Integrale (über $\pm \infty$) gleich sind! Vergleich m
 \begin{align*}
 v=& \frac{dx}{dt}= \frac{1}{c} \; \eta (t) \qquad \qquad \mbox{ mit } \langle \eta (t')  \; \eta (t) \rangle = \Gamma \delta (t-t') 
 \end{align*}
-\textbf{Wiener-Prozess}
+\textbf{Wiener-Prozess} %TODO image
 \begin{enumerate} 
 \item
 \begin{align}
@@ -2541,26 +2544,29 @@ v=& \frac{dx}{dt}= \frac{1}{c} \; \eta (t) \qquad \qquad \mbox{ mit } \langle \e
 $D$ ist die Diffusionskonstante mit \begin{align*}
 D= \frac{k_B T}{6 \pi \nu a} \quad \mbox{ mit: Viskosität } \nu \mbox{ und Teilchenradius } a
 \end{align*}
-Ausbreitung von \textit{Random Walk} $\propto \sqrt{t}$ $\Rightarrow$ \textbf{Wiener Prozess}  \\
+Ausbreitung von \textit{Random Walk} $\propto \sqrt{t}$ $\Rightarrow$ \textbf{Wiener Prozess}  \\ 
 \end{enumerate}
 Wo liegt das Problem? Warum nicht Euler?
 %TODO image
-Extrapolation des Rauschens gibt es aber nicht, wird $\eta (t) \; \eta(t') = \Gamma \delta (t-t')$. 
-%TODO %TODO %TODO Hier gehts nächstes mal weiter
-\textbf{Random Walk:} eines der einfachsten Modelle der Computersimulation
+Extrapolation des Rauschens gibt es aber nicht, wird $\eta (t) \; \eta(t') = \Gamma \delta (t-t')$. \\
+
+\textbf{Random Walk:} eines der einfachsten Modelle der Computersimulation %TODO image
 \begin{itemize}
 \item 'Random Walker' startet auf Gitterpunkt
-\item bei jedem Zeitschritt: zufällige Bewegung auf Gitter
+\item bewegt sich dann bei jedem Zeitschritt 'zufällig': z.B. Bewegung auf $2d$-Quadratgitter
 \item einzelne Trajektorie zufällig $\Rightarrow$ statistische Auswertung durch Mittelung über viele RW's
-\begin{align*}
-\langle x(t) \rangle =& \langle x(0) \rangle = x(0) \\
-\langle x(t)^2 \rangle = & t \; \Rightarrow \sqrt{\langle x(t)^2 \rangle} \propto \sqrt{t}
-\end{align*}
-Ausbreitung der RW also $\propto \sqrt{t}$ in jeder Dimension $\Rightarrow$ für Diffusion
 \end{itemize}
+Diskrete Version der DGL $\dot{x} \propto \eta (t)$
+\begin{align*}
+\langle x(t) \rangle =& \langle x(0) \rangle = x(0)\;  , \qquad \qquad
+\langle x(t)^2 \rangle =  t \quad \Leftrightarrow \quad \sqrt{\langle x(t)^2 \rangle} \propto \sqrt{t}
+\end{align*}
+Ausbreitung der RW also $\propto \sqrt{t}$ in jeder Dimension $\Rightarrow$ Modell für Diffusion
+
 \subsection*{Numerik stochastischer Differentialgleichungen (SDGL)}
-\begin{enumerate}
-\item Additives Rauschen der Form 
+\subsubsection{Erst die Numerik}
+
+Additives Rauschen der Form 
 \begin{align}
 \dot{x}	= f(x) + \eta (t)
 \end{align}
@@ -2568,32 +2574,48 @@ $\eta (t)$: stochastischer Prozess und
 \begin{align}
 \langle \eta (t) \rangle = 0 \; , \; \langle \eta (t), \eta (t') \rangle = \Gamma \delta (t-t') \forall t
 \end{align}
-Diskretisieren der Zeit $t_n = n \Delta t \forall n \in \mathcal{N}$
+Diskretisieren der Zeit 
+\begin{align*}
+t_n = n \Delta t \qquad \forall n \in \mathcal{N}
+\end{align*} 
 \begin{itemize}
 \item ohne Rauschen 
-\begin{align}
-\underbrace{\int_t^{t+\Delta t} \dot{x} dt}_\text{$x(t+ \Delta t) - x(t)$} = \underbrace{\int_t ^{t+\Delta t} f(x(t')) dt'}_\text{$f(x(t)) \Delta t + \mathcal{O}(\Delta t^2)$} \\
-x_{n+1} = x_n + f(x_n) \Delta t + \mathcal{O} (\Delta t^2) \mbox{ 'Euler Verfahren'}
-\end{align}
+\begin{align*}
+\underbrace{\int_t^{t+\Delta t} \dot{x} \; dt}_\text{$x(t+ \Delta t) - x(t)$} = \underbrace{\int_t ^{t+\Delta t} f(x(t')) \; dt'}_{f(x(t)) \Delta t + \mathcal{O}(\Delta t^2)} \qquad \underbrace{\longrightarrow }_\text{Euler} \qquad
+x_{n+1} = x_n + f(x_n) \Delta t + \mathcal{O} (\Delta t^2) 
+\end{align*}
 lokaler Abbruchfehler ist von Ordnung $\mathcal{O} (\Delta t^2)$
 \item mit Rauschen 
-\begin{align}
-x_{n+1} = x_n + f(x_n) \Delta t + \Delta w(t_n) \mbox{ wobei } \Delta W(t_n) = \int_{t_n}^{t_n + \Delta t} \eta (t) dt \\
-\langle \Delta w(t_n) \Delta w(t_{n'}) \rangle = \langle \int_{t_n}^{t_n +\Delta t } \int_{t_{n'}}^{t_{n'} +\Delta t } \eta (t_1) \eta (t_2) dt_1 dt_2 \rangle \\
-= \int_{t_n}^{t_n +\Delta t } \int_{t_{n'}}^{t_{n'} +\Delta t }  \Gamma \delta (t_1 - t_2) dt_1 dt_2 = \Gamma \int_{t_n}^{t_n +\Delta t } \delta_{n n'} dt_1 = \Gamma \Delta t \delta_{n n'}
-\end{align}
-$\to$ weißes Rauschen mit $\Gamma \Delta t$, siehe (a)\\
-$\to$ stochastische Eigenschaften bleiben erhalten aber $\Delta x$ wird erhöht um $ \Delta x \propto \sqrt{\Delta t}$ in niedrigster Ordnung (statt $\Delta t$)
-\begin{align}
-\Rightarrow f(x_n + \Delta x) \approx f(x_n) + \mathcal{O} (\Delta x) = f(x_n) + \mathcal{O}(\Delta t^\frac{1}{2}) \\
-\Rightarrow  \Aboxed{
- x_{n+1} = x_n + f(x_n) \Delta t + \Delta w (t_n) + \mathcal{O} (\Delta t^\frac{3}{2})}
-\end{align}
+\begin{align*}
+x_{n+1} = x_n + f(x_n) \Delta t + \Delta w(t_n) + ...  
+\end{align*}
+mit
+\begin{align*}
+\Delta w(t_n) &= \int_{t_n}^{t_n + \Delta t} \eta (t') dt' \\
+\langle \Delta w(t_n) \Delta w(t_{n'}) \rangle &= \langle \int_{t_n}^{t_n +\Delta t } \int_{t_{n'}}^{t_{n'} +\Delta t } \eta (t_1) \eta (t_2) \; dt_1 \, dt_2 \; \rangle \\
+&= \int_{t_n}^{t_n +\Delta t } \int_{t_{n'}}^{t_{n'} +\Delta t }  \Gamma \delta (t_1 - t_2) \; dt_1 \, dt_2 \\
+&= \Gamma \int_{t_n}^{t_n +\Delta t } \delta_{n n'} dt_1 = \Gamma \; \Delta t \; \delta_{n n'}
+\end{align*}
+$\Rightarrow$ wieder weißes Rauschen, aber mit Breite $\Gamma \Delta t$, siehe (a). Macht keinen Fehler, \textit{aber} durch das Rauschen wird der Schritt $\Delta x$ zusätzlich erhöht.\\
+$\Rightarrow$ stochastische Eigenschaften bleiben erhalten aber $\Delta x \; \to \; \Delta x \propto \sqrt{\Delta t}$ in niedrigster Ordnung (statt $\Delta t$)
+\begin{align*}
+f(x_n + \Delta x) \approx f(x_n) + \mathcal{O} (\Delta x) = f(x_n) + \mathcal{O}(\Delta t^\frac{1}{2}) 
+\end{align*}
+\begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
+ x_{n+1} = x_n + f(x_n) \Delta t + \Delta w (t_n) + \mathcal{O} (\Delta t^\frac{3}{2})
+\end{tcolorbox}
+\end{itemize}
 $\to$ mit Rauschen: andere Konvergenz \\
 $\to$ andere Breite des Rauschens für endliche Zeitschritte $(\Gamma \to \Gamma \Delta t)$
-\item Praktische Durchführung des \textsc{Euler-Maruyama}-Verfahrens
+
+ Praktische Durchführung des \textsc{Euler-Maruyama}-Verfahrens  (Wie bei Euler-Verfahren für deterministische DGL $+$ Rauschen, also Zufallszahlen der Breite $\Gamma \; \Delta t$). \textbf{z.B.} (aber nicht unbedingt) Gauß-verteilte Zufallszahlen mit Verteilung 
+ \begin{align*}
+ p(\Delta w) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{\Delta w^2}{2 \sigma ^2} } \qquad \text{mit } \sigma^2 = \Gamma \; \Delta t \underbrace{=}_{\substack{\text{ z.B. für Brownsche} \\ \text{Molekularbewegung}}} 2 k_B T \; 6 \pi \bar{\eta} a \; \Delta t
+ \end{align*}
+% \subsubsection{Jetzt komplizierter: Mulitplikatives Rauschen}
+%TODO keine Ahnung wo das herkommt....
 \begin{align}
-\dot{x}= \underbrace{ f(t,x)}_\text{det. Teil} +\underbrace{ g(t) \underbrace{\eta (t)}_\text{Rauschen}}_\text{stoch. Teil}
+\dot{x}= \underbrace{ f(t,x)}_\text{det. Teil} +\underbrace{ g(x(t)) \underbrace{\eta (t)}_\text{Rauschen}}_\text{stoch. Teil}
 \end{align}
 zusammen mit
 \begin{align}
@@ -2606,42 +2628,59 @@ wobei
 P( \Delta w) = \frac{1}{\sqrt{2 \pi} \mathcal{O}} e^{-\frac{\Delta w^2}{	2 \mathcal{O}^2}} \; , \; \mathcal{O}^2 = \Gamma \Delta t \\
 \langle \Delta w \rangle = 0 \; , \; \langle \Delta w^2 \rangle = \Gamma \Delta t
 \end{align}
-Beachte: Gaußverteilung ist nicht notwendig um (\ref{conditions}) zu erfüllen, aber hinreichend.
-\end{itemize}
-Beispiel: \textsc{Brown}'sche Molekularbewegung 
+Beachte: Gaußverteilung ist nicht notwendig um (\ref{conditions}) zu erfüllen, aber hinreichend. \\
+%TODO keine Ahnung wo das herkam da oben....
+
+\textbf{Beispiel:} \textsc{Brown}'sche Molekularbewegung 
 \begin{align*}
-m \ddot{x}= - \gamma \dot{x} + \eta (t) \\
+\dot{x}=v \qquad \Rightarrow \qquad m \ddot{x}= - \gamma \dot{x} + \eta (t)  \quad \text{mit } \frac{\gamma}{m}= 1 = \gamma = m
+\end{align*}
+\begin{align*} \Rightarrow
+\begin{cases}
+f_1 (v) = v \\
+f_2 (v) = -v
+\end{cases} \qquad \text{ sowie } \qquad \eta (t) \; \eta (t')= \Gamma \delta (t-t'), \; \Gamma =1
+\end{align*}
+Bei Diskretisierung $\eta (t) \to \Delta w(t)=$ Zufallszahl mit Breite $\Gamma\;  \Delta t$
+\begin{align*}
 \Rightarrow z= 
 \begin{pmatrix}x\\ \dot{x}\end{pmatrix} 
 \Rightarrow  \dot{z} = \begin{pmatrix} \dot{x}\\ \ddot{x}\end{pmatrix} = \begin{pmatrix}z_1\\ - \frac{\gamma}{m} z_2 + \frac{1}{m} \eta (t)\end{pmatrix} = 
 \underbrace{\begin{pmatrix} Z_2 \\ \frac{-\gamma}{m} z_2 \end{pmatrix} }_\text{det Teil}+\underbrace{ \begin{pmatrix} 0\\ \frac{1}{m} \eta (t)\end{pmatrix} }_\text{stoch}
 \end{align*}
-Beachte: \textit{kein} Wiener Prozess , da endliche Masse die zur Beschleunigung für kurze Zeiten führt. $\to$ Abweichung von $\langle ( x(t) - x(0)^2) \rangle = 2Dt$
-\item Multiplikatives Rauschen der Form 
-\begin{align}
+Beachte: \textit{kein} Wiener Prozess , da endliche Masse die zur Beschleunigung für kurze Zeiten führt ($m \to 0 \; \Rightarrow \; v \propto \eta$). \\
+$\Rightarrow$ Abweichungen von $\langle ( x(t) - x(0))^2 \rangle = 2Dt$\\
+$\Rightarrow$ Wegen der endlichen Masse $\widehat{=}$ Beschleunigung für kurze Zeiten.
+\subsubsection{Jetzt Multiplikatives Rauschen}
+etwas komplizierter: 
+\begin{align*}
 \dot{x}= f(t,x) + g(t,x) \cdot \eta (t) 
-\end{align}
+\end{align*}
 \begin{enumerate}
-\item Möglichkeit: Diskretisierung wie \textsc{Euler}
-\begin{align}
-\Delta x = x(t + \Delta t) - x(t) = f(x) \Delta t + g(x) \Delta w + \mathcal{O}(\Delta t^\frac{3}{2} \label{formel}
-\end{align}
-\item Möglichkeit: \textsc{Heun}-Verfahren (\textit{mit Parameter $\alpha$})
-\begin{align}
+\item \textbf{Möglichkeit:} Diskretisierung wie \textsc{Euler}
+\begin{tcolorbox}[ams align, title=It\^{o}-Diskretisierung , colback=blue!10!white, colframe=blue!30!black] 
+\Delta x = x(t + \Delta t) - x(t) = f(x) \Delta t + g(x(t)) \Delta w + \mathcal{O}(\Delta t^\frac{3}{2} )\label{formel} 
+\end{tcolorbox}
+\item \textbf{Möglichkeit:} \textsc{Heun}-Verfahren (\textit{mit Parameter $\alpha$}) wie Runge-Kutta 2. Stufe
+\begin{tcolorbox}[ams align, title=Stratonovich-Diskretisierung , colback=blue!10!white, colframe=blue!30!black] 
 \Delta x = \frac{\Delta t}{2} \left( f(x) + f(x + \alpha \Delta x) \right)+  \frac{\Delta w}{2} \left( g(x) + g(x +\alpha \Delta x) \right)
-\end{align}
+\end{tcolorbox}
+
+Wobei
+\begin{flalign*}
+f(x + \alpha \Delta x ) =& f(x) + f'(x) \; \alpha \;\Delta x + \mathcal{O}(\Delta x^2) \\
+g(x + \alpha \Delta x ) =& g(x) + g'(x) \;\alpha \; \Delta x + \frac{1}{2} g'' (x) (\alpha \; \Delta x)^2+ \mathcal{O}(\Delta x^3) 
+\end{flalign*}
+Mit $ \mathcal{O}(\Delta x) = \mathcal{O}(\Delta t^{\frac{1}{2}})$ folgt
 \begin{align}
-f(x + \alpha \Delta x ) =& f(x) + f'(x) \alpha \Delta x + \mathcal{O}(\Delta x^2) \\
-g(x + \alpha \Delta x ) =& g(x) + g'(x) \alpha \Delta x + \frac{1}{2} g'' (x) (\alpha \Delta x)^2+ \mathcal{O}(\Delta x^3) \\
-\Rightarrow \Delta x = & f(x) \Delta t + \frac{1}{2} f' (x) \alpha \Delta x \Delta t + \mathcal{O} (\Delta x^2 \Delta t) \\
+\Rightarrow \Delta x = & f(x)\;  \Delta t + \frac{1}{2} f' (x) \; \alpha \; \Delta x \; \Delta t + \mathcal{O} (\Delta x^2 \; \Delta t) \nonumber \\
 +&
-g(x) \Delta g + \frac{1}{2} g' (x) \alpha \Delta x \Delta w +\frac{\alpha^2}{4} g''(x) \underbrace{\Delta x^2 \Delta w}_\text{$ = \mathcal{O}(\Delta t^\frac{3}{2}$} + \underbrace{\mathcal{O} (x^3) }_\text{$ \Delta t^\frac{3}{2}$}
-\\
- \mbox{ mit: } \mathcal{O}(\Delta x) = \mathcal{O}(\Delta t^{\frac{1}{2}}
+g(x) \; \Delta w + \frac{1}{2} g' (x) \; \alpha \; \Delta x \; \Delta w +\frac{\alpha^2}{4} g''(x) \underbrace{\Delta x^2 \Delta w}_{ = \mathcal{O}(\Delta t^\frac{3}{2})} + \underbrace{\mathcal{O} (x^3) }_{ \Delta t^\frac{3}{2}} \nonumber \\
+=& f(x) \; \Delta t + g(x) \; \Delta w + \frac{\alpha}{2} g'(x) \; \Delta x \; \Delta w + \mathcal{O}(\Delta x^3)  \nonumber \\
+=& f(x) \; \Delta t + g(x) \; \Delta w + \frac{\alpha}{2} g'(x) \underbrace{(f(x) \; \Delta t + g(x) \; \Delta w + ...)}_{= \mathcal{O}(\Delta t^\frac{1}{2})} \Delta w  \nonumber \\
+=& f(x) \; \Delta t + g(x) \; \Delta w + \underbrace{\frac{\alpha}{2} \; g'(x) \; g(x) \; \Delta w^2}_{\mathcal{O}(\Delta t)} + \mathcal{O} (\Delta t^\frac{3}{2} ) \label{formel2}
 \end{align}
-\begin{align}
-\Rightarrow f(x) \Delta t + g(x) \Delta w + \frac{\alpha}{2} g'(x) g(x) \underbrace{\Delta w^2}_\textbf{$\mathcal{O}(\Delta t)$} + \mathcal{O} (\Delta t^\frac{3}{2} ) \label{formel2}
-\end{align}
+\end{enumerate}
 \begin{itemize}
 \item (\ref{formel}) und (\ref{formel2}) unterscheiden sich um einen Term der Ordnung $\Delta t$, global ist die Abweichung dann von Ordnung $\mathcal{O}(1)$.
 \item Spezialfall $\frac{\partial g}{\partial x}=0$ (additives Rauschen) $\Rightarrow$ (\ref{formel}) und (\ref{formel2}) stimmen überein
@@ -2649,129 +2688,215 @@ g(x) \Delta g + \frac{1}{2} g' (x) \alpha \Delta x \Delta w +\frac{\alpha^2}{4} 
 \item (\ref{formel}) approximierend SDGL nach Jtö
 \item (\ref{formel2}) approximierend SDGL nach Stratonovisch
 \end{itemize}
-\end{enumerate}
-\end{enumerate}
-%TODO interruption because I was too late
-
-\underline{Numerik:} 
+%TODO interruption because i was too l8
+\textbf{ Aus Sicht der Numerik:} 
 $\alpha = 0 $ (\textsc{Euler}
 ) und $\alpha = 1$ (\textsc{Heun}) unterscheiden sich um Term der Ordnung $\Delta t \Rightarrow $ verschiedene Ergebnisse. \\ 
-Die Verfahren konvergieren zu verschiedenen Integralen.
-
-\begin{align} \Rightarrow \text{Ito-Stratonovich-Dilemma}
+Die Verfahren konvergieren zu verschiedenen Integralen!
+\begin{align*} \Rightarrow \text{Ito-Stratonovich-Dilemma}
 \begin{cases}
 \textsc{Euler} \to \text{ITO} \\
 \textsc{Heun} \to \textsc{Stratonovich}
 \end{cases}
-\end{align}
+\end{align*}
 
-\underline{Beispiel:}
- \begin{align}
-\dot{x}= \eta (t) \Rightarrow \langle x^2 \rangle = \langle x_0^2 \rangle + 2Dt
-\end{align}
+\textbf{Beispiel:}
+ \begin{align*}
+\dot{x}= \eta (t) \qquad \Rightarrow \qquad  \langle x^2 \rangle = \langle x_0^2 \rangle + 2Dt
+\end{align*}
 Transformation $y=x^2$:
-\begin{align}
-\Rightarrow \dot{y}= 2 x \dot{x} = 2 x \eta (t) = 2 \sqrt{y} \eta (t)
-\end{align}
-%TODO missing line!!
+\begin{align*}
+ \dot{y} \;=\; 2 \, x \,  \dot{x} \; =\; 2 x \;  \eta (t) \; = \; 2\;  \sqrt{y} \;  \eta (t)
+\end{align*}
 
-Betrachte Diskretisierung mit $f=0$ und $g= 2 \sqrt{y}$ 
+Betrachte Diskretisierung mit $f=0$ und $g(y)= 2 \sqrt{y}$ 
 \begin{align}
-\Aboxed{\Delta y} = 2 \sqrt{y} \Delta w + \frac{\alpha}{2} 2 \frac{1}{2 \sqrt{y}} 2 \sqrt{y} \Delta w^2 = \Aboxed{2 \sqrt{y} \Delta w + \alpha \Delta w^2 }\\
-\Rightarrow \langle \Delta y \rangle = \langle \alpha \Delta w^2 \rangle = \alpha 2 D \Delta t
+\Delta y = 2 \sqrt{y} \; \Delta w + \frac{\alpha}{2} \; 2\;  \frac{1}{2 \sqrt{y}} \; 2\;  \sqrt{y} \; \Delta w^2 
 \end{align}
-Stimmt mit Lösung oben überein für $ \alpha = 1$ $\Rightarrow$ ' \textsc{Stratonovich} ist richtig'
+\begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
+\Delta y = 2 \sqrt{y} \; \Delta w + \alpha \;  \Delta w^2
+\end{tcolorbox}
+\begin{align*}
+\Rightarrow \quad \langle \Delta y \rangle = \langle \alpha \Delta w^2 \rangle = \alpha \, 2 \, D \;  \Delta t
+\end{align*}
 
-\subsection{Zeitquantifizierung von Monte Carlo} %TODO stimmt die Nummerierung?
- Wir betrachten wie zuvor in Kapitel  \ref{Kapitel2.9}:
+
+Stimmt mit Lösung oben überein für $ \alpha = 1$ $ \quad \Rightarrow \quad $ ' \textsc{Stratonovich} ist richtig' \\
+\textit{Achtung:} hier nur beispielhaft gezeigt! Mathematisch viel komplizierter $\to$ Integraldefinintionen. Demnach: in Physik ist Stratonovich sinnvoll. \\
+
+Einfachstes, irreversibles Verfahren, das Stratonovich-Gleichung verwendet: Heun-Verfahren. 
+
+\subsection{Zeitquantifizierung von Monte Carlo Methoden} %TODO stimmt die Nummerierung?
+ Wir betrachten  \textit{ Spin Modell }wie zuvor in Kapitel  \ref{Kapitel2.9}:
  Hamiltonian: \begin{align}
- H =\underbrace{ -\frac{J}{2} \sum_{i,j} \vec{S}_i \vec{S}_j }_\text{Austausch}- \underbrace{ D \sum_{i=1}^N (\vec{S}_i^2)^2 }_\text{Anisotropie}- \underbrace{\vec{B} \sum_{i=1}^N \vec{S}_i }_\text{\textsc{Zeeman}}
+ H =\underbrace{ -\frac{J}{2} \sum_{i,j} \vec{S}_i \vec{S}_j }_{ \substack{ \text{Austausch} \\ \text{nächster} \\ \text{Nachbar}}}- \underbrace{ D \sum_{i=1}^N (\vec{S}_i^2)^2 }_\text{Anisotropie}- \underbrace{\vec{B} \sum_{i=1}^N \vec{S}_i }_\text{\textsc{Zeeman}}
  \end{align}
  im klassischen Limes $\vert \vec{S} \vert $ 
  \begin{itemize}
- \item MC hatten wir schon
- \item jetzt \textsc{Langevin} Dynamik (Analogon zum Kreisel: Zwar nicht rotation aber präzession)
- 
-  Bewegungsgleichung: aus \textsc{Heisenberg}scher Bewegungsgleichung
+ \item MC hatten wir schon $\to$ kanonisches Ensemble
+ \item \textbf{jetzt} \textsc{Langevin} Dynamik als alternativer Zugang zum kanonischen Ensemble \footnote{(Analogon zum Kreisel: Zwar nicht rotation aber präzession)}
+  \end{itemize}
+ \begin{enumerate}
+ \item \textbf{Bewegungsgleichung:} aus \textsc{Heisenberg}scher Bewegungsgleichung folgt im klassischen Limes ($h \to 0$)
   \begin{align}
-  i \hbar \frac{\partial}{\partial t} \langle \vec{S}^{tilde}(t) \rangle = \langle \left[ \vec{S}(t) ,H^{tilde}\right] \rangle \\
-  \Rightarrow \frac{d \vec{S}_i}{dt} = \frac{\gamma}{\mu } ( \vec{S}_i \times \vec{h}_i ) \mbox{ mit } \vec{h}_i = - \nabla_{\vec{S}_i} H \mbox{ für } h \to 0 \\
+\frac{d \vec{S}_i}{dt} = \frac{\gamma}{\mu } ( \vec{S}_i \times \vec{h}_i ) \qquad \mbox{ mit } \vec{h}_i = - \nabla_{\vec{S}_i} H
   \end{align}
-  und weitere Annahmen (ist eigenltich eine Schwingung! Wie bei Phononen) (Der Vorfaktor hat was mit h-quer zu tun und kommt aus der quantenmechanischen Rechnung Raus: ein Spin S (Drehimpuls) hat magnetisches Moment $\mu$ und $\frac{g \mu_B}{\hbar}= \gamma$ wobei $g=$\textsc{Landé}Faktor (für 2 Elektronen), $\mu_B$: \textsc{Bohr}sches Magneton, $\gamma$: gyromagnetisches Verhalten. ) \\
+  Herleigung über QM-Heisenbergsche Bewegungsgleichung
+  \begin{align*}
+    i \hbar \frac{\partial}{\partial t} \langle \underbrace{\vec{\hat{S}}(t)}_{\substack{ \text{Spin-} \\ \text{Drehimpuls-} \\ \text{operator}}} \rangle = \langle \big[ \vec{S}(t) ,\hat{H}\big] \rangle
+  \end{align*}
+  und weitere Annahmen (ist eigentlich eine Schwingung! Wie bei Phononen)\footnote{Der Vorfaktor hat was mit h-quer zu tun und kommt aus der quantenmechanischen Rechnung Raus: ein Spin S (Drehimpuls) hat magnetisches Moment $\mu$ und $\frac{g \mu_B}{\hbar}= \gamma$ wobei $g=$\textsc{Landé}Faktor (für 2 Elektronen), $\mu_B$: \textsc{Bohr}sches Magneton, $\gamma$: gyromagnetisches Verhältnis.} \\
+  \textit{Benögig noch:}
+  \begin{itemize}
+  \item Vertauschungsregeln für Kommutatoren
+  \begin{align*}
+  \big[ \hat{\vec{S}_x} (t), \hat{\vec{S}_y} (t) \big] = i \hbar \hat{\vec{S}_z} (t) \qquad \text{(zyklisch)}
+  \end{align*}
+  \item Entwicklung des Kommutators:
+  \begin{align*}
+  \big[ \hat{\vec{S}} (t), \hat{\vec{H}}(\hat{\vec{S}} (t)) \big] =
+  i \hbar \left( \hat{\vec{S}}(t) - \frac{\partial}{\partial \hat{\vec{S} }}\right) \hat{\vec{H}} ( \hat{\vec{S}}(t) )+ \mathcal{O} (h^2) 
+  \end{align*} %TODO missing letter
+  \end{itemize}
+  Damit ergibt sich: 
+  \begin{align*}
+  i \hbar \frac{\partial}{\partial t} \langle \hat{\vec{S}}(t) \rangle = - i \hbar \langle \left( \hat{\vec{S}} (t) \times \frac{\partial}{\partial \hat{\vec{S}}} \right) \hat{\vec{H}} \rangle + \mathcal{O}(h^2)
+  \end{align*}
+  Betrachte nun den klassischen Limes $h \to 0$ (qm-Bewegungsgleichung geht in den klassischen Grenzfall über).
+  \begin{align*}
+ \frac{\partial \vec{S_i}}{\partial t}= - ( \vec{S_i} \times \frac{\partial}{\partial \vec{S_i}} H(S_i)
+  \end{align*}
+  Wobei die Erwartungswerte in klassische Größen übergehen. (\textbf{Ehrenfest-Theorem}): $\vec{S} = \langle \hat{\vec{S}} \rangle$ und $H= \langle \hat{\vec{H}} \rangle$. Spin $\vec{S}$ in mit dem magnetischen Moment $\vec{\mu}$ verknüpft über 
+  \begin{align*}
+  \vec{S}= \vec{\mu} \cdot \underbrace{1}_{\substack{ \text{gyromagnet.} \\ \text{Verhältn.}}} \qquad  \text{und}\qquad \mu_i = \mu_s S_i
+  \end{align*}
+  \begin{align*}
+  \gamma = g \; \mu_B \; \frac{1}{h} = 1,76 \cdot 10^{11} \frac{1}{Ts}
+  \end{align*}
+  mit \textsc{Landé}-Faktor $g$ und \textsc{Bohr}schem Magenton $\mu_B$.
+  \begin{itemize}
+  \item $\Rightarrow$ \textbf{Präzession} wie Eulersche Gleichung in Mechanik
+  \item erhält Energie
+  \end{itemize}
+  \item \textbf{Klassische Bewegungsgleichung} wurde um Reibungsterm Erweitert:
   
-  \underline{$+$Dissipation:} (nach Landau-Lifshitz)
+  \textbf{$+$Dissipation:}
+  \begin{itemize}
+ \item (Landau-Lifshitz-Gleichung)
   \begin{align}
-  \dot{\vec{S}_i}= -\frac{\gamma}{\mu} (\vec{S}_i \times \vec{h}_i ) - \frac{\alpha \gamma}{\mu} (\vec{S}_i \times ( \vec{S}_i \times \vec{h}_i))
+  \dot{\vec{S}_i}= -\frac{\gamma}{\mu_s} (\vec{S}_i \times \vec{H}_i ) + \frac{\alpha \gamma}{\mu_s} (\vec{S}_i \times ( \vec{S}_i \times \vec{H}_i))
   \end{align}
-  $\alpha$: Dämpfungskonstante \\
-  \underline{$+$ Fluktuation:} addiere weißes Rauschen zum effektiven Feld $\vec{h}_i: \vec{h}_i \to \vec{h}_i + \vec{\eta} (t)$
-  mit $\langle \vec{\eta}_i (t) \rangle = 0$ und
-   $\langle  \vec{\eta}_i^\nu (t)  \;  \vec{\eta}_j ^\theta (t) \rangle = \frac{2 \alpha \mu k_B T}{\gamma} \underbrace{\delta_{ij}}_\text{Gitterplätze} \underbrace{\delta_{\nu, \theta}}_\text{kart. Komponenten} \delta (t- t')$
-   \item führt zu Gleichgewichtseigenschaften des kanonischen Ensembles
-   \end{itemize}
-   \underline{Einfaches Beispiel:} 1 Makrospin mit 
+  $\alpha$: phänomenologische Dämpfungskonstante \\
+  
+  \item (Landau-Lifshitz-Gleichung mit Gilbert Dämpfung) \label{eins}
+  \begin{align*}
+   \dot{\vec{S}_i}= -\frac{\gamma}{\mu_s} (\vec{S}_i \times \vec{H}_i ) - \frac{\alpha \gamma}{\mu_s} ( \vec{S_i} \times \frac{\partial \vec{S_i}}{\partial t} )
+   \end{align*}
+   Beschreibt Ankopplung an ein Wärmebad
+   \item (Landau-Lifshitz-GIlbert-Gleichung) \label{zwei}
+   \begin{align*}
+  \dot{ \vec{S_i}} = - \frac{\gamma}{(1+\alpha^2)} \vec{S_i} \times \left( \vec{H_i} + \alpha (\vec{S_i} \times \vec{H_i})\right)
+   \end{align*}
+\end{itemize}
+Gleichung \ref{eins} und Gleichung \ref{zwei} sind äquivalent für $\vert \vec{S_i} \vert = 1 $.
+   
+  
+  \item \textbf{Rauschterm} addiere weißes Rauschen zum effektiven Feld \\
+  \textbf{$+$ Fluktuation:}  \\
+  
+\begin{align*}
+\vec{h}_i \to \vec{h}_i + \vec{\eta_i} (t)
+\end{align*}  
+  
+  mit 
+\begin{align*}
+\langle \vec{\eta}_i (t) \rangle = 0 \qquad \text{und} \qquad \langle  \vec{\eta}_i^\nu (t)  \;  \vec{\eta}_j ^\theta (t) \rangle = \frac{2 \alpha \mu_s }{\gamma} k_B T \underbrace{\delta_{ij}}_{ \substack{ \text{Gitter-} \\ \text{plätze} }} \underbrace{\delta_{\nu, \theta}}_{ \substack{ \text{kart.} \\ \text{Kompo-} \\ \text{nenten}}} \delta (t- t')
+\end{align*}  
+ führt zu Gleichgewichtseigenschaften des kanonischen Ensembles. Der Vergleich von Monte Carlo und UG liefert Zeitquantifizierung.
+   \end{enumerate}
+
+
+   \textbf{Einfaches Beispiel:} 1 Makrospin mit 
    \begin{align*}
    H = -D S_z^2 - \vec{B} \vec{S}
    \end{align*}
    Modell für Superparamagnetsimus: Für $\Delta E = D \approx k_B T$ kann die Energiebarriere thermisch überwunden werden. \\
-   \underline{Theorie:} mittlere Zeit $\tau$ zum überspringen der Energiebarriere ist $\tau = \tau_0 e^\frac{\Delta E}{k_B T}$. \begin{itemize}
+   \textit{Theorie:} mittlere Zeit $\tau$ zum überspringen der Energiebarriere ist 
+\begin{align*}
+\tau = \tau_0 \; e^\frac{\Delta E}{k_B T}
+\end{align*}   
+  \begin{itemize}
    \item Für $B=0$ ist $\Delta E = D$ und $\tau $ bekannt $\tau (D, T)$. 
     \item Ansonsten lässt sich $\tau, \Delta E$ asymptotisch rechnen.
     \end{itemize}
-    \underline{Numerik:} \textsc{Langevin:} starten in Energieminimum. Wie wachsen Fluktuationen?
+    \textbf{Numerik:} \\
+    \textsc{Langevin:} starten in Energieminimum. Wie wachsen die Fluktuationen?
     \begin{align}
     \dot{\vec{S}} = - \frac{\gamma}{\mu} \vec{S} \times \left( ( \vec{h} +  \vec{\eta}) + \alpha  \vec{S} \times ( \vec{h} +  \vec{\eta}) \right)
     \end{align}
     Linearisieren:
     \begin{align}
-     \vec{S} = \begin{pmatrix}S_x\\ S_y \\ 1 \end{pmatrix}
-    \end{align}
-    weil 
-    \begin{align}
-    S_z = \sqrt{1- S_x^2 - S_y^2}
+     \vec{S} = \begin{pmatrix}S_x\\ S_y \\ 1 \end{pmatrix} \qquad \text{ mit } \qquad S_z = \sqrt{1- S_x^2 - S_y^2}
     \end{align}
     \begin{align}
     \Rightarrow \dot{\vec{S}}_x = - \frac{\gamma }{\mu} \left(
-    \underbrace{ S_y}_\text{ $S_y <<1$} ( h_z - \eta_z ) - \underbrace{S_z}_\text{$=1$} (h_y + \eta_y) \right) - \underbrace{\alpha....}_\text{kleiner für $ \alpha \to 0$}
+    \underbrace{ S_y}_{ S_y \ll 1} ( h_z - \eta_z ) - \underbrace{S_z}_\text{$=1$} (h_y + \eta_y) \right) - \underbrace{\alpha....}_\text{klein für $ \alpha \to 0$}
     \end{align}
     mit
     \begin{align}
-    \vec{B} = \begin{pmatrix} 0 \\ 0 \\ B_z \end{pmatrix} \Rightarrow h_y = 0 \mbox{ und } \vec{h}= - \frac{\partial H}{\partial \vec{S}}= (2 DS_z + B_z) \hat{\vec{z}}
+    \vec{B} = \begin{pmatrix} 0 \\ 0 \\ B_z \end{pmatrix} \end{align}
+    \begin{align}
+     \Rightarrow \quad  h_y = 0 \quad \mbox{ und } \quad \vec{h}= - \frac{\partial H}{\partial \vec{S}}= (2 DS_z + B_z) \hat{\vec{z}}
     \end{align}
     \begin{align}
-    \Rightarrow \dot{\vec{S}}_x \approx & \frac{\gamma}{\mu} \eta_y (t) \Rightarrow \langle \Delta S_x^2 \rangle = Dt = \frac{\gamma ^2}{\mu ^2} \frac{2 \alpha \mu }{\gamma} k_B T \Delta t \\
-   \Aboxed{  \dot{\vec{S}}_z = & 2 \frac{\gamma}{\mu} \alpha k_B T \Delta t = \langle \Delta S_y^2 \rangle}
+    & \Rightarrow \dot{\vec{S}}_x \approx  \frac{\gamma}{\mu} \eta_y (t) \\
+    & \Rightarrow \langle \Delta S_x^2 \rangle = D\; \Delta t = \frac{\gamma ^2}{\mu ^2} \frac{2 \alpha \mu }{\gamma} k_B T \; \Delta t  
     \end{align}
-    Wir berechnen $\langle \Delta S_x^2 \rangle $ für einen \textsc{Monte Carlo} Schritt: Dabei ist $r = \sqrt{S_x^2 + S_y^2}$ die Schrittweite und $R$ die Maximale Schrittweite.
+    \begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
+   \langle \dot{\vec{S}}_y ^2\rangle=  \langle \dot{\vec{S}}_z ^2 \rangle = & 2 \frac{\gamma}{\mu} \alpha k_B T \Delta t = \langle \Delta S_y^2 \rangle
+    \end{tcolorbox}
+    
+    Wir berechnen $\langle \Delta S_x^2 \rangle $ für einen \textsc{Monte Carlo} Schritt: Dabei ist 
+    \begin{align*}
+   r = \sqrt{S_x^2 + S_y^2} 
+    \end{align*} die Schrittweite und $R$ die Maximale Schrittweite.
     \begin{itemize}
     \item Wahrscheinlichkeitsverteilung für Versuchsschritt $p_t (r)$
-    \item Wahrscheinlichkeitsverteilung für Akzeptanz $p_a (r) = \frac{1}{1 + e^\frac{\Delta E(r)}{k_B T}}$ (\textit{heat bath}).
+    \item Wahrscheinlichkeitsverteilung für Akzeptanz $p_a (r)$ (\textit{heat bath}).
     \end{itemize}
     \begin{align}
-p_t (r) = & \frac{3 \sqrt{ R^2 - r^2}} { 2 \pi R^3}     \; \Rightarrow \langle\Delta S_x^2 \rangle = \langle \frac{r^2}{2} \rangle = \int_0^{2 \pi} d \phi \int_0 ^R r dr \frac{r^2}{2} p_r (r) p_a (r)   \\
-=& 2 \pi  \int_0^R dr \frac{r^3}{2} \frac{3 \sqrt{R^2 - r^2}}{2\pi R^3 \left( 1 + \underbrace{ e^\frac{\Delta E (r) }{k_B T}}_\text{$ 1+ \frac{\Delta E (r)}{k_B T}$} \right)} 
-\\ \approx & \frac{3}{4 R^3} \int_0^R dr r^3 \sqrt{R^2 - r^2} \approx \frac{R^2}{10}
+    \begin{rcases}
+    p_a(r) = \frac{1}{1 + e^\frac{\Delta E(r)}{k_B T}} \\
+p_t (r) =  \frac{3\;  \sqrt{ R^2 - r^2}} { 2 \pi R^3}  
+\end{rcases}   \; \Rightarrow \langle\Delta S_x^2 \rangle =& \langle \frac{r^2}{2} \rangle = \int_0^{2 \pi} d \varphi \int_0 ^R r \; dr\;  \frac{r^2}{2} \;  p_r (r) p_a (r)   \\
+=& 2 \pi  \int_0^R dr \frac{r^3}{2} \frac{3 \sqrt{R^2 - r^2}}{2\pi R^3 \left( 1 + \underbrace{ e^\frac{\Delta E (r) }{k_B T}}_{ 1+ \frac{\Delta E (r)}{k_B T}} \right)} 
+\\ \approx & \frac{3}{4 R^3} \int_0^R dr \; r^3 \sqrt{R^2 - r^2} 
+\approx  \frac{R^2}{10}
 \end{align}
-Vergleich:  \\
+direkter Vergleich:  \\
 \begin{center}
 
 
 \begin{tabular}{ c c }
-\textsc{Langevin:} & \textsc{Monte Carlo} \\ 
-$\langle \Delta S_x^2 \rangle = 2\frac{\gamma}{\mu} \alpha k_B T \Delta t $ & $ \langle \Delta S_x^2 \rangle = \frac{R^2}{10} $\\ 
+\textsc{Langevin:} & \textsc{Monte Carlo:} \\ 
+$\langle \Delta S_x^2 \rangle = 2\frac{\gamma}{\mu} \; \alpha \; k_B T \; \Delta t $ & $ \langle \Delta S_x^2 \rangle = \frac{R^2}{10} $\\ 
 \end{tabular} \\
 \end{center}
 
 $\Rightarrow $ 1 MCS entspricht Zeitintervall $\Delta t$ für
-\begin{align}
-\Aboxed{ R^2 = \frac{20 k_B T \alpha \gamma}{\mu} \Delta t }
-\end{align}
-für $R<<1$
+ \begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
+R^2 = \frac{20 k_B T \alpha \gamma}{\mu} \Delta t 
+\end{tcolorbox}
+für $R \ll 1$, für große Dämpfung, wenn Bewegungsgleichung keine Rolle spielt \\
 
+\appendix
+\addcontentsline{toc}{section}{Anhang} 
+
+\includepdf[pages={1,2,3,4,5}]{Thouless_Uebergang_Nobelprice.pdf} 
+\includepdf[pages={1,2,3,4}]{Nowak.pdf}
  \end{document}
  
-ANHANG:
-\includepdf[pages={1,2,3,4,5}]{Thouless_Uebergang_Nobelprice.pdf}  \label{siehe Dokument...} 
+
  
  Siehe physical review letters 3. January 2000 Volume 84 Number 1
  
