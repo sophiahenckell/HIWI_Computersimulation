@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  6 APR 2017 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.10.24)  6 APR 2017 17:22
 entering extended mode
 **./Skript_Überarbeitung.tex
 (Skript_Überarbeitung.tex
@@ -1045,7 +1045,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  [1
 
 {C:/Users/studium/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<Null_DrittesStandbein.jpg, id=10, 388.8126pt x 238.0092pt>
+<Null_DrittesStandbein.jpg, id=11, 388.8126pt x 238.0092pt>
 File: Null_DrittesStandbein.jpg Graphic file (type jpg)
 
 <use Null_DrittesStandbein.jpg>
@@ -1059,7 +1059,7 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
 
-<Null_Rechner.png, id=11, 623.4492pt x 194.6472pt>
+<Null_Rechner.png, id=12, 623.4492pt x 194.6472pt>
 File: Null_Rechner.png Graphic file (type png)
  <use Null_Rechner.png>
 Package pdftex.def Info: Null_Rechner.png used on input line 95.
@@ -1080,13 +1080,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 140--143
 
  []
 
-[3 <./Null_Rechner.png>] <Folie1.png, id=25, 722.7pt x 542.025pt>
+[3 <./Null_Rechner.png>] <Folie1.png, id=26, 722.7pt x 542.025pt>
 File: Folie1.png Graphic file (type png)
 
 <use Folie1.png>
 Package pdftex.def Info: Folie1.png used on input line 174.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
- <Folie2.png, id=26, 722.7pt x 542.025pt>
+ <Folie2.png, id=27, 722.7pt x 542.025pt>
 File: Folie2.png Graphic file (type png)
  <use Folie2.png>
 Package pdftex.def Info: Folie2.png used on input line 182.
@@ -1111,16 +1111,16 @@ mm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 q\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
 [4] <Folie3.png, id=35, 722.7pt x 542.025pt>
 File: Folie3.png Graphic file (type png)
  <use Folie3.png>
-Package pdftex.def Info: Folie3.png used on input line 231.
+Package pdftex.def Info: Folie3.png used on input line 232.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
 <Folie4.png, id=36, 722.7pt x 542.025pt>
 File: Folie4.png Graphic file (type png)
  <use Folie4.png>
-Package pdftex.def Info: Folie4.png used on input line 239.
+Package pdftex.def Info: Folie4.png used on input line 240.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 229--244
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 230--245
 []$[]$   $[]$ 
  []
 
@@ -1131,16 +1131,16 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <Folie5.png, id=49, 722.7pt x 542.025pt>
 File: Folie5.png Graphic file (type png)
  <use Folie5.png>
-Package pdftex.def Info: Folie5.png used on input line 319.
+Package pdftex.def Info: Folie5.png used on input line 320.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
 <Folie6.png, id=50, 722.7pt x 542.025pt>
 File: Folie6.png Graphic file (type png)
  <use Folie6.png>
-Package pdftex.def Info: Folie6.png used on input line 327.
+Package pdftex.def Info: Folie6.png used on input line 328.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 317--332
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 318--333
 []$[]$   $[]$ 
  []
 
@@ -1148,38 +1148,38 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 317--332
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 335--336
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
 [7] [8 <./Folie5.png> <./Folie6.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 404--406
+Underfull \hbox (badness 10000) in paragraph at lines 406--408
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 435--438
+Underfull \hbox (badness 10000) in paragraph at lines 437--440
 
  []
 
-<Folie7.png, id=65, 722.7pt x 542.025pt>
+<Folie7.png, id=66, 722.7pt x 542.025pt>
 File: Folie7.png Graphic file (type png)
  <use Folie7.png>
-Package pdftex.def Info: Folie7.png used on input line 442.
+Package pdftex.def Info: Folie7.png used on input line 444.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie8.png, id=66, 722.7pt x 542.025pt>
+<Folie8.png, id=67, 722.7pt x 542.025pt>
 File: Folie8.png Graphic file (type png)
  <use Folie8.png>
-Package pdftex.def Info: Folie8.png used on input line 450.
+Package pdftex.def Info: Folie8.png used on input line 452.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 440--455
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 442--457
 []$[]$   $[]$ 
  []
 
@@ -1187,43 +1187,43 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 440--455
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
 [10] [11 <./Folie7.png> <./Folie8.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
-<Folie9.png, id=75, 722.7pt x 542.025pt>
+<Folie9.png, id=76, 722.7pt x 542.025pt>
 File: Folie9.png Graphic file (type png)
  <use Folie9.png>
-Package pdftex.def Info: Folie9.png used on input line 502.
+Package pdftex.def Info: Folie9.png used on input line 504.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie11.png, id=76, 722.7pt x 542.025pt>
+<Folie11.png, id=77, 722.7pt x 542.025pt>
 File: Folie11.png Graphic file (type png)
  <use Folie11.png>
-Package pdftex.def Info: Folie11.png used on input line 510.
+Package pdftex.def Info: Folie11.png used on input line 512.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 500--515
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 502--517
 []$[]$   $[]$ 
  []
 
-[12 <./Folie9.png> <./Folie11.png>] <Folie12.png, id=82, 722.7pt x 542.025pt>
+[12 <./Folie9.png> <./Folie11.png>] <Folie12.png, id=83, 722.7pt x 542.025pt>
 File: Folie12.png Graphic file (type png)
 
 <use Folie12.png>
-Package pdftex.def Info: Folie12.png used on input line 580.
+Package pdftex.def Info: Folie12.png used on input line 582.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 File: Folie12.png Graphic file (type png)
  <use Folie12.png>
-Package pdftex.def Info: Folie12.png used on input line 588.
+Package pdftex.def Info: Folie12.png used on input line 590.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 578--593
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 580--595
 []$[]$   $[]$ 
  []
 
@@ -1231,23 +1231,28 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 578--593
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 617--619
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/sc' undefined
+(Font)              using `OT1/cmr/bx/n' instead on input line 603.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--621
 
  []
 
-<Folie13.png, id=88, 722.7pt x 542.025pt>
+<Folie13.png, id=89, 722.7pt x 542.025pt>
 File: Folie13.png Graphic file (type png)
  <use Folie13.png>
-Package pdftex.def Info: Folie13.png used on input line 623.
+Package pdftex.def Info: Folie13.png used on input line 625.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie14.png, id=89, 722.7pt x 542.025pt>
+<Folie14.png, id=90, 722.7pt x 542.025pt>
 File: Folie14.png Graphic file (type png)
  <use Folie14.png>
-Package pdftex.def Info: Folie14.png used on input line 631.
+Package pdftex.def Info: Folie14.png used on input line 633.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 621--636
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 623--638
 []$[]$   $[]$ 
  []
 
@@ -1255,34 +1260,34 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 621--636
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [14 <./Folie12.png>]
-Overfull \hbox (21.10927pt too wide) in paragraph at lines 656--657
+Overfull \hbox (21.10927pt too wide) in paragraph at lines 658--659
 []\OT1/cmr/m/n/12 Es exi-stie-ren zahl-rei-che Wei-ter-ent-wick-lun-gen des lin
 ear-konvergenten Zufallszahlen-
  []
 
 [15 <./Folie13.png> <./Folie14.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 687--688
+Underfull \hbox (badness 10000) in paragraph at lines 689--690
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 691--695
+Underfull \hbox (badness 10000) in paragraph at lines 693--697
 
  []
 
-<Folie15.png, id=102, 722.7pt x 542.025pt>
+<Folie15.png, id=103, 722.7pt x 542.025pt>
 File: Folie15.png Graphic file (type png)
  <use Folie15.png>
-Package pdftex.def Info: Folie15.png used on input line 718.
+Package pdftex.def Info: Folie15.png used on input line 720.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie16.png, id=103, 722.7pt x 542.025pt>
+<Folie16.png, id=104, 722.7pt x 542.025pt>
 File: Folie16.png Graphic file (type png)
  <use Folie16.png>
-Package pdftex.def Info: Folie16.png used on input line 726.
+Package pdftex.def Info: Folie16.png used on input line 728.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 716--731
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 718--733
 []$[]$   $[]$ 
  []
 
@@ -1290,795 +1295,793 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 716--731
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 748--750
+Underfull \hbox (badness 10000) in paragraph at lines 751--752
 
  []
 
 [17 <./Folie15.png> <./Folie16.png>]
-<Folie17.png, id=112, 722.7pt x 542.025pt>
+<Folie17.png, id=113, 722.7pt x 542.025pt>
 File: Folie17.png Graphic file (type png)
  <use Folie17.png>
-Package pdftex.def Info: Folie17.png used on input line 799.
+Package pdftex.def Info: Folie17.png used on input line 801.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie18.png, id=113, 722.7pt x 542.025pt>
+<Folie18.png, id=114, 722.7pt x 542.025pt>
 File: Folie18.png Graphic file (type png)
  <use Folie18.png>
-Package pdftex.def Info: Folie18.png used on input line 807.
+Package pdftex.def Info: Folie18.png used on input line 809.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 797--812
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 799--814
 []$[]$   $[]$ 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18] <Folie19.png, id=117, 722.7pt x 542.025pt>
+[18] <Folie19.png, id=118, 722.7pt x 542.025pt>
 File: Folie19.png Graphic file (type png)
  <use Folie19.png>
-Package pdftex.def Info: Folie19.png used on input line 839.
+Package pdftex.def Info: Folie19.png used on input line 841.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie22.png, id=118, 722.7pt x 542.025pt>
+<Folie22.png, id=119, 722.7pt x 542.025pt>
 File: Folie22.png Graphic file (type png)
  <use Folie22.png>
-Package pdftex.def Info: Folie22.png used on input line 847.
+Package pdftex.def Info: Folie22.png used on input line 849.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 837--852
-[]$[]$   $[]$ 
- []
-
-<Folie20.png, id=119, 722.7pt x 542.025pt>
-File: Folie20.png Graphic file (type png)
- <use Folie20.png>
-Package pdftex.def Info: Folie20.png used on input line 859.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-<Folie21.png, id=120, 722.7pt x 542.025pt>
-File: Folie21.png Graphic file (type png)
- <use Folie21.png>
-Package pdftex.def Info: Folie21.png used on input line 866.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 857--870
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 839--854
 []$[]$   $[]$ 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[19 <./Folie17.png> <./Folie18.png> <./Folie19.png> <./Folie22.png>] [20 <./Fol
-ie20.png> <./Folie21.png>] <Folie23.png, id=134, 722.7pt x 542.025pt>
+<Folie20.png, id=120, 722.7pt x 542.025pt>
+File: Folie20.png Graphic file (type png)
+ <use Folie20.png>
+Package pdftex.def Info: Folie20.png used on input line 861.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+<Folie21.png, id=121, 722.7pt x 542.025pt>
+File: Folie21.png Graphic file (type png)
+ <use Folie21.png>
+Package pdftex.def Info: Folie21.png used on input line 868.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 859--872
+[]$[]$   $[]$ 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19 <./Folie17.png> <./Folie18.png>] [20 <./Folie19.png> <./Folie22.png> <./Fol
+ie20.png> <./Folie21.png>] <Folie23.png, id=135, 722.7pt x 542.025pt>
 File: Folie23.png Graphic file (type png)
 
 <use Folie23.png>
-Package pdftex.def Info: Folie23.png used on input line 924.
+Package pdftex.def Info: Folie23.png used on input line 926.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
- <Folie24.png, id=135, 722.7pt x 542.025pt>
+ <Folie24.png, id=136, 722.7pt x 542.025pt>
 File: Folie24.png Graphic file (type png)
  <use Folie24.png>
-Package pdftex.def Info: Folie24.png used on input line 932.
+Package pdftex.def Info: Folie24.png used on input line 934.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 922--937
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 924--939
 []$[]$   $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--946
+Underfull \hbox (badness 10000) in paragraph at lines 946--948
 
  []
 
 
-Overfull \hbox (16.82448pt too wide) in paragraph at lines 951--952
+Overfull \hbox (16.82448pt too wide) in paragraph at lines 953--954
 []\OT1/cmr/m/it/12 Schlecht w[]are zum Bei-spiel: \OT1/cmr/m/n/12 die Betrags-E
 xponentialfunktion (\OT1/cmr/m/sc/12 Gau\OT1/cmr/m/n/12 funktion) ben[]otigt
  []
 
-[21 <./Folie23.png> <./Folie24.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1017--1018
+[21 <./Folie23.png> <./Folie24.png>] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 1019--1020
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1030--1031
+Underfull \hbox (badness 10000) in paragraph at lines 1032--1033
 
  []
 
-[22] <Folie25.png, id=144, 722.7pt x 542.025pt>
+<Folie25.png, id=145, 722.7pt x 542.025pt>
 File: Folie25.png Graphic file (type png)
  <use Folie25.png>
-Package pdftex.def Info: Folie25.png used on input line 1035.
+Package pdftex.def Info: Folie25.png used on input line 1037.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie26.png, id=145, 722.7pt x 542.025pt>
+<Folie26.png, id=146, 722.7pt x 542.025pt>
 File: Folie26.png Graphic file (type png)
  <use Folie26.png>
-Package pdftex.def Info: Folie26.png used on input line 1043.
+Package pdftex.def Info: Folie26.png used on input line 1045.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1033--1048
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1035--1050
 []$[]$   $[]$ 
  []
 
 [23 <./Folie25.png> <./Folie26.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1126
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1129
 
  []
 
-[24] [25] <Folie27.png, id=158, 722.7pt x 542.025pt>
+[24] [25] [26] <Folie27.png, id=162, 722.7pt x 542.025pt>
 File: Folie27.png Graphic file (type png)
  <use Folie27.png>
-Package pdftex.def Info: Folie27.png used on input line 1214.
+Package pdftex.def Info: Folie27.png used on input line 1218.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie28.png, id=159, 722.7pt x 542.025pt>
+<Folie28.png, id=163, 722.7pt x 542.025pt>
 File: Folie28.png Graphic file (type png)
  <use Folie28.png>
-Package pdftex.def Info: Folie28.png used on input line 1222.
+Package pdftex.def Info: Folie28.png used on input line 1226.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1212--1227
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1216--1231
 []$[]$   $[]$ 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[26]
-Overfull \hbox (35.15198pt too wide) in paragraph at lines 1258--1261
-$\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 Pro-blem: wir brau-chen Zust[]ande $[]$ mi
-t Wahr-schein-lich-keit $\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 ([]) \OMS/cmsy/m/n/1
-2 / \OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 ($\OMS/cmsy/m/n/12 )$\OT1/cmr/m/n/12 
-Problematisch).
+[27 <./Folie27.png> <./Folie28.png>]
+Overfull \hbox (35.15198pt too wide) in paragraph at lines 1263--1265
+[]$\OMS/cmsy/m/n/12 )$ \OT1/cmr/m/n/12 Pro-blem: wir brau-chen Zust[]ande $[]$ 
+mit Wahr-schein-lich-keit $\OML/cmm/m/it/12 w\OT1/cmr/m/n/12 ([]) \OMS/cmsy/m/n
+/12 / \OML/cmm/m/it/12 e[]$ \OT1/cmr/m/n/12 ($\OMS/cmsy/m/n/12 )$\OT1/cmr/m/n/1
+2 Problematisch).
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1258--1261
+Underfull \hbox (badness 10000) in paragraph at lines 1263--1265
 
  []
 
-[27 <./Folie27.png> <./Folie28.png>] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
+[28]
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1356
 
  []
 
-<Folie29.png, id=171, 722.7pt x 542.025pt>
+<Folie29.png, id=172, 722.7pt x 542.025pt>
 File: Folie29.png Graphic file (type png)
  <use Folie29.png>
-Package pdftex.def Info: Folie29.png used on input line 1356.
+Package pdftex.def Info: Folie29.png used on input line 1360.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie30.png, id=172, 722.7pt x 542.025pt>
+<Folie30.png, id=173, 722.7pt x 542.025pt>
 File: Folie30.png Graphic file (type png)
  <use Folie30.png>
-Package pdftex.def Info: Folie30.png used on input line 1364.
+Package pdftex.def Info: Folie30.png used on input line 1368.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1354--1369
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1358--1373
 []$[]$   $[]$ 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [29] [30 <./Folie29.png> <./Folie30.png>]
-<Folie31.png, id=181, 722.7pt x 542.025pt>
+<Folie31.png, id=182, 722.7pt x 542.025pt>
 File: Folie31.png Graphic file (type png)
  <use Folie31.png>
-Package pdftex.def Info: Folie31.png used on input line 1419.
+Package pdftex.def Info: Folie31.png used on input line 1423.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie32.png, id=182, 722.7pt x 542.025pt>
+<Folie32.png, id=183, 722.7pt x 542.025pt>
 File: Folie32.png Graphic file (type png)
  <use Folie32.png>
-Package pdftex.def Info: Folie32.png used on input line 1427.
+Package pdftex.def Info: Folie32.png used on input line 1431.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1417--1432
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1421--1436
 []$[]$   $[]$ 
  []
 
 [31 <./Folie31.png> <./Folie32.png>]
-Overfull \hbox (1.41315pt too wide) in paragraph at lines 1480--1480
+Overfull \hbox (1.41315pt too wide) in paragraph at lines 1484--1484
 [] 
  []
 
-<Folie33.png, id=189, 722.7pt x 542.025pt>
+[32] <Folie33.png, id=193, 722.7pt x 542.025pt>
 File: Folie33.png Graphic file (type png)
  <use Folie33.png>
-Package pdftex.def Info: Folie33.png used on input line 1515.
+Package pdftex.def Info: Folie33.png used on input line 1519.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie34.png, id=190, 722.7pt x 542.025pt>
+<Folie34.png, id=194, 722.7pt x 542.025pt>
 File: Folie34.png Graphic file (type png)
  <use Folie34.png>
-Package pdftex.def Info: Folie34.png used on input line 1523.
+Package pdftex.def Info: Folie34.png used on input line 1527.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1513--1528
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1517--1532
 []$[]$   $[]$ 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[32] <Folie35.png, id=194, 722.7pt x 542.025pt>
+<Folie35.png, id=195, 722.7pt x 542.025pt>
 File: Folie35.png Graphic file (type png)
  <use Folie35.png>
-Package pdftex.def Info: Folie35.png used on input line 1551.
+Package pdftex.def Info: Folie35.png used on input line 1555.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie36.png, id=195, 722.7pt x 542.025pt>
+<Folie36.png, id=196, 722.7pt x 542.025pt>
 File: Folie36.png Graphic file (type png)
  <use Folie36.png>
-Package pdftex.def Info: Folie36.png used on input line 1559.
+Package pdftex.def Info: Folie36.png used on input line 1563.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1549--1564
-[]$[]$   $[]$ 
- []
-
-[33 <./Folie33.png> <./Folie34.png> <./Folie35.png> <./Folie36.png>]
-<Folie37.png, id=203, 722.7pt x 542.025pt>
-File: Folie37.png Graphic file (type png)
- <use Folie37.png>
-Package pdftex.def Info: Folie37.png used on input line 1616.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-<Folie38.png, id=204, 722.7pt x 542.025pt>
-File: Folie38.png Graphic file (type png)
- <use Folie38.png>
-Package pdftex.def Info: Folie38.png used on input line 1624.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1614--1629
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1553--1568
 []$[]$   $[]$ 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[34] [35 <./Folie37.png> <./Folie38.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1701--1703
-
- []
-
-<Folie39.png, id=213, 722.7pt x 542.025pt>
-File: Folie39.png Graphic file (type png)
- <use Folie39.png>
-Package pdftex.def Info: Folie39.png used on input line 1707.
+[33 <./Folie33.png> <./Folie34.png>]
+<Folie37.png, id=202, 722.7pt x 542.025pt>
+File: Folie37.png Graphic file (type png)
+ <use Folie37.png>
+Package pdftex.def Info: Folie37.png used on input line 1620.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie40.png, id=214, 722.7pt x 542.025pt>
-File: Folie40.png Graphic file (type png)
- <use Folie40.png>
-Package pdftex.def Info: Folie40.png used on input line 1715.
+<Folie38.png, id=203, 722.7pt x 542.025pt>
+File: Folie38.png Graphic file (type png)
+ <use Folie38.png>
+Package pdftex.def Info: Folie38.png used on input line 1628.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1705--1720
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1618--1633
 []$[]$   $[]$ 
  []
 
-[36 <./Folie39.png> <./Folie40.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1737--1738
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34 <./Folie35.png> <./Folie36.png>] [35 <./Folie37.png> <./Folie38.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1712--1713
+
+ []
+
+<Folie39.png, id=214, 722.7pt x 542.025pt>
+File: Folie39.png Graphic file (type png)
+ <use Folie39.png>
+Package pdftex.def Info: Folie39.png used on input line 1717.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+<Folie40.png, id=215, 722.7pt x 542.025pt>
+File: Folie40.png Graphic file (type png)
+ <use Folie40.png>
+Package pdftex.def Info: Folie40.png used on input line 1725.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1715--1730
+[]$[]$   $[]$ 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1747--1748
+
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1768
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1756--1758
+Underfull \hbox (badness 10000) in paragraph at lines 1769--1773
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1759--1763
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 1795--1796
+[37 <./Folie39.png> <./Folie40.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1805--1806
 
  []
 
 [38]
-Underfull \hbox (badness 10000) in paragraph at lines 1831--1833
+Underfull \hbox (badness 10000) in paragraph at lines 1842--1844
 
  []
 
-<Folie41.png, id=227, 722.7pt x 542.025pt>
+<Folie41.png, id=228, 722.7pt x 542.025pt>
 File: Folie41.png Graphic file (type png)
  <use Folie41.png>
-Package pdftex.def Info: Folie41.png used on input line 1837.
+Package pdftex.def Info: Folie41.png used on input line 1848.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie42.png, id=228, 722.7pt x 542.025pt>
+<Folie42.png, id=229, 722.7pt x 542.025pt>
 File: Folie42.png Graphic file (type png)
  <use Folie42.png>
-Package pdftex.def Info: Folie42.png used on input line 1845.
+Package pdftex.def Info: Folie42.png used on input line 1856.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1835--1850
-[]$[]$   $[]$ 
- []
-
-[39 <./Folie41.png> <./Folie42.png>] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1912--1915
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1916--1920
-
- []
-
-<Folie43.png, id=237, 722.7pt x 542.025pt>
-File: Folie43.png Graphic file (type png)
- <use Folie43.png>
-Package pdftex.def Info: Folie43.png used on input line 1947.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-<Folie44.png, id=238, 722.7pt x 542.025pt>
-File: Folie44.png Graphic file (type png)
- <use Folie44.png>
-Package pdftex.def Info: Folie44.png used on input line 1955.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1945--1960
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1846--1861
 []$[]$   $[]$ 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[39] [40 <./Folie41.png> <./Folie42.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1925--1927
 
-Overfull \hbox (6.84203pt too wide) in paragraph at lines 1964--1964
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1928--1932
+
+ []
+
+[41] <Folie43.png, id=241, 722.7pt x 542.025pt>
+File: Folie43.png Graphic file (type png)
+ <use Folie43.png>
+Package pdftex.def Info: Folie43.png used on input line 1959.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+<Folie44.png, id=242, 722.7pt x 542.025pt>
+File: Folie44.png Graphic file (type png)
+ <use Folie44.png>
+Package pdftex.def Info: Folie44.png used on input line 1967.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 1957--1972
+[]$[]$   $[]$ 
+ []
+
+
+Overfull \hbox (6.84203pt too wide) in paragraph at lines 1976--1976
 []\OT1/cmr/bx/n/14.4 Kontinuierliche Frei-heits-gra-de: 'x-y' und Heisenbergs-M
 odell 
  []
 
-[41] <Folie45.png, id=242, 722.7pt x 542.025pt>
+[42 <./Folie43.png> <./Folie44.png>]
+<Folie45.png, id=248, 722.7pt x 542.025pt>
 File: Folie45.png Graphic file (type png)
  <use Folie45.png>
-Package pdftex.def Info: Folie45.png used on input line 1992.
+Package pdftex.def Info: Folie45.png used on input line 2004.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie46.png, id=243, 722.7pt x 542.025pt>
+<Folie46.png, id=249, 722.7pt x 542.025pt>
 File: Folie46.png Graphic file (type png)
  <use Folie46.png>
-Package pdftex.def Info: Folie46.png used on input line 2000.
+Package pdftex.def Info: Folie46.png used on input line 2012.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 1990--2005
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2002--2017
 []$[]$   $[]$ 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[42 <./Folie43.png> <./Folie44.png>]
-Overfull \hbox (5.60808pt too wide) in paragraph at lines 2023--2029
+Overfull \hbox (5.60808pt too wide) in paragraph at lines 2035--2041
 \OT1/cmr/m/n/12 dem gibt es rich-ti-ge (=al-so er-go-di-sche) und zu-dem sehr e
 f-fek-ti-ve Cluster-Algorithmen,
  []
 
-<Folie47.png, id=249, 722.7pt x 542.025pt>
+[43 <./Folie45.png> <./Folie46.png>]
+<Folie47.png, id=257, 722.7pt x 542.025pt>
 File: Folie47.png Graphic file (type png)
  <use Folie47.png>
-Package pdftex.def Info: Folie47.png used on input line 2033.
+Package pdftex.def Info: Folie47.png used on input line 2045.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie48.png, id=250, 722.7pt x 542.025pt>
+<Folie48.png, id=258, 722.7pt x 542.025pt>
 File: Folie48.png Graphic file (type png)
  <use Folie48.png>
-Package pdftex.def Info: Folie48.png used on input line 2041.
+Package pdftex.def Info: Folie48.png used on input line 2053.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2031--2046
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2043--2058
 []$[]$   $[]$ 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[43 <./Folie45.png> <./Folie46.png>] [44 <./Folie47.png> <./Folie48.png>]
-[45]
-Underfull \hbox (badness 10000) in paragraph at lines 2182--2183
+[44 <./Folie47.png> <./Folie48.png>] [45] [46]
+Underfull \hbox (badness 10000) in paragraph at lines 2194--2195
 
  []
 
-<Folie49.png, id=266, 722.7pt x 542.025pt>
+<Folie49.png, id=270, 722.7pt x 542.025pt>
 File: Folie49.png Graphic file (type png)
  <use Folie49.png>
-Package pdftex.def Info: Folie49.png used on input line 2186.
+Package pdftex.def Info: Folie49.png used on input line 2198.
 (pdftex.def)             Requested size: 204.85844pt x 153.64339pt.
- [46]
-Underfull \hbox (badness 10000) in paragraph at lines 2221--2223
+ [47 <./Folie49.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2233--2235
 
  []
 
-<hello.png, id=271, 753.5352pt x 403.7484pt>
+<hello.png, id=275, 753.5352pt x 403.7484pt>
 File: hello.png Graphic file (type png)
  <use hello.png>
-Package pdftex.def Info: hello.png used on input line 2231.
+Package pdftex.def Info: hello.png used on input line 2243.
 (pdftex.def)             Requested size: 455.24408pt x 243.92046pt.
- [47 <./Folie49.png>] <Folie55.png, id=276, 722.7pt x 542.025pt>
+ [48 <./hello.png>] <Folie55.png, id=280, 722.7pt x 542.025pt>
 File: Folie55.png Graphic file (type png)
  <use Folie55.png>
-Package pdftex.def Info: Folie55.png used on input line 2265.
+Package pdftex.def Info: Folie55.png used on input line 2277.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie56.png, id=277, 722.7pt x 542.025pt>
+<Folie56.png, id=281, 722.7pt x 542.025pt>
 File: Folie56.png Graphic file (type png)
  <use Folie56.png>
-Package pdftex.def Info: Folie56.png used on input line 2273.
+Package pdftex.def Info: Folie56.png used on input line 2285.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2263--2278
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2275--2290
 []$[]$   $[]$ 
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[48 <./hello.png>]
-Overfull \hbox (6.71364pt too wide) in paragraph at lines 2297--2298
+Overfull \hbox (6.71364pt too wide) in paragraph at lines 2309--2310
 []\OT1/cmr/m/n/12 Molekulardynamik (zun[]achst) mi-kro-ka-no-nisch, d.h. die En
 er-gie bleibt er-hal-ten. Durch
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2297--2298
+Underfull \hbox (badness 10000) in paragraph at lines 2309--2310
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2324--2325
+[49 <./Folie55.png> <./Folie56.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2336--2337
 
  []
 
-<Folie57.png, id=282, 722.7pt x 542.025pt>
+<Folie57.png, id=288, 722.7pt x 542.025pt>
 File: Folie57.png Graphic file (type png)
  <use Folie57.png>
-Package pdftex.def Info: Folie57.png used on input line 2328.
+Package pdftex.def Info: Folie57.png used on input line 2340.
 (pdftex.def)             Requested size: 318.66946pt x 239.0045pt.
- [49 <./Folie55.png> <./Folie56.png>]
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 2362.
-LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 2362.
  [50 <./Folie57.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2388--2390
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <8> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 2373.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 2373.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2399--2401
 
  []
 
-<Folie58.png, id=294, 722.7pt x 542.025pt>
+[51] <Folie58.png, id=298, 722.7pt x 542.025pt>
 File: Folie58.png Graphic file (type png)
  <use Folie58.png>
-Package pdftex.def Info: Folie58.png used on input line 2439.
+Package pdftex.def Info: Folie58.png used on input line 2450.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie59.png, id=295, 722.7pt x 542.025pt>
+<Folie59.png, id=299, 722.7pt x 542.025pt>
 File: Folie59.png Graphic file (type png)
  <use Folie59.png>
-Package pdftex.def Info: Folie59.png used on input line 2447.
+Package pdftex.def Info: Folie59.png used on input line 2458.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2437--2452
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2448--2463
 []$[]$   $[]$ 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 2475--2477
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2495--2496
-
- []
-
-<Folie60.png, id=300, 722.7pt x 542.025pt>
-File: Folie60.png Graphic file (type png)
- <use Folie60.png>
-Package pdftex.def Info: Folie60.png used on input line 2501.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-<Folie61.png, id=301, 722.7pt x 542.025pt>
-File: Folie61.png Graphic file (type png)
- <use Folie61.png>
-Package pdftex.def Info: Folie61.png used on input line 2509.
-(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
-
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2499--2514
-[]$[]$   $[]$ 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 [52 <./Folie58.png> <./Folie59.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2538--2540
+Underfull \hbox (badness 10000) in paragraph at lines 2486--2488
 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2506--2507
+
+ []
+
+<Folie60.png, id=305, 722.7pt x 542.025pt>
+File: Folie60.png Graphic file (type png)
+ <use Folie60.png>
+Package pdftex.def Info: Folie60.png used on input line 2512.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+<Folie61.png, id=306, 722.7pt x 542.025pt>
+File: Folie61.png Graphic file (type png)
+ <use Folie61.png>
+Package pdftex.def Info: Folie61.png used on input line 2520.
+(pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
+
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2510--2525
+[]$[]$   $[]$ 
  []
 
 [53 <./Folie60.png> <./Folie61.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2572--2573
+Underfull \hbox (badness 10000) in paragraph at lines 2549--2551
 
  []
 
-[54] <Folie62.png, id=315, 722.7pt x 542.025pt>
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 2583--2584
+
+ []
+
+<Folie62.png, id=315, 722.7pt x 542.025pt>
 File: Folie62.png Graphic file (type png)
  <use Folie62.png>
-Package pdftex.def Info: Folie62.png used on input line 2614.
+Package pdftex.def Info: Folie62.png used on input line 2625.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
 <Folie63.png, id=316, 722.7pt x 542.025pt>
 File: Folie63.png Graphic file (type png)
  <use Folie63.png>
-Package pdftex.def Info: Folie63.png used on input line 2622.
+Package pdftex.def Info: Folie63.png used on input line 2633.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2612--2627
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2623--2638
 []$[]$   $[]$ 
  []
 
-[55 <./Folie62.png> <./Folie63.png>]
-<Folie64.png, id=323, 722.7pt x 542.025pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[55] <Folie64.png, id=321, 722.7pt x 542.025pt>
 File: Folie64.png Graphic file (type png)
  <use Folie64.png>
-Package pdftex.def Info: Folie64.png used on input line 2660.
+Package pdftex.def Info: Folie64.png used on input line 2671.
 (pdftex.def)             Requested size: 318.66946pt x 239.0045pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2670--2672
+Underfull \hbox (badness 10000) in paragraph at lines 2681--2683
 
  []
 
-
-Overfull \hbox (2.56035pt too wide) in paragraph at lines 2677--2681
+[56 <./Folie62.png> <./Folie63.png>]
+Overfull \hbox (2.56035pt too wide) in paragraph at lines 2688--2692
 \OT1/cmr/m/n/12 Tra-jek-to-rie. Seit \OT1/cmr/m/sc/12 Poin-car[]e \OT1/cmr/m/n/
 12 (1892) ist eben-so be-kannt, dass sol-che DGLn un-ter Umst[]anden
  []
 
-[56 <./Folie64.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2686--2687
+
+Underfull \hbox (badness 10000) in paragraph at lines 2697--2698
 
  []
 
-<Folie65.png, id=328, 722.7pt x 542.025pt>
+<Folie65.png, id=327, 722.7pt x 542.025pt>
 File: Folie65.png Graphic file (type png)
  <use Folie65.png>
-Package pdftex.def Info: Folie65.png used on input line 2692.
+Package pdftex.def Info: Folie65.png used on input line 2703.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie66.png, id=329, 722.7pt x 542.025pt>
+<Folie66.png, id=328, 722.7pt x 542.025pt>
 File: Folie66.png Graphic file (type png)
  <use Folie66.png>
-Package pdftex.def Info: Folie66.png used on input line 2700.
+Package pdftex.def Info: Folie66.png used on input line 2711.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2690--2705
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2701--2716
 []$[]$   $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2722--2724
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2733--2735
 
  []
 
-<Folie67.png, id=330, 722.7pt x 542.025pt>
+[57 <./Folie64.png>] <Folie67.png, id=333, 722.7pt x 542.025pt>
 File: Folie67.png Graphic file (type png)
- <use Folie67.png>
-Package pdftex.def Info: Folie67.png used on input line 2727.
+
+<use Folie67.png>
+Package pdftex.def Info: Folie67.png used on input line 2738.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
- [57 <./Folie65.png> <./Folie66.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 2753--2755
+ [58 <./Folie65.png> <./Folie66.png> <./Folie67.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 2764--2766
 
  []
 
-[58 <./Folie67.png>] <Folie68.png, id=340, 722.7pt x 542.025pt>
+<Folie68.png, id=340, 722.7pt x 542.025pt>
 File: Folie68.png Graphic file (type png)
-
-<use Folie68.png>
-Package pdftex.def Info: Folie68.png used on input line 2785.
+ <use Folie68.png>
+Package pdftex.def Info: Folie68.png used on input line 2796.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
- <Folie69.png, id=341, 722.7pt x 542.025pt>
+
+<Folie69.png, id=341, 722.7pt x 542.025pt>
 File: Folie69.png Graphic file (type png)
  <use Folie69.png>
-Package pdftex.def Info: Folie69.png used on input line 2793.
+Package pdftex.def Info: Folie69.png used on input line 2804.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2783--2798
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2794--2809
 []$[]$   $[]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2818--2819
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[59]
+Underfull \hbox (badness 10000) in paragraph at lines 2829--2830
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2820--2820
+Underfull \hbox (badness 10000) in paragraph at lines 2831--2831
 
  []
 
-[59 <./Folie68.png> <./Folie69.png>] [60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 2950--2955
+[60 <./Folie68.png> <./Folie69.png>] [61] [62]
+Underfull \hbox (badness 10000) in paragraph at lines 2961--2966
 
  []
 
-<Folie70.png, id=354, 722.7pt x 542.025pt>
+<Folie70.png, id=357, 722.7pt x 542.025pt>
 File: Folie70.png Graphic file (type png)
  <use Folie70.png>
-Package pdftex.def Info: Folie70.png used on input line 2960.
+Package pdftex.def Info: Folie70.png used on input line 2971.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie71.png, id=355, 722.7pt x 542.025pt>
+<Folie71.png, id=358, 722.7pt x 542.025pt>
 File: Folie71.png Graphic file (type png)
  <use Folie71.png>
-Package pdftex.def Info: Folie71.png used on input line 2968.
+Package pdftex.def Info: Folie71.png used on input line 2979.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 2958--2973
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 2969--2984
 []$[]$   $[]$ 
  []
 
-[62] [63 <./Folie70.png> <./Folie71.png>]
+[63 <./Folie70.png> <./Folie71.png>]
 <Folie72.png, id=364, 722.7pt x 542.025pt>
 File: Folie72.png Graphic file (type png)
  <use Folie72.png>
-Package pdftex.def Info: Folie72.png used on input line 3028.
+Package pdftex.def Info: Folie72.png used on input line 3039.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3035--3037
+Underfull \hbox (badness 10000) in paragraph at lines 3046--3048
+
+ []
+
+[64]
+Underfull \hbox (badness 10000) in paragraph at lines 3059--3061
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3048--3050
+Underfull \hbox (badness 10000) in paragraph at lines 3072--3073
 
  []
 
-[64 <./Folie72.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3061--3062
+[65 <./Folie72.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3095--3097
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 3084--3086
-
- []
-
-<Folie73.png, id=369, 722.7pt x 542.025pt>
+<Folie73.png, id=372, 722.7pt x 542.025pt>
 File: Folie73.png Graphic file (type png)
  <use Folie73.png>
-Package pdftex.def Info: Folie73.png used on input line 3089.
+Package pdftex.def Info: Folie73.png used on input line 3100.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3094--3100
+Underfull \hbox (badness 10000) in paragraph at lines 3105--3111
 
  []
 
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 3104--3107
+[66 <./Folie73.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3115--3118
 
  []
 
-<Folie74.png, id=373, 722.7pt x 542.025pt>
+<Folie74.png, id=377, 722.7pt x 542.025pt>
 File: Folie74.png Graphic file (type png)
  <use Folie74.png>
-Package pdftex.def Info: Folie74.png used on input line 3111.
+Package pdftex.def Info: Folie74.png used on input line 3122.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-<Folie75.png, id=374, 722.7pt x 542.025pt>
+<Folie75.png, id=378, 722.7pt x 542.025pt>
 File: Folie75.png Graphic file (type png)
  <use Folie75.png>
-Package pdftex.def Info: Folie75.png used on input line 3119.
+Package pdftex.def Info: Folie75.png used on input line 3130.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 3109--3124
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 3120--3135
 []$[]$   $[]$ 
  []
 
-[66 <./Folie73.png> <./Folie74.png> <./Folie75.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3155--3156
+[67 <./Folie74.png> <./Folie75.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3166--3167
 
  []
 
 
-Overfull \hbox (1.90877pt too wide) in paragraph at lines 3163--3168
+Overfull \hbox (1.90877pt too wide) in paragraph at lines 3174--3179
 \OT1/cmr/m/sc/12 Lan-ge-vin \OT1/cmr/m/n/12 1908) Fol-gen \OT1/cmr/m/sc/12 Lan-
 ge-vin \OT1/cmr/m/n/12 Be-we-gungs-glei-chung f[]ur \OT1/cmr/m/it/12 ein \OT1/c
 mr/m/n/12 Teil-chen auf ei-ner Fl[]ussig-
  []
 
-[67]
+[68]
 
-LaTeX Warning: Command \ss invalid in math mode on input line 3199.
+LaTeX Warning: Command \ss invalid in math mode on input line 3210.
 
 
-LaTeX Warning: Command \ss invalid in math mode on input line 3199.
+LaTeX Warning: Command \ss invalid in math mode on input line 3210.
 
-[68] <Folie76.png, id=389, 722.7pt x 542.025pt>
+<Folie76.png, id=389, 722.7pt x 542.025pt>
 File: Folie76.png Graphic file (type png)
  <use Folie76.png>
-Package pdftex.def Info: Folie76.png used on input line 3233.
+Package pdftex.def Info: Folie76.png used on input line 3244.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
 <Folie77.png, id=390, 722.7pt x 542.025pt>
 File: Folie77.png Graphic file (type png)
  <use Folie77.png>
-Package pdftex.def Info: Folie77.png used on input line 3241.
+Package pdftex.def Info: Folie77.png used on input line 3252.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (7.83325pt too wide) in paragraph at lines 3231--3246
+Overfull \hbox (7.83325pt too wide) in paragraph at lines 3242--3257
 []$[]$   $[]$ 
  []
 
-[69 <./Folie76.png> <./Folie77.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 3266--3268
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[69]
+Underfull \hbox (badness 10000) in paragraph at lines 3277--3279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3269--3271
+Underfull \hbox (badness 10000) in paragraph at lines 3280--3282
 
  []
 
-<Folie78.png, id=396, 722.7pt x 542.025pt>
+<Folie78.png, id=394, 722.7pt x 542.025pt>
 File: Folie78.png Graphic file (type png)
  <use Folie78.png>
-Package pdftex.def Info: Folie78.png used on input line 3274.
+Package pdftex.def Info: Folie78.png used on input line 3285.
 (pdftex.def)             Requested size: 227.62204pt x 170.71396pt.
 
-Overfull \hbox (1.39981pt too wide) in paragraph at lines 3281--3282
+Overfull \hbox (1.39981pt too wide) in paragraph at lines 3292--3293
 []\OT1/cmr/m/n/12 bewegt sich dann bei je-dem Zeit-schritt 'zuf[]allig': z.B. B
 e-we-gung auf $2\OML/cmm/m/it/12 d$\OT1/cmr/m/n/12 -Quadratgitter 
  []
 
-[70 <./Folie78.png>] [71]
-Underfull \hbox (badness 10000) in paragraph at lines 3355--3358
+[70 <./Folie76.png> <./Folie77.png>] [71 <./Folie78.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 3366--3369
 
  []
 
 [72] [73]
-Underfull \hbox (badness 10000) in paragraph at lines 3449--3451
+Underfull \hbox (badness 10000) in paragraph at lines 3460--3462
 
  []
 
 
-Overfull \hbox (11.71637pt too wide) in paragraph at lines 3452--3453
+Overfull \hbox (11.71637pt too wide) in paragraph at lines 3463--3464
 []\OT1/cmr/m/n/12 Einfachstes, ir-re-ver-si-bles Ver-fah-ren, das Stratonovich-
 Gleichung ver-wen-det: Heun-Verfahren. 
  []
 
 [74]
-Overfull \hbox (4.83983pt too wide) in paragraph at lines 3493--3495
+Overfull \hbox (4.83983pt too wide) in paragraph at lines 3504--3506
 \OT1/cmr/m/n/12 Wobei die Er-war-tungs-wer-te in klas-si-sche Gr[]oen []uber-g
-e-hen. (\OT1/cmr/bx/n/12 Ehrenfest-Theorem\OT1/cmr/m/n/12 ):
+e-hen. (\OT1/cmr/bx/sc/12 Ehrenfest-Theorem\OT1/cmr/m/n/12 ):
  []
 
 [75]
-Underfull \hbox (badness 10000) in paragraph at lines 3513--3515
+Underfull \hbox (badness 10000) in paragraph at lines 3524--3526
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3529--3531
+Underfull \hbox (badness 10000) in paragraph at lines 3540--3542
 
  []
 
-[76]
-Underfull \hbox (badness 10000) in paragraph at lines 3600--3602
+[76] [77]
+Underfull \hbox (badness 10000) in paragraph at lines 3611--3613
 
  []
 
-[77]
-Underfull \hbox (badness 10000) in paragraph at lines 3615--3616
+
+Underfull \hbox (badness 10000) in paragraph at lines 3626--3627
 
  []
 
@@ -2087,37 +2090,37 @@ File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 3
-620.
+631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 3
-620.
+631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 3
-620.
+631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 3
-620.
+631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 3
-620.
+631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf used on input line 3
-620.
+631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
 <Thouless_Uebergang_Nobelprice.pdf, id=432, page=1, 597.50829pt x 845.0471pt>
@@ -2125,32 +2128,32 @@ File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 1>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 1>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [78]
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 1>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 1>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 1>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page1 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [79 <./Thouless_Uebergang_Nobelprice.pdf>]
 <Thouless_Uebergang_Nobelprice.pdf, id=540, page=2, 597.50829pt x 845.0471pt>
@@ -2158,19 +2161,19 @@ File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 2>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page2 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 2>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page2 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 2>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page2 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [80 <./Thouless_Uebergang_Nobelprice.pdf>]
 <Thouless_Uebergang_Nobelprice.pdf, id=572, page=3, 597.50829pt x 845.0471pt>
@@ -2178,19 +2181,19 @@ File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 3>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page3 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 3>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page3 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 3>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page3 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [81 <./Thouless_Uebergang_Nobelprice.pdf>]
 <Thouless_Uebergang_Nobelprice.pdf, id=584, page=4, 597.50829pt x 845.0471pt>
@@ -2198,19 +2201,19 @@ File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 4>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page4 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 4>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page4 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 4>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page4 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [82 <./Thouless_Uebergang_Nobelprice.pdf>]
 <Thouless_Uebergang_Nobelprice.pdf, id=596, page=5, 597.50829pt x 845.0471pt>
@@ -2218,126 +2221,129 @@ File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 5>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page5 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 5>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page5 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Thouless_Uebergang_Nobelprice.pdf Graphic file (type pdf)
 
 <use Thouless_Uebergang_Nobelprice.pdf, page 5>
 Package pdftex.def Info: Thouless_Uebergang_Nobelprice.pdf, page5 used on input
- line 3620.
+ line 3631.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [83 <./Thouless_Uebergang_Nobelprice.pdf>] <Nowak.pdf, id=608, 614.295pt x 794
 .97pt>
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf>
-Package pdftex.def Info: Nowak.pdf used on input line 3621.
+Package pdftex.def Info: Nowak.pdf used on input line 3632.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Nowak.pdf Graphic file (type pdf)
 
 <use Nowak.pdf>
-Package pdftex.def Info: Nowak.pdf used on input line 3621.
+Package pdftex.def Info: Nowak.pdf used on input line 3632.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf>
-Package pdftex.def Info: Nowak.pdf used on input line 3621.
+Package pdftex.def Info: Nowak.pdf used on input line 3632.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf>
-Package pdftex.def Info: Nowak.pdf used on input line 3621.
+Package pdftex.def Info: Nowak.pdf used on input line 3632.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf>
-Package pdftex.def Info: Nowak.pdf used on input line 3621.
+Package pdftex.def Info: Nowak.pdf used on input line 3632.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 
 <Nowak.pdf, id=614, page=1, 614.295pt x 794.97pt>
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 1>
-Package pdftex.def Info: Nowak.pdf, page1 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 3632.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: Nowak.pdf Graphic file (type pdf)
 
 <use Nowak.pdf, page 1>
-Package pdftex.def Info: Nowak.pdf, page1 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 1>
-Package pdftex.def Info: Nowak.pdf, page1 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 1>
-Package pdftex.def Info: Nowak.pdf, page1 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
 
 <use Nowak.pdf, page 1>
-Package pdftex.def Info: Nowak.pdf, page1 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page1 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [84 <./Nowak.pdf>]
 <Nowak.pdf, id=646, page=2, 614.295pt x 794.97pt>
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 2>
-Package pdftex.def Info: Nowak.pdf, page2 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page2 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
 
 <use Nowak.pdf, page 2>
-Package pdftex.def Info: Nowak.pdf, page2 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page2 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 2>
-Package pdftex.def Info: Nowak.pdf, page2 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page2 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [85 <./Nowak.pdf>]
 <Nowak.pdf, id=659, page=3, 614.295pt x 794.97pt>
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 3>
-Package pdftex.def Info: Nowak.pdf, page3 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page3 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
 
 <use Nowak.pdf, page 3>
-Package pdftex.def Info: Nowak.pdf, page3 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page3 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 3>
-Package pdftex.def Info: Nowak.pdf, page3 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page3 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [86 <./Nowak.pdf>]
 <Nowak.pdf, id=674, page=4, 614.295pt x 794.97pt>
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 4>
-Package pdftex.def Info: Nowak.pdf, page4 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page4 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
 
 <use Nowak.pdf, page 4>
-Package pdftex.def Info: Nowak.pdf, page4 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page4 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: Nowak.pdf Graphic file (type pdf)
  <use Nowak.pdf, page 4>
-Package pdftex.def Info: Nowak.pdf, page4 used on input line 3621.
+Package pdftex.def Info: Nowak.pdf, page4 used on input line 3632.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
  [87 <./Nowak.pdf>]
 (Skript_Überarbeitung.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19666 strings out of 493334
- 390982 string characters out of 3139675
- 479291 words of memory out of 3000000
- 22739 multiletter control sequences out of 15000+200000
- 20698 words of font info for 82 fonts, out of 3000000 for 9000
+ 19688 strings out of 493334
+ 391335 string characters out of 3139675
+ 480291 words of memory out of 3000000
+ 22761 multiletter control sequences out of 15000+200000
+ 20999 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,22n,85p,826b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,22n,85p,826b,634s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
 gram Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
 s/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Program Files/MiKTeX2.
@@ -2363,7 +2369,7 @@ cm/cmtt12.pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/cm/cmtt8.
 pfb><C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb>
 <C:/Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/
 Program Files/MiKTeX2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Skript_Überarbeitung.pdf (87 pages, 2994587 bytes).
+Output written on Skript_Überarbeitung.pdf (87 pages, 2998770 bytes).
 PDF statistics:
  770 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

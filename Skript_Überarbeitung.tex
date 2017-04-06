@@ -202,9 +202,10 @@ Das Phasenraumintegral wird also etwas anders definiert:
 1 = \frac{1}{h^{3N} N!} \int \rho (q,p)\;  d\Gamma
 \end{align}
 Ohne diese Korrektur kommt man zum \textsc{Gibb}schen Paradoxon. Der \textbf{thermische Mittelwert} $A(q,p)$ einer beliebigen Größe ist damit
-\begin{align}
-\Aboxed{ \langle A \rangle = \frac{1}{h^{3N} N!} \int \rho (q,p)\; A(q,p) \;  d\Gamma }
-\end{align}
+
+\begin{tcolorbox}[ams gather,title= thermischer Mittelwert, colback=blue!10!white, colframe=blue!30!black] 
+ \langle A \rangle = \frac{1}{h^{3N} N!} \int \rho (q,p)\; A(q,p) \;  d\Gamma 
+\end{tcolorbox}
 Dieser ist Nummerisch nicht lösbar, da für 10 Teilchen bereits $10^{60}$ Rechenoperationen nötig wären! 
 \end{enumerate}
 Die \textbf{Entropie} definieren wir analog zur Informationstheorie über 
@@ -373,7 +374,7 @@ S &= -k_B \int d\Gamma \rho \; ln(\rho ) = -k_B \int d\Gamma \frac{e^{- \beta \;
 \end{align}
 \textbf{Beispiel:} (Ideales Gas, gemäß Abbildung \ref{fig:Volumen})
 \begin{align*}
-H = \sum_{i=1}^N \frac{p_i ^2}{2m} \; ,  \; \vec{p_i} = (p_x, p_y, p_z)
+H = \sum_{i=1}^N \frac{p_i ^2}{2m} \; ,  \; \mathbf{p_i} = (p_x, p_y, p_z)
 \end{align*}
 Kanonische Zustandssumme
 \begin{align*}
@@ -395,9 +396,10 @@ ln(N!) \approx N \; ln(N) - N
 \Rightarrow p = - \frac{\partial F}{\partial V} \biggr\vert_{T,N} = \frac{N k_B T}{V}
 \end{align}
 
-\begin{align}
- \Rightarrow \; \Aboxed{ p V = N k_B T}
-\end{align}
+\begin{tcolorbox}[ams gather,title= ideale Gasgleichung, colback=blue!10!white, colframe=blue!30!black] 
+ p V = N k_B T
+\end{tcolorbox}
+
 Es folgt also eine der Gasgleichungen. Die andere folgt aus
 \begin{align}
 U = F + TS = F + T \frac{\partial F}{\partial T} \biggr\vert_{V,N} = \frac{3}{2} N k_B T
@@ -586,7 +588,7 @@ Betrachte 1. Teilintervall (als Beispiel) Wahrscheinlichkeit, dass von N Zufalls
 	\begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Folie12.png}
-		\caption{Gauß-Funktion} 
+		\caption{\textsc{Gauß}-Funktion} 
 		\label{fig:Gaussfunktion}
 		\centering
 	\end{subfigure}
@@ -598,7 +600,7 @@ p_N (N_1) = p^{N_1} (1-p)^{N-N_1} \frac{N!}{N_1 ! (N-N_1)!} \quad  \mbox{ \textb
  \mbox{ mit } p= \Delta x
 \end{align}
 
-Die Binomialverteilung geht in Grenzfällen in einfachere, d.h. analytische Verteilungen über: In diesem Beispiel geht sie für $N \to \infty$ und konstantes $p$ in die \textbf{Gaußverteilung} über.
+Die Binomialverteilung geht in Grenzfällen in einfachere, d.h. analytische Verteilungen über: In diesem Beispiel geht sie für $N \to \infty$ und konstantes $p$ in die \textbf{\textsc{Gauss}verteilung} über.
 \begin{align}
 p_N (N_1) = \frac{1}{\sqrt{2 \pi N p (1-p)}} e^{- \frac{(N_1 - N_p)^2}{2 N_p (1-p)}}
 \end{align}
@@ -694,10 +696,10 @@ $\Rightarrow n^d$ Terme müssen summiert werden\\
 Für kleine $d$ kein Problem, für große jedoch absolut unmöglich. \\
 
 \textbf{Beispiel:} (Phasenraumintegral) \\
- 3TL, Freiheitsgrade $\vec{r}, \vec{p} \; \quad \Rightarrow$ Integral im Phasenraum: 
+ 3TL, Freiheitsgrade $\mathbf{r}, \mathbf{p} \; \quad \Rightarrow$ Integral im Phasenraum: 
 
 \begin{align*}
-\int d^3 \vec{r}_1 d^3 \vec{r}_2 d^3 \vec{r}_3 \; d^3 \vec{p}_1 d^3 \vec{p}_2 d^3 \vec{p}_3 .... 
+\int d^3 \mathbf{r}_1 d^3 \mathbf{r}_2 d^3 \mathbf{r}_3 \; d^3 \mathbf{p}_1 d^3 \mathbf{p}_2 d^3 \mathbf{p}_3 .... 
 \end{align*} %TODO bild
 ist immerhin 18-dimensional mit 
 \begin{align*}
@@ -743,10 +745,10 @@ n \cdot \Delta x =&\;  b-a \; \quad
 = \frac{b-a}{N} \sum_{\nu =1}^n \underbrace{\overline{N}_\nu f(x_\nu)}_{ \approx \sum_{x_j \in [\,]_\nu} f(x_j)} \\ =& \frac{b-a}{N} \sum_{i=1}^N f(x_i)
 \end{align}
 Diese Formel ist nicht auf $d=1$ beschränkt, sondern gilt auch in höheren Dimensionen:
-\begin{align}
-\Aboxed{ I \approx \frac{V_d}{N} \sum_{i=1}^N f(\vec{x}_i) }
-\end{align}
-d.h. das Integral ist der Mittelwert der Funktionswerte an zufälligen Stützstellen $\vec{x}_i$.\\
+\begin{tcolorbox}[ams gather,title= , colback=blue!10!white, colframe=blue!30!black] 
+ I \approx \frac{V_d}{N} \sum_{i=1}^N f(\mathbf{x}_i) 
+\end{tcolorbox}
+d.h. das Integral ist der Mittelwert der Funktionswerte an zufälligen Stützstellen $\mathbf{x}_i$.\\
 \paragraph{Fehler:} (für $I = \int_0^1 f(x) dx$)\\
 $\{ x_1, x_2,..., x_N\}$ sei spezielle Folge von Zufallszahlen mit $I_1$ als Integralwert (also Resultat). Eine andere Folge erzeugt anderes Ergebnis $I_2,...$. \\
 $\Rightarrow$ Es existiert eine Wahrscheinlichkeitsverteilung $P(I)$ um dafür einen bestimmten Integralwert $I$ zu erhalten.  (Abb. \ref{fig:Integralwert})
@@ -882,9 +884,9 @@ $\to$ Wie kann man das Verfahren verbessern?
 (\Delta I )^2 = \frac{1}{N} \underbrace{\left( \langle f^2(x) \rangle - \langle f(x)\rangle^2 \right)}_\text{Schwankungsbreite der Fkt}
 \end{align}
 Idee: Transformation, so dass der Integrand $\approx const$, dafür aber Zufallszahl \textit{nicht} gleichverteilt.
-\begin{align}
-\Aboxed{ I= \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)} }
-\end{align}
+\begin{tcolorbox}[ams gather,title= , colback=blue!10!white, colframe=blue!30!black] I= \frac{1}{N} \sum_{i=1}^N \frac{f(y_i)}{w(y_i)} 
+\end{tcolorbox}
+
 wobei $y_i$ eine Folge von Zufallszahlen gemäß Verteilung $w(y)$ mit $w(y)>0$, $\int w(y) \; dy=1$. \\
 Beweis:
 \begin{align}
@@ -930,7 +932,7 @@ Fehler: \begin{align}
 \begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Folie24.png}
-		\caption{Gauß-Funktion}
+		\caption{\textsc{Gauß}-Funktion}
 		\label{fig:Gaussunktion}
 		\centering
 	\end{subfigure}
@@ -970,9 +972,9 @@ soll vorgegeben werden. Wie lautet dann $f(x)$?
 \begin{align}
 \Rightarrow  \int_0^x dx' = \int \rho(y) dy \; \Rightarrow \; x(y) = \int \rho(y) \; dy = x(y) = f^{-1}(y) 
 \end{align}
-\begin{align}
-\Aboxed{\Rightarrow  f(x)= \left( \int \rho(y) \; dy \right)^{-1} }
-\end{align}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+ f(x)= \left( \int \rho(y) \; dy \right)^{-1} 
+\end{tcolorbox}
 \begin{align*}
 \Rightarrow  f(x_i)=y_i \mbox{ sind gesuchte ZZ}
 \end{align*} 
@@ -1079,10 +1081,11 @@ also...
 
 
 
-praktisch: \begin{align}
-\Aboxed{x_{2i}= \sigma \sqrt{-2 ln(1-y_{2i})} \; cos(2\pi \; y_{2i-1}) } \\
-\mbox{ mit } y_i\mbox{ ZZ} \in [0, 1) \mbox{ gleichverteilt} \nonumber
-\end{align}
+praktisch:
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+x_{2i}= \sigma \sqrt{-2 ln(1-y_{2i})} \; cos(2\pi \; y_{2i-1}) \\
+\mbox{ mit } \quad y_i\mbox{ ZZ} \in [0, 1) \mbox{ gleichverteilt} \nonumber
+\end{tcolorbox}
 Beispiel: Wir nehmen das Integral
 \begin{align*}
 \int_0^{2\pi} x \; e^x \; dx \underbrace{=}_\text{analytisch} e^{2\pi} (2\pi -1) +1
@@ -1117,15 +1120,15 @@ wobei $x_i \in [0,1)$.
 % %TODO Review END
  
  \subsection{Ising Modell}
- Das \textsc{Ising}modell\footnote{Zweizustandsmodell: minimales Modell für ein reales system, jeder einzelne Freiheitsgrad hat nur zwei Zustände, ist aber das erste Modell das einen Phasenübergang zeigt. Es ist im $2d$ Fall aber exakt lösbar und daher gut für uns.} findet zahlreiche Anwendungen (\textbf{z.B.} in den Sozialwissenschaften, in der Phyik für Fest-Flüssig-Übergänge oder mehr noch für \textit{magnetische Eigenschaften}, wie etwa dem Ferromagneten). Es ist \textit{sehr einfach} und zudem auch \textit{exakt lösbar} für Lösungen im $1d$ (\textsc{Ising}), $2d $ (\textsc{Onsager}) Fall.
+ Das \textsc{Ising}Modell\footnote{Zweizustandsmodell: minimales Modell für ein reales system, jeder einzelne Freiheitsgrad hat nur zwei Zustände, ist aber das erste Modell das einen Phasenübergang zeigt. Es ist im $2d$ Fall aber exakt lösbar und daher gut für uns.} findet zahlreiche Anwendungen (\textbf{z.B.} in den Sozialwissenschaften, in der Physik für Fest-Flüssig-Übergänge oder mehr noch für \textit{magnetische Eigenschaften}, wie etwa dem Ferromagneten). Es ist \textit{sehr einfach} und zudem auch \textit{exakt lösbar} für Lösungen im $1d$ (\textsc{Ising}), $2d $ (\textsc{Onsager}) Fall.
 ($\to$ Nobelpreis) \\
 Wir benutzen das Modell eines Ferromagneten, gemäß Abbildung \ref{fig:Ferromagnet}.  \\
-Makroskopisch ist eine Gesamtmagnetisiertung zu beobachten. Auf mikroskopischer Ebene findet man Atome mit 'Spin', atomare Momente, die in eine Richtung ausgerichtet sind. Sie wechselwirken mit ihren umliegenden Nachbarn\footnote{ Die Wechselwirkung ist im einfachsten Fall nur mit den nächsten Nachbarn, Idee: Überlapp der Wellenfunktion ist begrenzt exponentiell}. Es gibt Vorzugsrichtungen, abhängig von den Kristallstrukturen (Wegen Spin-Bahn Wechselwirkungen) \\
+Makroskopisch ist eine Gesamtmagnetisierung zu beobachten. Auf mikroskopischer Ebene findet man Atome mit 'Spin', atomare Momente, die in eine Richtung ausgerichtet sind. Sie wechselwirken mit ihren umliegenden Nachbarn\footnote{ Die Wechselwirkung ist im einfachsten Fall nur mit den nächsten Nachbarn, Idee: Überlapp der Wellenfunktion ist begrenzt exponentiell}. Es gibt Vorzugsrichtungen, abhängig von den Kristallstrukturen (Wegen Spin-Bahn Wechselwirkungen) \\
 $\Rightarrow$ Vorzugsachse (\textbf{Anisotropie}). Der Kristall hat eine leichte Achse, d.h. Spins wollen in diese Richtung stehen.\\
 $\Rightarrow$ nur noch zwei Zustände! ('rauf' $\uparrow$ oder 'runter' $\downarrow$) \\
 
  \begin{itemize}
-\item[-] Gitter aus Spins, im einfachsten Fall $S= \pm 1$, sodass beispielsweise $S_i$ nur index $i= \{+,-\}$ hat.
+\item[-] Gitter aus Spins, im einfachsten Fall $S= \pm 1$, sodass beispielsweise $S_i$ nur Index $i= \{+,-\}$ hat.
 \item[-]Hamilton-Funktion\footnote{Spin ist hier kein Drehimpuls sondern wirklich ein Spin, das Minuszeichen kommt vom Drehimpuls des \textit{Elektrons}. Es ist ein phänomenologisches klassisches Modell, also nicht wirklich ein quantenmechanisches Spin-$1/2$-Modell sonder im klassischen Limes (Limes Heisenbergmodell und gleichzeitig Anisotropie gegen unendlich)}
 \begin{align}
 H= - \sum_{i=1}^N B \; S_i
@@ -1177,11 +1180,12 @@ p_{\underline{\dot{S}}} = p ( H_{\underline{\dot{S}}}) = \frac{e^{- \beta H_{\un
 }_{\text{Normierung:} \sum_{\underline{\dot{S}}} p_{\underline{\dot{S}}} =1 }}\; , \quad \beta = \frac{1}{k_BT}
 \end{align}
 mit \textit{Zustandssumme} 
-\begin{align}
-\Aboxed{ Z= \sum_{\underline{\dot{S}}} e^{- \beta H_{\underline{\dot{S}}} } }
+\begin{tcolorbox}[ams gather,title= kanonisches Ensemble, colback=blue!10!white, colframe=blue!30!black] 
+Z= \sum_{\underline{\dot{S}}} e^{- \beta H_{\underline{\dot{S}}} } 
 \quad
-\mbox{ und }  \Aboxed{ \langle \Omega \rangle = \frac{1}{Z}  \sum_{\underline{\dot{S}}} \Omega({\underline{\dot{S}}}) \;  e^{- \beta H_{\underline{\dot{S}}} }}
-\end{align} (fürs kanonische Ensemble bestimmbar in obiger Form)
+\mbox{ und } \quad  \langle \Omega \rangle = \frac{1}{Z}  \sum_{\underline{\dot{S}}} \Omega({\underline{\dot{S}}}) \;  e^{- \beta H_{\underline{\dot{S}}} }
+\end{tcolorbox}
+ (fürs kanonische Ensemble bestimmbar in obiger Form)
 \end{itemize}
 Das \textsc{Ising}-Modell ist lösbar in $1d$ und $2d$. Wir beobachten im Folgenden aber Numerik und deswegen analytisch lösbare 'Vorüberlegung' mit nur 2 Spins:\\
 \textbf{ Beispiel:} ($N=2$): 
@@ -1248,14 +1252,14 @@ $\Rightarrow$ Näherungsverfahren!
 
 Dabei sind $[\underline{S}]$ Konfigurationen von Spins mit Wahrscheinlichkeit $w(S)$. Wähle 
 
-\begin{align}
-\Aboxed{ w(\bar{S})= e^{-\beta H(\underline{S})}  }
-\end{align}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black]  
+w(\bar{S})= e^{-\beta H(\underline{S})}  
+\end{tcolorbox}
  und dann folgt
 
-\begin{align}
-\Aboxed{ \langle M \rangle = \frac{1}{K} \sum_{ [\underline{S}]}^{(k)} M(\bar{S})}
-\end{align}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black]  
+\langle M \rangle = \frac{1}{K} \sum_{ [\underline{S}]}^{(k)} M(\bar{S})
+\end{tcolorbox}
 $\Rightarrow$ Problem: wir brauchen Zustände $\overline{S}$ mit Wahrscheinlichkeit $w(\overline{S})\propto e^{-\beta H(\overline{S})}$ ($\Rightarrow$Problematisch). Wir brauchen also ein Verfahren das Zustände des Systems (Spinkonfiguration $\underline{S}$) erzeugt die eben dieser eben genannten Wahrscheinlichkeitsverteilung genügt. Wie bekommt man jetzt Konfigurationen mit einer bestimmten Wahrscheinlichkeitsverteilung? 
 Lösung: \textbf{ Metropolis-Algorithmus}. \\
 
@@ -1281,7 +1285,7 @@ $r \leq 1:$ akzeptieren mit Wahrscheinlichkeit $r$
 \textbf{Implementierung:} am Beispiel einer Spinkette $\uparrow \uparrow \uparrow \uparrow \uparrow \uparrow$ (der letzte wechselwirkt wieder mit dem ersten wieder, periodische Randbedingungen also)
 
 \begin{enumerate}
-\item Array von Spins \texttt{int spins}$[N]$: $ +1|+1|+1|+1|+1|+1|$ (mit Anfangsbedingung $S_i =1$)
+\item Array von Spins \texttt{int Spins}$[N]$: $ +1|+1|+1|+1|+1|+1|$ (mit Anfangsbedingung $S_i =1$)
 \item \label{wiederPunkt2} Versuchsschritt: misst \textbf{'single spin flip'}, d.h. ein Spin wird gedreht: \\
 $S_i \rightarrow - S_i$: $ +1|-1|+1|+1|+1|+1|$
 \item $\Delta H= H(\underline{S}_r)  - H(\underline{S}_n) = 2 J (S_i S_{i-1} + S_i S_{i+1}) + 2BS_i \; \; \Rightarrow r= e^{-\Delta H / k_BT}$
@@ -1325,7 +1329,7 @@ Betrachte eine mögliche Lösung: jeder einzelne Summand wird $=0$. (\textbf{'de
 \Rightarrow  \frac{p(\underline{S} \rightarrow \underline{S}')}{p(\underline{S}' \rightarrow  \underline{S})} = \frac{w(\underline{S}')}{w(\underline{S})} = e^{-\beta(E(\underline{S}')- E(\underline{S})}
 \end{align}
 \begin{enumerate}
-\item \underline{Lösung:} (eigentl. Metropolis Algorithmus)
+\item \underline{Lösung:} (eigentlich. Metropolis Algorithmus)
  \begin{align}
 p(\underline{S} \rightarrow \underline{S}')
 \begin{cases}
@@ -1437,7 +1441,7 @@ w_{sr}&= \frac{1}{Z'} \sum_{r',s'} e^{\beta (E_{r'}' -E_{s'}') } e^{-\beta E_{r'
 \item $w_{sr}$ liegen nicht absolut fest. Mit $w_{sr}, w_{rs}$ ist auch $\gamma (t) w_{sr}, \gamma(t) w_{rs}$ Lösung \\  $\Rightarrow$ Zeitskala ist nicht absolut festgelegt!
 \item $w_{sr}$ ist nicht mikroskopisch bekannt (im Raum nicht festgelegt)
 \item Die Master Gleichung beschreibt \textit{ausschließlich} irreversible Dynamiken, nicht aber die Bewegungsgleichung innerhalb des Systems $\tilde{H}$, (Abb. \ref{fig:System})! 
-\item speziell für das Ising Modell heißt diese Dynamik, die durch die Mastergleichung beschrieben wird  \textbf{Glauber-Dynamik}.(Besonders wichtig, das Ising Modell keine Bewegungsgleichung hat)
+\item speziell für das \textsc{Ising}-Modell heißt diese Dynamik, die durch die Mastergleichung beschrieben wird  \textbf{Glauber-Dynamik}.(Besonders wichtig, das \textsc{Ising}-Modell keine Bewegungsgleichung hat)
 \end{itemize}
 
 
@@ -1505,7 +1509,7 @@ M(t)= \sum_s p_s(t) M_s = p_{++}(t) + p_{--}(t) \underbrace{\approx}_{t \to \inf
 \underline{Diskussion:}  (siehe auch Abb. \ref{fig:Relax})
 \begin{itemize}
 \item $\tau$ hängt vom 'Algorithmus' ab (siehe auch Grenze für $T\to \infty $)
-\item $p(t)$ hängt von Annahmen bezüglich Übergangswahrcheinlichkteisraten  also der Dynamik ab (single spin flip oder nicht)
+\item $p(t)$ hängt von Annahmen bezüglich Übergangswahrscheinlichkeitsraten  also der Dynamik ab (single spin flip oder nicht)
 \end{itemize}
 \subsection{Phasenübergange und Skalentheorie}
 
@@ -1521,14 +1525,14 @@ M(t)= \sum_s p_s(t) M_s = p_{++}(t) + p_{--}(t) \underbrace{\approx}_{t \to \inf
 \begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Folie34.png}
-		\caption{Computer: Isingmodell}
+		\caption{Computer: \textsc{Ising}-Modell}
 		\label{fig:Computer}
 		\centering
 	\end{subfigure}
 	\caption{ }
 \end{figure}	
 
-Ideale Gase haben keine Wechselwirkung erst die Wechselwirkung zwischen Teilchen erklärt aber das Entstehen von Ordnung. Ordnung entsteht häufig spontan durch Phasenübergänge, bei dem eine Symmetrie gebrochen (Abb. \ref{fig:Symmetriebruch}) wird. Ein Analytisch lösbares Modell für das Studium von Phasenübergängen ist das in Abb. \ref{fig:Computer} dargestellte \textbf{ (2d) Ising-Modell}: 
+Ideale Gase haben keine Wechselwirkung erst die Wechselwirkung zwischen Teilchen erklärt aber das Entstehen von Ordnung. Ordnung entsteht häufig spontan durch Phasenübergänge, bei dem eine Symmetrie gebrochen (Abb. \ref{fig:Symmetriebruch}) wird. Ein Analytisch lösbares Modell für das Studium von Phasenübergängen ist das in Abb. \ref{fig:Computer} dargestellte \textbf{ (2d) \textsc{Ising}-Modell}: 
 
 Ordnungsparameter: 
 \begin{align*}
@@ -1557,7 +1561,7 @@ Die exakte Lösung von Onsager (1944) erhielt einen Nobelpreis. Heutzutage löst
 \begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Folie36.png}
-		\caption{Isingmodell im Feld.}
+		\caption{\textsc{Ising}-Modell im Feld.}
 		\label{fig:IsingmodellimFeld}
 		\centering
 	\end{subfigure}
@@ -1585,7 +1589,7 @@ sinh \left(\frac{2J}{k_BT_c} \right) = 1\quad \Rightarrow cosh \left(\frac{2J}{k
 \begin{itemize}
 \item[•] Dies spezifische Wärme $c(\underbrace{T \to T_c}_{\kappa \to 1}) \propto - ln \left(\vert 1- \frac{T}{T_c}\vert \right)$
 \end{itemize}
-Der Ornungsparameter jedoch bleibt endlich. (Magnetisierung:)
+Der Ordnungsparameter jedoch bleibt endlich. (Magnetisierung:)
 \begin{itemize}
 \item[•] Magnetisierung 
 \begin{align}
@@ -1602,7 +1606,7 @@ x= e^{- \frac{2J}{k_B T}}, \\
 \end{itemize}
 
 \textbf{Kritische Exponenten} \\
-Ising Modell mit Feld. (s. Abb. \ref{fig:IsingmodellimFeld})
+\textsc{Ising}-Modell mit Feld. (s. Abb. \ref{fig:IsingmodellimFeld})
 \begin{itemize}
 \item[•] Phasenübergang $1.$Ordnung bei %TODO missing word
 des Feldes $\Rightarrow$ \textit{Hysterese}, Ordnungsparameter stetig, kritische Exponenten
@@ -1675,7 +1679,7 @@ Moderne Theorie der Phasenübergänge 2.Ordnung: \\
 Verschiedene physikalische Systeme können dieselben kritischen Exponenten aufweisen! %TODO kommt dieser satz hier hin?
 Bestimmung der kritischen Exponenten aus:
 \begin{enumerate}
-\item[a)] exakte Lösung (2d-Ising-Model)
+\item[a)] exakte Lösung (2d-\textsc{Ising}-Modell)
 \item[b)]Reihenentwicklung
 \item[c)]Computersimulation
 \item[d)]Experimente
@@ -1690,15 +1694,21 @@ für führenden nicht-analytischen Anteil. Gültig in unmittelbarer Nähe des kr
 \textbf{Beispiel:}
 \begin{align*}
 f(x) = x^{0.5} \quad & \Leftrightarrow \quad f(bx) = (bx)^{0.5} = b^{0.5} \; x^{0.5} \\
-b= y^2 \quad &\Rightarrow \Aboxed{ f(a^2 x) = a \; x^{0.5} = a f(x) }
+b= y^2 \quad 
 \end{align*}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+ f(a^2 x) = a \; x^{0.5} = a f(x)
+ \end{tcolorbox}
 'Normal' wäre: f analytisch
 \begin{align*}
 f(x) &= f(0) + f'(0)x + .... \\
  \Delta f(x) &= f(x) - f(0) = f'(0)x+... \\
-\Delta f(ax) &= f'(0) ax +... \\
-\Rightarrow \Aboxed{ \Delta f(ax) &= a \Delta f(x)}
+\Delta f(ax) &= f'(0) ax +... 
 \end{align*} 
+
+\begin{tcolorbox}[ams align,title=, colback=blue!10!white, colframe=blue!30!black] 
+\Delta f(ax) &= a\;  \Delta f(x)
+\end{tcolorbox}
 \textit{Erinnerung an 'Thermodynamik'} \\
 
 \begin{figure}[h] 
@@ -1798,15 +1808,16 @@ Da sich $\alpha, \; \beta, \; \gamma, \; \delta$ (die sogenannten \textit{thermi
 \begin{align*}
 \underbrace{\alpha = 2 - \frac{1}{x_2} \quad \quad \quad \quad \beta = \frac{1- x_1}{x_2} \quad \quad \quad \quad \gamma = \frac{2x_1 - 1}{x_2}} 
 \end{align*}
-\begin{align}
-\Aboxed{ \alpha + 2 \beta + \gamma = 2 } \quad \mbox{'\textbf{Rushbrooke-Gleichung}'}
-\end{align}
+\begin{tcolorbox}[ams gather,title= Rushbrooke-Gleichung, colback=blue!10!white, colframe=blue!30!black]  
+\alpha + 2 \beta + \gamma = 2 
+\end{tcolorbox}
+
 und \begin{align*}
 \delta= \frac{x_1}{1-x_1}  \quad \quad \Rightarrow \delta - 1 = \frac{x_1 - 1 + x_1}{1 - x_1} = \frac{2 x_1 - 1}{1 - x_1}
 \end{align*}
-\begin{align}
-\Aboxed{ \gamma = \beta \; (\delta - 1)} \quad \mbox{'\textbf{Widom-Gleichung}'}
-\end{align}
+\begin{tcolorbox}[ams gather,title= Widom-Gleichung, colback=blue!10!white, colframe=blue!30!black] 
+\gamma = \beta \; (\delta - 1)
+\end{tcolorbox}
 \end{itemize}
 Weitere Folgerungen sind
 \begin{itemize}
@@ -1818,9 +1829,9 @@ M(B,\epsilon)& = - \frac{\partial G}{\partial B} = - \frac{\partial}{\partial B}
 g\left( \frac{\epsilon}{B^\frac{x_2}{x_1}}\right) 
 - \frac{x_2}{x_1} \; \frac{\epsilon}{\vert B \vert ^{\frac{x_2}{x_1}} } \; \;g'\left( \frac{\epsilon}{\vert B \vert ^\frac{x_2}{x_1} }\right) \right] 
 \end{align}
-\begin{align}
-\Rightarrow \Aboxed{M(B,\epsilon)= B^\frac{1}{\delta} \; \; \tilde{g} \left( \frac{\epsilon}{B^\frac{1}{\beta \delta}} \right)  } \label{Magnetisierung}
-\end{align}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+M(B,\epsilon)= B^\frac{1}{\delta} \; \; \tilde{g} \left( \frac{\epsilon}{B^\frac{1}{\beta \delta}} \right)   \label{Magnetisierung}
+\end{tcolorbox}
 \begin{align}
 M(B,\epsilon)
 = \underbrace{B^\frac{1}{\delta}}_{ \substack{ \text{Grösse hängt} \\ \text{ von einem Feld} \\ \text{ab}}} \cdot \; \text{\~{g}} \Big( \frac{\epsilon}{\underbrace{ B^\frac{1}{\beta \delta}}_{ \substack{ \text{hängt von} \\ \text{zwei Feldern} \\ \text{ ab}}}} \Big) 
@@ -1901,15 +1912,16 @@ L^\frac{\beta}{\nu} M(\epsilon,L)=\underbrace{f}_{\substack{\text{ander-} \\ \te
 \end{align*}
 Siehe auch Abbildung \ref{fig:Anschaulich}. 
  \subsubsection*{Wie berechnet man $M(T)$ im System endlicher Größe?}
-zu jedem Zustand $\vec{S}$ mit $M(\vec{S})$ gibt es einen (bei $ B=0$) gleichwahrscheinlichen Zustand $\vec{S}'= -\vec{S}$ mit $M(S') = - M(\vec{S})$. (Siehe auch nochmal Abbildung \ref{fig:Computer}.) \\
+zu jedem Zustand $\mathbf{S}$ mit $M(\mathbf{S})$ gibt es einen (bei $ B=0$) gleichwahrscheinlichen Zustand $\mathbf{S}'= -\mathbf{S}$ mit $M(S') = - M(\mathbf{S})$. (Siehe auch nochmal Abbildung \ref{fig:Computer}.) \\
 $\Rightarrow$ es ist 
 \begin{align*}
 M(T,B=0) \; = \;  \frac{1}{N} \sum_{i=1}^N \underbrace{\langle S_i \rangle}_{\substack{ \text{thermisches} \\ \text{ Mittel} \\ \widehat{=} \text{MC- Mittel}}} \; = \; 0 \quad \quad \quad \forall N
 \end{align*} 
 Der \textbf{Symmetriebruch} findet nur statt für: 
-\begin{align}
-\Aboxed{\langle M(T,B=0) \rangle = \lim_{B \to 0} \lim_{N \to \infty} \langle M(T,B) \rangle }
-\end{align} 
+
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+\langle M(T,B=0) \rangle = \lim\limits_{B \to 0} \lim\limits_{N \to \infty} \langle M(T,B) \rangle 
+\end{tcolorbox} 
 Dies ist auch experimentell beobachtbar: endliche Systeme fluktuieren thermisch $(\pm M),$ sodass sie im Zeitmittel 'nicht-magnetisch' erscheinen $M \to 0$ \\
 $\to$\textbf{Superparamagnetismus} \\ ($\Rightarrow$ Bedetung für Festplatten diskutieren!) \\
 
@@ -1962,23 +1974,23 @@ U_L = 1-  \frac{\langle S^4 \rangle}{3 \langle S^2 \rangle^2}
 
 Siehe auch Abbildung \ref{fig:Binder_Kummulante}.
  \subsection{Kontinuierliche Freiheitsgrade: 'x-y' und Heisenbergs-Modell} \label{Kapitel2.9}
- Bislang betrachten wir Ising-Spins mit $ \uparrow \Rightarrow \downarrow$. Versuchs... %TODO word
+ Bislang betrachten wir \textsc{Ising}-Spins mit $ \uparrow \Rightarrow \downarrow$. Versuchs... %TODO word
  des Monte-Carlo-Algorithmus 'offensichtlich'. Wir betrachten jetzt (als Beispiel) Spinmodelle mit kontinuierlichen Freiheitsgraden.\\ 
  $3d$ Heisenberg-Ferromagnet mit axialer Anisotropie: 
  \begin{align}
- H= - J \sum_{i,j} \vec{S}_i \vec{S}_j - K \sum_i S_{iz}^2 \; , \quad \quad  \vert \vec{S} \vert
+ H= - J \sum_{i,j} \mathbf{S}_i \mathbf{S}_j - K \sum_i S_{iz}^2 \; , \quad \quad  \vert \mathbf{S} \vert
  =1
  \end{align}
  \textbf{Universalität:} Das kritische Verhalten hängt nicht von $J$ ab, sondern von Dimensionen des Ordnungsparameters!
  \begin{enumerate}
- \item $K= 0:  \quad$ $\vec{S}_i \cdot \vec{S}_j$ isotrop $ \quad \Rightarrow  \quad$ OP hat $n=3$ Komponenten $(m_x, m_y, m_z)$
+ \item $K= 0:  \quad$ $\mathbf{S}_i \cdot \mathbf{S}_j$ isotrop $ \quad \Rightarrow  \quad$ OP hat $n=3$ Komponenten $(m_x, m_y, m_z)$
  \item $K<0:  \quad$ Spins legen sich in $xy-$Ebene $ \quad \Rightarrow  \quad$ OP hat $2$ Komponenten ($m_x, \; m_y$)
  \item $K>0 : \quad$ Spins entlang $z-$Achse $ \quad \Rightarrow  \quad$ OP hat 1 Komponente ($m_z$)
  \end{enumerate}
  Das Phasendiagramm hierfür ist noch einmal in Abbildung \ref{fig:Phasen_Diagramm} ersichtlich.
  \begin{itemize}
  \item entlang der ($K=0$)-Linie anderes kritisches Verhalten (andere Exponenten) als für $K\neq 0$.
- \item für jedes endliche $K$ ist man im Universalitätsklasse von Ising- oder 'x-y'-Modell. 
+ \item für jedes endliche $K$ ist man im Universalitätsklasse von \textsc{Ising}- oder 'x-y'-Modell. 
  \item $K=0$: Heisenberg
  
  %TODO Tabelle von Gebhardt und krey als image
@@ -1998,7 +2010,7 @@ Siehe auch Abbildung \ref{fig:Binder_Kummulante}.
 \begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Folie46.png}
-		\caption{Cluster-Algorithmus im Ising-Modell}
+		\caption{Cluster-Algorithmus im \textsc{Ising}-Modell}
 		\label{fig:Cluster_Ising}
 		\centering
 	\end{subfigure}
@@ -2006,7 +2018,7 @@ Siehe auch Abbildung \ref{fig:Binder_Kummulante}.
 \end{figure}	
 
 
-Wir beachten kontinuierlichen 'Spin' (eigentlich ein magnetisches Moment) in der Ebene: $\vert \vec{S} \vert = 1$. Ein Spin davon mit Anisotropie \begin{align*}
+Wir beachten kontinuierlichen 'Spin' (eigentlich ein magnetisches Moment) in der Ebene: $\vert \mathbf{S} \vert = 1$. Ein Spin davon mit Anisotropie \begin{align*}
 H=-D \; S_x^2 = -D \cos(\phi)^2
 \end{align*} mit dem Potential
 \begin{align*}
@@ -2022,10 +2034,10 @@ wie gezeigt in Abbildung \ref{fig:Spin_Potential}.
 \varphi_{trial} = \varphi_{initial} \pm \Delta \varphi \quad \quad \quad \Delta \varphi = const.
 \end{align*}
 Falsch! Setze $\Delta \varphi = \pi$ \\
-$ \Rightarrow$ anderes Modell (Ising $S_x = \pm 1$). Allgemein gilt, dass der MC-Algorithmus \textbf{ergodisch} sein muss, d.h. er muss genau den Phasenraum erreichen können!\footnote{genauer: Ergodisch bedeutet 'Zeit-Mittelwert $\widehat{=}$ Ensemble-Mittelwert'} \\
+$ \Rightarrow$ anderes Modell (\textsc{Ising} $S_x = \pm 1$). Allgemein gilt, dass der MC-Algorithmus \textbf{ergodisch} sein muss, d.h. er muss genau den Phasenraum erreichen können!\footnote{genauer: Ergodisch bedeutet 'Zeit-Mittelwert $\widehat{=}$ Ensemble-Mittelwert'} \\
 Ein anderes Beispiel für 'nicht-ergodisch' ist: \\
 \textbf{Beispiel} ('naiver Clusteralgorithmus', Abb. \ref{fig:Cluster_Ising}) \\
-Im Isingmodell: bestimmte Konfigurationen können nicht vermischt werden. Trotzdem gibt es richtige (=also ergodische) und zudem sehr effektive Cluster-Algorithmen, wie beispielsweise \textit{Swendsten-Wang}. Da werden (immer andere) Cluster nach Regeln getrennt. 
+Im \textsc{Ising}-Modell: bestimmte Konfigurationen können nicht vermischt werden. Trotzdem gibt es richtige (=also ergodische) und zudem sehr effektive Cluster-Algorithmen, wie beispielsweise \textit{Swendsten-Wang}. Da werden (immer andere) Cluster nach Regeln getrennt. 
 
 \begin{figure}[h] 
 		\begin{subfigure}[h]{0.5 \textwidth}
@@ -2039,7 +2051,7 @@ Im Isingmodell: bestimmte Konfigurationen können nicht vermischt werden. Trotzd
 \begin{subfigure}[h]{0.5\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{Folie48.png}
-		\caption{Kleine Schritte um alten Vektor $\vec{S}$, hier: innerhalb eines Kegels}
+		\caption{Kleine Schritte um alten Vektor $\mathbf{S}$, hier: innerhalb eines Kegels}
 		\label{fig:Kegel}
 		\centering
 	\end{subfigure}
@@ -2080,8 +2092,8 @@ Idee \ref{Idee3} ist identisch mit Idee \ref{Idee4} für $\Delta \varphi = \pi$.
 
 \subsubsection{Heisenberg-Modell}
 \begin{align}
-H= - \underbrace{\frac{J}{2} \sum_{i,j} \vec{S}_i \vec{S}_j}_{\substack{\text{Austausch} \\ \text{Nächste Nachbarn}}}
- - \underbrace{ D \sum_i S_{iz}^2}_\text{Anisotropie} - \underbrace{\vec{B} \sum_i \vec{S}_i}_\text{Magnetfeld} \; , \quad \quad \quad \vert \vec{S}_i \vert =1
+H= - \underbrace{\frac{J}{2} \sum_{i,j} \mathbf{S}_i \mathbf{S}_j}_{\substack{\text{Austausch} \\ \text{Nächste Nachbarn}}}
+ - \underbrace{ D \sum_i S_{iz}^2}_\text{Anisotropie} - \underbrace{\mathbf{B} \sum_i \mathbf{S}_i}_\text{Magnetfeld} \; , \quad \quad \quad \vert \mathbf{S}_i \vert =1
 \end{align}
 
 \textbf{single spin flip Algorithmus:} Phasenraum des einzelnen Spins ist Einheitskugeloberfläche 
@@ -2136,14 +2148,14 @@ sein.
 \end{itemize}
 			
 			
-			\item \textbf{ kleine Schritte um den alten Vektor $\vec{S}$ innerhalb eines Kegels}, wie in Abbildung \ref{fig:Kegel} gezeigt:
+			\item \textbf{ kleine Schritte um den alten Vektor $\mathbf{S}$ innerhalb eines Kegels}, wie in Abbildung \ref{fig:Kegel} gezeigt:
 			\begin{itemize}
-			\item[-] erzeuge Zufallsvektor $\vec{S}_r$ innerhalb einer Kugel, also mit maximalen Radius R.
+			\item[-] erzeuge Zufallsvektor $\mathbf{S}_r$ innerhalb einer Kugel, also mit maximalen Radius R.
 			\item[-] rechne 
 			\begin{align}
-			\vec{S}_r = \frac{\vec{S} + \vec{S}_r}{\sqrt{\vec{S}^2 + \vec{S}_r^2}}
-			\end{align} d.h. addiere $\vec{S}_r$ und normiere.
-			\item[-] $\vec{S}_r$ aus rejection Methode ohne Normierung
+			\mathbf{S}_r = \frac{\mathbf{S} + \mathbf{S}_r}{\sqrt{\mathbf{S}^2 + \mathbf{S}_r^2}}
+			\end{align} d.h. addiere $\mathbf{S}_r$ und normiere.
+			\item[-] $\mathbf{S}_r$ aus rejection Methode ohne Normierung
 			\end{itemize}
 			
 			
@@ -2188,7 +2200,7 @@ der dissipativen Dynamik des Systems abzubilden $\to$ Zeitquantifizierung \texti
 	\label{fig:Korrelationsfunktion}
 \end{figure}
 
- 	 $g( \vert \vec{r}_1 - \vec{r}_2 \vert)$: Wahrscheinlichkeit, dass $\vec{r}_1$ und $\vec{r}_2$ zum gleichen Cluster (Abb. \ref{fig:Korrelationsfunktion}) gehören. \\
+ 	 $g( \vert \mathbf{r}_1 - \mathbf{r}_2 \vert)$: Wahrscheinlichkeit, dass $\mathbf{r}_1$ und $\mathbf{r}_2$ zum gleichen Cluster (Abb. \ref{fig:Korrelationsfunktion}) gehören. \\
  	\textbf{Korrelationslänge:}
  	 \begin{align}
  	\xi^2= \frac{\sum_r r^2 g(r)}{\sum_r g(r)}
@@ -2300,16 +2312,16 @@ $\Rightarrow$ Wir brauchen ein Verfahren zur nummerischen Lösung von DGL \\
 \textbf{Dynamische Systeme} 
 ist beispeilsweise die Newtonsche Bewegungsgleichung 
 \begin{align}
-m \ddot{\vec{r}} = \vec{F} (\vec{r}, \dot{\vec{r}}, t) \quad \quad \quad \vec{r} \in \mathbb{R}^3 \; \text{(pro Teilchen)}
-\end{align} mit der Bahn $\vec{r}(t)$. Hier haben wir 3 DGLn $2.$Ordnung mit den zwei Anfangsbedingungen
+m \ddot{\mathbf{r}} = \mathbf{F} (\mathbf{r}, \dot{\mathbf{r}}, t) \quad \quad \quad \mathbf{r} \in \mathbb{R}^3 \; \text{(pro Teilchen)}
+\end{align} mit der Bahn $\mathbf{r}(t)$. Hier haben wir 3 DGLn $2.$Ordnung mit den zwei Anfangsbedingungen
 \begin{align*}
 r(t=0) \quad \quad  \quad \quad \dot{r}(t=0)
 \end{align*}
 Wir führen neue Variablen ein 
 \begin{align*}
 \begin{cases}
-\dot{\vec{r}}= \vec{v} \\
-\dot{\vec{v}} = \frac{1}{m} \vec{F}(\vec{r}, \vec{v},t) 
+\dot{\mathbf{r}}= \mathbf{v} \\
+\dot{\mathbf{v}} = \frac{1}{m} \mathbf{F}(\mathbf{r}, \mathbf{v},t) 
 \end{cases}
 \text{ mit }
 \begin{pmatrix}\mathbf{r}\\ \mathbf{v}\end{pmatrix} \in \mathbb{R}^6
@@ -2320,7 +2332,7 @@ Es handelt sich um 6 DGLn 1.Ordnung (siehe auch 'Hamilton Formalismus') %TODO ve
 \dot{\mathbf{x}}= \mathbf{f}( \mathbf{x},t) \quad \quad \quad \quad \mbox{  mit  } x \in \mathbb{R}^n \tag{\textbf{Dynamisches System}}
 \end{align}
 
-\subsection{Euler Verfahren}
+\subsection{ \textsc{Euler} Verfahren}
 Eindimensional $\dot{x}= f(x,t)$, Abb. \ref{fig:Euler}.\\  
 
 \begin{figure}[ht]
@@ -2344,13 +2356,12 @@ x_n = x(t_n)
 \quad \quad \quad n=0,1,2,...
 \end{align*}
 \textbf{Euler:}
-\begin{align}
-\Aboxed{ x_{n+1}= x_n + f(x_n, t_n)h+ \mathcal{O}(h^2)}
-\end{align}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
+ x_{n+1}= x_n + f(x_n, t_n)h+ \mathcal{O}(h^2)
+\end{tcolorbox}
 Fehler des Einzelschritts $\propto h^2$. Für ein Intervall der Länge $T$ benötigt man $N= \frac{T}{h}$ Schritte.
-\begin{align}
-\Aboxed{ \mbox{Gesamtfehler} \propto h^2 N \propto h }
-\end{align}
+\begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] \text{Gesamtfehler} \propto h^2 N \propto h 
+\end{tcolorbox}
 Fehler oben heißt \textbf{systematischer Fehler}. Er entsteht durch die Approximation. Verkleinern durch $h \to 0$ - Geht das? Nein! Wegen \textit{Rundungsfehlern} und eventueller \textit{Instabilitäten}.
 
 
@@ -2475,7 +2486,7 @@ Es gibt viele bessere Verfahren
 Warum schneller? Schneller muss dabei im einzelnen abgewogen werden: \\
  $\to$ 'CPU-Zeit $\Leftrightarrow$ bessere Konvergenz'.\\
 
-\underline{Euler:} 
+\textit{Euler:} 
 
 \begin{align*}
  x(t_n +h)  &= x(t_n) + \dot{x}(t_n) \cdot h + \mathcal{O}(h^2) \\
@@ -2809,7 +2820,7 @@ N(\epsilon) \propto \epsilon ^{-D} \qquad \quad \text{ (klar bei euklid. Objekte
 \end{align*}
 Definition der
 \begin{tcolorbox}[ams gather,title= Hausdorff-Dimension, colback=blue!10!white, colframe=blue!30!black] 
-D = - \lim_{\epsilon \to 0} \frac{ln(N(\epsilon))}{ln(\epsilon)}
+D = - \lim\limits_{\epsilon \to 0} \frac{ln(N(\epsilon))}{ln(\epsilon)}
 \end{tcolorbox} Ein fraktales Objekt muss also auf allen Längenskalen durchlöchert sein. Problematisch für numerische Anwendungen ist jedoch $lim \; \epsilon \to 0$, denn numerisch ist die Zahl der Punkte begrenzt ($N_0$)
 \begin{enumerate}
 \item[1)] Ist $\epsilon$ zu klein: es stehen nur $N_0$ Punkte zur Verfügung: $\Rightarrow \; N(\epsilon) = N_0 = const.$
@@ -2854,15 +2865,15 @@ Tricks:
  moderne Physik beschäftigt sich viel mit Vielteilchensystemen (wie Gase, Flüssigkeiten, Plasma) meist speziell Festkörperproblemen (Halbleiterphysik, Magnetismus...) Betrachtet man die Teilchen als klassisch (z.Bsp. hinreichend große Moleküle\footnote{...daher auch die Namensgebung} oder granulare Materie), kann man die Bewegungsgleichung für wechselwirkende Teilchen lösen: \textbf{Molekulardynamik-Simulation}. (Wichtiges Verfahren)
  \begin{itemize}
  \item (Intensive Wechselwirkungen ) $\widehat{=}$ MD-Simulationen. 
- \item Teilchen können innere Freiheitsgrade haben. Beispielsweise bei Molekülen: Rotation und Schwingung. Wird im einfachsten Fall vernachlässigt \\$\to $ Moleküle als Kugel mit Schwerpunkt(skoordinate) $\vec{r}_i$:
+ \item Teilchen können innere Freiheitsgrade haben. Beispielsweise bei Molekülen: Rotation und Schwingung. Wird im einfachsten Fall vernachlässigt \\$\to $ Moleküle als Kugel mit Schwerpunkt(skoordinate) $\mathbf{r}_i$:
  
- \item $N$ Teilchen, die miteinander wechselwirken mit Potential $V(\vec{r}_1,\vec{r}_2, ..., \vec{r}_N)$ 
+ \item $N$ Teilchen, die miteinander wechselwirken mit Potential $V(\mathbf{r}_1,\mathbf{r}_2, ..., \mathbf{r}_N)$ 
  \end{itemize}
  $\Rightarrow$ Bewegungsgleichung (nach \textsc{Newton}):
  \begin{tcolorbox}[ams gather,title= Newtonsche Bewegungsgleichung, colback=blue!10!white, colframe=blue!30!black] 
- m_i \vec{\ddot{r}}_i = -grad_{\vec{r}_i} V(\vec{r}_i, ..., \vec{r}_N) \qquad i=1,...,N \qquad
+ m_i \mathbf{\ddot{r}}_i = -grad_{\mathbf{r}_i} V(\mathbf{r}_i, ..., \mathbf{r}_N) \qquad i=1,...,N \qquad
  \end{tcolorbox}
- mit Anfangsbedingungen $\vec{r}_i^{(0)}, \dot{\vec{r}}_i^{(0)}$
+ mit Anfangsbedingungen $\mathbf{r}_i^{(0)}, \dot{\mathbf{r}}_i^{(0)}$
  
  \begin{itemize}
  \item Achtung, ohne Dissipation erhalten diese MD Simulationen die Energie und Teilchenzahl 
@@ -2893,46 +2904,46 @@ Zu 1) TD: populär ist der \textbf{Verlet Algorithmus}, den es in 2 Versionen gi
 \begin{enumerate}
 \item[1)]
 \begin{align}
-\vec{r}_i (t+h) =& r_i(t) + h \; \vec{\dot{r}}_i(t) + \frac{h^2}{2} \; \vec{\ddot{r}}_i(t) + \mathcal{O} (h^2) \\
-\vec{r}_i (t-h) =& r_i (t) - h \; \vec{\dot{r}}_i (t) + \frac{h^2}{2} \; \vec{\ddot{r}}_i (t) - \mathcal{O} (h^2) 
+\mathbf{r}_i (t+h) =& r_i(t) + h \; \mathbf{\dot{r}}_i(t) + \frac{h^2}{2} \; \mathbf{\ddot{r}}_i(t) + \mathcal{O} (h^2) \\
+\mathbf{r}_i (t-h) =& r_i (t) - h \; \mathbf{\dot{r}}_i (t) + \frac{h^2}{2} \; \mathbf{\ddot{r}}_i (t) - \mathcal{O} (h^2) 
 \end{align}
 \begin{tcolorbox}[ams gather,title= I. Verlet-Algorithmus=blue!10!white, colframe=blue!30!black] 
-\vec{r}_i (t+h) = 2 \vec{r_i} (t) - \vec{r}_i (t-h) + h^2 \vec{\ddot{r}}_i (t) +\mathcal{O} (h^4) \\
- \mbox{mit} \qquad \vec{\ddot{r}}_i (t)= \frac{\vec{F}(\vec{r}_1 (t),..., \vec{r}_N(t))}{m} 
+\mathbf{r}_i (t+h) = 2 \mathbf{r_i} (t) - \mathbf{r}_i (t-h) + h^2 \mathbf{\ddot{r}}_i (t) +\mathcal{O} (h^4) \\
+ \mbox{mit} \qquad \mathbf{\ddot{r}}_i (t)= \frac{\mathbf{F}(\mathbf{r}_1 (t),..., \mathbf{r}_N(t))}{m} 
  \end{tcolorbox}
 
  
 Anfangsbedingungen 
 \begin{align*}
-\vec{r}_i (0), \vec{\dot{r}}_i (0) \qquad \underbrace{\Rightarrow}_\text{Euler} \qquad \vec{r}_i (h) = \vec{v}_i (0) h + \vec{r}_i (0)
+\mathbf{r}_i (0), \mathbf{\dot{r}}_i (0) \qquad \underbrace{\Rightarrow}_\text{Euler} \qquad \mathbf{r}_i (h) = \mathbf{v}_i (0) h + \mathbf{r}_i (0)
 \end{align*} 
-Dabei wird $\vec{r}_i (t+h)$ wird berechnet, ohne dass $\vec{v}_i$ berechnet werden muss. Wenn $\vec{v}$ bestimmt werden muss (z.B. für kinetische Energie): 
+Dabei wird $\mathbf{r}_i (t+h)$ wird berechnet, ohne dass $\mathbf{v}_i$ berechnet werden muss. Wenn $\mathbf{v}$ bestimmt werden muss (z.B. für kinetische Energie): 
 \begin{align*}
-\vec{v}(t) = \frac{\vec{r}(t+h) - \vec{r}(t-h)}{2h} \mathcal{0}(h^2)
+\mathbf{v}(t) = \frac{\mathbf{r}(t+h) - \mathbf{r}(t-h)}{2h} \mathcal{0}(h^2)
 \end{align*}
 
 \item[2)] Geschwindigkeitsvariation: \textit{(häufiger)}
 \begin{tcolorbox}[ams gather,title=, colback=blue!10!white, colframe=blue!30!black] 
-\vec{r}(t+h) = \vec{r}(t) + \vec{\dot{r}} (t) h + \frac{h^2}{2} \vec{\ddot{r}}(t) + \mathcal{O}(h^3) 
+\mathbf{r}(t+h) = \mathbf{r}(t) + \mathbf{\dot{r}} (t) h + \frac{h^2}{2} \mathbf{\ddot{r}}(t) + \mathcal{O}(h^3) 
 \end{tcolorbox}
 
 \begin{align}
-\vec{\dot{r}}(t+h) = \vec{\dot{r}}(t) + \vec{\ddot{r}} (t) h + \frac{h^2}{2} \vec{\dddot{r}}(t) + \mathcal{O}(h^3) 
+\mathbf{\dot{r}}(t+h) = \mathbf{\dot{r}}(t) + \mathbf{\ddot{r}} (t) h + \frac{h^2}{2} \mathbf{\dddot{r}}(t) + \mathcal{O}(h^3) 
 \end{align}
 und
 \begin{align}
-h \vec{\dddot{r}}(t) = \vec{\ddot{r}} (t+h) - \vec{\ddot{r}} (t) + \mathcal{O}(h^2) \end{align}
+h \mathbf{\dddot{r}}(t) = \mathbf{\ddot{r}} (t+h) - \mathbf{\ddot{r}} (t) + \mathcal{O}(h^2) \end{align}
 
 \begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
- \vec{\dot{r}} (t+h)  = \vec{\dot{r}} (t) & + \frac{h}{2} ( \vec{\ddot{r}} (t) + \vec{\ddot{r}} (t+h) ) + \mathcal{O}(h^3)    \\
-\text{mit } \qquad \vec{\ddot{r}} (t) & = \frac{\vec{F} (\vec{\dot{r}}_1 (t), ... , \vec{\dot{r}}_N (t) ) }{m}  \nonumber \\
-\vec{\ddot{r}} (t+h) & = \frac{\vec{F} (\vec{\dot{r}}_1 (t+h), ... , \vec{\dot{r}}_N (t+h) ) }{m} \nonumber 
+ \mathbf{\dot{r}} (t+h)  = \mathbf{\dot{r}} (t) & + \frac{h}{2} ( \mathbf{\ddot{r}} (t) + \mathbf{\ddot{r}} (t+h) ) + \mathcal{O}(h^3)    \\
+\text{mit } \qquad \mathbf{\ddot{r}} (t) & = \frac{\mathbf{F} (\mathbf{\dot{r}}_1 (t), ... , \mathbf{\dot{r}}_N (t) ) }{m}  \nonumber \\
+\mathbf{\ddot{r}} (t+h) & = \frac{\mathbf{F} (\mathbf{\dot{r}}_1 (t+h), ... , \mathbf{\dot{r}}_N (t+h) ) }{m} \nonumber 
 \end{tcolorbox}
-Anfangsbedingungen $\vec{r}_i (0), \vec{\dot{r}}_i (0)\; \Rightarrow \;\vec{F}(\vec{r}_1 (0), ..., \vec{r}_N (0))$
+Anfangsbedingungen $\mathbf{r}_i (0), \mathbf{\dot{r}}_i (0)\; \Rightarrow \;\mathbf{F}(\mathbf{r}_1 (0), ..., \mathbf{r}_N (0))$
 \begin{align*}
-\mbox{1. Schritt: } & \vec{r}(t+h) \mbox{ aus } \vec{r}(t), \vec{\dot{r}}(t) \\
-\mbox{ 2. Schritt: } &  F( \vec{r}_1 (t+h),..., \vec{r}_N (t+h)) \\
-\mbox{ 3. Schritt: } & \vec{\dot{r}}(t+h) \mbox{ aus } \vec{r}(t), \vec{r}(t+h), \vec{\dot{r}}(t)
+\mbox{1. Schritt: } & \mathbf{r}(t+h) \mbox{ aus } \mathbf{r}(t), \mathbf{\dot{r}}(t) \\
+\mbox{ 2. Schritt: } &  F( \mathbf{r}_1 (t+h),..., \mathbf{r}_N (t+h)) \\
+\mbox{ 3. Schritt: } & \mathbf{\dot{r}}(t+h) \mbox{ aus } \mathbf{r}(t), \mathbf{r}(t+h), \mathbf{\dot{r}}(t)
 \end{align*}
 wichtiges Kriterium für Güte eines Algorithmus:\\
 \textbf{Erhaltung der Energie:} hier: 
@@ -2988,36 +2999,36 @@ $\Rightarrow$ anziehende Wechselwirkung der Dipole (QM-Effekt) mit $U \propto - 
 \end{itemize}
 \textbf{Beispiel:} (N Teilchen mit Lennard-Jones Potential)
 \begin{itemize}
-\item Anfangsbedingung: $\vec{v}_i (0)=0, \vec{r}_i (0)$ äquidistant, Eindimensional (1D) 
+\item Anfangsbedingung: $\mathbf{v}_i (0)=0, \mathbf{r}_i (0)$ äquidistant, Eindimensional (1D) 
 \end{itemize} %TODO ? struktur? (S.31)
 zu 2) ereignisgesteuerte Simulation
 \begin{itemize}
-\item $\vec{r}_i^{(0)}, \vec{v}_i^{(0)}$ seinen Koordinaten nach einem Stoß (oder Anfangsbedingung): 
+\item $\mathbf{r}_i^{(0)}, \mathbf{v}_i^{(0)}$ seinen Koordinaten nach einem Stoß (oder Anfangsbedingung): 
 \begin{align*}
-\vec{r}_i (t) = \vec{r}^{(0)} + \vec{v}^{(0)} t
+\mathbf{r}_i (t) = \mathbf{r}^{(0)} + \mathbf{v}^{(0)} t
 \end{align*} Bilde nun alle $\frac{N(N-1)}{2}$ Abstände zwischen dem Teilchen 
 \begin{align*}
-\vert \vec{r}_i (t) - \vec{r}_j (t) \vert > R_i + R_j \quad \forall i,j \qquad \Rightarrow \qquad  \text{freier Flug}
+\vert \mathbf{r}_i (t) - \mathbf{r}_j (t) \vert > R_i + R_j \quad \forall i,j \qquad \Rightarrow \qquad  \text{freier Flug}
 \end{align*}
 \item Stoß findet statt, wenn für ein Paar $(i,j)$ gilt:
 \begin{align*}
-\; \vert \vec{r}_i (t_s) - \vec{r}_j (t_s) \vert &= R_i + R_j   \qquad t_s = \text{Stoßzeit} \\
-\text{ und } \quad  \vert \vec{r}_i (t_s) - \vec{r}_j (t_s) \vert &> R_i + R_j \qquad \forall 0< t < t_s \text{ und alle anderen } i,j
+\; \vert \mathbf{r}_i (t_s) - \mathbf{r}_j (t_s) \vert &= R_i + R_j   \qquad t_s = \text{Stoßzeit} \\
+\text{ und } \quad  \vert \mathbf{r}_i (t_s) - \mathbf{r}_j (t_s) \vert &> R_i + R_j \qquad \forall 0< t < t_s \text{ und alle anderen } i,j
 \end{align*} 
 \end{itemize}
 \begin{enumerate}
 \item \textbf{Berechnung der Stoßzeit} (für gleiche Radien): 
 \begin{align*}
-\vert \vec{r}_i^{(0)} - \vec{r}_j^{(0)} + \left( \vec{v}_i^{(0)} - \vec{v}_j^{(0)} \right) t_{s,ij}  \vert = 2 R 
+\vert \mathbf{r}_i^{(0)} - \mathbf{r}_j^{(0)} + \left( \mathbf{v}_i^{(0)} - \mathbf{v}_j^{(0)} \right) t_{s,ij}  \vert = 2 R 
 \end{align*}
 \begin{align*}
-\Rightarrow (\Delta \vec{r}_{i,j})^2 + 2(\Delta \vec{r}_{i,j})( \Delta\vec{v}_{i,j}) t_{s,ij} + (\Delta \vec{v}_{i,j})^2 t_{s,ij}^2 = 4R^2 
+\Rightarrow (\Delta \mathbf{r}_{i,j})^2 + 2(\Delta \mathbf{r}_{i,j})( \Delta\mathbf{v}_{i,j}) t_{s,ij} + (\Delta \mathbf{v}_{i,j})^2 t_{s,ij}^2 = 4R^2 
 \end{align*}
 \begin{align*}
 t_{s,ij} =
- \frac{1}{(\Delta \vec{v}_{i,j})^2} 
+ \frac{1}{(\Delta \mathbf{v}_{i,j})^2} 
  \left( 
- - \Delta \vec{v}_{i,j} \; \Delta \vec{r}_{i,j} - \sqrt{( \Delta \vec{v}_{i,j} \; \Delta \vec{r}_{i,j})^2 - \left( (\Delta \vec{r}_{i,j})^2 - 4R^2\right) (\Delta \vec{v}_{i,j})^2} \; \right)
+ - \Delta \mathbf{v}_{i,j} \; \Delta \mathbf{r}_{i,j} - \sqrt{( \Delta \mathbf{v}_{i,j} \; \Delta \mathbf{r}_{i,j})^2 - \left( (\Delta \mathbf{r}_{i,j})^2 - 4R^2\right) (\Delta \mathbf{v}_{i,j})^2} \; \right)
 \end{align*}
 Stoßzeit $t_s = \min \{ t_{s,ij} > 0\} \; \forall i,j$
 \item \textbf{Geschwindigkeitsänderung bei Stoß} \\
@@ -3031,19 +3042,19 @@ Hier ist die Kraft $\perp$ Kugeloberfläche.
 \end{figure}
 
 \begin{itemize}
-\item Impulsänderung  entlang der Verbindungslinie der Schwerpunkte $|| \vec{r}_{i} - \vec{r}_{j} ||$
-\item Änderung von $\vec{v}_{i}, \vec{v}_{j}$ folgt aus Energiesatz und Impulssatz \\
+\item Impulsänderung  entlang der Verbindungslinie der Schwerpunkte $|| \mathbf{r}_{i} - \mathbf{r}_{j} ||$
+\item Änderung von $\mathbf{v}_{i}, \mathbf{v}_{j}$ folgt aus Energiesatz und Impulssatz \\
 (\textit{hier:} gleiche Massen als harte Kugeln, Abb. \ref{fig:Geschwindigkeitsaenderung})\\ 
 
 \textit{Impulssatz}: 
 \begin{align*}
-m( \vec{v}_{i}' - \vec{v}_{i}) = -m ( \vec{v}_{j}' - \vec{v}_{j})   \qquad \text{mit } (v'\; \widehat{=} \text{ nach Stoß)} 
+m( \mathbf{v}_{i}' - \mathbf{v}_{i}) = -m ( \mathbf{v}_{j}' - \mathbf{v}_{j})   \qquad \text{mit } (v'\; \widehat{=} \text{ nach Stoß)} 
 \end{align*} 
 \textit{Energiesatz:}
 \begin{align*}
-\frac{m}{2} (\vec{v}_{i}^2 + \vec{v}_{j}^2) &= \frac{m}{2} (\vec{v}_{i}'^2  + \vec{v}_{j}^{'2}) && + Q \\
- \mbox{ mit } \qquad \qquad \qquad \qquad  \vec{v}_{i}^2 - \vec{v}_{i}'^2 &= \vec{v}_{j'}^2 - \vec{v}_{j}'^2 && + \frac{2Q}{m} \\ 
- (\vec{v}_{i}^2-\vec{v}_{i}'^2)(\vec{v}_{i}^2 + \vec{v}_{i}'^2) &= (\vec{v}_{j}^2 - \vec{v}_{j}'^2)(\vec{v}_{j}^2 + \vec{v}_{j}'^2) \\
+\frac{m}{2} (\mathbf{v}_{i}^2 + \mathbf{v}_{j}^2) &= \frac{m}{2} (\mathbf{v}_{i}'^2  + \mathbf{v}_{j}^{'2}) && + Q \\
+ \mbox{ mit } \qquad \qquad \qquad \qquad  \mathbf{v}_{i}^2 - \mathbf{v}_{i}'^2 &= \mathbf{v}_{j'}^2 - \mathbf{v}_{j}'^2 && + \frac{2Q}{m} \\ 
+ (\mathbf{v}_{i}^2-\mathbf{v}_{i}'^2)(\mathbf{v}_{i}^2 + \mathbf{v}_{i}'^2) &= (\mathbf{v}_{j}^2 - \mathbf{v}_{j}'^2)(\mathbf{v}_{j}^2 + \mathbf{v}_{j}'^2) \\
  \text{ (wegen Impulserhaltung) } \qquad  v_i + v_i' &= v_j' + v_j && + \frac{2Q}{m (v_i - v_i')}
 \end{align*}\\
 und weiterhin \\
@@ -3053,15 +3064,15 @@ und weiterhin \\
 \end{align*}
 und allgemein in $3d$:
 \begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
-\Delta \vec{v}_{i} = \vec{l}_{i,j} (\vec{v}_j - \vec{v}_i) \,  \vec{l}_{i,j}  
- \qquad \quad \mbox{ mit} \quad \vec{l}_{i,j} = \frac{\vec{r}_i - \vec{r}_j}{\vert \vec{r}_i - \vec{r}_j \vert}
+\Delta \mathbf{v}_{i} = \mathbf{l}_{i,j} (\mathbf{v}_j - \mathbf{v}_i) \,  \mathbf{l}_{i,j}  
+ \qquad \quad \mbox{ mit} \quad \mathbf{l}_{i,j} = \frac{\mathbf{r}_i - \mathbf{r}_j}{\vert \mathbf{r}_i - \mathbf{r}_j \vert}
 \end{tcolorbox}
 \end{itemize}
 \end{enumerate}
  Häufig ist auch eine \textbf{Energiedissipation}\footnote{leichter Energieverlust} erwünscht: \\
 
 \begin{align}
-\Delta \vec{v}_i = \vec{l}_{i,j} \left[ ( \vec{v}_j - \vec{v}_i) - \frac{Q}{m \; \Delta v_i} \right] \vec{l}_{i,j}
+\Delta \mathbf{v}_i = \mathbf{l}_{i,j} \left[ ( \mathbf{v}_j - \mathbf{v}_i) - \frac{Q}{m \; \Delta v_i} \right] \mathbf{l}_{i,j}
 \end{align}
 Restriktionskoeffizient:
 \begin{align*}
@@ -3190,7 +3201,7 @@ Summe von Zufallsprozessen in $(t, t+\Delta t)$.
  \langle \Delta \omega \rangle &= \langle \int_t^{t+\Delta t}  \eta (t') \; dt' \rangle =0 \qquad \qquad  \\
  \langle \Delta \omega^2 \rangle &= \Gamma \; \Delta t
 \end{align}
-erfüllt durch Gauß-Verteilung mit $\Gamma \Delta $
+erfüllt durch \textsc{Gauß}-Verteilung mit $\Gamma \Delta $
 \end{enumerate}
 Beide Eigenschaften, 1. und 2. determinieren \textbf{weißes Rauschen}. Zentrales Problem jedoch: $\Gamma $?\\
 Deterministischer Anteil hat Lösung
@@ -3333,7 +3344,7 @@ f(x_n + \Delta x) \approx f(x_n) + \mathcal{O} (\Delta x) = f(x_n) + \mathcal{O}
 $\to$ mit Rauschen: andere Konvergenz \\
 $\to$ andere Breite des Rauschens für endliche Zeitschritte $(\Gamma \to \Gamma \Delta t)$
 
- Praktische Durchführung des \textsc{Euler-Maruyama}-Verfahrens  (Wie bei Euler-Verfahren für deterministische DGL $+$ Rauschen, also Zufallszahlen der Breite $\Gamma \; \Delta t$). \textbf{z.B.} (aber nicht unbedingt) Gauß-verteilte Zufallszahlen mit Verteilung 
+ Praktische Durchführung des \textsc{Euler-Maruyama}-Verfahrens  (Wie bei Euler-Verfahren für deterministische DGL $+$ Rauschen, also Zufallszahlen der Breite $\Gamma \; \Delta t$). \textbf{z.B.} (aber nicht unbedingt) \textsc{Gauß}verteilte Zufallszahlen mit Verteilung 
  \begin{align*}
  p(\Delta w) = \frac{1}{\sigma \sqrt{2 \pi}} e^{- \frac{\Delta w^2}{2 \sigma ^2} } \qquad \text{mit } \sigma^2 = \Gamma \; \Delta t \underbrace{=}_{\substack{\text{ z.B. für Brownsche} \\ \text{Molekularbewegung}}} 2 k_B T \; 6 \pi \bar{\eta} a \; \Delta t
  \end{align*}
@@ -3344,16 +3355,16 @@ $\to$ andere Breite des Rauschens für endliche Zeitschritte $(\Gamma \to \Gamma
 \end{align}
 zusammen mit
 \begin{align}
-\langle \eta (t) \rangle = 0 \; , \; \langle \eta (t) \eta (t') \rangle = \Gamma \delta (t-t')  \label{conditions}\\
-\Aboxed{ x_{n+1}= x_n + f(t_n, x_n) \Delta t + g (t_n) \Delta w}\\ 
-\mbox{ \textsc{'Euler-Maruyama}-Verfahren'}
-\end{align}
+\langle \eta (t) \rangle = 0 \; , \; \langle \eta (t) \eta (t') \rangle = \Gamma \delta (t-t')  \label{conditions}\end{align}
+\begin{tcolorbox}[ams align, title=\textsc{Euler-Maruyama}-Verfahren , colback=blue!10!white, colframe=blue!30!black] 
+ x_{n+1}= x_n + f(t_n, x_n) \Delta t + g (t_n) \Delta w
+\end{tcolorbox}
 wobei 
 \begin{align}
 P( \Delta w) = \frac{1}{\sqrt{2 \pi} \mathcal{O}} e^{-\frac{\Delta w^2}{	2 \mathcal{O}^2}} \; , \; \mathcal{O}^2 = \Gamma \Delta t \\
 \langle \Delta w \rangle = 0 \; , \; \langle \Delta w^2 \rangle = \Gamma \Delta t
 \end{align}
-Beachte: Gaußverteilung ist nicht notwendig um (\ref{conditions}) zu erfüllen, aber hinreichend. \\
+Beachte: \textsc{Gauß}verteilung ist nicht notwendig um (\ref{conditions}) zu erfüllen, aber hinreichend. \\
 %TODO keine Ahnung wo das herkam da oben....
 
 \textbf{Beispiel:} \textsc{Brown}'sche Molekularbewegung 
@@ -3454,9 +3465,9 @@ Einfachstes, irreversibles Verfahren, das Stratonovich-Gleichung verwendet: Heun
 \subsection{Zeitquantifizierung von Monte Carlo Methoden} %TODO stimmt die Nummerierung?
  Wir betrachten  \textit{ Spin Modell }wie zuvor in Kapitel  \ref{Kapitel2.9}:
  Hamiltonian: \begin{align}
- H =\underbrace{ -\frac{J}{2} \sum_{i,j} \vec{S}_i \vec{S}_j }_{ \substack{ \text{Austausch} \\ \text{nächster} \\ \text{Nachbar}}}- \underbrace{ D \sum_{i=1}^N (\vec{S}_i^2)^2 }_\text{Anisotropie}- \underbrace{\vec{B} \sum_{i=1}^N \vec{S}_i }_\text{\textsc{Zeeman}}
+ H =\underbrace{ -\frac{J}{2} \sum_{i,j} \mathbf{S}_i \mathbf{S}_j }_{ \substack{ \text{Austausch} \\ \text{nächster} \\ \text{Nachbar}}}- \underbrace{ D \sum_{i=1}^N (\mathbf{S}_i^2)^2 }_\text{Anisotropie}- \underbrace{\mathbf{B} \sum_{i=1}^N \mathbf{S}_i }_\text{\textsc{Zeeman}}
  \end{align}
- im klassischen Limes $\vert \vec{S} \vert $ 
+ im klassischen Limes $\vert \mathbf{S} \vert $ 
  \begin{itemize}
  \item MC hatten wir schon $\to$ kanonisches Ensemble
  \item \textbf{jetzt} \textsc{Langevin} Dynamik als alternativer Zugang zum kanonischen Ensemble \footnote{(Analogon zum Kreisel: Zwar nicht rotation aber präzession)}
@@ -3464,36 +3475,36 @@ Einfachstes, irreversibles Verfahren, das Stratonovich-Gleichung verwendet: Heun
  \begin{enumerate}
  \item \textbf{Bewegungsgleichung:} aus \textsc{Heisenberg}scher Bewegungsgleichung folgt im klassischen Limes ($h \to 0$)
   \begin{align}
-\frac{d \vec{S}_i}{dt} = \frac{\gamma}{\mu } ( \vec{S}_i \times \vec{h}_i ) \qquad \mbox{ mit } \vec{h}_i = - \nabla_{\vec{S}_i} H
+\frac{d \mathbf{S}_i}{dt} = \frac{\gamma}{\mu } ( \mathbf{S}_i \times \mathbf{h}_i ) \qquad \mbox{ mit } \mathbf{h}_i = - \nabla_{\mathbf{S}_i} H
   \end{align}
   Herleigung über QM-Heisenbergsche Bewegungsgleichung
   \begin{align*}
-    i \hbar \frac{\partial}{\partial t} \langle \underbrace{\vec{\hat{S}}(t)}_{\substack{ \text{Spin-} \\ \text{Drehimpuls-} \\ \text{operator}}} \rangle = \langle \big[ \vec{S}(t) ,\hat{H}\big] \rangle
+    i \hbar \frac{\partial}{\partial t} \langle \underbrace{\mathbf{\hat{S}}(t)}_{\substack{ \text{Spin-} \\ \text{Drehimpuls-} \\ \text{operator}}} \rangle = \langle \big[ \mathbf{S}(t) ,\hat{H}\big] \rangle
   \end{align*}
   und weitere Annahmen (ist eigentlich eine Schwingung! Wie bei Phononen)\footnote{Der Vorfaktor hat was mit h-quer zu tun und kommt aus der quantenmechanischen Rechnung Raus: ein Spin S (Drehimpuls) hat magnetisches Moment $\mu$ und $\frac{g \mu_B}{\hbar}= \gamma$ wobei $g=$\textsc{Landé}Faktor (für 2 Elektronen), $\mu_B$: \textsc{Bohr}sches Magneton, $\gamma$: gyromagnetisches Verhältnis.} \\
   \textit{Benögig noch:}
   \begin{itemize}
   \item Vertauschungsregeln für Kommutatoren
   \begin{align*}
-  \big[ \hat{\vec{S}_x} (t), \hat{\vec{S}_y} (t) \big] = i \hbar \hat{\vec{S}_z} (t) \qquad \text{(zyklisch)}
+  \big[ \hat{\mathbf{S}_x} (t), \hat{\mathbf{S}_y} (t) \big] = i \hbar \hat{\mathbf{S}_z} (t) \qquad \text{(zyklisch)}
   \end{align*}
   \item Entwicklung des Kommutators:
   \begin{align*}
-  \big[ \hat{\vec{S}} (t), \hat{\vec{H}}(\hat{\vec{S}} (t)) \big] =
-  i \hbar \left( \hat{\vec{S}}(t) - \frac{\partial}{\partial \hat{\vec{S} }}\right) \hat{\vec{H}} ( \hat{\vec{S}}(t) )+ \mathcal{O} (h^2) 
+  \big[ \hat{\mathbf{S}} (t), \hat{\mathbf{H}}(\hat{\mathbf{S}} (t)) \big] =
+  i \hbar \left( \hat{\mathbf{S}}(t) - \frac{\partial}{\partial \hat{\mathbf{S} }}\right) \hat{\mathbf{H}} ( \hat{\mathbf{S}}(t) )+ \mathcal{O} (h^2) 
   \end{align*} %TODO missing letter
   \end{itemize}
   Damit ergibt sich: 
   \begin{align*}
-  i \hbar \frac{\partial}{\partial t} \langle \hat{\vec{S}}(t) \rangle = - i \hbar \langle \left( \hat{\vec{S}} (t) \times \frac{\partial}{\partial \hat{\vec{S}}} \right) \hat{\vec{H}} \rangle + \mathcal{O}(h^2)
+  i \hbar \frac{\partial}{\partial t} \langle \hat{\mathbf{S}}(t) \rangle = - i \hbar \langle \left( \hat{\mathbf{S}} (t) \times \frac{\partial}{\partial \hat{\mathbf{S}}} \right) \hat{\mathbf{H}} \rangle + \mathcal{O}(h^2)
   \end{align*}
   Betrachte nun den klassischen Limes $h \to 0$ (qm-Bewegungsgleichung geht in den klassischen Grenzfall über).
   \begin{align*}
- \frac{\partial \vec{S_i}}{\partial t}= - ( \vec{S_i} \times \frac{\partial}{\partial \vec{S_i}} H(S_i)
+ \frac{\partial \mathbf{S_i}}{\partial t}= - ( \mathbf{S_i} \times \frac{\partial}{\partial \mathbf{S_i}} H(S_i)
   \end{align*}
-  Wobei die Erwartungswerte in klassische Größen übergehen. (\textbf{Ehrenfest-Theorem}): $\vec{S} = \langle \hat{\vec{S}} \rangle$ und $H= \langle \hat{\vec{H}} \rangle$. Spin $\vec{S}$ in mit dem magnetischen Moment $\vec{\mu}$ verknüpft über 
+  Wobei die Erwartungswerte in klassische Größen übergehen. (\textbf{Ehrenfest-Theorem}): $\mathbf{S} = \langle \hat{\mathbf{S}} \rangle$ und $H= \langle \hat{\mathbf{H}} \rangle$. Spin $\mathbf{S}$ in mit dem magnetischen Moment $\mathbf{\mu}$ verknüpft über 
   \begin{align*}
-  \vec{S}= \vec{\mu} \cdot \underbrace{1}_{\substack{ \text{gyromagnet.} \\ \text{Verhältn.}}} \qquad  \text{und}\qquad \mu_i = \mu_s S_i
+  \mathbf{S}= \mathbf{\mu} \cdot \underbrace{1}_{\substack{ \text{gyromagnet.} \\ \text{Verhältn.}}} \qquad  \text{und}\qquad \mu_i = \mu_s S_i
   \end{align*}
   \begin{align*}
   \gamma = g \; \mu_B \; \frac{1}{h} = 1,76 \cdot 10^{11} \frac{1}{Ts}
@@ -3509,33 +3520,33 @@ Einfachstes, irreversibles Verfahren, das Stratonovich-Gleichung verwendet: Heun
   \begin{itemize}
  \item (Landau-Lifshitz-Gleichung)
   \begin{align}
-  \dot{\vec{S}_i}= -\frac{\gamma}{\mu_s} (\vec{S}_i \times \vec{H}_i ) + \frac{\alpha \gamma}{\mu_s} (\vec{S}_i \times ( \vec{S}_i \times \vec{H}_i))
+  \dot{\mathbf{S}_i}= -\frac{\gamma}{\mu_s} (\mathbf{S}_i \times \mathbf{H}_i ) + \frac{\alpha \gamma}{\mu_s} (\mathbf{S}_i \times ( \mathbf{S}_i \times \mathbf{H}_i))
   \end{align}
   $\alpha$: phänomenologische Dämpfungskonstante \\
   
   \item (Landau-Lifshitz-Gleichung mit Gilbert Dämpfung) \label{eins}
   \begin{align*}
-   \dot{\vec{S}_i}= -\frac{\gamma}{\mu_s} (\vec{S}_i \times \vec{H}_i ) - \frac{\alpha \gamma}{\mu_s} ( \vec{S_i} \times \frac{\partial \vec{S_i}}{\partial t} )
+   \dot{\mathbf{S}_i}= -\frac{\gamma}{\mu_s} (\mathbf{S}_i \times \mathbf{H}_i ) - \frac{\alpha \gamma}{\mu_s} ( \mathbf{S_i} \times \frac{\partial \mathbf{S_i}}{\partial t} )
    \end{align*}
    Beschreibt Ankopplung an ein Wärmebad
    \item (Landau-Lifshitz-GIlbert-Gleichung) \label{zwei}
    \begin{align*}
-  \dot{ \vec{S_i}} = - \frac{\gamma}{(1+\alpha^2)} \vec{S_i} \times \left( \vec{H_i} + \alpha (\vec{S_i} \times \vec{H_i})\right)
+  \dot{ \mathbf{S_i}} = - \frac{\gamma}{(1+\alpha^2)} \mathbf{S_i} \times \left( \mathbf{H_i} + \alpha (\mathbf{S_i} \times \mathbf{H_i})\right)
    \end{align*}
 \end{itemize}
-Gleichung \ref{eins} und Gleichung \ref{zwei} sind äquivalent für $\vert \vec{S_i} \vert = 1 $.
+Gleichung \ref{eins} und Gleichung \ref{zwei} sind äquivalent für $\vert \mathbf{S_i} \vert = 1 $.
    
   
   \item \textbf{Rauschterm} addiere weißes Rauschen zum effektiven Feld \\
   \textbf{$+$ Fluktuation:}  \\
   
 \begin{align*}
-\vec{h}_i \to \vec{h}_i + \vec{\eta_i} (t)
+\mathbf{h}_i \to \mathbf{h}_i + \mathbf{\eta_i} (t)
 \end{align*}  
   
   mit 
 \begin{align*}
-\langle \vec{\eta}_i (t) \rangle = 0 \qquad \text{und} \qquad \langle  \vec{\eta}_i^\nu (t)  \;  \vec{\eta}_j ^\theta (t) \rangle = \frac{2 \alpha \mu_s }{\gamma} k_B T \underbrace{\delta_{ij}}_{ \substack{ \text{Gitter-} \\ \text{plätze} }} \underbrace{\delta_{\nu, \theta}}_{ \substack{ \text{kart.} \\ \text{Kompo-} \\ \text{nenten}}} \delta (t- t')
+\langle \mathbf{\eta}_i (t) \rangle = 0 \qquad \text{und} \qquad \langle  \mathbf{\eta}_i^\nu (t)  \;  \mathbf{\eta}_j ^\theta (t) \rangle = \frac{2 \alpha \mu_s }{\gamma} k_B T \underbrace{\delta_{ij}}_{ \substack{ \text{Gitter-} \\ \text{plätze} }} \underbrace{\delta_{\nu, \theta}}_{ \substack{ \text{kart.} \\ \text{Kompo-} \\ \text{nenten}}} \delta (t- t')
 \end{align*}  
  führt zu Gleichgewichtseigenschaften des kanonischen Ensembles. Der Vergleich von Monte Carlo und UG liefert Zeitquantifizierung.
    \end{enumerate}
@@ -3543,7 +3554,7 @@ Gleichung \ref{eins} und Gleichung \ref{zwei} sind äquivalent für $\vert \vec{
 
    \textbf{Einfaches Beispiel:} 1 Makrospin mit 
    \begin{align*}
-   H = -D S_z^2 - \vec{B} \vec{S}
+   H = -D S_z^2 - \mathbf{B} \mathbf{S}
    \end{align*}
    Modell für Superparamagnetsimus: Für $\Delta E = D \approx k_B T$ kann die Energiebarriere thermisch überwunden werden. \\
    \textit{Theorie:} mittlere Zeit $\tau$ zum überspringen der Energiebarriere ist 
@@ -3557,28 +3568,28 @@ Gleichung \ref{eins} und Gleichung \ref{zwei} sind äquivalent für $\vert \vec{
     \textbf{Numerik:} \\
     \textsc{Langevin:} starten in Energieminimum. Wie wachsen die Fluktuationen?
     \begin{align}
-    \dot{\vec{S}} = - \frac{\gamma}{\mu} \vec{S} \times \left( ( \vec{h} +  \vec{\eta}) + \alpha  \vec{S} \times ( \vec{h} +  \vec{\eta}) \right)
+    \dot{\mathbf{S}} = - \frac{\gamma}{\mu} \mathbf{S} \times \left( ( \mathbf{h} +  \mathbf{\eta}) + \alpha  \mathbf{S} \times ( \mathbf{h} +  \mathbf{\eta}) \right)
     \end{align}
     Linearisieren:
     \begin{align}
-     \vec{S} = \begin{pmatrix}S_x\\ S_y \\ 1 \end{pmatrix} \qquad \text{ mit } \qquad S_z = \sqrt{1- S_x^2 - S_y^2}
+     \mathbf{S} = \begin{pmatrix}S_x\\ S_y \\ 1 \end{pmatrix} \qquad \text{ mit } \qquad S_z = \sqrt{1- S_x^2 - S_y^2}
     \end{align}
     \begin{align}
-    \Rightarrow \dot{\vec{S}}_x = - \frac{\gamma }{\mu} \left(
+    \Rightarrow \dot{\mathbf{S}}_x = - \frac{\gamma }{\mu} \left(
     \underbrace{ S_y}_{ S_y \ll 1} ( h_z - \eta_z ) - \underbrace{S_z}_\text{$=1$} (h_y + \eta_y) \right) - \underbrace{\alpha....}_\text{klein für $ \alpha \to 0$}
     \end{align}
     mit
     \begin{align}
-    \vec{B} = \begin{pmatrix} 0 \\ 0 \\ B_z \end{pmatrix} \end{align}
+    \mathbf{B} = \begin{pmatrix} 0 \\ 0 \\ B_z \end{pmatrix} \end{align}
     \begin{align}
-     \Rightarrow \quad  h_y = 0 \quad \mbox{ und } \quad \vec{h}= - \frac{\partial H}{\partial \vec{S}}= (2 DS_z + B_z) \hat{\vec{z}}
+     \Rightarrow \quad  h_y = 0 \quad \mbox{ und } \quad \mathbf{h}= - \frac{\partial H}{\partial \mathbf{S}}= (2 DS_z + B_z) \hat{\mathbf{z}}
     \end{align}
     \begin{align}
-    & \Rightarrow \dot{\vec{S}}_x \approx  \frac{\gamma}{\mu} \eta_y (t) \\
+    & \Rightarrow \dot{\mathbf{S}}_x \approx  \frac{\gamma}{\mu} \eta_y (t) \\
     & \Rightarrow \langle \Delta S_x^2 \rangle = D\; \Delta t = \frac{\gamma ^2}{\mu ^2} \frac{2 \alpha \mu }{\gamma} k_B T \; \Delta t  
     \end{align}
     \begin{tcolorbox}[ams align, title= , colback=blue!10!white, colframe=blue!30!black] 
-   \langle \dot{\vec{S}}_y ^2\rangle=  \langle \dot{\vec{S}}_z ^2 \rangle = & 2 \frac{\gamma}{\mu} \alpha k_B T \Delta t = \langle \Delta S_y^2 \rangle
+   \langle \dot{\mathbf{S}}_y ^2\rangle=  \langle \dot{\mathbf{S}}_z ^2 \rangle = & 2 \frac{\gamma}{\mu} \alpha k_B T \Delta t = \langle \Delta S_y^2 \rangle
     \end{tcolorbox}
     
     Wir berechnen $\langle \Delta S_x^2 \rangle $ für einen \textsc{Monte Carlo} Schritt: Dabei ist 
