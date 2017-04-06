@@ -9,6 +9,7 @@
 \usepackage{amsmath,mathtools} %hinteres dient der umrandung von Formeln
 
 \usepackage{graphicx}
+\usepackage{subcaption} %für bilder nebeneinander
 \usepackage{geometry}
 \geometry{a4paper,left=40mm,right=20mm, top=40mm, bottom=20mm}
 \pagestyle{plain}
@@ -22,18 +23,18 @@
 \usepackage{pdfpages} %bindet pdfs ein
 \usepackage{empheq}
 \usepackage[theorems,skins]{tcolorbox}  %macht bunte boxen, auch in matheumgebung
-\newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
-\newtcbox{\othermathbox}[1][]{nobeforeafter, 
-math upper, 
-tcbox raise base, 
-%sharp corners,
-enhanced, 
-colback=blue!10!white, %Hintergrundfarbe Farbe!Transparenz
-colframe=blue!30!black, 
-left=1em, 
-top=2em,
-right=3em, 
-bottom=4em}
+%\newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
+%\newtcbox{\othermathbox}[1][]{nobeforeafter, 
+%math upper, 
+%tcbox raise base, 
+%%sharp corners,
+%enhanced, 
+%colback=blue!10!white, %Hintergrundfarbe Farbe!Transparenz
+%colframe=blue!30!black, 
+%left=1em, 
+%top=2em,
+%right=3em, 
+%bottom=4em}
 
 
 \begin{document}
@@ -88,13 +89,14 @@ $\Rightarrow$  Für die Zahl der Atome  ($N = 10^{23}$) dann $10^{13} s \approx 
 
 \item \textbf{Speicherbedarf:} \\
 'Trivialmodell' eines Rechners: 
-
+\begin{center}
 \begin{figure}[ht]
 	\centering
   \includegraphics[width=0.8\textwidth]{Null_Rechner.png}
 	%\caption{}
 	\label{Null_DrittesStandbein}
 \end{figure}
+\end{center}
 
 Informationseinheit: 
 \begin{align*}
@@ -164,15 +166,27 @@ $\Rightarrow$ Regel für den Programmierer: Bei langen Zahlenreihen erst die kle
 
 \subsection{Mikrozustände, Phasenraum und Entropie}
 Die \textbf{Gesamtheit (Ensemble)} ist eine Menge von Mikrozuständen, die einen Makrozustand repräsentieren (Zeit/Systemabhängig). Der \textbf{Mikrozustand} eines Systems wird durch generalisierte Koordinaten $q_i$ und Impulse $p_i$ mit $i=\{ 1,...,3N\} $ beschrieben. \\
-$\to 6N$-dimensionaler Phasenraum. Ein Punkt im Phasenraum ist ein Mikrozustand, Dynamik führt auf eine Bahn (\textit{Phasenraumtrajektorie)}
+$\to 6N$-dimensionaler Phasenraum. Ein Punkt im Phasenraum ist ein Mikrozustand, Dynamik führt auf eine Bahn (\textit{Phasenraumtrajektorie)} Siehe Abbildung \ref{fig:Phasenraum}.
 
-%
-%\begin{figure}[ht]
-%	\centering
-%  \includegraphics[width=0.8\textwidth]{1}
-%	%\caption{Phasenraumtrajektorie des $1d$ harmonischen Oszillators. $q(t) \propto cos( \omega t)$ und $p(t) \propto sin(\\omega t)}
-%	\label{Phasenraum}
-%\end{figure}
+\begin{figure}[h]
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie1.png}
+		\caption{Phasenraumtrajektorie des $1d$ harmonischen Oszillators. $q(t) \propto cos( \omega t)$ und $p(t) \propto sin(\omega t)$} 
+		\label{fig:Phasenraum}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie2.png}
+		\caption{Ununterscheidbare Zustände} 
+		\label{fig:unterscheidbar}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
 
 Die \textbf{Hamiltonfunktion} $H(q,p)$ entspricht der Gesamtenergie des Systems. \textbf{Energieerhaltung:} Im abgeschlossenen System ist die Gesamtenergie konstant mit $U = H (q (t), p(t)) = const.$ (\textit{innere Energie}). \\
 Die stochastische Beschreibung ist zurückzuführen auf die \textbf{Wahrscheinlichkeitsverteilung} $\rho (p,q)$\footnote{ besser: eine Wahrscheinlichkeitsdichte} mit der Wahrscheinlichkeit $\rho (q,p) dq^{3N} dp	^{3N}= \prod_{i=1}^{N} \; dq_i dp_i =: d\Gamma $  die Mikroszustände im Phasenraumelement $dq^{3N} dp^{3N} $ des Systems zu finden. Die Normierung verlangt: 
@@ -183,7 +197,7 @@ Die stochastische Beschreibung ist zurückzuführen auf die \textbf{Wahrscheinli
 Das Phasenraumintegral wird also etwas anders definiert:
 \begin{enumerate}
 \item Faktor $\frac{1}{h^{3N}}$ wird eingeführt, damit $\rho $ dimensionslos ist. Mit dem \textsc{Planck}schen Wirkungsquantum $h$ und macht Sinn wegen $\Delta q \Delta p \approx h$ (kleinstmögliches Phasenraumelement)
-\item Bislang gehen wir davon aus, dass die Teilchen ununterscheidbar sind (durchnummerierbar). Bei unterscheidbaren Teilchen wäre das gleiche Zustände! Deswegen muss zusätzlich durch die Zahl der Vertauschungen ($N! $) dividiert werden! (\textsc{Gibbson}scher Korrelationsfaktor)
+\item Bislang gehen wir davon aus, dass die Teilchen ununterscheidbar sind (durchnummerierbar). Siehe Abbildung \ref{fig:unterscheidbar}. Bei unterscheidbaren Teilchen wäre das gleiche Zustände! Deswegen muss zusätzlich durch die Zahl der Vertauschungen ($N! $) dividiert werden! (\textsc{Gibbson}scher Korrelationsfaktor)
 \begin{align}
 1 = \frac{1}{h^{3N} N!} \int \rho (q,p)\;  d\Gamma
 \end{align}
@@ -209,7 +223,26 @@ Es sei $p(Kopf) = p \neq p(Zahl)= q$ und $1=p+q$. %TODO zweimal gleiches P? oder
 \Rightarrow S =& - k_B \underbrace{\sum_{_{Kopf, Zahl}} \rho \; ln(\rho ) }_\text{Integral wird Summe} = -k_B  (p \; ln(p) + q \; ln(q)) \\
 =&  -k_B ( p \; ln(p) + (1-p) \; ln(1-p))
 \end{align*}
-Wir werfen N-mal:
+Wir werfen N-mal: (siehe Abbildung \ref{fig:Bogen})
+
+\begin{figure}[h]
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie3.png}
+		\caption{(Gezinkter) Münzwurf} 
+		\label{fig:Bogen}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie4.png}
+		\caption{Hyperfläche} 
+		\label{fig:Trajektorie}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
 
 \begin{align*}
 \begin{rcases}
@@ -238,7 +271,7 @@ Wir postulieren, dass dann $\rho$ für alle erlaubten Zustände gleich ist, also
 0 & \mbox{ sonst }
 \end{cases}
 \end{align}
-Da $\rho $ Volumenintegral, ist es zweckmäßig, Volumen zwischen zwei Hyperfllächen zu betrachten: 
+Da $\rho $ Volumenintegral, ist es zweckmäßig, Volumen zwischen zwei Hyperfllächen zu betrachten (siehe Abbildung \ref{fig:Trajektorie}):
 \begin{align}
 \beta = \{ (p,q): U \leq H (p,q) \leq U +\Delta \}
 \end{align}
@@ -279,7 +312,30 @@ also Entropie $\propto ln(\mbox{Zahl der Zustände})$
 \end{itemize}
 \textbf{Wichtig: löst man nummerisch Bewegungsgleichnungen unter Energieerhaltung, summiert man im mikrokanonischen Ensemble}
 \subsection{Kanonisches Ensemble}
-Wir betrachten jetzt ein System in Kontakt mit einem Wärmebad der Temperatur $T$: \\
+
+\begin{figure}[h]
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie5.png}
+		\caption{kanonische Gesamtheit} 
+		\label{fig:Waermebad}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie6.png}
+		\caption{Volumenbegriff, ideales Gas} 
+		\label{fig:Volumen}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
+Wir betrachten jetzt ein System in Kontakt mit einem Wärmebad der Temperatur $T$, gemäß Abbildung \ref{fig:Waermebad}. \\
+
+
+
 \begin{itemize}
 \item Die Gesamtenergie $E = E_w + E_k$. \\
 \item Das Wärmebad soll sehr groß sein, sodass $\frac{E_K}{E} << 1$
@@ -315,7 +371,7 @@ S &= -k_B \int d\Gamma \rho \; ln(\rho ) = -k_B \int d\Gamma \frac{e^{- \beta \;
 &\Rightarrow TS = U + k_B T ln(Z) \; (F= U - TS) \\
 & \Rightarrow \mbox{ Freie Energie: } F = - k_B T ln(Z) = F(T,V,N)
 \end{align}
-\textbf{Beispiel:} (Ideales Gas)
+\textbf{Beispiel:} (Ideales Gas, gemäß Abbildung \ref{fig:Volumen})
 \begin{align*}
 H = \sum_{i=1}^N \frac{p_i ^2}{2m} \; ,  \; \vec{p_i} = (p_x, p_y, p_z)
 \end{align*}
@@ -379,7 +435,28 @@ mit $p^2 = p_x^2 + p_y^2 + p_z^2 \Rightarrow U= \frac{3}{2} N k_B T$ (gut für T
 Statistik wichtig für Physik und andere Disziplinen. Physikalische Probleme sind oft ähnlich. Statt beispielsweise$10^{23}$ Atomen werden nur wenige betrachtet, dann 'hochgerechnet'.  \\
 $\Rightarrow$ Zahl der Freiheitsgrade sinnvoll beschränken. Häufig wichtig für 'Stichprobe': zufällige Auswahl  $\to$ also Zufallszahl.\\
 Im einfachsten Fall: \textit{diskrete Zufallszahlen} $x_1 ... x_N$\\
-\textbf{Beispiel:} (Würfel)  \\
+
+\begin{figure}[h]
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie7.png}
+		\caption{Würfelwurf} 
+		\label{fig:Wuerfelwurf}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie8.png}
+		\caption{kontinuierliche Verteilung von $p(x)$: Die Wahrscheinlichkeitsdichte} 
+		\label{fig:wahrscheinlichkeitsdichte}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
+
+\textbf{Beispiel:} (Würfel, Abbildung \ref{fig:Wuerfelwurf})  \\
 \begin{align*}
 x_1 = 1 , \; ... \; ,  x_6 = 1 , \; (N=6)
 \end{align*}
@@ -398,7 +475,7 @@ Der \textbf{Mittelwert} ist definiert über
 \begin{align}
 \overline{x} = \sum_{i=1}^N p_i \; x_i \; = \sum_{i=1}^N \frac{M_i x_i}{M} \biggr\vert_{M \to \infty}
 \end{align}
-und entsprechend bei kontinuierlicher Verteilung $p(x)$ die 'Wahrscheinlichkeitsdichte'
+und entsprechend bei kontinuierlicher Verteilung $p(x)$ die 'Wahrscheinlichkeitsdichte' (siehe Abbildung \ref{fig:wahrscheinlichkeitsdichte})
 \begin{align}
 p(x) \; dx \; = \frac{dM_x}{M}
 \end{align}
@@ -418,7 +495,27 @@ häufig wichtig ist auch
 \begin{align}
 \overline{(x-\overline{x})^2} = \overline{x^2 - \underbrace{2 \overline{x} x}_\text{=0, s.u.} - \overline{x}^2} = \overline{x^2} - \overline{x}^2
 \end{align}  \footnote{mittelt sich zu Null, da nach oben gleiche Abweichung wie nach unten} \\
-\textbf{Beispiel:}(Gleichverteilung) 
+
+\begin{figure}[h]
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie9.png}
+		\caption{Gleichverteilung} 
+		\label{fig:Gleichverteilung}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie11.png}
+		\caption{Teilintervalle im Wertebereich} 
+		\label{fig:Teilintervall}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
+\textbf{Beispiel:}(Gleichverteilung, Abbildung \ref{fig:Gleichverteilung}) 
 \begin{align*}
 p(x) = 
 \begin{cases}
@@ -434,7 +531,7 @@ p(x) =
 ...geht nicht, da es beim Rechner, einer deterministischen Maschine, keinen Zufall gibt. $\Rightarrow$ 'Pseudo-Zufallszahlen', deterministische Kette von Zahlen $x_i$, die bestimmten Anforderungen genügen: 
 \begin{itemize}
 \item definierter Wertebereich, \textbf{z.B.} $ [ 0,1] $ \textit{(double)}, $[ 0: RAND\_ \; MAX]$\textit{(Integer)}
-\item wohldefinierte Wahrscheinlichkeitsverteilung, gleichverteilt, \textbf{ z.B.} %TODO image doppeltes
+\item wohldefinierte Wahrscheinlichkeitsverteilung, gleichverteilt (Abb. \ref{fig:Gleichverteilung}) \textbf{ z.B.} %TODO image doppeltes
 \item lange Periode: $x_i$ ist immer periodisch denn
 \begin{itemize}
 \item Rechner speichert Information
@@ -468,25 +565,45 @@ Man kann zeigen: Der Algorithmus hat keine Zyklen $< m$ wenn:
 \end{itemize}
 Mögliche Testverfahren dafür sind:
 \begin{enumerate}
-\item Histogramm bezüglich Gleichmäßigkeit der Verteilung: Man teilt den Wertebereich in $I$ Teilintervalle der Länge $\Delta x$. Es gilt $I \cdot \Delta x = 1$.  Ziehe N Zufallszahlen, $N_i$ im Teilintervall $i$
+\item Histogramm bezüglich Gleichmäßigkeit der Verteilung: Man teilt den Wertebereich in $I$ Teilintervalle der Länge $\Delta x$. Es gilt $I \cdot \Delta x = 1$.  Ziehe N Zufallszahlen, $N_i$ im Teilintervall $i$, siehe Abbildung \ref{fig:Teilintervall}.
 \begin{align}
 N = \sum _{i=1}^I N_i, \quad \quad \quad \overline{N_i} = \frac{N_i}{I}= N \Delta x
 \end{align}
 \begin{itemize}
 \item $\frac{N_i}{N}$ sollte für $N \to \infty $ gegen $\frac{N}{I}$ gehen
 \item Konvergenz (Fehler) %TODO FELDER? \\
-Betrachte 1. Teilintervall (als Beispiel) Wahrscheinlichkeit, dass von N Zufallszahlen $N_1$ im 1. Teilintervall sind: 
+Betrachte 1. Teilintervall (als Beispiel) Wahrscheinlichkeit, dass von N Zufallszahlen $N_1$ im 1. Teilintervall sind:
+
+\begin{figure}[h] %TODO %TODO IMAGE MISSING! S.59
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie12.png}
+		\caption{Binomialverteilung} 
+		\label{fig:Binomialverteilung}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie12.png}
+		\caption{Gauß-Funktion} 
+		\label{fig:Gaussfunktion}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+Anschauliche Darstellung, siehe Abbildung \ref{fig:Binomialverteilung}.
 \begin{align}
 p_N (N_1) = p^{N_1} (1-p)^{N-N_1} \frac{N!}{N_1 ! (N-N_1)!} \quad  \mbox{ \textbf{'Binomialverteilung'}} \\
  \mbox{ mit } p= \Delta x
 \end{align}
-%TODO IMAGE MISSING! S.59
-Die Binomialverteilung geht in Grenzfällen in einfachere, d.h. analytische Verteilungen über: In diesem Beispiel geht sie für $N \to \infty$ und konstantes $p$ in die \textbf{ Gaußverteilung} über.
+
+Die Binomialverteilung geht in Grenzfällen in einfachere, d.h. analytische Verteilungen über: In diesem Beispiel geht sie für $N \to \infty$ und konstantes $p$ in die \textbf{Gaußverteilung} über.
 \begin{align}
 p_N (N_1) = \frac{1}{\sqrt{2 \pi N p (1-p)}} e^{- \frac{(N_1 - N_p)^2}{2 N_p (1-p)}}
 \end{align}
 Der Beweis hierfür ist etwas komplizierter, unter Anderem mit \textsc{Stirling}-Formel $ln(N!) = N \; ln(N) - N + \frac{1}{2} \; ln( 2 \pi N)$. \\
-Die Eigenschaften der \textsc{Gauß}-Formel auf einen Blick:
+Die Eigenschaften der \textsc{Gauß}-Funktion, siehe auch Abbildung \ref{fig:Gaussfunktion}, auf einen Blick:
 \begin{itemize}
 \item Mittelwert: $\overline{N_1}= N_p$
 \item Schwankung: $\chi ^2 = \overline{(N_1 - \overline{N_1})^2} \propto N p (1-p)$ 
@@ -499,7 +616,28 @@ Auf Korrelation prüfen. Aufeinanderfolgende Zufallszahlen werden als Punkte in 
 (x_k, x_{k+1}, \; ...\; ,\; x_{k+(d-1)}) \in \mathbb{R}^d
 \end{align}
 Falls Korrelation vorhanden: Punkte füllen nicht den Raum sondern liegen auf $(d-1)$-dimensionalen Ebenen. \\
-\textbf{Beispiel:} $d=2$. 
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie13.png}
+		\caption{Musterbildung als beispiel für schlechten Zufallszahlgenerator} 
+		\label{fig:Interferenz}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie14.png}
+		\caption{Integral} 
+		\label{fig:Integral}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
+
+\textbf{Beispiel:} $d=2 \; \to$ Abbildung \ref{fig:Interferenz}
 
 Muster $\widehat{=}$ schlechter Zufallszahlengenerator. 
 
@@ -534,7 +672,7 @@ $z[250]$ \begin{itemize}
 
 
 \subsection{ Monte Carlo Integration}
-Betrachten Integral 
+Betrachten Integral (Abb. \ref{fig:Integral})
 \begin{align}
 I= \int_a^b f(x) \; dx
 \end{align}
@@ -573,8 +711,29 @@ Dafür betrachten wir wieder (der Einfachheit halber) folgendes Integral:
 \begin{align}
 I= \int_a^b f(x) \; dx
 \end{align}
-mit $x_1,....x_N$ als $N$ gleichverteilte Zufallszahlen über $[a,b]$. %TODO bild
-Wir zerlegen das Intervall in $n$ Kästchen der Länge $\Delta x$.
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie15.png}
+		\caption{Integral in Intervallzerlegung} 
+		\label{fig:Intervall}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie16.png}
+		\caption{Integral} 
+		\label{fig:Integralwert}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
+
+mit $x_1,....x_N$ als $N$ gleichverteilte Zufallszahlen über $[a,b]$. 
+Wir zerlegen das Intervall in $n$ Kästchen der Länge $\Delta x$, gemäß Abbildung \ref{fig:Intervall}.
 $N_\mu$ sei weiterhin die Anzahl der $x_i$ im $\nu$ten Teilintervall. Dann gilt
 \begin{align}
 n \cdot \Delta x =&\;  b-a \; \quad
@@ -590,7 +749,7 @@ Diese Formel ist nicht auf $d=1$ beschränkt, sondern gilt auch in höheren Dime
 d.h. das Integral ist der Mittelwert der Funktionswerte an zufälligen Stützstellen $\vec{x}_i$.\\
 \paragraph{Fehler:} (für $I = \int_0^1 f(x) dx$)\\
 $\{ x_1, x_2,..., x_N\}$ sei spezielle Folge von Zufallszahlen mit $I_1$ als Integralwert (also Resultat). Eine andere Folge erzeugt anderes Ergebnis $I_2,...$. \\
-$\Rightarrow$ Es existiert eine Wahrscheinlichkeitsverteilung $P(I)$ um dafür einen bestimmten Integralwert $I$ zu erhalten.   %TODO image
+$\Rightarrow$ Es existiert eine Wahrscheinlichkeitsverteilung $P(I)$ um dafür einen bestimmten Integralwert $I$ zu erhalten.  (Abb. \ref{fig:Integralwert})
 Betrachte deswegen unendliche viele Ketten\footnote{$\to$ exaktes Resultat, aber wie groß ist dann die Schwankung?} von Zufallszahlen der Länge $N$:\\
 $\Rightarrow P(I) dI$ wäre dann die Wahrscheinlichkeit, dass $I$ im $I$-ten Intervall $dI$ um $I$ liegt.
 \begin{align}
@@ -634,11 +793,32 @@ $ \Rightarrow$ für $d<4$ ist Monte Carlo 'besser' als Trapezregel
 
 \item[2)] $I \to \langle I \rangle$ für $N \to \infty$. \textit{Eine} $\infty$-lange Kette (o. Folge) führt (auch) zum exakten Resultat, d.h. das Verfahren ist sebstmittelnd.
 
-\item[3)] Verfahren gut, wenn $f$ möglichst konstant.  Anschaulich in Abbildung . Man sieht, dass das Verfahren exakt ist, falls $f= const.$ %TODO bild
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie17.png}
+		\caption{Dichtefluktuation} 
+		\label{fig:Dichtefluktuation}
+		\centering
+	\end{subfigure}
+	~
+	\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie18.png}
+		\caption{Volumen einer $2-$dimensionalen Kugel}
+		\label{fig:Kugel}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}
+
+
+
+\item[3)] Verfahren gut, wenn $f$ möglichst konstant.  Anschaulich in Abbildung . Man sieht (Abb. \ref{fig:Dichtefluktuation}), dass das Verfahren exakt ist, falls $f= const.$
 \item[4)]Der Fehler lässt sich während der Integration berechnen und sollte endlich bleiben.
 \end{itemize}
 \textbf{Beispiel:} (Volumen einer D-Dimensionalen Einheitskugel) \\
-Wir starten in 2D. %TODO bild
+Wir starten in 2D, gemäß Abbildung \ref{fig:Kugel}.
 \begin{align*}
 f(x,y)=
 \begin{cases}
@@ -652,7 +832,49 @@ I= \int_0 dx \; dy \; 1 = \int_{-1}^1 dx \int_{-1}^1 dy \; f(x,y)
 \approx \frac{4}{N} \sum_{i=1}^N f(x_i,y_i)
 \end{align*}
 mit $[x_i, y_i]$ gleichverteilt aus $[-1,1]$.
-Zeige Programm: Das Volumen verschwindet für hohe Dimensionen: Eindimensionale Betrachtung: Intervall geht exakt von $[-1,1]$, bei einem Kreis in $[-1,1] \times [-1,1]$ fallen schon die Ecken weg. Das Volumen auf den Einheitsradius ist nicht mehr ganz so groß. Bei drei Dimensionen fallen schon die 8 Ecken weg, daher nimmt das relatives Volumen für große Dimensionen ab. \\
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie19.png}
+		\caption{Relatives Volumen für wachsende Dimension} 
+		\label{fig:RelativesVolumen}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie22.png}
+		\caption{Problemstellung}
+		\label{fig:Problemstellung}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+	
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie20.png}
+		\caption{} 
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie21.png}
+		\caption{}
+		\centering
+	\end{subfigure}
+	\caption{ Importance sampling}
+	\label{fig:Funktion}
+\end{figure}
+	
+ 
+
+
+Zeige Programm: Das Volumen verschwindet für hohe Dimensionen: Eindimensionale Betrachtung: Intervall geht exakt von $[-1,1]$, bei einem Kreis in $[-1,1] \times [-1,1]$ fallen schon die Ecken weg. Das Volumen auf den Einheitsradius ist nicht mehr ganz so groß. Bei drei Dimensionen fallen schon die 8 Ecken weg, daher nimmt das relatives Volumen für große Dimensionen ab. (Abbildung \ref{fig:RelativesVolumen}) \\
 $\to$ Wie kann man das Verfahren verbessern?
 
 \paragraph{Verbesserung:}
@@ -673,21 +895,50 @@ Fehler: \begin{align}
 \Delta I=\frac{1}{\sqrt{N}}
  \sqrt{\langle \left(\frac{f}{w}\right)^2 \rangle - \langle \frac{f}{w} \rangle ^2}
  \end{align}
- $\Rightarrow$ für kleine Felder: $w$ so wählen, dass $\frac{f}{w} \approx const.$ Man muss allerdings $w$ integrieren können und $w$ muss $f$ ähnlich sein und man braucht Zufallszahlen mit einer vorgegebenen Verteilung! %TODO grafik \\
+ 
+ 
+
+ 
+ 
+ $\Rightarrow$ für kleine Felder: $w$ so wählen, dass $\frac{f}{w} \approx const.$ Man muss allerdings $w$ integrieren können und $w$ muss $f$ ähnlich sein und man braucht Zufallszahlen mit einer vorgegebenen Verteilung! (Abbildung \ref{fig:Funktion})
+ 
  
  $\Rightarrow$ Mann nennt dieses Verfahren:\textbf{Importance sampling}, (weil 'wichtige'$\widehat{=}$ 'hohe' Werte des Integranden $f(x)$ in der ursprünglichen Funktion häufiger genommen werden, im Gegensatz zum herkömmlichen \textbf{simple sampling})\\ $\Rightarrow$ die Wurzel N im Fehler ist geblieben. Leider konnten wir die Konvergenz dadurch nicht verstärken. Neues Problem hierbei ist jetzt: 
  
  \subsection{Zufallszahlen einer vorgegebenen Verteilung}
- Problem: %TODO grafik \\
+ 
+
+ 
+ Problem: (Problemstellung siehe Abbildung \ref{fig:Problemstellung}).
  Zufallszahlen $x_i$ aus einem Intervall berechnen mit einer Verteilung $\rho(x)$ mit
  \begin{itemize}
  \item $\rho(x)>0$
  \item $\int_0^1 dy \rho(x)=1$.
 \end{itemize} 
  
+
+ 
+ \begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie23.png}
+		\caption{Rejection Method} 
+		\label{fig:Neumann}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie24.png}
+		\caption{Gauß-Funktion}
+		\label{fig:Gaussunktion}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
  \begin{itemize}
- \item[a)] \textbf{Rejection-Method} nach \textsc{von Neumann} (1947) \\
- %TODO grafik
+ \item[a)] \textbf{Rejection-Method} nach \textsc{von Neumann} (1947) \\ (Abbildung \ref{fig:Neumann}).
  betrachte Paar von Zufallszahlen, $x_i \in [0,1], y_i \in [0,b]$ mit $b=Max(\rho(x))$.
  
 $\to$ wenn $y_i < \rho(x_i) \Rightarrow x_i$ wird akzeptiert mit $\xi_i=x_i$\\
@@ -697,15 +948,15 @@ $\to$ wenn $y_i < \rho(x_i) \Rightarrow x_i$ wird akzeptiert mit $\xi_i=x_i$\\
  
  \textbf{Problem:} viele Züge notwendig, wenn selten akzeptiert wird. 
  
- \textit{Schlecht wäre zum Beispiel:} die Betrags-Exponentialfunktion (\textsc{Gauß}funktion) benötigt ein großes $x-$Intervall.
- %TODO image
+ \textit{Schlecht wäre zum Beispiel:} die Betrags-Exponentialfunktion (\textsc{Gauß}funktion) benötigt ein großes $x-$Intervall: Abbildung \ref{fig:Gaussunktion}.
  
 \textit{Gut wäre dafür aber:} Kugeln - 
 Vektoren innerhalb (oder auf) Einheitskreis
-%TODO
+
+
 
 \item[b)] \textbf{Transformationsmethode} \\
-betrachte monotone Funktion. Dabei seien wieder $x_i$ gleichverteilte Zufallsvariablen aus $x_i \in [0,1]$ und $y_i = f(x_i)$.Frage: Wie sind die verteilt? \footnote{Dafür muss man die Wahrscheinlichkeiten umrechnen. In ein $\Delta x$ fallen irgendwelche Zufallsvariablen rein und werden auf $\Delta y$ abgebildet, das ja kleiner sein kann. Die dichte in $\Delta y$ sowie $\Delta x$ kann also verschieden sein.} %TODO siehe image
+betrachte monotone Funktion (Abbildung \ref{fig:Problemstellung}) . Dabei seien wieder $x_i$ gleichverteilte Zufallsvariablen aus $x_i \in [0,1]$ und $y_i = f(x_i)$.Frage: Wie sind die verteilt? \footnote{Dafür muss man die Wahrscheinlichkeiten umrechnen. In ein $\Delta x$ fallen irgendwelche Zufallsvariablen rein und werden auf $\Delta y$ abgebildet, das ja kleiner sein kann. Die dichte in $\Delta y$ sowie $\Delta x$ kann also verschieden sein.} %TODO siehe image
 
 $N$ Zufallszahlen \\
  $\Rightarrow$ $N \cdot \Delta x$ fallen in das Intervall $\Delta x$. Die entsprechenden abgebildeten Zufallszahlen $y_i=f(x_i)$ fallen in $\Delta y$ um $f(x)$.
@@ -777,6 +1028,27 @@ Wieder gilt:
 
 
 Sie ist nicht analytisch (bestimmt) integrierbar, sodass die Transformationsmethode nicht anwendbar ist. Dafür gibt es aber einen Trick: \\
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie25.png}
+		\caption{Kugelkoordinaten} 
+		\label{fig:Kugelkoordinaten}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie26.png}
+		\caption{Modell des Ferromagneten}
+		\label{fig:Ferromagnet}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
+
 betrachte eine zweidimensionale Wahrscheinlichkeitsverteilung
 \begin{align}
 p(x_1,x_2)=\frac{1}{	2 \pi \sigma^2} e^{- \frac{x_1^2 + x_2^2}{2 \sigma^2}} = \rho(x_1) \cdot \rho(x_2)
@@ -786,7 +1058,7 @@ die Zahl der Punkte im Intervall $dx_1, dx_2$ ist:
 \frac{1}{	2 \pi \sigma^2} e^{- \frac{x_1^2 + x_2^2}{2 \sigma^2}} dx_1 dx_2= & \frac{1}{	2 \pi \sigma^2} e^{- \frac{r^2}{2 \sigma^2}} \;r \; dr  d\phi \quad \left( \mbox{subst: } u = \frac{r^2}{2 \sigma^2} \right) \\
 = & \frac{1}{2 \pi} e^{-u} du \; d\phi
 \end{align}
-mit
+mit Koordinaten (Abb. \ref{fig:Kugelkoordinaten})
 \begin{align*}
 x_1=  r cos(\phi) = \sigma \sqrt{2 u} \; cos(\phi) \\
 x_2=  r sin(\phi)= \sigma \sqrt{2 u} \; sin(\phi)
@@ -847,12 +1119,10 @@ wobei $x_i \in [0,1)$.
  \subsection{Ising Modell}
  Das \textsc{Ising}modell\footnote{Zweizustandsmodell: minimales Modell für ein reales system, jeder einzelne Freiheitsgrad hat nur zwei Zustände, ist aber das erste Modell das einen Phasenübergang zeigt. Es ist im $2d$ Fall aber exakt lösbar und daher gut für uns.} findet zahlreiche Anwendungen (\textbf{z.B.} in den Sozialwissenschaften, in der Phyik für Fest-Flüssig-Übergänge oder mehr noch für \textit{magnetische Eigenschaften}, wie etwa dem Ferromagneten). Es ist \textit{sehr einfach} und zudem auch \textit{exakt lösbar} für Lösungen im $1d$ (\textsc{Ising}), $2d $ (\textsc{Onsager}) Fall.
 ($\to$ Nobelpreis) \\
-Wir benutzen das Modell eines Ferromagneten:  \\
-Makroskopisch ist eine Gesamtmagnetisiertung zu beobachten. Auf mikroskopischer Ebene findet man Atome mit 'Spin', atomare Momente, die in eine Richtung ausgerichtet sind. Sie wechselwirken mit ihren umliegenden Nachbarn\footnote{ Die Wechselwirkung ist im einfachsten Fall nur mit den nächsten Nachbart, idee: überlapp der wellenfunktion ist begrenzt exponentiell}. Es gibt Vorzugsrichtungen, abhängig von den Kristallstrukturen (Wegen Spin-Bahn Wechselwirkungen) \\
+Wir benutzen das Modell eines Ferromagneten, gemäß Abbildung \ref{fig:Ferromagnet}.  \\
+Makroskopisch ist eine Gesamtmagnetisiertung zu beobachten. Auf mikroskopischer Ebene findet man Atome mit 'Spin', atomare Momente, die in eine Richtung ausgerichtet sind. Sie wechselwirken mit ihren umliegenden Nachbarn\footnote{ Die Wechselwirkung ist im einfachsten Fall nur mit den nächsten Nachbarn, Idee: Überlapp der Wellenfunktion ist begrenzt exponentiell}. Es gibt Vorzugsrichtungen, abhängig von den Kristallstrukturen (Wegen Spin-Bahn Wechselwirkungen) \\
 $\Rightarrow$ Vorzugsachse (\textbf{Anisotropie}). Der Kristall hat eine leichte Achse, d.h. Spins wollen in diese Richtung stehen.\\
 $\Rightarrow$ nur noch zwei Zustände! ('rauf' $\uparrow$ oder 'runter' $\downarrow$) \\
-
- %TODO image
 
  \begin{itemize}
 \item[-] Gitter aus Spins, im einfachsten Fall $S= \pm 1$, sodass beispielsweise $S_i$ nur index $i= \{+,-\}$ hat.
@@ -936,8 +1206,29 @@ Z= e^{-\beta (-J -2B)} + 2 e^{-\beta J} + e^{- \beta (-J +2B)}
  M &= \frac{1}{2} \frac{2 e^{-\beta (-J - 2B)} - 2 e^{-\beta (-J + 2B)}}{Z} = \frac{e^{\beta J} \left( e^{2 \beta B} - e^{-2\beta B} \right)}{e^{\beta J} \left( e^{-2\beta B} + e^{-2 \beta B} + 2 e^{-2 \beta J} \right)} \\
  &= \frac{sinh( 2 \beta B) }{(cosh(2 \beta B) + e^{-2 \beta J}}
 \end{align*}
- 
-%TODO image
+Siehe auch Abbildung \ref{fig:Magnetisierung}.
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie27.png}
+		\caption{Magnetisierung zum Beispiel} 
+		\label{fig:Magnetisierung}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie28.png}
+		\caption{Vergleich beider Algorithmen}
+		\label{fig:MA_HB}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
+
+
 Allgemein: N Spins \\
 $\Rightarrow \; 2^N$-Zustände ($2^{100} = 10^{30}$) \\
 $\Rightarrow$ d.h. durch direktes Summieren numerisch nicht lösbar \\
@@ -1051,16 +1342,41 @@ p(\underline{S} \rightarrow \underline{S}') = \frac{1}{1+ e^{\beta \Delta E}} \m
 \begin{align*}
 \frac{p(\underline{S} \rightarrow \underline{S}')}{p(\underline{S}' \rightarrow \underline{S})} = \frac{1+e^{-\beta \Delta E} }{1+e^{\beta \Delta E}} = \frac{e^{-\beta \Delta E} (e^{\beta \Delta E}+1)}{1+e^{\beta \Delta E}}= e^{-\beta \Delta E}
 \end{align*}
-%TODO image
 \end{enumerate}
+Siehe zum Vergleich auch nochmal Abbildung \ref{fig:MA_HB}.
+
 
 
 \subsection{Master Gleichung und Monte Carlo Dynamik}
 \textit{(Zusammenhang mit irreversibler Dynamik)}\\
 
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie29.png}
+		\caption{Betrachtetes System aus Beispiel} 
+		\label{fig:Gassystem}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie30.png}
+		\caption{(oben) Gas, das mit der Zeit sinkt. \\ (unten) Equibrilierung eines Spinsystems}
+		\label{fig:sinken}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
 
-Betrachte ein System im nicht-Gleichgewicht, das equilibriert (irreversibel)  %TODO image
-Beispielsweise ein Gas, das mit der Zeit sinkt oder ein Spinsystem. (Letzteres equilibriert durch 'entkopplung an Phononen') %TODO entkoppelt? 
+
+
+Betrachte ein System im nicht-Gleichgewicht, das equilibriert (irreversibel): 
+\textbf{Beispielsweise}
+\begin{itemize}
+\item ein Gas, das mit der Zeit sinkt (Abb. \ref{fig:Gassystem}, \ref{fig:sinken}).
+\item oder ein Spinsystem. (equilibriert durch 'Ankopplung an Phononen', siehe Abbildung \ref{fig:sinken})
+\end{itemize}    
 Wie beschreibt man solche \textbf{irreversiblen Dynamiken}?
 \begin{itemize}
 \item Stellen uns vor, wir haben $\infty$ viele Kopien des Systems und machen nun 'Momentaufnahmen' der Zustände über der Zeit. 
@@ -1097,11 +1413,30 @@ w_{sr}&= \frac{1}{Z'} \sum_{r',s'} e^{\beta (E_{r'}' -E_{s'}') } e^{-\beta E_{r'
 \end{align}
  Diese Dynamik wird durch Metropolis Algorithmus (oder Heat Bath Algorithmus) simuliert. %TODO nicht durch MC?
 
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie31.png}
+		\caption{betrachtetes System} 
+		\label{fig:System}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie32.png}
+		\caption{Relaxationszeit und Magnetisierung}
+		\label{fig:Relax}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
 \underline{Beachte:} 
 \begin{itemize}
 \item $w_{sr}$ liegen nicht absolut fest. Mit $w_{sr}, w_{rs}$ ist auch $\gamma (t) w_{sr}, \gamma(t) w_{rs}$ Lösung \\  $\Rightarrow$ Zeitskala ist nicht absolut festgelegt!
 \item $w_{sr}$ ist nicht mikroskopisch bekannt (im Raum nicht festgelegt)
-\item Die Master Gleichung beschreibt \textit{ausschließlich} irreversible Dynamiken, nicht aber die Bewegungsgleichung innerhalb des Systems $\tilde{H}$! %TODO image
+\item Die Master Gleichung beschreibt \textit{ausschließlich} irreversible Dynamiken, nicht aber die Bewegungsgleichung innerhalb des Systems $\tilde{H}$, (Abb. \ref{fig:System})! 
 \item speziell für das Ising Modell heißt diese Dynamik, die durch die Mastergleichung beschrieben wird  \textbf{Glauber-Dynamik}.(Besonders wichtig, das Ising Modell keine Bewegungsgleichung hat)
 \end{itemize}
 
@@ -1167,14 +1502,33 @@ M(t)= \sum_s p_s(t) M_s = p_{++}(t) + p_{--}(t) \underbrace{\approx}_{t \to \inf
 \end{align}
 
 
-\underline{Diskussion:} %TODO image
+\underline{Diskussion:}  (siehe auch Abb. \ref{fig:Relax})
 \begin{itemize}
 \item $\tau$ hängt vom 'Algorithmus' ab (siehe auch Grenze für $T\to \infty $)
 \item $p(t)$ hängt von Annahmen bezüglich Übergangswahrcheinlichkteisraten  also der Dynamik ab (single spin flip oder nicht)
 \end{itemize}
 \subsection{Phasenübergange und Skalentheorie}
 
-Ideale Gase haben keine Wechselwirkung erst die Wechselwirkung zwischen Teilchen erklärt aber das Entstehen von Ordnung. Ordnung entsteht häufig spontan durch Phasenübergänge, bei dem eine Symmetrie gebrochen wird. Ein Analytisch lösbares Modell für das Studium von Phasenübergängen ist das \textbf{ (2d) Ising-Modell}: %TODO image
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie33.png}
+		\caption{Symmetriebruch beim Phasenübergang} 
+		\label{fig:Symmetriebruch}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie34.png}
+		\caption{Computer: Isingmodell}
+		\label{fig:Computer}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
+Ideale Gase haben keine Wechselwirkung erst die Wechselwirkung zwischen Teilchen erklärt aber das Entstehen von Ordnung. Ordnung entsteht häufig spontan durch Phasenübergänge, bei dem eine Symmetrie gebrochen (Abb. \ref{fig:Symmetriebruch}) wird. Ein Analytisch lösbares Modell für das Studium von Phasenübergängen ist das in Abb. \ref{fig:Computer} dargestellte \textbf{ (2d) Ising-Modell}: 
 
 Ordnungsparameter: 
 \begin{align*}
@@ -1190,6 +1544,26 @@ Die exakte Lösung von Onsager (1944) erhielt einen Nobelpreis. Heutzutage löst
 \item[-] graph theory
 \item[-] transfermatrix methods
 \end{itemize} 
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie35.png}
+		\caption{Singularität bei der kritischen Temperatur} 
+		\label{fig:Singularity}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie36.png}
+		\caption{Isingmodell im Feld.}
+		\label{fig:IsingmodellimFeld}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
 \textbf{innere Energie:}
 \begin{align}
 \frac{U}{N}= - J \; coth\left( \frac{2J}{k_BT}\right) \left[ 1 + \frac{2}{\pi} \left( 2 \; tanh^2 \left( \frac{2J}{k_BT} \right) - 1 \right) K_1(\kappa ) \right]
@@ -1202,10 +1576,10 @@ U ist nicht analytisch bei einer Temperatur $T_c$ mit
 \begin{align*}
 sinh \left(\frac{2J}{k_BT_c} \right) = 1\quad \Rightarrow cosh \left(\frac{2J}{k_BT_c} \right)= \sqrt{2} \quad \Rightarrow 2 tanh^2\left( \frac{2J}{k_B T_c}\right) =1
 \end{align*}
- mit $k_B T_c = 2.269 J$. %TODO bild 
- Beachte, dass $K_1(\kappa)$ hat eine Singularität für $\kappa \to 1$:
+ mit $k_B T_c = 2.269 J$.
+ Beachte, dass $K_1(\kappa)$ hat eine Singularität (Abb. \ref{fig:Singularity}) für $\kappa \to 1$:
  \begin{align*}
- K_1(\kappa) \propto  ln \left( \frac{U}{\sqrt{1-\kappa^2}} \right)
+ K_1(\kappa) \propto  ln \left(\frac{U}{\sqrt{1-\kappa^2}} \right)
  \end{align*}
  $U$ bleibt endlich, aber seine Ableitung divergiert. Typisch für einen Phasenübergang sind unter anderem kritische Punkte mit nicht-analytischen Singularitäten sowie auch Werte hüpfen oder divergieren können. (kritisches Verhalten) Beispielsweise:
 \begin{itemize}
@@ -1228,7 +1602,7 @@ x= e^{- \frac{2J}{k_B T}}, \\
 \end{itemize}
 
 \textbf{Kritische Exponenten} \\
-Ising Modell mit Feld:
+Ising Modell mit Feld. (s. Abb. \ref{fig:IsingmodellimFeld})
 \begin{itemize}
 \item[•] Phasenübergang $1.$Ordnung bei %TODO missing word
 des Feldes $\Rightarrow$ \textit{Hysterese}, Ordnungsparameter stetig, kritische Exponenten
@@ -1236,7 +1610,25 @@ des Feldes $\Rightarrow$ \textit{Hysterese}, Ordnungsparameter stetig, kritische
 \item[•] kritischer Punkt: $B=0, \; (T= T_c) \;  \widehat{=}$ Phasenübergang 2.Ordnung $\widehat{=} $ 2. Ableitung der freien Energie unstetig (z.B. spezifische Wärme) %TODO missing word
 sind viele Größen nicht-analytisch. 
 \end{itemize}
-Definition: Kritische Exponenten beschreiben das Verhalten in der Nähe des kritischen Punktes $(\epsilon = \frac{T - T_c}{T_c} , \;  B) = (0,0)$  ($\widehat{=}$ Abstand vom kritischen Punkt. 
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie37.png}
+		\caption{} 
+		%\label{fig:Symmetriebruch}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie38.png}
+		\caption{}
+		%\label{fig:Computer}
+		\centering
+	\end{subfigure}
+	\caption{ Phasendiagramm und kritische Punkte} \label{Phasendiagramm}
+\end{figure}	
+\textbf{Definition:} Kritische Exponenten beschreiben das Verhalten in der Nähe des kritischen Punktes $(\epsilon = \frac{T - T_c}{T_c} , \;  B) = (0,0)$  ($\widehat{=}$ Abstand vom kritischen Punkt.) Siehe auch Abb. \ref{Phasendiagramm}.
 \begin{itemize}
 \item $T>T_c, \; B=0 : $ 
 \begin{itemize}
@@ -1278,7 +1670,6 @@ Kritische Exponenten haben Eigenschaften, die sie interessant machen:
 \item[1)] Sie sind nicht unabhängig, d.h. es gibt sogenannte Skalengesetze %TODO words missing! 
 \item[2)] Universalität, Werte hängen nur von räumlicher Dimension und Symmetrie des Hamiltonoperators ab und nicht von Stärke der Wechselwirkungen, ...
 \end{enumerate}
-%TODO 3 images
 
 Moderne Theorie der Phasenübergänge 2.Ordnung: \\
 Verschiedene physikalische Systeme können dieselben kritischen Exponenten aufweisen! %TODO kommt dieser satz hier hin?
@@ -1309,7 +1700,27 @@ f(x) &= f(0) + f'(0)x + .... \\
 \Rightarrow \Aboxed{ \Delta f(ax) &= a \Delta f(x)}
 \end{align*} 
 \textit{Erinnerung an 'Thermodynamik'} \\
-\textit{Wir verdoppeln ein System sodass  %TODO image
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie39.png}
+		\caption{Betrachtetes thermodyn. System} 
+		\label{fig:Erinnerung}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie40.png}
+		\caption{scaling plot}
+		\label{fig:scalingplot}
+		\centering
+	\end{subfigure}
+	\caption{ }
+\end{figure}	
+
+\textit{Wir verdoppeln ein System, gem. Abbildung \ref{fig:Erinnerung},  sodass 
 \begin{align*}
 \begin{rcases}
 U_{ges}= 2U \\
@@ -1418,12 +1829,29 @@ M(B,\epsilon)
 \mbox{vorher: } \; & M = M(B,\epsilon) \quad \text{ \textbf{eine} Größe hängt ab von \textbf{zwei} Parametern }\\
 \mbox{jetzt: }\; & M = M(B,\epsilon) \quad \text{ \textbf{eine} Größe hängt ab von \textbf{einem} Parameter}
 \end{align*}
-Dies führt zum sogenannten \textbf{scaling plot}: \\
+Dies führt zum sogenannten \textbf{scaling plot}, der in Abbildung \ref{fig:scalingplot} zu finden ist. \\
 
-%TODO image
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie41.png}
+		\caption{Skalenverhalten der freien Energie} 
+		\label{crossover}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie42.png}
+		\caption{Anschaulich zum Beispiel}
+		\label{fig:Anschaulich}
+		\centering
+	\end{subfigure}
+	\caption{} % \label{crossover}
+\end{figure}	
 
 \item \textbf{Crossover-Verhalten} \\
-Skalenverhalten der freien Energie:
+Skalenverhalten der freien Energie (siehe auch Abbildung \ref{crossover}) :
 \begin{align}
 G(B,\epsilon) \; =& \;  \vert \epsilon \vert ^\frac{1}{x_2} \; f^\pm \left( \frac{B}{\vert \epsilon \vert ^\frac{x_1}{x_2}} \right) \\
 G(B,\epsilon) \; =  & \; \vert B \vert ^\frac{1}{x_1}\;  \; g \left( \frac{\epsilon}{B ^\frac{x_2}{x_2}} \right) \quad \quad \quad (B>0) \\
@@ -1435,7 +1863,7 @@ Für $B\neq 0$ sieht man also ein gleiches kritisches Verhalten wie bei $ B=0.$ 
 Für einen Ferromagnet im Feld beobachtet man jenseits des Crossover-Bereichs kein kritisches Verhalten. Es gibt aber erheblich interessantere Fälle, wo in Abhängigkeit von einem unsichtbaren %TODO wort stimmt?
  Systemparameter das kritische Verhalten wechselt (von einem zu einem anderen).
 \end{itemize}
-%TODO images
+
 \subsection{Finite size scaling}
 Phasenübergänge werden in einem endlichen System unterdrückt, weil $ \xi < L$. (Liniendimension %TODO wort?
 des Systems). \\
@@ -1471,9 +1899,9 @@ Ohne Beweis gilt weiterhin:
 \begin{align*}
 L^\frac{\beta}{\nu} M(\epsilon,L)=\underbrace{f}_{\substack{\text{ander-} \\ \text{es $f$}}}(L^\frac{1}{\nu} \epsilon) \quad \Rightarrow \quad M(0,L) \; = \; L^{-\frac{\beta}{\nu}} \; f(0)
 \end{align*}
- %TODO  image
+Siehe auch Abbildung \ref{fig:Anschaulich}. 
  \subsubsection*{Wie berechnet man $M(T)$ im System endlicher Größe?}
-zu jedem Zustand $\vec{S}$ mit $M(\vec{S})$ gibt es einen (bei $ B=0$) gleichwahrscheinlichen Zustand $\vec{S}'= -\vec{S}$ mit $M(S') = - M(\vec{S})$. \\
+zu jedem Zustand $\vec{S}$ mit $M(\vec{S})$ gibt es einen (bei $ B=0$) gleichwahrscheinlichen Zustand $\vec{S}'= -\vec{S}$ mit $M(S') = - M(\vec{S})$. (Siehe auch nochmal Abbildung \ref{fig:Computer}.) \\
 $\Rightarrow$ es ist 
 \begin{align*}
 M(T,B=0) \; = \;  \frac{1}{N} \sum_{i=1}^N \underbrace{\langle S_i \rangle}_{\substack{ \text{thermisches} \\ \text{ Mittel} \\ \widehat{=} \text{MC- Mittel}}} \; = \; 0 \quad \quad \quad \forall N
@@ -1511,9 +1939,28 @@ U_L = 1-  \frac{\langle S^4 \rangle}{3 \langle S^2 \rangle^2}
 \item $ T< T_c,  \; L \gg \xi: \quad \; U_L \to \frac{2}{3}$
 \item $L \ll \xi: \quad   \quad  \quad  \quad \quad U_L \to U^* \; (L, T$ unabhängiger Zahlenwert)
 \end{enumerate}
-%TODO image doppelbild
 \end{itemize}
 
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie43.png}
+		\caption{Binder-Kummulante $U_L$ und $\zeta$} 
+		\label{fig:Binder_Kummulante}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie44.png}
+		\caption{Phasendiagramm}
+		\label{fig:Phasen_Diagramm}
+		\centering
+	\end{subfigure}
+	\caption{} % \label{crossover}
+\end{figure}	
+
+Siehe auch Abbildung \ref{fig:Binder_Kummulante}.
  \subsection{Kontinuierliche Freiheitsgrade: 'x-y' und Heisenbergs-Modell} \label{Kapitel2.9}
  Bislang betrachten wir Ising-Spins mit $ \uparrow \Rightarrow \downarrow$. Versuchs... %TODO word
  des Monte-Carlo-Algorithmus 'offensichtlich'. Wir betrachten jetzt (als Beispiel) Spinmodelle mit kontinuierlichen Freiheitsgraden.\\ 
@@ -1527,8 +1974,8 @@ U_L = 1-  \frac{\langle S^4 \rangle}{3 \langle S^2 \rangle^2}
  \item $K= 0:  \quad$ $\vec{S}_i \cdot \vec{S}_j$ isotrop $ \quad \Rightarrow  \quad$ OP hat $n=3$ Komponenten $(m_x, m_y, m_z)$
  \item $K<0:  \quad$ Spins legen sich in $xy-$Ebene $ \quad \Rightarrow  \quad$ OP hat $2$ Komponenten ($m_x, \; m_y$)
  \item $K>0 : \quad$ Spins entlang $z-$Achse $ \quad \Rightarrow  \quad$ OP hat 1 Komponente ($m_z$)
- %TODO image Phasendiagramm
  \end{enumerate}
+ Das Phasendiagramm hierfür ist noch einmal in Abbildung \ref{fig:Phasen_Diagramm} ersichtlich.
  \begin{itemize}
  \item entlang der ($K=0$)-Linie anderes kritisches Verhalten (andere Exponenten) als für $K\neq 0$.
  \item für jedes endliche $K$ ist man im Universalitätsklasse von Ising- oder 'x-y'-Modell. 
@@ -1539,12 +1986,33 @@ U_L = 1-  \frac{\langle S^4 \rangle}{3 \langle S^2 \rangle^2}
 \end{itemize}
 \subsection{MC-Algorithmen für kontinuierliche Freiheitsgrade}
 \subsubsection{x-y-Modell}
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie45.png}
+		\caption{\textbf{(oben)} kontinuierlicher Spin (magn. Moment)   im $1$-dimensionalen Potential \textbf{(unten)}} 
+		\label{fig:Spin_Potential}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie46.png}
+		\caption{Cluster-Algorithmus im Ising-Modell}
+		\label{fig:Cluster_Ising}
+		\centering
+	\end{subfigure}
+	\caption{} % \label{crossover}
+\end{figure}	
+
+
 Wir beachten kontinuierlichen 'Spin' (eigentlich ein magnetisches Moment) in der Ebene: $\vert \vec{S} \vert = 1$. Ein Spin davon mit Anisotropie \begin{align*}
 H=-D \; S_x^2 = -D \cos(\phi)^2
 \end{align*} mit dem Potential
 \begin{align*}
 V(x) = -D \cos(x)^2
 \end{align*}
+wie gezeigt in Abbildung \ref{fig:Spin_Potential}.
 
 \textbf{Frage:} Wie wählt man den Versuchsschritt des Monte-Carlo-Algorithmus?
 \begin{enumerate}
@@ -1556,11 +2024,30 @@ V(x) = -D \cos(x)^2
 Falsch! Setze $\Delta \varphi = \pi$ \\
 $ \Rightarrow$ anderes Modell (Ising $S_x = \pm 1$). Allgemein gilt, dass der MC-Algorithmus \textbf{ergodisch} sein muss, d.h. er muss genau den Phasenraum erreichen können!\footnote{genauer: Ergodisch bedeutet 'Zeit-Mittelwert $\widehat{=}$ Ensemble-Mittelwert'} \\
 Ein anderes Beispiel für 'nicht-ergodisch' ist: \\
-\textbf{Beispiel} ('naiver Clusteralgorithmus') \\
-%TODO image
+\textbf{Beispiel} ('naiver Clusteralgorithmus', Abb. \ref{fig:Cluster_Ising}) \\
 Im Isingmodell: bestimmte Konfigurationen können nicht vermischt werden. Trotzdem gibt es richtige (=also ergodische) und zudem sehr effektive Cluster-Algorithmen, wie beispielsweise \textit{Swendsten-Wang}. Da werden (immer andere) Cluster nach Regeln getrennt. 
 
-\item \textbf{Idee:} (falsch!) Wähle zufälligen Punkt im Einheitsquadrat und normiere. %TODO image
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie47.png}
+		\caption{Zufälliger Punkt auf Einheitskreis wird normiert. Nebendran werden Idee 3 und Idee 4 verglichen.} 
+		\label{fig:zufaellig}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie48.png}
+		\caption{Kleine Schritte um alten Vektor $\vec{S}$, hier: innerhalb eines Kegels}
+		\label{fig:Kegel}
+		\centering
+	\end{subfigure}
+	\caption{} % \label{crossover}
+\end{figure}	
+
+
+\item \textbf{Idee:} (falsch!) Wähle zufälligen Punkt im Einheitsquadrat und normiere. (Abb. \ref{fig:zufaellig})
 Dieser ist auch falsch: Punkte auf dem Einheitskreis sind \textit{nicht} gleichverteilt, entlang Diagonale wahrscheinlicher
 \begin{align*}
 \frac{w(1 \to 2)}{w(2\to 1)} \overset{!}{=} e^{- \beta \; (E_2 - E_1)} = \frac{w_{t} (1 \to 2) \; w_{a} (1 \to 2)}{w_{t} (2 \to 1) \; w_{a} (2 \to 1) }  = \frac{w_t(2 \to 1)}{w_t(1 \to 2)} \; e^{-\beta \; (E_2-E_1)}
@@ -1586,9 +2073,7 @@ Und damit ergodisch und symmetrisch.
 Auch ergodisch und symmetrisch, wenn $\delta_{trial}$ symmetrisch gewählt wird.
 \end{enumerate}
 
-Idee \ref{Idee3} ist identisch mit Idee \ref{Idee4} für $\Delta \varphi = \pi$. Für kleines $\Delta \varphi \ll \pi$: Unterschiedliche Dynamik. Allgemein muss Idee \ref{Idee4} über den Energieberg, um Spin umzudrehen, Idee \ref{Idee3} nicht. Daher sind die Relaxationszeiten verschieden, aber Gleichgewichtseigenschaften sind gleich. 
-
-%TODO image 
+Idee \ref{Idee3} ist identisch mit Idee \ref{Idee4} für $\Delta \varphi = \pi$. Für kleines $\Delta \varphi \ll \pi$: Unterschiedliche Dynamik, wie gezeigt in Abbildung \ref{fig:zufaellig}. Allgemein muss Idee \ref{Idee4} über den Energieberg, um Spin umzudrehen, Idee \ref{Idee3} nicht. Daher sind die Relaxationszeiten verschieden, aber Gleichgewichtseigenschaften sind gleich. 
 
 
 
@@ -1650,7 +2135,8 @@ sein.
 \textbf{Nachteil:} $\cos(),\sin()$ müssen gerechnet werden $\to$ langsam!			
 \end{itemize}
 			
-			\item \textbf{ kleine Schritte um den alten Vektor $\vec{S}$ innerhalb eines Kegels} %TODO image kegel
+			
+			\item \textbf{ kleine Schritte um den alten Vektor $\vec{S}$ innerhalb eines Kegels}, wie in Abbildung \ref{fig:Kegel} gezeigt:
 			\begin{itemize}
 			\item[-] erzeuge Zufallsvektor $\vec{S}_r$ innerhalb einer Kugel, also mit maximalen Radius R.
 			\item[-] rechne 
@@ -1694,7 +2180,15 @@ der dissipativen Dynamik des Systems abzubilden $\to$ Zeitquantifizierung \texti
  	\end{center} 
  	\end{itemize}
  	\textbf{Definition Korrelationsfunktion:}\\
- 	 $g( \vert \vec{r}_1 - \vec{r}_2 \vert)$: Wahrscheinlichkeit, dass $\vec{r}_1$ und $\vec{r}_2$ zum gleichen Cluster gehören. \\
+ 	
+ 	\begin{figure}[ht]
+\centering
+\includegraphics[width=0.45\textwidth]{Folie49.png}
+	\caption{}
+	\label{fig:Korrelationsfunktion}
+\end{figure}
+
+ 	 $g( \vert \vec{r}_1 - \vec{r}_2 \vert)$: Wahrscheinlichkeit, dass $\vec{r}_1$ und $\vec{r}_2$ zum gleichen Cluster (Abb. \ref{fig:Korrelationsfunktion}) gehören. \\
  	\textbf{Korrelationslänge:}
  	 \begin{align}
  	\xi^2= \frac{\sum_r r^2 g(r)}{\sum_r g(r)}
@@ -1729,9 +2223,16 @@ ln(p) \approx p-1  \quad \quad \Rightarrow \quad \quad  \xi (p \to p_c) = \frac{
  	
  	In höheren Dimensionen $D>1$ sind nur numerische Verfahren möglich. Zentrale Größe für die Analyse ist die Verteilungsfunktion der Clustergrößen $D(s,p)$.
  	\subsubsection{nummerisches Verfahren zur Clusteranalyse}
- 		\begin{enumerate}
+ 	
+ 	 		\begin{enumerate}
+ 		\item Rekursiv (Abb. \ref{fig:hello})
+ 		\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{hello.png}
+	\caption{}
+	\label{fig:hello}
+\end{figure}
  		
- 		\item Rekursiv %TODO 5 images
  			\begin{itemize}
  			\item Schleife durch das Gitter
  			\item 1.Besetzter Platz erhält Index 1
@@ -1757,7 +2258,27 @@ Die \textbf{Cluster-Analyse} erlaubt weitere Auswirkung der Verteilungsfunktione
 \item 'normal' wäre Fläche $F \propto r^2$ und Volumen $V \propto r^3$. $D_f$ ist dabei kleiner als die einbettende Dimension $(2,3)$
 \item Fraktale sind selbstähnlich\footnote{hier im statistischen Sinne}
 \end{itemize}
-Beispiel: aus der Mathematik %TODO image fraktale
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie55.png}
+		%\caption{} 
+		%\label{fig:Symmetriebruch}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie56.png}
+		%\caption{}
+		%\label{fig:Computer}
+		\centering
+	\end{subfigure}
+	\caption{ Fraktale} \label{Fraktale}
+\end{figure}	
+
+\textbf{Beispiel:} aus der Mathematik (Abb. \ref{Fraktale}):
 
 allgemein: \begin{align*}
 ln(as)= a^x ln(s) \quad \quad \quad   4=3^x \Rightarrow x= \frac{ln(4)}{ln(3)}
@@ -1800,7 +2321,15 @@ Es handelt sich um 6 DGLn 1.Ordnung (siehe auch 'Hamilton Formalismus') %TODO ve
 \end{align}
 
 \subsection{Euler Verfahren}
-Eindimensional $\dot{x}= f(x,t)$.\\  %TODO image 
+Eindimensional $\dot{x}= f(x,t)$, Abb. \ref{fig:Euler}.\\  
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{Folie57.png}
+	\caption{}
+	\label{fig:Euler}
+\end{figure}
+ 
 \textbf{Taylor:}
 \begin{align}
 x(t_0 +h)=& x(t_0) + \dot{x}(t_0)h+ \mathcal{O} (h^2) \\
@@ -1903,14 +2432,34 @@ Wir betrachten noch einmal:
  \begin{align}
 \dot{x}= f(x) = - \lambda x \quad \quad \Rightarrow \quad \quad x(t) = x_0 e^{-\lambda t} \quad \quad \Rightarrow \quad \quad \text{stabil}
 \end{align}
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie58.png}
+		\caption{stabil} 
+		%\label{fig:Symmetriebruch}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie59.png}
+		\caption{instabil}
+		%\label{fig:Computer}
+		\centering
+	\end{subfigure}
+	\caption{Anschauliche Erklärung} \label{Anschaulich}
+\end{figure}	
 %TODO image BEARBEITEN!!!
+
 \begin{align*}
 x_{n+1} \; = \; x_n + \Delta t \; f(x_n, t_n) \; = \; x_n - \lambda x_n \, \Delta t
 \end{align*}
 \begin{align*}
 \dot{x} = f(x) = + \lambda x \quad \quad \Rightarrow \quad \quad \lambda > 0 \quad \quad \Rightarrow \quad \quad \text{instabil}
 \end{align*}
-%TODO image 
+Siehe Abbildung \ref{Anschaulich}. 
 \paragraph{Weitere Tests (nummerisch):}
 \begin{itemize}
 \item Erhaltungssätze überprüfen: Energie-, Impuls-, Drehimpulserhaltung 
@@ -1945,7 +2494,26 @@ x_{n+2}= x_{n} + 2 h f(x_{n+1}, t) + \mathcal{O} (h^3)
 %TODO %TODO %TODO Schablone von boxes
 Man nennt dies auch \textbf{'Bocksprung', 'Leap-Frog'} oder \textbf{'Merhschrittverfahren'}.\\ 
 
-%TODO image
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie60.png}
+		\caption{RK 1.Stufe, Prinzip} 
+		\label{fig:RK1}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie61.png}
+		\caption{RK 2. Stufe im Vergleich mit Euler}
+		\label{fig:RK2}
+		\centering
+	\end{subfigure}
+	\caption{} 
+\end{figure}	
+
 
 \textbf{noch besser:} Runge-Kutta 2.Stufe.
 \begin{align*}
@@ -2039,7 +2607,28 @@ a \;  h_{neu}= \epsilon \qquad \Rightarrow \qquad h^2 = \frac{\epsilon}{a} = h^2
 \end{itemize}
 
 \subsection{Prädikator-Korrelator-Verfahren}
-Ein sehr genaues und stabiles Verfahren. Hier soll nur das Prinzip erläutert werden.
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie62.png}
+		%\caption{} 
+		%\label{fig:Symmetriebruch}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie63.png}
+		%\caption{}
+		%\label{fig:Computer}
+		\centering
+	\end{subfigure}
+	\caption{} \label{Praedikator}
+\end{figure}	
+
+
+Ein sehr genaues und stabiles Verfahren. Hier soll nur das Prinzip erläutert werden. (Siehe auch Abb. \ref{Praedikator})
 \begin{align*}
 \dot{x}= f(x,t) \qquad \overrightarrow{_{Integrieren}} \qquad x(t+h) = x(t) + \int_t^{t+h} dt' \; f(x(t'), t') 
 \end{align*}
@@ -2065,6 +2654,14 @@ In der Praxis:
 \item[2)] unter Umständen mehrere Prädikator-Korrelation-Schritte
 \end{enumerate}
 \subsection{Chaotische Systeme und fraktale Dimensionen}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\textwidth]{Folie64.png}
+	\caption{}
+	\label{fig:Trajektorie}
+\end{figure}
+
 \textbf{Chaos:} Typisches Gebiet der Physik, das durch Einsatz von Rechnen unglaublich %TODO word
 beeinflusst wurde, obwohl prinzipiell schon in Newtonscher Bewegungsgleichung enthalten. \\
 Dynamisches System
@@ -2072,7 +2669,8 @@ Dynamisches System
 \ddot{\mathbf{x}} = \mathbf{F} (\mathbf{x}, \mathbf{\dot{x}}, t)
 \end{align*}
 wird beschrieben durch Trajektorie $(x(t), v(t))$ im Phasenraum. \\
-\textbf{Beispiel} (harmonischer Oszillator)
+
+\textbf{Beispiel} (harmonischer Oszillator, Abb. \ref{fig:Trajektorie})
 \begin{align*}
 \dot{r} &= v \\
 \dot{v} &= - \omega^2 r
@@ -2087,12 +2685,32 @@ System ist deterministisch, d.h. aus den Anfangsbedingungen $x_0, \; v_0$ folgt 
 \end{itemize}
 $\Rightarrow$ 'chaotisch' wäre gebunden, aber nicht periodisch. \\
 \paragraph{Geht das denn überhaupt?}
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie65.png}
+		%\caption{} 
+		%\label{fig:Symmetriebruch}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie66.png}
+		%\caption{}
+		%\label{fig:Computer}
+		\centering
+	\end{subfigure}
+	\caption{} \label{Phasenraumtrajektorie}
+\end{figure}	
+
 \begin{itemize}
 \item betrachte  
 \begin{align*}
 \dot{\mathbf{x}} = f(\mathbf{x}, \mathbf{\dot{x}}) \qquad \qquad (2d)
 \end{align*}
-Trajektorien können sich nicht schneiden. Wenn eine Trajektorie
+Trajektorien können sich nicht schneiden. Wenn eine Trajektorie (siehe Abb. \ref{Phasenraumtrajektorie})
 \begin{itemize}
 \item[•] endet $\qquad \quad \to$ \textit{Fixpunkt}
 \item[•] sich schließt $\, \to$ \textit{periodische Bewegung}
@@ -2102,9 +2720,16 @@ Für Chaos braucht man entweder
 \tcboxmath{ d \geq 3} \qquad \text{ oder } \qquad
 \dot{x} = f(\mathbf{x}, \mathbf{\dot{x}},t),
 \end{align*}
-denn nur dann können sich Trajektorien in $2d$ schneiden.
-%TODO images (2)
-$1d$ Molekularphysik mit $\mathbf{F} + \mathbf{F}(t)$ kann nicht chaotisch werden! Ab $d=3$ kann eine Trajektorie in höhere Dimensionen ausweichen. Siehe bild %TODO : 
+denn nur dann können sich Trajektorien in $2d$ schneiden. \\
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{Folie67.png}
+	\caption{}
+	\label{fig:2d}
+\end{figure}
+
+$1d$ Molekularphysik mit $\mathbf{F} + \mathbf{F}(t)$ kann nicht chaotisch werden! Ab $d=3$ kann eine Trajektorie in höhere Dimensionen ausweichen. Siehe Skizze in Abbildung \ref{fig:2d}.
 \textsc{Poincaré}-Schritt ist Punktmenge in (z.B) der $x_3 =0$ Ebene.
 
 \item $A$ muss \textbf{nicht linear} sein (sonst gibt es Schwingungen oder exponentielle Lösungen)
@@ -2143,7 +2768,7 @@ F=0 \qquad \Rightarrow \qquad
 \end{cases} 
 \end{align*}
 für lange Zeiten und $\gamma =0$ endet man in einem der beiden Fixpunkte.
-\item[2)] \textbf{Attraktor:} Punktmenge im Phasenraum, auf der die Lösung für $t \to \infty$ liegt (siehe Beispiel: Trajektorie des harmonischen Oszillators). Mit Reibung ohne Antrieb folgt, dass der Atraktor gleich dem Fixpunkt ist. \\
+\item[2)] \textbf{Attraktor:} Punktmenge im Phasenraum, auf der die Lösung für $t \to \infty$ liegt (siehe Beispiel: Trajektorie des harmonischen Oszillators, Abbildung \ref{Phasenraumtrajektorie} (links)). Mit Reibung ohne Antrieb folgt, dass der Atraktor gleich dem Fixpunkt ist. \\
 Eigenschaften des 'seltsamen Attraktors' (\textit{strange}), d.h. im chaotischen Bereich ($\beta =1, \gamma \approx 0.8$)
 \begin{itemize}
 \item[-]nicht periodisch
@@ -2153,8 +2778,29 @@ Eigenschaften des 'seltsamen Attraktors' (\textit{strange}), d.h. im chaotischen
 $\Rightarrow$ formale Defintionen von Chaos durch \textsc{Lyaponov}-Exponenten, der das Auseinanderlaufen beschreibt
 \end{enumerate}
 \subsection*{Fraktale Dimensionen/ Box-Counting}
-Wie definiert/bestimmet man die Dimension eines Objektes bzw. einer Punktmenge? \\ %TODO  image gitter
-Einbettende Dimension ($d=2)$, Volumen $V$. \begin{itemize}
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie68.png}
+		\caption{Quadratgitter} 
+		\label{fig:Quadratgitter}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie69.png}
+		\caption{Boxdimension}
+		\label{fig:Boxdimension}
+		\centering
+	\end{subfigure}
+	\caption{}
+\end{figure}	
+
+Wie definiert/bestimmet man die Dimension eines Objektes bzw. einer Punktmenge? \\ 
+Einbettende Dimension ($d=2)$, Volumen $V$, Abbildung \ref{fig:Quadratgitter}. 
+\begin{itemize}
 \item Führe Quadrate der Kantenlänge $\epsilon$ ein.
 \item Zähle die Würfel, in die ein Punkt der Menge fällt $N(\epsilon)$
 \end{itemize}
@@ -2169,7 +2815,7 @@ D = - \lim_{\epsilon \to 0} \frac{ln(N(\epsilon))}{ln(\epsilon)}
 \item[1)] Ist $\epsilon$ zu klein: es stehen nur $N_0$ Punkte zur Verfügung: $\Rightarrow \; N(\epsilon) = N_0 = const.$
 \item[2)] Ist $\epsilon$ zu groß: jede Box enthält Punkte $\Rightarrow \; N(\epsilon) = \frac{V}{\epsilon^d} \; \propto \epsilon^{-d}$
 \end{enumerate}
-Also %TODO image
+Siehe Abbildung \ref{fig:Boxdimension}. \\
 
 Fraktale in der Natur sind (ähnlich wie beim Rechnen) stets begrenzt, d.h. es gibt obere und untere Abschnitte-Längenskalen, z.B. die Ausdehnung des Gesamtobjektes (ohne) und die Mikrostruktur, z.B. Zelle, Atom...(unten). \\\paragraph*{ Wichtige Eigenschaften:}
 \begin{itemize}
@@ -2307,17 +2953,36 @@ $\Rightarrow$ Gitterstruktur, Gleichgewichtsabstände, Kräfte \\
 für Gase, Flüssigkeiten gibt es das stark vereinfachte
 \\
 \paragraph{Lennard-Jones-Potential} 
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie70.png}
+		\caption{Lennard Jones Potential und die überlappende Wellenfunktion zweier Atome} 
+		\label{fig:Lennard}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie71.png}
+		\caption{Polariation der Ladungsverteilung (Van der Waals Kräfte)}
+		\label{fig:VdWaal}
+		\centering
+	\end{subfigure}
+	\caption{} \label{Phasenraumtrajektorie}
+\end{figure}	
+
 \begin{align}
 U(r) = 
 4 \epsilon 
 \left[ \left(  \frac{ \sigma }{r}  \right)^{12} - \left( \frac{\sigma }{r} \right)^6 \right]
 \end{align}
-für neutrale Atome ohne innere Freiheitsgrade. 
+für neutrale Atome ohne innere Freiheitsgrade, gezeigt in Abbildung \ref{fig:Lennard}.
 \begin{itemize}
-\item \textbf{kleine Abstände:} Wellenfunktion zweier Atome überlappen,
-%TODO image 
+\item \textbf{kleine Abstände:} Wellenfunktion zweier Atome überlappen, (Abb. \ref{fig:Lennard})
  Pauli Prinzip verbietet Annäherung (bei abgeschlossenen Schalen im gleichen Zustand) \\ $\Rightarrow U \propto r^{-12}$ (gut für Edelgase) \\ bei nicht abgeschlossenen Schalen auch chemische Bindung möglich. ($H_2$ Molekül)
-\item \textbf{große Abstände:} \textsc{Van der Waals} Kräfte durch Polarisation der Ladungsverteilung \\
+\item \textbf{große Abstände:} \textsc{Van der Waals} Kräfte durch Polarisation der Ladungsverteilung (Abb. \ref{fig:VdWaal}) \\
 $\Rightarrow$ anziehende Wechselwirkung der Dipole (QM-Effekt) mit $U \propto - r^{-6}$.
 \item eventuell auch weitere Wechselwirkungen wie z.B. Coulombwirkung bei elektrisch geladenen Teilchen, ...
 \end{itemize}
@@ -2357,11 +3022,19 @@ t_{s,ij} =
 Stoßzeit $t_s = \min \{ t_{s,ij} > 0\} \; \forall i,j$
 \item \textbf{Geschwindigkeitsänderung bei Stoß} \\
 Hier ist die Kraft $\perp$ Kugeloberfläche.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{Folie72.png}
+	\caption{}
+	\label{fig:Geschwindigkeitsaenderung}
+\end{figure}
+
 \begin{itemize}
 \item Impulsänderung  entlang der Verbindungslinie der Schwerpunkte $|| \vec{r}_{i} - \vec{r}_{j} ||$
 \item Änderung von $\vec{v}_{i}, \vec{v}_{j}$ folgt aus Energiesatz und Impulssatz \\
-(\textit{hier:} gleiche Massen, harte Kugeln)\\ 
-%TODO image
+(\textit{hier:} gleiche Massen als harte Kugeln, Abb. \ref{fig:Geschwindigkeitsaenderung})\\ 
+
 \textit{Impulssatz}: 
 \begin{align*}
 m( \vec{v}_{i}' - \vec{v}_{i}) = -m ( \vec{v}_{j}' - \vec{v}_{j})   \qquad \text{mit } (v'\; \widehat{=} \text{ nach Stoß)} 
@@ -2411,12 +3084,19 @@ r = 1 - 2\; \epsilon
 Häufig, etwa bei Simulationen von Flüssigkeiten; Gasen ist man an Systemen mit vielen Teilchen interessiert. In Simulationen nur endliche Teilchenzahl $N$ möglich. Realistische Teilchenzahlen in Großrechnern sind $\approx 100 \, 000$ (1997).Wünschenswert wäre: $N \to \infty, V \to \infty$ (Außer bei Nanotechnologie) \\
 $\Rightarrow$ Extrapolation uninteressant, wo liegt das Problem? \\
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{Folie73.png}
+	\caption{}
+	\label{fig:Gittah}
+\end{figure}
+
 \textbf{Beispiel:}  (N Teilchen auf einfach kubischem Gitter $N = 512 = 8^3$) \\
 $\Rightarrow$ Gittergröße: $ 8 \cdot 8 \cdot 8 = 512=N$ \\
 $\Rightarrow$ Oberfläche: $8 \cdot 8 \cdot 6 = 384$ Teilchen auf der Oberfläche (mehr als die Hälfte). \\
 $\Rightarrow$ Normal: $6$ Nachbarn, auf Oberfläche $<6$ Nachbarn. \\
 $\Rightarrow$ Problem sind die Oberflächen wegen geändertem Verhalten. (wegen der Nachbarn)\\ \\
- \textit{Lösungsansatz:} System periodisch fortsetzten. Periodische Randbedingungen. 
+ \textit{Lösungsansatz:} System periodisch fortsetzten. Periodische Randbedingungen. (Abb. \ref{fig:Gittah})
 \begin{itemize}
 \item Bewegung der Teilchen wird nur in \textit{einer} Zelle berechnet
 \item Wechselwirkung wird (prinzipiell) als Summe der Wechselwirkungen mit allen Bildern genommen
@@ -2424,16 +3104,36 @@ $\Rightarrow$ Problem sind die Oberflächen wegen geändertem Verhalten. (wegen 
 $\Rightarrow$ Wechselwirkung wie im unendlichen System, Verteilung im Ort aber periodisch (Approximation). \\
 (Andere Interpolation: periodische Anfangsbedingung führen zu periodischen Dichten %TODO word
 ) \\
-\textbf{Einfaches Beispiel:} (1-dim System granularer Materie (geht auch in 2,3D)) \\ %TODO image
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie74.png}
+		\caption{$1$-dimensionales System granularer Materie} 
+		\label{fig:Granulat}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie75.png}
+		\caption{ED - MD Simulation}
+		\label{fig:ED_MD}
+		\centering
+	\end{subfigure}
+	\caption{}
+\end{figure}	
+
+\textbf{Einfaches Beispiel:} (1-dim System granularer Materie (geht auch in 2,3D)) Siehe Abbildung \ref{fig:Granulat}. \\ 
 nur einen Abstand mehr einführen \\ $\Rightarrow$ periodische Randbedingung (\textit{'Nächster Nachbar Wechselwirkung}') \\
 \textbf{komplizierteres Beispiel:} (unendlich langreichweitige Wechselwirkung)
 \begin{itemize}
-\item entweder abschneiden, falls Wechselwirkung hinreichend schnell abfällt (siehe Bild oben) %TODO reference
+\item entweder abschneiden, falls Wechselwirkung hinreichend schnell abfällt
 \item oder unendliche Reihe ausrechnen ($\to$Ewald Summation) z.B. erforderlich bei elektrostatischen Dipol-Wechselwirkung 
 \end{itemize}
 \textbf{Ergebnis:} Unterschied zu unendlichen Systemen: Periodizität! Oberflächeneffekte verschwinden, aber System bleibt periodisch. \\
 \textbf{Beispiel:} (Event driven molekulardynamische Simulation) \\
-$N=80$, $1d$, $R=0$ (links getrieben, rechts reflektiert $v  \dashrightarrow -v$) %TODO image
+$N=80$, $1d$, $R=0$ (links getrieben, rechts reflektiert $v  \dashrightarrow -v$) $\to$ Abbildung \ref{fig:ED_MD}.
 Energiedissipation über Restriktionskoeffizienten 
 \begin{align*}
 r = 1-2 \; \epsilon \qquad \qquad (\epsilon \text{ wird vorgegeben)}
@@ -2525,9 +3225,29 @@ Letzteres im Sinne, dass Integrale (über $\pm \infty$) gleich sind! Vergleich m
 \begin{align*}
 v=& \frac{dx}{dt}= \frac{1}{c} \; \eta (t) \qquad \qquad \mbox{ mit } \langle \eta (t')  \; \eta (t) \rangle = \Gamma \delta (t-t') 
 \end{align*}
-\textbf{Wiener-Prozess} %TODO image
+\textbf{Wiener-Prozess} 
+
+\begin{figure}[h] 
+		\begin{subfigure}[h]{0.5 \textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie76.png}
+		\caption{Gauss Verteilung.} 
+		\label{fig:whatever1}
+		\centering
+	\end{subfigure}
+	~
+\begin{subfigure}[h]{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{Folie77.png}
+		\caption{Extrapolation des Rauschens}
+		\label{fig:Extrapolation}
+		\centering
+	\end{subfigure}
+	\caption{}
+\end{figure}	
+
 \begin{enumerate} 
-\item
+\item (Siehe hierzu auch Abbildung \ref{fig:whatever1})
 \begin{align}
 \Gamma =& c^2 \frac{2 k_B T}{c} = 2 k_B T c
 \end{align}
@@ -2547,10 +3267,15 @@ D= \frac{k_B T}{6 \pi \nu a} \quad \mbox{ mit: Viskosität } \nu \mbox{ und Teil
 Ausbreitung von \textit{Random Walk} $\propto \sqrt{t}$ $\Rightarrow$ \textbf{Wiener Prozess}  \\ 
 \end{enumerate}
 Wo liegt das Problem? Warum nicht Euler?
-%TODO image
-Extrapolation des Rauschens gibt es aber nicht, wird $\eta (t) \; \eta(t') = \Gamma \delta (t-t')$. \\
+Extrapolation des Rauschens (Abb. \ref{fig:Extrapolation}) gibt es aber nicht, wird $\eta (t) \; \eta(t') = \Gamma \delta (t-t')$. \\
 
-\textbf{Random Walk:} eines der einfachsten Modelle der Computersimulation %TODO image
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.5\textwidth]{Folie78.png}
+	\caption{}
+	\label{fig:RandomWalk}
+\end{figure}
+\textbf{Random Walk:} eines der einfachsten Modelle der Computersimulation, siehe Abbildung \ref{fig:RandomWalk}.
 \begin{itemize}
 \item 'Random Walker' startet auf Gitterpunkt
 \item bewegt sich dann bei jedem Zeitschritt 'zufällig': z.B. Bewegung auf $2d$-Quadratgitter
